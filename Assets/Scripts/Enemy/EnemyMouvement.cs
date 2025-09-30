@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class EnnemyMouvement : MonoBehaviour
+public class EnemyMouvement : MonoBehaviour
 {
+    public EnemyScriptableObject enemyData;
     private Transform player;
-    public float speed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,6 +14,6 @@ public class EnnemyMouvement : MonoBehaviour
     void Update()
     {
         transform.position =
-            Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            Vector2.MoveTowards(transform.position, player.transform.position, enemyData.moveSpeed * Time.deltaTime);
     }
 }
