@@ -702,7 +702,7 @@ MonoBehaviour:
   speed: 20
   cooldown: 2
   pierce: 0
---- !u!1001 &1065999794784444754
+--- !u!1001 &8146555175703643822
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -710,55 +710,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2688176253652522649, guid: df3f6a3c7e5d9fb49917767df5fcdd48, type: 3}
-      propertyPath: m_Name
-      value: Isometric Diamond
-      objectReference: {fileID: 0}
-    - target: {fileID: 3678448319102259395, guid: df3f6a3c7e5d9fb49917767df5fcdd48, type: 3}
+    - target: {fileID: 6514993009154707594, guid: fb3ce32a2f5fc7a4db33e9033231bee7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -28.62753
       objectReference: {fileID: 0}
-    - target: {fileID: 3678448319102259395, guid: df3f6a3c7e5d9fb49917767df5fcdd48, type: 3}
+    - target: {fileID: 6514993009154707594, guid: fb3ce32a2f5fc7a4db33e9033231bee7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.3679206
       objectReference: {fileID: 0}
-    - target: {fileID: 3678448319102259395, guid: df3f6a3c7e5d9fb49917767df5fcdd48, type: 3}
+    - target: {fileID: 6514993009154707594, guid: fb3ce32a2f5fc7a4db33e9033231bee7, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3678448319102259395, guid: df3f6a3c7e5d9fb49917767df5fcdd48, type: 3}
+    - target: {fileID: 6514993009154707594, guid: fb3ce32a2f5fc7a4db33e9033231bee7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.92387956
       objectReference: {fileID: 0}
-    - target: {fileID: 3678448319102259395, guid: df3f6a3c7e5d9fb49917767df5fcdd48, type: 3}
+    - target: {fileID: 6514993009154707594, guid: fb3ce32a2f5fc7a4db33e9033231bee7, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3678448319102259395, guid: df3f6a3c7e5d9fb49917767df5fcdd48, type: 3}
+    - target: {fileID: 6514993009154707594, guid: fb3ce32a2f5fc7a4db33e9033231bee7, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3678448319102259395, guid: df3f6a3c7e5d9fb49917767df5fcdd48, type: 3}
+    - target: {fileID: 6514993009154707594, guid: fb3ce32a2f5fc7a4db33e9033231bee7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.38268343
       objectReference: {fileID: 0}
-    - target: {fileID: 3678448319102259395, guid: df3f6a3c7e5d9fb49917767df5fcdd48, type: 3}
+    - target: {fileID: 6514993009154707594, guid: fb3ce32a2f5fc7a4db33e9033231bee7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3678448319102259395, guid: df3f6a3c7e5d9fb49917767df5fcdd48, type: 3}
+    - target: {fileID: 6514993009154707594, guid: fb3ce32a2f5fc7a4db33e9033231bee7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3678448319102259395, guid: df3f6a3c7e5d9fb49917767df5fcdd48, type: 3}
+    - target: {fileID: 6514993009154707594, guid: fb3ce32a2f5fc7a4db33e9033231bee7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997200509264440334, guid: fb3ce32a2f5fc7a4db33e9033231bee7, type: 3}
+      propertyPath: m_Name
+      value: Knife
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: df3f6a3c7e5d9fb49917767df5fcdd48, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: fb3ce32a2f5fc7a4db33e9033231bee7, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -766,5 +766,5 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 743487559}
   - {fileID: 711154259}
-  - {fileID: 1065999794784444754}
   - {fileID: 212908944}
+  - {fileID: 8146555175703643822}
