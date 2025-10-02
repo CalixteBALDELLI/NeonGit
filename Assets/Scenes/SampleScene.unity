@@ -697,11 +697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae7ffa0a06e722546978ae5708d69386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2688176253652522649, guid: df3f6a3c7e5d9fb49917767df5fcdd48, type: 3}
-  damage: 0
-  speed: 20
-  cooldown: 2
-  pierce: 0
+  weaponData: {fileID: 11400000, guid: 17a8d5d3ab2d40340ac769ebde4c3870, type: 2}
 --- !u!1001 &8146555175703643822
 PrefabInstance:
   m_ObjectHideFlags: 0

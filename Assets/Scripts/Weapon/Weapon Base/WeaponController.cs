@@ -13,7 +13,7 @@ public class WeaponCOntroller : MonoBehaviour
     protected virtual void Start()
     {
         pm = FindObjectOfType<PlayerMovement>();
-        currentCooldown = weaponData.cooldownDuration; //cooldown before starting to shoot
+        currentCooldown = weaponData.CooldownDuration; //cooldown before starting to shoot
     }
 
     // Update is called once per frame
@@ -29,6 +29,6 @@ public class WeaponCOntroller : MonoBehaviour
 
     protected virtual void Attack()
     {
-        currentCooldown = weaponData.cooldownDuration;
+        currentCooldown = weaponData.CooldownDuration;
     }
 }
