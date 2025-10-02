@@ -11,8 +11,8 @@ public class KnifeController : WeaponCOntroller
     protected override void Attack()
     {
         base.Attack(); // Spawn avec réglage de la direction du couteau
-        GameObject spawnedKnife = Instantiate(prefab); 
-        spawnedKnife.transform.position = transform.position;
-        spawnedKnife.GetComponent<KnifeBehavior>().DirectionChecker(pm.lastMovedVector);
+        GameObject spawnedKnife = Instantiate(weaponData.prefab); 
+        spawnedKnife.transform.position = transform.position;  //Assign the position to be the same as this object which is parented to the player
+        spawnedKnife.GetComponent<KnifeBehavior>().DirectionChecker(pm.lastMovedVector); //Reference and set the direction
     }
 }
