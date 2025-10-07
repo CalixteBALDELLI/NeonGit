@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,15 +29,42 @@ public class EnemySpawner : MonoBehaviour
     public List<Wave> waves; //A list of all the list in the game
     public int currentWaveCount; //The Index of the current wave [start at 0]
 
+    [Header("Spawner Attributes")]
+    float spawnTimer; //Timer use to determine when to spawn the next enemy
+    public float waveInterval; //The interval between each wave
+    
+    
     Transform player;
     void Start()
     {
         PlayerMovement[] playerMovement = FindObjectsByType<PlayerMovement>(FindObjectsInactive.Exclude,FindObjectsSortMode.None); //IL FAUT CHANGER CA UNE FOIS LE PLAYER STATS FAIT <3
         player =  playerMovement[0].transform;
         CalculateWaveQuota();
-        SpawnEnemies();
+        
     }
-    
+
+    void Update()
+    {
+        spawnTimer += Time.deltaTime;
+
+        //Check if it's time to  spawn the next enemy
+        if (spawnTimer >= waves[currentWaveCount].spawnInterval)
+        {
+            spawnTimer = 0f;   
+            SpawnEnemies();
+        }
+    }
+
+    IEnumerator BeginNextWave()
+    {
+        //Wave for 'waveInterval' seconds
+        yield return new WaitForSeconds(waveInterval);
+        if (currentWaveCount < waves.Count - 1)
+        {
+            currentWaveCount++;
+            CalculateWaveQuota();
+        }
+    }
     void CalculateWaveQuota()
     {
         int currentWaveQuota = 0;
