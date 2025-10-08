@@ -6,7 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: "Assets/Scenes/D\xE9part.unity"
+    path: Assets/Scenes/Menu/Menu.unity
+    guid: 17ef0acb1a46c3c4cbdaee8b3e6ffa89
+  - enabled: 1
+    path: "Assets/Scenes/Menu/Menu Am\xE9liorations.unity"
+    guid: cbf6d7fd8b7848c4180a8a7647cd3904
+  - enabled: 1
+    path: Assets/Scenes/Menu/Menu Options.unity
+    guid: e23ed1978b63c254d956aa37cef2ef35
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/Scenes/1.unity

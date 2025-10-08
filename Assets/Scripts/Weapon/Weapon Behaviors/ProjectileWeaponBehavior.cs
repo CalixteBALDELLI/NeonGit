@@ -46,6 +46,19 @@ public class ProjectileWeaponBehavior : MonoBehaviour
         {
             EnemyStat enemy = col.GetComponent<EnemyStat>();
             enemy.TakeDamage(currentDamage); //make sur to use currentDamage instead of weaponData.Damage in case of damage multiplier in the future
-        }
-    }
+        	ReducePierce();
+		}
+	}
+
+	void ReducePierce() //Destroy once the pierce peaches 0
+	{
+		currentPierce--;
+		if(currentPierce <= 0)
+		{
+			Destroy(gameObject);
+				
+		}
+			
+	}	
+
 }
