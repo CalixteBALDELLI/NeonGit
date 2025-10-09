@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6653913473360311072}
   - component: {fileID: 8381736246786852496}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Knife Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 7261363701271085377}
   - component: {fileID: 4353250225601353133}
   - component: {fileID: 5406576978966803188}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 8645961416726448300}
   - component: {fileID: 3748832978514341679}
   - component: {fileID: 4932410868808639047}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
