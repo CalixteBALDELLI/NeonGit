@@ -287,7 +287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0827da4ee3ce67f4e8d07cd83a0e9a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 3748832978514341679}
   moveSpeed: 10
   moveDirection: {x: 0, y: 0}
   move: {fileID: -54435082969366638, guid: 189c225c90f342d47819dcdaec895259, type: 3}
@@ -295,6 +294,8 @@ MonoBehaviour:
   lastMovedVector: {x: 0, y: 0}
   lastHorizontalVector: 0
   lastVerticalVector: 0
+  rb: {fileID: 3748832978514341679}
+  characterData: {fileID: 0}
 --- !u!114 &8645961416726448300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +360,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8473274156851806471}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -382,7 +383,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

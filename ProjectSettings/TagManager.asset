@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - WeaponMenu
+  - XP
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Teleporter
   - Weapon
   - Player
-  - 
+  - XP
   - 
   - 
   - 
