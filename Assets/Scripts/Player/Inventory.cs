@@ -1,14 +1,9 @@
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Teleporter : MonoBehaviour
+public class Inventory : MonoBehaviour
 {
-    public GameObject canvas;
-    public void OnTriggerEnter2D(Collider2D boxCollider)
-    {
-        Debug.Log("Canva");
-        Instantiate(canvas);
-    }
+    public int equippedWeapons;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

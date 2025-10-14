@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -6,11 +7,13 @@ using UnityEngine.UI;
 public class Scene1Load : MonoBehaviour
 {
 
+    public MapData mapData;
     public Button button;
-
+    public TextMeshProUGUI buttonText;
     private void Start()
     {
         button.onClick.AddListener(LoadScene1);
+        buttonText.text = mapData.mapName;
     }
 
     private void OnDestroy()
@@ -20,7 +23,7 @@ public class Scene1Load : MonoBehaviour
     void LoadScene1()
     {
         Debug.Log("LOAD");
-        SceneManager.LoadScene("1");
+        SceneManager.LoadScene(mapData.mapId);
     }
 
 }

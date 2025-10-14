@@ -1,15 +1,16 @@
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
-public class Teleporter : MonoBehaviour
+public class WeaponChoiceUiTrigger : MonoBehaviour
 {
     public GameObject canvas;
-    public void OnTriggerEnter2D(Collider2D boxCollider)
-    {
-        Debug.Log("Canva");
-        Instantiate(canvas);
-    }
     
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("weaponENTer");
+        canvas.SetActive(true);
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
