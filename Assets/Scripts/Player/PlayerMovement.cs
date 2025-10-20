@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody2D rb; //reference au rigidbody
+
     
     public float moveSpeed; //vitesse de déplacement
     
@@ -15,8 +15,11 @@ public class PlayerMovement : MonoBehaviour
     public InputActionReference fire;
     [HideInInspector]
     public Vector2 lastMovedVector;
+    
     public float lastHorizontalVector;
     public float lastVerticalVector;
+    public Rigidbody2D rb; //reference au rigidbody
+    public CharacterScriptableObject characterData;
 
     void Start()
     {
@@ -47,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new  Vector2(moveDirection.x, moveDirection.y) * moveSpeed; // deplacement du personnage sur la carte (mulitpipplication du vecteur de direction par la  valeur de vitesse réglable) 
+        rb.linearVelocity = new  Vector2(moveDirection.x, moveDirection.y) * characterData.MovingSpeed; // deplacement du personnage sur la carte (mulitpipplication du vecteur de direction par la  valeur de vitesse réglable) 
     }
     
     // tir
