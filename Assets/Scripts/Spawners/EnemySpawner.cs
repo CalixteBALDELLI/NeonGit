@@ -111,9 +111,7 @@ public class EnemySpawner : MonoBehaviour
                         return;
                     }
                     //Spawn the enemy at a random position close to the player 
-                    Instantiate(enemyGroup.enemyPrefab,
-                        player.position + relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position,
-                        Quaternion.identity);
+                    Instantiate(enemyGroup.enemyPrefab,player.position + relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position, Quaternion.identity);
                    
                     enemyGroup.spawnCount++;
                     waves[currentWaveCount].spawnCount++;
