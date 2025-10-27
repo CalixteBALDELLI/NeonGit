@@ -4,11 +4,11 @@ using UnityEngine.UI;
 public class WeaponEquip : MonoBehaviour
 {
     
-    public Button button;
+    public Button                 button;
     public WeaponScriptableObject weaponData;
-    public Inventory inventory;
-    public GameObject weaponController;
-    public PlayerMovement player;
+    public GameObject            inventory;
+    public GameObject            weaponController;
+    public GameObject            player;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,7 +25,7 @@ public class WeaponEquip : MonoBehaviour
         }
         else
         {
-            Instantiate(weaponController, player.transform.position, Quaternion.identity);
+            Instantiate(weaponController, transform, player);
             inventory.equippedWeapons ++;
             Debug.Log("equiped");
         }

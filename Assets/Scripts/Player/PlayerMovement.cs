@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     public Rigidbody2D rb; //reference au rigidbody
     
     public float moveSpeed; //vitesse de déplacement

@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
+    
     public int equippedWeapons;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created

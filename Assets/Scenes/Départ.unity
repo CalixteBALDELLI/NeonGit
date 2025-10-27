@@ -841,6 +841,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4932410868808639047, guid: 2fb908e514736114a979faf71a1e5921, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8473274156851806471, guid: 2fb908e514736114a979faf71a1e5921, type: 3}
       propertyPath: m_Name
       value: Player
@@ -941,6 +945,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1460258953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 658877421234568493, guid: 6296e80fbe7db054a9000baaede516fa, type: 3}
+  m_PrefabInstance: {fileID: 2011904750}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1852654680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1154,6 +1163,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knife Collectable
       objectReference: {fileID: 0}
+    - target: {fileID: 7060200027962255266, guid: 6296e80fbe7db054a9000baaede516fa, type: 3}
+      propertyPath: weaponController
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575406461301471705, guid: 6296e80fbe7db054a9000baaede516fa, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1460258953}
     - target: {fileID: 9008725113772030793, guid: 6296e80fbe7db054a9000baaede516fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.9120626
@@ -1207,13 +1224,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1532159234142474893, guid: 7f3789d9ee231624ca5d7d869bd2e9ae, type: 3}
-      propertyPath: equippedWeapons
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3263628556814977994, guid: 7f3789d9ee231624ca5d7d869bd2e9ae, type: 3}
       propertyPath: m_Name
-      value: Inventory Manager
+      value: Game Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6342766848686577219, guid: 7f3789d9ee231624ca5d7d869bd2e9ae, type: 3}
       propertyPath: m_LocalPosition.x
