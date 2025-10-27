@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7995386399235093858}
   - component: {fileID: 7486884730850139798}
   - component: {fileID: 2135264109103385301}
-  - component: {fileID: 4719210183119237584}
+  - component: {fileID: 460234960311440908}
   m_Layer: 10
-  m_Name: xp asset proto_0 1
+  m_Name: XP Bottle 1
   m_TagString: XP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +125,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1.695
---- !u!114 &4719210183119237584
+--- !u!114 &460234960311440908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9034295119827784896}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cdb36b9f3c41334fb4da4c7d6898294, type: 3}
+  m_Script: {fileID: 11500000, guid: 34fa083832ecd4945a8aeb29e783fded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  experienceGranted: 100
+  bottleData: {fileID: 11400000, guid: 84471d9762d9a2a4fbf1e2f81dbf09dd, type: 2}
