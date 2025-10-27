@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
 { 
+    public int                   MoneyToAdd = 10;
     public EnemyScriptableObject enemyData;
-    
+    public AudioClip             bruitagedegas;
     //Current stats
     float currentMoveSpeed;
     float currentHealth;
@@ -21,7 +22,7 @@ public class EnemyStat : MonoBehaviour
     {
         
         currentHealth -= dmg;
-
+        AudioSource.PlayClipAtPoint(bruitagedegas, transform.position);
         if (currentHealth <= 0)
         {
             kill();
@@ -32,6 +33,7 @@ public class EnemyStat : MonoBehaviour
     public void kill()
     {
         Destroy(gameObject);
+        
     }
 
     private void OnDestroy()
@@ -39,5 +41,6 @@ public class EnemyStat : MonoBehaviour
         EnemySpawner es = FindObjectOfType<EnemySpawner>();
         if (es != null)
             es.OnEnemyKilled();
+        MonyManager.instance.AddScore(MoneyToAdd);
     }
 }
