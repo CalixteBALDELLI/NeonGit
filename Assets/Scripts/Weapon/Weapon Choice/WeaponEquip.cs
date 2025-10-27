@@ -19,14 +19,14 @@ public class WeaponEquip : MonoBehaviour
     
     public void WeaponEquiping()
     {
-        if (inventory.equippedWeapons == 3)
+        //if (inventory.equippedWeapons == 3)
         {
             Debug.Log("Inventory Full");
         }
-        else
+        //else
         {
             Instantiate(weaponController, transform, player);
-            inventory.equippedWeapons ++;
+            //inventory.equippedWeapons ++;
             Debug.Log("equiped");
         }
         
