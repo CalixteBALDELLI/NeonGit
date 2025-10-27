@@ -50,12 +50,15 @@ public class EnemySpawner : MonoBehaviour
         
     }
 
+
+    private bool waving = false;
     void Update()
     {
         
-       if (currentWaveCount < waves.Count && waves[currentWaveCount].spawnCount == 0) // Check if the wave has ended and the next wave should sart
+       if (currentWaveCount < waves.Count && waves[currentWaveCount].spawnCount == 0 && !waving) // Check if the wave has ended and the next wave should sart
        {
            StartCoroutine(BeginNextWave());
+           waving = true;
        }
        spawnTimer += Time.deltaTime;
 
@@ -71,7 +74,7 @@ public class EnemySpawner : MonoBehaviour
     {
         //Wave for 'waveInterval' seconds before starting the next wave
         yield return new WaitForSeconds(waveInterval);
-        
+        waving = false;
         
         if (currentWaveCount < waves.Count - 1)
         {
@@ -108,9 +111,7 @@ public class EnemySpawner : MonoBehaviour
                         return;
                     }
                     //Spawn the enemy at a random position close to the player 
-                    Instantiate(enemyGroup.enemyPrefab,
-                        player.position + relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position,
-                        Quaternion.identity);
+                    Instantiate(enemyGroup.enemyPrefab,player.position + relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position, Quaternion.identity);
                    
                     enemyGroup.spawnCount++;
                     waves[currentWaveCount].spawnCount++;
@@ -134,5 +135,7 @@ public class EnemySpawner : MonoBehaviour
     }
     
 }
+
+
 
 

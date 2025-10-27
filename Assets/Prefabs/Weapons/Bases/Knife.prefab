@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3440578304973633127}
   - component: {fileID: 8307456605826771155}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 78221483147770358}
   - component: {fileID: 5842290136543409348}
   - component: {fileID: 5331096453131454266}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7246458210994813800}
   - component: {fileID: 100168088313267166}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Diamond
   m_TagString: Untagged
   m_Icon: {fileID: 0}

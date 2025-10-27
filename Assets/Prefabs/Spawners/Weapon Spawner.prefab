@@ -10,8 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4334958848056847600}
   - component: {fileID: 1554819054235893684}
+<<<<<<<< HEAD:Assets/Prefabs/Spawners/Weapon Spawner.prefab
   - component: {fileID: 1328476205813902120}
   m_Layer: 0
+========
+  m_Layer: 6
+>>>>>>>> bef4ea15fc45102f01e5b994074d71c04c411892:Assets/Prefabs/Spawner/Weapon Spawner.prefab
   m_Name: Weapon Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
