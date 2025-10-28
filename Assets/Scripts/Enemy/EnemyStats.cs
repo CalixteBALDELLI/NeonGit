@@ -1,8 +1,10 @@
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
 { 
+    
     public EnemyScriptableObject enemyData;
     
     //Current stats

@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4334958848056847600}
   - component: {fileID: 1554819054235893684}
-  m_Layer: 6
+  - component: {fileID: 1328476205813902120}
+  m_Layer: 0
   m_Name: Weapon Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,3 +88,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1328476205813902120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038155603795555547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80cad565b3c0d3c44873eddae9bc62fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon70: {fileID: 5989766164689989864, guid: 6296e80fbe7db054a9000baaede516fa, type: 3}
+  weapon30: {fileID: 1248204333588313736, guid: 6b948094560fb84448a6c717d538869d, type: 3}
+  whichweapon: 0

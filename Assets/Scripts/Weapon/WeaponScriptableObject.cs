@@ -2,7 +2,8 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "WeaponScriptableObject", menuName = "ScriptableObjects/Weapon" )]
 public class WeaponScriptableObject :ScriptableObject
-{ 
+{
+    public int weaponId;
     //Base stats for weapons
     [SerializeField]
     GameObject prefab; 

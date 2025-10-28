@@ -7,7 +7,7 @@ public class Teleporter : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D boxCollider)
     {
         Debug.Log("Canva");
-        canvas.SetActive(true);
+        Instantiate(canvas);
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
