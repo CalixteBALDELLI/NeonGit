@@ -13,60 +13,37 @@ public class QuestPointer : MonoBehaviour
     private RectTransform pointerRectTransform;
     private Camera mainCamera;
     private Canvas canvas;
-
-    private bool hasTargetBeenSeen = false;
-
+    
     void Awake()
     {
         pointerRectTransform = GetComponent<RectTransform>();
         mainCamera = Camera.main;
-        canvas = GetComponentInParent<Canvas>();
-
-        if (canvas == null || canvas.renderMode != RenderMode.ScreenSpaceOverlay)
-        {
-            Debug.LogWarning("[QuestPointer] Le Canvas parent doit être en 'Screen Space - Overlay'.");
-        }
+        canvas = GetComponent<Canvas>();
     }
 
     void Update()
     {
-        if (target == null) return;
-
         Vector3 screenPos = mainCamera.WorldToScreenPoint(target.position);
-        bool isBehind = screenPos.z < 0;
 
         bool isOffScreen =
             screenPos.x < 0 || screenPos.x > Screen.width ||
-            screenPos.y < 0 || screenPos.y > Screen.height ||
-            isBehind;
-
+            screenPos.y < 0 || screenPos.y > Screen.height;
+            
         // Détection apparition dans l'écran
-        if (!isOffScreen && !hasTargetBeenSeen)
-        {
-            hasTargetBeenSeen = true;
-            Debug.Log("[QuestPointer] 🎯 La cible est maintenant visible à l'écran !");
-        }
-
-        // Afficher la flèche si la cible est hors écran ou si elle a été vue une fois
-        bool shouldShowPointer = isOffScreen || hasTargetBeenSeen;
-
-        pointerRectTransform.gameObject.SetActive(shouldShowPointer);
-
-        if (!shouldShowPointer)
-            return;
-
-        // Si la cible est visible à l'écran, positionne la flèche au centre (ou autre position) sans la faire sortir de l'écran
         if (!isOffScreen)
         {
-            // Position flèche au centre bas de l'écran (ou autre position fixe)
-            pointerRectTransform.position = new Vector3(Screen.width / 2f, edgePadding, 0f);
-            pointerRectTransform.rotation = Quaternion.identity; // pas de rotation
-            return;
+            isOffScreen = true;
+            Debug.Log("La cible est visible");
+            pointerRectTransform.gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f);
+            // Fait disparaitre la fleche tant que la target est dans l'ecran
         }
-
-        // Si hors écran, positionne la flèche clamped au bord avec la bonne rotation
-
-        // Clamp position à l'intérieur de l'écran (avec marges)
+        else if (isOffScreen)
+        {
+            Debug.Log("La cible n'est pas visible");
+            pointerRectTransform.gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+            // Fait aparaitre la fleche tant que la target n'est pas dans l'ecran
+        }
+        // Met une marge a de x au bord de l'ecran
         screenPos.x = Mathf.Clamp(screenPos.x, edgePadding, Screen.width - edgePadding);
         screenPos.y = Mathf.Clamp(screenPos.y, edgePadding, Screen.height - edgePadding);
         screenPos.z = 0f;
