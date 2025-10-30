@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb60c578595716c4ca134e41ad915c26, type: 3}
   m_Name: Couteau
   m_EditorClassIdentifier: 
-  weaponName: 
+  weaponName: Couteau
   weaponId: 0
