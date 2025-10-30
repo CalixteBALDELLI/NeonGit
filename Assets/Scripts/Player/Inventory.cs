@@ -5,9 +5,10 @@ public class InventoryManager : MonoBehaviour
 {
     
     public int          equippedWeapons;
+    
     public GameObject[] playerWeapons;
     public int          weaponToEquip;
-    Canvas   weaponChoiceCanvas;
+    Canvas              weaponChoiceCanvas;
     public GameObject   pickedWeapon;
 
     public void WeaponEquiping()

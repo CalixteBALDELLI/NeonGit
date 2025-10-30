@@ -14,3 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapName: Neon
   mapId: 4
+  playerWeapons:
+  - {fileID: 5989766164689989864, guid: 6296e80fbe7db054a9000baaede516fa, type: 3}
+  - {fileID: 5989766164689989864, guid: 6296e80fbe7db054a9000baaede516fa, type: 3}
+  - {fileID: 5989766164689989864, guid: 6296e80fbe7db054a9000baaede516fa, type: 3}
+  - {fileID: 5989766164689989864, guid: ea903f23af69b734598af958aa44c3c0, type: 3}
