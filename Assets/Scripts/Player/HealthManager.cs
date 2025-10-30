@@ -6,6 +6,12 @@ public class HealthManager : MonoBehaviour
     public float      playerHealth;
     public GameObject gameOverCanvas;
     public int        CurrentPlayerXP;
+    GameObject        gameManager;
+    void Start()
+    {
+        gameManager = gameObject;
+        DontDestroyOnLoad(gameManager);
+    }
     void Update()
     {
         if (playerHealth <= 0)

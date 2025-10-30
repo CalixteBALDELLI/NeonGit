@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3846402973270745991}
   - component: {fileID: 5975176543049524663}
   - component: {fileID: 5382567270991821216}
-  - component: {fileID: 362016865349650122}
+  - component: {fileID: 3342359284166084237}
   m_Layer: 5
-  m_Name: Button 2
+  m_Name: Map 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,9 +35,9 @@ RectTransform:
   - {fileID: 272141797137124533}
   m_Father: {fileID: 9219011395659892055}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 86.3, y: 7.6}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3846402973270745991
@@ -121,8 +121,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5975176543049524663}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &362016865349650122
+      m_Calls:
+      - m_Target: {fileID: 3342359284166084237}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3342359284166084237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,7 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapData: {fileID: 11400000, guid: d4866de79785e1f42807c7dff18388f9, type: 2}
-  button: {fileID: 5382567270991821216}
   buttonText: {fileID: 434934784799217201}
 --- !u!1 &1636572002722218224
 GameObject:
@@ -149,9 +160,9 @@ GameObject:
   - component: {fileID: 6444051597829490964}
   - component: {fileID: 4070386848474558546}
   - component: {fileID: 7931795772295688197}
-  - component: {fileID: 2438921675442947038}
+  - component: {fileID: 4415565619248086175}
   m_Layer: 5
-  m_Name: Button 1
+  m_Name: Map 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,9 +183,9 @@ RectTransform:
   - {fileID: 7398104570062798352}
   m_Father: {fileID: 9219011395659892055}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -81, y: 6.9}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6444051597829490964
@@ -258,8 +269,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4070386848474558546}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &2438921675442947038
+      m_Calls:
+      - m_Target: {fileID: 4415565619248086175}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4415565619248086175
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,8 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f3259f7ff1cf0f41ba7e4cbb95871cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapData: {fileID: 11400000, guid: 67f0e9e867a1c6e42be4955d16d6cf1f, type: 2}
-  button: {fileID: 7931795772295688197}
+  mapData: {fileID: 11400000, guid: d4d04b40fbb133440ac7810a27a8e8cd, type: 2}
   buttonText: {fileID: 2825903518833472335}
 --- !u!1 &1841822988044522455
 GameObject:
@@ -424,6 +446,7 @@ GameObject:
   - component: {fileID: 3393876588187420587}
   - component: {fileID: 8752285497501438861}
   - component: {fileID: 3989026467012007792}
+  - component: {fileID: 8956940234115208117}
   m_Layer: 5
   m_Name: Map Choice
   m_TagString: Untagged
@@ -459,7 +482,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7087254073493211949}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -515,6 +538,32 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8956940234115208117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7087254073493211949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &8543477107601613029
 GameObject:
   m_ObjectHideFlags: 0

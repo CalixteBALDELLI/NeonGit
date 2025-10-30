@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed; //vitesse de déplacement
     
     public Vector2 moveDirection; // moving direction
-
     public InputActionReference move;  // reference à l'action move
     public InputActionReference fire;
     [HideInInspector]
@@ -21,8 +20,11 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb; //reference au rigidbody
     public CharacterScriptableObject characterData;
 
+    GameObject player;
     void Start()
     {
+        player = gameObject;
+        DontDestroyOnLoad(player);
         lastMovedVector = new Vector2(1, 0f);
     }
     private void Update()

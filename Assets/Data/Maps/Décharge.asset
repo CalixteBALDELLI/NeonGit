@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4cf8348f07297e409808649b5c26a61, type: 3}
-  m_Name: Map1
+  m_Name: "D\xE9charge"
   m_EditorClassIdentifier: 
-  mapName: Neon
+  mapName: "D\xE9charge"
   mapId: 4
   playerWeapons:
   - {fileID: 5989766164689989864, guid: 6296e80fbe7db054a9000baaede516fa, type: 3}
   - {fileID: 5989766164689989864, guid: 6296e80fbe7db054a9000baaede516fa, type: 3}
   - {fileID: 5989766164689989864, guid: 6296e80fbe7db054a9000baaede516fa, type: 3}
   - {fileID: 5989766164689989864, guid: ea903f23af69b734598af958aa44c3c0, type: 3}
+  cameraFOV: 13

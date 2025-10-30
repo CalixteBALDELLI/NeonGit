@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80cad565b3c0d3c44873eddae9bc62fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon70: {fileID: 5989766164689989864, guid: 6296e80fbe7db054a9000baaede516fa, type: 3}
-  weapon30: {fileID: 1248204333588313736, guid: 6b948094560fb84448a6c717d538869d, type: 3}
   whichweapon: 0
+  mapData: {fileID: 11400000, guid: 67f0e9e867a1c6e42be4955d16d6cf1f, type: 2}
+  minSpawnTime: 5
+  maxSpawnTime: 10

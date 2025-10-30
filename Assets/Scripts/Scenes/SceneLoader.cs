@@ -4,26 +4,29 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Scene1Load : MonoBehaviour
+public class SceneLoader : MonoBehaviour
 {
 
-    public MapData mapData;
-    public Button button;
+    public MapData         mapData;
     public TextMeshProUGUI buttonText;
+    Camera           playerCamera;
+    
+    //public TextMeshProUGUI buttonText;
     private void Start()
     {
-        button.onClick.AddListener(LoadScene1);
         buttonText.text = mapData.mapName;
+        playerCamera = Camera.main;
     }
 
     private void OnDestroy()
     {
-        button.onClick.RemoveListener(LoadScene1);
+        
     }
-    void LoadScene1()
+    public void LoadScene()
     {
         Debug.Log("LOAD");
         SceneManager.LoadScene(mapData.mapId);
+        playerCamera.fieldOfView = mapData.cameraFOV;
     }
 
 }
