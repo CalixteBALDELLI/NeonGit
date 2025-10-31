@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         DontDestroyOnLoad(player);
         lastMovedVector = new Vector2(1, 0f);
     }
-    private void Update()
+    private void Update() //Direction Checker
     {
         moveDirection = move.action.ReadValue<Vector2>(); // détection des input, transfert du résultat vers la variable de direction
         if (moveDirection.x != 0)

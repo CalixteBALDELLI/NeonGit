@@ -1,11 +1,14 @@
 using System;
+using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class SwordAttack : MonoBehaviour
 {
     //public Vector3 startingPosition;
     public SwordManager           swordManager;
+    public PlayerMovement         player;
     public float                  startingPosition;
     public float                  targetPosition;
     public float                  speed;
@@ -14,6 +17,14 @@ public class SwordAttack : MonoBehaviour
     public WeaponScriptableObject swordData;
 
 
+    void Awake()
+    {
+        
+    }
+    
+    
+    
+    
 
     void Update()
     {
