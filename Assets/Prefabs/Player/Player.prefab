@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5539253357537209332}
   - component: {fileID: 8645961416726448300}
   - component: {fileID: 6046002240566187758}
-  - component: {fileID: 4560728864950645535}
   - component: {fileID: 6662800625405998616}
   - component: {fileID: 5101090137655071331}
   m_Layer: 9
@@ -146,22 +145,6 @@ MonoBehaviour:
   lastVerticalVector: 0
   rb: {fileID: 6662800625405998616}
   characterData: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
---- !u!114 &4560728864950645535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4204516607395110230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e25e375a6dcd0ba4e8b63c2adca3fe39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  equippedWeapons: 0
-  playerWeapons: []
-  weaponToEquip: 0
-  pickedWeapon: {fileID: 0}
 --- !u!50 &6662800625405998616
 Rigidbody2D:
   serializedVersion: 5
