@@ -15,15 +15,6 @@ public class SwordAttack : MonoBehaviour
     public float                  timeCount;
     public float                  currentRotation;
     public WeaponScriptableObject swordData;
-
-
-    void Awake()
-    {
-        
-    }
-    
-    
-    
     
 
     void Update()

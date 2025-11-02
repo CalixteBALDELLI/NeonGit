@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: -4390385675418812344}
   - component: {fileID: -662496154140549720}
   - component: {fileID: 804009395005956057}
+  - component: {fileID: 227300478535214226}
+  - component: {fileID: 7511955047700940496}
   m_Layer: 3
   m_Name: Red Goon Enemy
   m_TagString: Enemy
@@ -181,3 +183,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &227300478535214226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745270701351364792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11d433de56bfffd478ac4b95e1e3f796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 2e9e89caee6d0d94e8992c4360cfa491, type: 2}
+--- !u!114 &7511955047700940496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745270701351364792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fe970f1601b3343b5d6963020176e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ennemyStats: {fileID: -4390385675418812344}
+  playerSword: {fileID: 11400000, guid: df3380266ee08c344b02ef88c329d05a, type: 2}

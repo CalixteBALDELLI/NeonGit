@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8842742955450646885}
   - component: {fileID: 5507292390785704494}
   - component: {fileID: 489376007098039883}
+  - component: {fileID: 7968331912535701130}
+  - component: {fileID: 6114761339648453574}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -63,4 +65,30 @@ MonoBehaviour:
   equippedWeapons: 0
   playerWeapons:
   - {fileID: 0}
+  - {fileID: 0}
   weaponToEquip: 0
+  pickedWeapon: {fileID: 0}
+--- !u!114 &7968331912535701130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2459730909182841648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb87e47003992b4693a951f2d58fa73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6114761339648453574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2459730909182841648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fbae28945ad354fbc7290d23cc69e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
