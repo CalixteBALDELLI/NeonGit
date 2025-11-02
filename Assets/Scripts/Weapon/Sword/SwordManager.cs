@@ -9,8 +9,9 @@ public class SwordManager : MonoBehaviour
     public SwordAttack    playerSword;
     public GameObject     playerSwordGameObject;
     public PlayerMovement player;
-    public float          lastPlayerX;
-    public float          lastPlayerY;
+    public float          swingCardinalRadius;
+    public float          swingDiagonalRadius;
+    public float          swingRadiusDividedbyTwo;
     
     void Update()
     {
@@ -31,84 +32,66 @@ public class SwordManager : MonoBehaviour
         SwordDirection();
         
     }
-    void SetPlayerSwordOrientation(float startingPosition, float targetPosition)
+    void SetPlayerSwordOrientation(float startingPosition, float swingRadius)
     {
         playerSword.startingPosition = startingPosition;
-        playerSword.targetPosition   = targetPosition;
+        playerSword.targetPosition = startingPosition + swingRadius;
+        //if (startingPosition < 90)
+        { 
+        }
+        //else
+        {
+            //playerSword.targetPosition = startingPosition + swingRadius;
+        }
     }
 
     
     void SwordDirection()
     {
             // Horizontal and Vertical Detection
-        if (player.lastHorizontalVector == -1) //Gauche
+        
+        if (player.lastHorizontalVector == -1) 
         { 
-            SetPlayerSwordOrientation(135,235);
+            SetPlayerSwordOrientation(135,swingCardinalRadius); //Gauche
         }
 
-        if (player.lastHorizontalVector == 1) // Droite
+        if (player.lastHorizontalVector == 1) 
         { 
-            SetPlayerSwordOrientation(45,-45);
+            SetPlayerSwordOrientation(315,swingCardinalRadius); // Droite
         }
 
-        if (player.lastVerticalVector == -1) // Bas
+        if (player.lastVerticalVector == -1) 
         {
-            SetPlayerSwordOrientation(225,315);
+            SetPlayerSwordOrientation(225,swingCardinalRadius); // Bas
         }
 
-        if (player.lastVerticalVector == 1) // Haut
+        if (player.lastVerticalVector == 1) 
         {
-            SetPlayerSwordOrientation(45,135);
+            SetPlayerSwordOrientation(45,swingCardinalRadius); // Haut
         }
 
             // Diagonal Detection
             
         if (player.lastHorizontalVector < 0 && player.lastHorizontalVector > -1 && player.lastVerticalVector > 0 && player.lastVerticalVector < 1) // Gauche Haut
         {
-            SetPlayerSwordOrientation(90,135);
+            SetPlayerSwordOrientation(90,swingDiagonalRadius);
         }
 
         if (player.lastHorizontalVector < 0 && player.lastHorizontalVector > -1 && player.lastVerticalVector < 0 && player.lastVerticalVector > -1) // Gauche Bas
         {
-            SetPlayerSwordOrientation(225,270);
+            SetPlayerSwordOrientation(225,swingDiagonalRadius);
         }
 
         if (player.lastHorizontalVector > 0 && player.lastHorizontalVector < 1 && player.lastVerticalVector > 0 && player.lastVerticalVector < 1) // Droite Haut
         {
-            SetPlayerSwordOrientation(90,45);
+            SetPlayerSwordOrientation(45,swingDiagonalRadius);
         }
 
         if (player.lastHorizontalVector > 0 && player.lastHorizontalVector < 1 && player.lastVerticalVector < 0 && player.lastVerticalVector > -1) // Droite Bas
         {
-            SetPlayerSwordOrientation(270,315);
+            SetPlayerSwordOrientation(270,swingDiagonalRadius);
         } 
-
-        void DiagonalSword()
-        {
-            if (player.lastHorizontalVector > 0 && player.lastVerticalVector > 0) //Haut Droite
-            {
-                playerSword.startingPosition = 90;
-                playerSword.targetPosition   = 45;
-            }
-
-            if (player.lastHorizontalVector < 0 && player.lastVerticalVector > 0) //Haut Gauche
-            {
-                playerSword.startingPosition = 90;
-                playerSword.targetPosition   = 135;
-            }
-
-            if (player.lastHorizontalVector < 0 && player.lastVerticalVector < 0) //Bas Gauche
-            {
-                playerSword.startingPosition = 225;
-                playerSword.targetPosition   = 270;
-            }
-
-            if (player.lastHorizontalVector > 0 && player.lastVerticalVector < 0) //Bas Droite
-            {
-                playerSword.startingPosition = 270;
-                playerSword.targetPosition   = 315;
-            }
-        }
+        
     }
 }
     

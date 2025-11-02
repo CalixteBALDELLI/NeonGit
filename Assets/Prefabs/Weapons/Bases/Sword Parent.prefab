@@ -48,7 +48,7 @@ MonoBehaviour:
   swordManager: {fileID: 0}
   player: {fileID: 0}
   startingPosition: 45
-  targetPosition: -35
+  targetPosition: -45
   speed: 5
   timeCount: 0
   currentRotation: 0

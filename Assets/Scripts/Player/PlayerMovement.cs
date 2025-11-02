@@ -30,6 +30,19 @@ public class PlayerMovement : MonoBehaviour
     private void Update() //Direction Checker
     {
         moveDirection = move.action.ReadValue<Vector2>(); // détection des input, transfert du résultat vers la variable de direction
+        
+        if (moveDirection.x != 0 && moveDirection.y == 0 && lastVerticalVector != 0) // Si déplacement de l'avatar horizontal
+        {
+            lastVerticalVector = 0;
+        }
+
+        if (moveDirection.x == 0 && moveDirection.y != 0 && lastHorizontalVector != 0) //Si déplacement de l'avatar vertical
+        {
+            lastHorizontalVector = 0;
+        }
+        
+        
+        
         if (moveDirection.x != 0)
         {
             lastHorizontalVector = moveDirection.x;
