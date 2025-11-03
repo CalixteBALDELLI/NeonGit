@@ -7,11 +7,8 @@ using Vector3 = UnityEngine.Vector3;
 public class SwordAttack : MonoBehaviour
 {
     //public Vector3 startingPosition;
-    public SwordManager           swordManager;
-    public PlayerMovement         player;
     public float                  startingPosition;
     public float                  targetPosition;
-    public float                  speed;
     public float                  timeCount;
     public float                  currentRotation;
     public WeaponScriptableObject swordData;
@@ -21,7 +18,7 @@ public class SwordAttack : MonoBehaviour
     {
         currentRotation            = Mathf.Lerp(startingPosition, targetPosition, timeCount);
         transform.localEulerAngles = new Vector3(0, 0, currentRotation);
-        timeCount                  = timeCount += speed * Time.deltaTime;
+        timeCount                  = timeCount += swordData.Speed * Time.deltaTime;
     }
 }
 

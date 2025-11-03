@@ -5,9 +5,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-    
-    public float moveSpeed; //vitesse de déplacement
     
     public Vector2 moveDirection; // moving direction
     public InputActionReference move;  // reference à l'action move
