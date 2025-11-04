@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2064473439258034773}
   - component: {fileID: 9024858487180829317}
-  - component: {fileID: 5318108029185307242}
   - component: {fileID: -4390385675418812344}
+  - component: {fileID: 5318108029185307242}
   - component: {fileID: 6970144066063837735}
   - component: {fileID: -3949810189180238684}
   - component: {fileID: 1161815033490814516}
-  - component: {fileID: 3336811291559499898}
+  - component: {fileID: -3328938199766474261}
   m_Layer: 3
   m_Name: Goon Enemy
   m_TagString: Enemy
@@ -51,6 +51,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: b0908b8f1681ea043b44d8555ab758df, type: 2}
+--- !u!114 &-4390385675418812344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745270701351364792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c032be3dc0ed58645b32189e6307d811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoneyToAdd: 10
+  enemyData: {fileID: 11400000, guid: b0908b8f1681ea043b44d8555ab758df, type: 2}
+  bruitagedegas: {fileID: 8300000, guid: 41961aaa321b6fb409bb1ce12e907c20, type: 3}
 --- !u!212 &5318108029185307242
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -106,20 +121,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4390385675418812344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745270701351364792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c032be3dc0ed58645b32189e6307d811, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: b0908b8f1681ea043b44d8555ab758df, type: 2}
-  bruitagedegas: {fileID: 8300000, guid: 41961aaa321b6fb409bb1ce12e907c20, type: 3}
 --- !u!50 &6970144066063837735
 Rigidbody2D:
   serializedVersion: 5
@@ -200,7 +201,7 @@ MonoBehaviour:
   - name: Xp Point
     itemPrefab: {fileID: 9034295119827784896, guid: 0c511ab59d42ed340bea61838ea812bc, type: 3}
     dropRate: 50
---- !u!82 &3336811291559499898
+--- !u!82 &-3328938199766474261
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,7 +213,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
