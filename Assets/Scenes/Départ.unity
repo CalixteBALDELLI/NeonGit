@@ -1402,12 +1402,24 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5681150719699066549, guid: 5c5601137fe792c4eaf709f470d7e6da, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681150719699066549, guid: 5c5601137fe792c4eaf709f470d7e6da, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681150719699066549, guid: 5c5601137fe792c4eaf709f470d7e6da, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681150719699066549, guid: 5c5601137fe792c4eaf709f470d7e6da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.8539734
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5681150719699066549, guid: 5c5601137fe792c4eaf709f470d7e6da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.93
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5681150719699066549, guid: 5c5601137fe792c4eaf709f470d7e6da, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1419,15 +1431,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5681150719699066549, guid: 5c5601137fe792c4eaf709f470d7e6da, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5681150719699066549, guid: 5c5601137fe792c4eaf709f470d7e6da, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5681150719699066549, guid: 5c5601137fe792c4eaf709f470d7e6da, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5681150719699066549, guid: 5c5601137fe792c4eaf709f470d7e6da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2177,15 +2189,15 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 907068674}
+  - {fileID: 619394802}
+  - {fileID: 711154259}
   - {fileID: 506158414214978196}
   - {fileID: 807375579}
   - {fileID: 1217628230}
-  - {fileID: 619394802}
-  - {fileID: 711154259}
   - {fileID: 7992850271628607702}
   - {fileID: 7300437249824627545}
   - {fileID: 359743027566396138}
   - {fileID: 2056494382}
   - {fileID: 1345577727}
-  - {fileID: 1682231248}
   - {fileID: 403605508}
+  - {fileID: 1682231248}
