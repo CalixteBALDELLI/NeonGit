@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3043376372723173969}
   - component: {fileID: 5539253357537209332}
   - component: {fileID: 8645961416726448300}
-  - component: {fileID: 6046002240566187758}
   - component: {fileID: 6662800625405998616}
   - component: {fileID: 5101090137655071331}
+  - component: {fileID: 6046002240566187758}
   - component: {fileID: 5839847417102695510}
   m_Layer: 9
   m_Name: Player
@@ -127,27 +127,6 @@ MonoBehaviour:
   m_DefaultActionMap: Movement
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &6046002240566187758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4204516607395110230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0827da4ee3ce67f4e8d07cd83a0e9a30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
-  moveDirection: {x: 0, y: 0}
-  move: {fileID: -54435082969366638, guid: 189c225c90f342d47819dcdaec895259, type: 3}
-  fire: {fileID: -6863618858964191, guid: 189c225c90f342d47819dcdaec895259, type: 3}
-  lastMovedVector: {x: 0, y: 0}
-  lastHorizontalVector: 0
-  lastVerticalVector: 0
-  rb: {fileID: 6662800625405998616}
-  characterData: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
 --- !u!50 &6662800625405998616
 Rigidbody2D:
   serializedVersion: 5
@@ -221,6 +200,26 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.4465437, y: 6.663314}
   m_EdgeRadius: 0
+--- !u!114 &6046002240566187758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4204516607395110230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0827da4ee3ce67f4e8d07cd83a0e9a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDirection: {x: 0, y: 0}
+  move: {fileID: -54435082969366638, guid: 189c225c90f342d47819dcdaec895259, type: 3}
+  fire: {fileID: -6863618858964191, guid: 189c225c90f342d47819dcdaec895259, type: 3}
+  lastMovedVector: {x: 0, y: 0}
+  lastHorizontalVector: 0
+  lastVerticalVector: 0
+  rb: {fileID: 6662800625405998616}
+  characterData: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
 --- !u!114 &5839847417102695510
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -573,6 +573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5539253357537209332, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5839847417102695510, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
       propertyPath: swordData
       value: 

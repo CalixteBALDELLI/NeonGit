@@ -5,17 +5,20 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
-    public Vector2 moveDirection; // moving direction
     public InputActionReference move;  // reference à l'action move
     public InputActionReference fire;
-    [HideInInspector]
-    public Vector2 lastMovedVector;
-    
-    public float lastHorizontalVector;
-    public float lastVerticalVector;
     public Rigidbody2D rb; //reference au rigidbody
     public CharacterScriptableObject characterData;
+    
+    [HideInInspector]
+    public Vector2 moveDirection; // moving direction
+    [HideInInspector]
+    public Vector2 lastMovedVector;
+    [HideInInspector]
+    public float lastHorizontalVector;
+    [HideInInspector]
+    public float lastVerticalVector;
+    
 
     GameObject player;
     void Start()
