@@ -3,13 +3,16 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    
-    public int          equippedWeapons;
-    
     public GameObject[] playerWeapons;
-    public int          weaponToEquip;
     Canvas              weaponChoiceCanvas;
+    
+    [HideInInspector]
+    public int          equippedWeapons;
+    [HideInInspector]
+    public int          weaponToEquip;
+    [HideInInspector]
     public GameObject   pickedWeapon;
+    
 
     public void WeaponEquiping()
     {

@@ -8,13 +8,19 @@ public class RestartLevel : MonoBehaviour
     {
         
     }
-
+    
+    public void LevelRestart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            LevelRestart();
         }
     }
+
 }

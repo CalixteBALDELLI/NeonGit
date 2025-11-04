@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
-public class SwordAttack : MonoBehaviour
+public class SwordRotation : MonoBehaviour
 {
     //public Vector3 startingPosition;
     [HideInInspector]

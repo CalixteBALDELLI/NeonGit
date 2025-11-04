@@ -6,7 +6,7 @@ using Vector3 = UnityEngine.Vector3;
 
 public class SwordManager : MonoBehaviour
 {
-    public SwordAttack    playerSword;
+    public SwordRotation  playerSword;
     public GameObject     playerSwordGameObject;
     public PlayerMovement player;
     public float          swingCardinalRadius;

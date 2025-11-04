@@ -5,7 +5,7 @@ public class HealthManager : MonoBehaviour
 {
     public float      playerHealth;
     public GameObject gameOverCanvas;
-    public int        CurrentPlayerXP;
+    
     GameObject        gameManager;
     void Start()
     {
