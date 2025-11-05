@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class DestructibleFurniture : MonoBehaviour
 {
-	public                 string      destructTag;
-	public                 Sprite      intactSprite;
+	public                 string      destructTag = "PlayerSword";
 	public                 Sprite      destroyedSprite;
 	public                 AudioClip[] destructionSounds;
 	[Range(0f, 1f)] public float       volume = 1f;
@@ -16,8 +15,7 @@ public class DestructibleFurniture : MonoBehaviour
 	{
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		audioSource    = GetComponent<AudioSource>();
-		if (audioSource  == null) audioSource           = gameObject.AddComponent<AudioSource>();
-		if (intactSprite != null) spriteRenderer.sprite = intactSprite;
+		if (audioSource  == null) audioSource          = gameObject.AddComponent<AudioSource>();
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
