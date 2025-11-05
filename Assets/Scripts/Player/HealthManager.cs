@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
-    public float      playerHealth;
-    public GameObject gameOverCanvas;
+    public PlayerStats playerStats;
+    public GameObject  gameOverCanvas;
     
     GameObject        gameManager;
     void Start()
@@ -14,7 +14,7 @@ public class HealthManager : MonoBehaviour
     }
     void Update()
     {
-        if (playerHealth <= 0)
+        if (playerStats.currentHealth <= 0)
         {
             gameOverCanvas.SetActive(true);
             Time.timeScale = 0;

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6662800625405998616}
   - component: {fileID: 5101090137655071331}
   - component: {fileID: 6046002240566187758}
+  - component: {fileID: 5846819970631973800}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -219,6 +220,24 @@ MonoBehaviour:
   lastMovedVector: {x: 0, y: 0}
   lastHorizontalVector: 0
   lastVerticalVector: 0
+--- !u!114 &5846819970631973800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4204516607395110230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e33340dc7272c2f499fa7cf6657e3776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
+  currentHealth: 0
+  experience: 0
+  level: 1
+  experienceCap: 0
+  levelRanges: []
 --- !u!1 &5559179481854786815
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,7 +674,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 151065802621400904, guid: a67782b67afba854284a295948edb53c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
