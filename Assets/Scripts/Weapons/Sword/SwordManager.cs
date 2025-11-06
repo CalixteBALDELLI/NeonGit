@@ -17,16 +17,13 @@ public class SwordManager : MonoBehaviour
 
     bool rotationActivated = true;
 
-    //[HideInInspector]
+    [HideInInspector]
     public float startingPosition;
-
-    //[HideInInspector]
+    [HideInInspector]
     public float targetPosition;
-
-    //[HideInInspector]
+    [HideInInspector]
     public float timeCount;
-
-    //[HideInInspector]
+    [HideInInspector]
     public float currentRotation;
 
     public WeaponScriptableObject swordData;

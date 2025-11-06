@@ -12,6 +12,7 @@ public class RestartLevel : MonoBehaviour
     public void LevelRestart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
     
     // Update is called once per frame
@@ -22,5 +23,8 @@ public class RestartLevel : MonoBehaviour
             LevelRestart();
         }
     }
-
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
