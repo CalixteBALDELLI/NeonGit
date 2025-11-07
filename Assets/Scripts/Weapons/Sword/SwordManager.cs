@@ -27,6 +27,8 @@ public class SwordManager : MonoBehaviour
     public float currentRotation;
 
     public WeaponScriptableObject swordData;
+
+    [SerializeField] KnifeController projectile;
     //public GameObject             swordParent;
 
 
@@ -38,6 +40,7 @@ public class SwordManager : MonoBehaviour
         playerSwordGameObject.SetActive(true);
         SwordDirection();
         rotationActivated = true;
+        projectile.LaunchProjectile(); // LANCE LE PROJECTILE A CHAQUE COUP D'EPEE.
     }
 
     void SwordMovement() // rotation de l'épée du point de départ vers le point d'arrivée à une certaine vitesse.
@@ -60,7 +63,6 @@ public class SwordManager : MonoBehaviour
             timeCount         = 0;
             rotationActivated = false;
             StartCoroutine(SwordAttack());
-
         }
     }
 
