@@ -9,4 +9,9 @@ public class ModuleManager : MonoBehaviour
     {
         Debug.Log("Propagation");
     }
+    
+    public void TirEnergie()
+    {
+        Debug.Log("tire energie");
+    }
 }

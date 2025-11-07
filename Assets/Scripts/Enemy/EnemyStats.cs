@@ -1,40 +1,50 @@
-using JetBrains.Annotations;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
 {
-
-    public EnemyScriptableObject  enemyData;
-    PlayerStats                   playerStats;
+    public EnemyScriptableObject enemyData;
+    PlayerStats playerStats;
     public WeaponScriptableObject playerSword;
     [SerializeField] DropRateManager dropRateManager;
-    //Current stats
+
+    [Header("Référence vers le prefab du ModuleManager")]
+    public ModuleManager moduleManagerPrefab;
+    private static ModuleManager moduleManagerInstance;
+
+    // Current stats
     float currentMoveSpeed;
     float currentHealth;
     float currentDamage;
 
     void Awake()
     {
+        // Initialisation des stats
         currentMoveSpeed = enemyData.MoveSpeed;
         currentHealth    = enemyData.MaxHealth;
         currentDamage    = enemyData.Damage;
+
         playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
+
+        // 👇 Vérifie si le ModuleManager existe déjà dans la scène
+        if (moduleManagerInstance == null)
+        {
+            moduleManagerInstance = Instantiate(moduleManagerPrefab);
+            moduleManagerInstance.name = "ModuleManager (Instance)";
+            DontDestroyOnLoad(moduleManagerInstance.gameObject); // garde-le si tu changes de scène
+        }
     }
 
     public void TakeDamage(float dmg)
     {
-
         currentHealth -= dmg;
 
         if (currentHealth <= 0)
         {
-            kill();
+            Kill();
         }
-
     }
 
-    public void kill()
+    public void Kill()
     {
         dropRateManager.BottleDrop();
         Destroy(gameObject);
@@ -47,18 +57,17 @@ public class EnemyStat : MonoBehaviour
             es.OnEnemyKilled();
     }
 
-    
-
     public void OnTriggerEnter2D(Collider2D cl2D)
     {
-        if (cl2D.gameObject.tag == "Player")
+        if (cl2D.CompareTag("Player"))
         {
             playerStats.currentHealth -= enemyData.Damage;
         }
-        
-        if (cl2D.gameObject.tag == "PlayerSword")
+
+        if (cl2D.CompareTag("PlayerSword"))
         {
             TakeDamage(playerSword.Damage);
+            moduleManagerInstance.Propagation();
         }
     }
 }
