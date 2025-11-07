@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: 804009395005956057}
   - component: {fileID: 9024858487180829317}
   - component: {fileID: -4390385675418812344}
-  - component: {fileID: 227300478535214226}
-  - component: {fileID: 7511955047700940496}
   - component: {fileID: 959795687780341901}
   m_Layer: 3
   m_Name: Red Goon Enemy
@@ -171,6 +169,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 2e9e89caee6d0d94e8992c4360cfa491, type: 2}
+  isKnockedBack: 0
+  knockbackForce: 10
+  rb: {fileID: 804009395005956057}
 --- !u!114 &-4390385675418812344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,32 +187,8 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: b0908b8f1681ea043b44d8555ab758df, type: 2}
   playerSword: {fileID: 11400000, guid: df3380266ee08c344b02ef88c329d05a, type: 2}
   dropRateManager: {fileID: 959795687780341901}
---- !u!114 &227300478535214226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745270701351364792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11d433de56bfffd478ac4b95e1e3f796, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7511955047700940496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745270701351364792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1fe970f1601b3343b5d6963020176e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ennemyStats: {fileID: -4390385675418812344}
-  playerSword: {fileID: 11400000, guid: df3380266ee08c344b02ef88c329d05a, type: 2}
+  moduleManagerPrefab: {fileID: 0}
+  knockBackModule: {fileID: 0}
 --- !u!114 &959795687780341901
 MonoBehaviour:
   m_ObjectHideFlags: 0
