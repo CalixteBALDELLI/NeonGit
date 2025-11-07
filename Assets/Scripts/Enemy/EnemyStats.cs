@@ -8,7 +8,7 @@ public class EnemyStat : MonoBehaviour
     public EnemyScriptableObject  enemyData;
     PlayerStats                   playerStats;
     public WeaponScriptableObject playerSword;
-    
+    [SerializeField] DropRateManager dropRateManager;
     //Current stats
     float currentMoveSpeed;
     float currentHealth;
@@ -36,6 +36,7 @@ public class EnemyStat : MonoBehaviour
 
     public void kill()
     {
+        dropRateManager.BottleDrop();
         Destroy(gameObject);
     }
 

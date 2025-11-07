@@ -33,13 +33,13 @@ public class QuestPointer : MonoBehaviour
         if (!isOffScreen)
         {
             isOffScreen = true;
-            Debug.Log("La cible est visible");
+            //Debug.Log("La cible est visible");
             pointerRectTransform.gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f);
             // Fait disparaitre la fleche tant que la target est dans l'ecran
         }
         else if (isOffScreen)
         {
-            Debug.Log("La cible n'est pas visible");
+            //Debug.Log("La cible n'est pas visible");
             pointerRectTransform.gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
             // Fait aparaitre la fleche tant que la target n'est pas dans l'ecran
         }

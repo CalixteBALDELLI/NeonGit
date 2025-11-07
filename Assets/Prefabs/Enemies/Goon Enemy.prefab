@@ -182,8 +182,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: b0908b8f1681ea043b44d8555ab758df, type: 2}
-  playerStats: {fileID: 0}
   playerSword: {fileID: 11400000, guid: df3380266ee08c344b02ef88c329d05a, type: 2}
+  dropRateManager: {fileID: 1161815033490814516}
 --- !u!114 &1161815033490814516
 MonoBehaviour:
   m_ObjectHideFlags: 0

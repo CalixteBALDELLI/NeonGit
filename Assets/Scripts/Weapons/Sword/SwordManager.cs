@@ -1,4 +1,4 @@
-using System.Collections;
+	using System.Collections;
 using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,54 +6,72 @@ using Vector3 = UnityEngine.Vector3;
 
 public class SwordManager : MonoBehaviour
 {
-    public SwordRotation  playerSword;
+    //public SwordRotation  playerSword;
     public GameObject     playerSwordGameObject;
     public PlayerMovement player;
     public float          swingCardinalRadius;
     public float          swingDiagonalRadius;
+
     [HideInInspector]
-    public float          swingRadiusDividedbyTwo;
-    
-    //[HideInInspector]
-    public float                  startingPosition;
-    //[HideInInspector]
-    public float                  targetPosition;
-    //[HideInInspector]
-    public float                  timeCount;
-    //[HideInInspector]
-    public float                  currentRotation;
-    
+    public float swingRadiusDividedbyTwo;
+
+    bool rotationActivated = true;
+
+    [HideInInspector]
+    public float startingPosition;
+    [HideInInspector]
+    public float targetPosition;
+    [HideInInspector]
+    public float timeCount;
+    [HideInInspector]
+    public float currentRotation;
+
     public WeaponScriptableObject swordData;
-    public GameObject             swordParent;
+    //public GameObject             swordParent;
 
 
     public IEnumerator SwordAttack() // Active l'épée et règle la direction de son coup.
     {
-        
+
         playerSwordGameObject.SetActive(false);
         yield return new WaitForSeconds(1);
         playerSwordGameObject.SetActive(true);
         SwordDirection();
+        rotationActivated = true;
     }
+
+    void SwordMovement() // rotation de l'épée du point de départ vers le point d'arrivée à une certaine vitesse.
+    {
+        currentRotation            = Mathf.Lerp(startingPosition, targetPosition, timeCount);
+        transform.localEulerAngles = new Vector3(0, 0, currentRotation);
+        timeCount                  = timeCount += swordData.Speed * Time.deltaTime;
+    }
+
     void Update()
     {
-        if (currentRotation == targetPosition) // si l'épée a terminé son coup, retour à son état d'origine, puis démarrage de la Coroutine pour la réactiver.
+        if (rotationActivated)
         {
-            currentRotation = 0;
-            timeCount       = 0;
-            StartCoroutine(SwordAttack());
             SwordMovement();
         }
+
+        if (currentRotation == targetPosition) // si l'épée a terminé son coup, retour à son état d'origine, puis démarrage de la Coroutine pour la réactiver.
+        {
+            currentRotation   = 0;
+            timeCount         = 0;
+            rotationActivated = false;
+            StartCoroutine(SwordAttack());
+
+        }
     }
-    
-    
+
+
     void SetPlayerSwordOrientation(float startingPos, float swingRadius) // réglage du point de départ et du point d'arivée de sa rotation.
     {
         startingPosition = startingPos;
-        targetPosition = startingPosition + swingRadius;
-        
+        targetPosition   = startingPosition + swingRadius;
+
         //if (startingPosition < 90)
-        { 
+        {
         }
         //else
         {
@@ -108,14 +126,6 @@ public class SwordManager : MonoBehaviour
             SetPlayerSwordOrientation(270, swingDiagonalRadius);
         }
     }
-
-
-        void SwordMovement() // rotation de l'épée du point de départ vers le point d'arrivée à une certaine vitesse.
-        {
-            currentRotation                        = Mathf.Lerp(startingPosition, targetPosition, timeCount);
-            swordParent.transform.localEulerAngles = new Vector3(0, 0, currentRotation);
-            timeCount                              = timeCount += swordData.Speed * Time.deltaTime;
-        }
-    }
+}
 
     

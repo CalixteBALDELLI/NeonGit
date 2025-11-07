@@ -9,13 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2064473439258034773}
-  - component: {fileID: 9024858487180829317}
   - component: {fileID: 5318108029185307242}
-  - component: {fileID: -4390385675418812344}
   - component: {fileID: -662496154140549720}
   - component: {fileID: 804009395005956057}
+  - component: {fileID: 9024858487180829317}
+  - component: {fileID: -4390385675418812344}
   - component: {fileID: 227300478535214226}
   - component: {fileID: 7511955047700940496}
+  - component: {fileID: 959795687780341901}
   m_Layer: 3
   m_Name: Red Goon Enemy
   m_TagString: Enemy
@@ -38,19 +39,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9024858487180829317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745270701351364792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fbb6d920ff78dc4fb4676a30d457d4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 2e9e89caee6d0d94e8992c4360cfa491, type: 2}
 --- !u!212 &5318108029185307242
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -106,19 +94,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4390385675418812344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745270701351364792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c032be3dc0ed58645b32189e6307d811, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: b0908b8f1681ea043b44d8555ab758df, type: 2}
 --- !u!70 &-662496154140549720
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -183,6 +158,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &9024858487180829317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745270701351364792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fbb6d920ff78dc4fb4676a30d457d4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 2e9e89caee6d0d94e8992c4360cfa491, type: 2}
+--- !u!114 &-4390385675418812344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745270701351364792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c032be3dc0ed58645b32189e6307d811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: b0908b8f1681ea043b44d8555ab758df, type: 2}
+  playerSword: {fileID: 11400000, guid: df3380266ee08c344b02ef88c329d05a, type: 2}
+  dropRateManager: {fileID: 959795687780341901}
 --- !u!114 &227300478535214226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11d433de56bfffd478ac4b95e1e3f796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 2e9e89caee6d0d94e8992c4360cfa491, type: 2}
 --- !u!114 &7511955047700940496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,3 +212,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ennemyStats: {fileID: -4390385675418812344}
   playerSword: {fileID: 11400000, guid: df3380266ee08c344b02ef88c329d05a, type: 2}
+--- !u!114 &959795687780341901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745270701351364792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa1967bf895e34349b21a16d43a70322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: Xp Point
+    itemPrefab: {fileID: 9034295119827784896, guid: 0c511ab59d42ed340bea61838ea812bc, type: 3}
+    dropRate: 50

@@ -25,6 +25,8 @@ public class SceneLoader : MonoBehaviour
     public void LoadScene()
     {
         Debug.Log("LOAD");
+        DontDestroyOnLoad(GameObject.Find("Player"));
+        DontDestroyOnLoad(GameObject.Find("GameManager"));
         SceneManager.LoadScene(mapData.mapId);
         playerCamera.fieldOfView = mapData.cameraFOV;
     }
