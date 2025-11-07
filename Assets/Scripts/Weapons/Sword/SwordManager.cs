@@ -40,7 +40,7 @@ public class SwordManager : MonoBehaviour
         playerSwordGameObject.SetActive(true);
         SwordDirection();
         rotationActivated = true;
-        projectile.LaunchProjectile(); // LANCE LE PROJECTILE A CHAQUE COUP D'EPEE.
+        // projectile.LaunchProjectile(); // LANCE LE PROJECTILE A CHAQUE COUP D'EPEE.
     }
 
     void SwordMovement() // rotation de l'épée du point de départ vers le point d'arrivée à une certaine vitesse.

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
@@ -11,6 +13,10 @@ public class EnemyStat : MonoBehaviour
     public ModuleManager moduleManagerPrefab;
     private static ModuleManager moduleManagerInstance;
 
+    
+    public Rigidbody2D rb;
+    public EnemyMouvement ennemyMovement;
+    
     // Current stats
     float currentMoveSpeed;
     float currentHealth;
@@ -57,6 +63,14 @@ public class EnemyStat : MonoBehaviour
             es.OnEnemyKilled();
     }
 
+    IEnumerator Knockback()
+    {
+        ennemyMovement.isAttacked = true;
+        yield return new WaitForSeconds(0.5f);
+        ennemyMovement.isAttacked = false;
+        rb.linearVelocity = Vector2.zero;
+        Debug.Log("Player hit by enemy");
+    }
     public void OnTriggerEnter2D(Collider2D cl2D)
     {
         if (cl2D.CompareTag("Player"))
@@ -67,7 +81,8 @@ public class EnemyStat : MonoBehaviour
         if (cl2D.CompareTag("PlayerSword"))
         {
             TakeDamage(playerSword.Damage);
-            moduleManagerInstance.Propagation();
+            StartCoroutine(Knockback());
+            //moduleManagerInstance.Propagation();
         }
     }
 }
