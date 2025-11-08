@@ -45,14 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785128cb024d4c947825436a0b82e272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordManager: {fileID: 0}
-  player: {fileID: 0}
-  startingPosition: 45
-  targetPosition: -45
-  speed: 5
-  timeCount: 0
-  currentRotation: 0
-  swordData: {fileID: 11400000, guid: df3380266ee08c344b02ef88c329d05a, type: 2}
 --- !u!1001 &484326965367748751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61,6 +53,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6403680393271680711}
     m_Modifications:
+    - target: {fileID: 100168088313267166, guid: 3163875be4f3ebc41973802de7f05703, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5331096453131454266, guid: 3163875be4f3ebc41973802de7f05703, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -156,6 +152,10 @@ PrefabInstance:
     - target: {fileID: 6997200509264440334, guid: 3163875be4f3ebc41973802de7f05703, type: 3}
       propertyPath: m_Name
       value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307456605826771155, guid: 3163875be4f3ebc41973802de7f05703, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

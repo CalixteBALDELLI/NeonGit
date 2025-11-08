@@ -273,6 +273,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterData: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
   currentHealth: 0
+  speedToAdd: 0
+  damagesToAdd: 0
+  critChancesToAdd: 0
+  swordDistanceToAdd: 0
+  swordRadiusToAdd: 0
   experience: 0
   level: 1
   experienceCap: 0
@@ -717,13 +722,49 @@ PrefabInstance:
     - {fileID: 151065802621400904, guid: a67782b67afba854284a295948edb53c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2365028836465035875, guid: a67782b67afba854284a295948edb53c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6938176074072043702}
   m_SourcePrefab: {fileID: 100100000, guid: a67782b67afba854284a295948edb53c, type: 3}
 --- !u!4 &657971138500990729 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6403680393271680711, guid: a67782b67afba854284a295948edb53c, type: 3}
   m_PrefabInstance: {fileID: 5908692062606723534}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3917080703150890319 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7467988551737578625, guid: a67782b67afba854284a295948edb53c, type: 3}
+  m_PrefabInstance: {fileID: 5908692062606723534}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8155351600392946605 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2365028836465035875, guid: a67782b67afba854284a295948edb53c, type: 3}
+  m_PrefabInstance: {fileID: 5908692062606723534}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6938176074072043702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8155351600392946605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5893942ca771d44a9526327b1e44e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSwordGameObject: {fileID: 3917080703150890319}
+  player: {fileID: 6046002240566187758}
+  swingCardinalRadius: 90
+  swingDiagonalRadius: 45
+  swingRadiusDividedbyTwo: 0
+  startingPosition: 315
+  targetPosition: 405
+  timeCount: 0
+  currentRotation: 0
+  swordData: {fileID: 11400000, guid: df3380266ee08c344b02ef88c329d05a, type: 2}
+  projectile: {fileID: 6935302280865147188}
 --- !u!1001 &6207011136834234950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -786,3 +827,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2169051300004968130, guid: 8d04ecf366e744745947000f0d05d266, type: 3}
   m_PrefabInstance: {fileID: 6207011136834234950}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6935302280865147188 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3899166285024035698, guid: 8d04ecf366e744745947000f0d05d266, type: 3}
+  m_PrefabInstance: {fileID: 6207011136834234950}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7ffa0a06e722546978ae5708d69386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

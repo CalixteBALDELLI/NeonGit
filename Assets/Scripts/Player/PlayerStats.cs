@@ -9,10 +9,16 @@ public class PlayerStats : MonoBehaviour
     //Stats actuelles
     //[HideInInspector] 
     public float currentHealth;
-    float currentRecovery;
-    float currentMoveSpeed;
-    float currentMight;
-    float currentProjectileSpeed;
+    float        currentRecovery;
+    float        currentMoveSpeed;
+    float        currentMight;
+    float        currentProjectileSpeed;
+    float        currentDamages;
+    public float speedToAdd;
+    public float damagesToAdd;
+    public float critChancesToAdd;
+    public float swordDistanceToAdd;
+    public float  swordRadiusToAdd;
 
     //Experience and level of the player
     [Header("Experience/Level")]
@@ -33,13 +39,19 @@ public class PlayerStats : MonoBehaviour
 
     void Awake()
     {
-        currentHealth = characterData.MaxHealth;
-        currentRecovery = characterData.Recovery;
-        currentMoveSpeed = characterData.MovingSpeed;
-        currentMight = characterData.Might;
-        currentProjectileSpeed = characterData.ProjectileSpeed;
+        StatsReset();
     }
+    void StatsReset()
+    {
+        currentHealth          = characterData.MaxHealth;
+        currentRecovery        = characterData.Recovery;
+        currentMoveSpeed       = characterData.MovingSpeed;
+        currentMight           = characterData.Might;
+        currentProjectileSpeed = characterData.ProjectileSpeed;
 
+        currentDamages += damagesToAdd;
+        currentMoveSpeed += speedToAdd;
+    }
     void Start()
     {
         //Initialise le cap d'xp au premier cap d'xp d'augmentation de niveau
@@ -72,4 +84,39 @@ public class PlayerStats : MonoBehaviour
             experienceCap += experienceCapIncrease;
         }
     }
+    
+    // In Game Upgrades
+    void DamageUpgrade()
+    {
+        currentDamages++;
+    }
+
+    void SpeedUpgrade()
+    {
+        currentMoveSpeed++;
+    }
+
+    void SwordLengthUpgrade()
+    {
+        
+    }
+
+    void SwordRadiusUpgrade()
+    {
+        
+    }
+
+    void CriticalChanceUpgrade()
+    {
+        
+    }
+
+    // Out Game Upgrades
+    void OutGameDamagesUpgrade()
+    {
+        damagesToAdd++;
+    }
+    
+    
 }
+
