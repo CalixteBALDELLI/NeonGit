@@ -8,11 +8,13 @@ public class DebugUI: MonoBehaviour
     [SerializeField] SwordManager    playerSword;
     [SerializeField] TextMeshProUGUI playerX;
     [SerializeField] TextMeshProUGUI playerY;
-    [SerializeField] TextMeshProUGUI startingpos;
     [SerializeField] TextMeshProUGUI targetpos;
     [SerializeField] TextMeshProUGUI angle;
     [SerializeField] TextMeshProUGUI currentRotation;
     [SerializeField] TextMeshProUGUI currentSetRotation;
+    [SerializeField] TextMeshProUGUI timeCount;
+    [SerializeField] TextMeshProUGUI rotationActivated;
+    [SerializeField] TextMeshProUGUI swordDirection;
     void Start()
     {
         
@@ -34,8 +36,10 @@ public class DebugUI: MonoBehaviour
     {
         currentRotation.text = "Current Rotation : "  + playerSword.transform.rotation.eulerAngles;
         currentSetRotation.text = "Current Set Rotation : "  + playerSword.currentRotation;
-        startingpos.text     = "Starting position : " + playerSword.startingPosition;
-        targetpos.text       = "Target position : "   + playerSword.targetPosition;
-        angle.text           = " Sword Angle : "      + playerSword.angle;
+        //startingpos.text     = "Starting position : " + playerSword.startingPosition;
+        targetpos.text         = "Target position : "  + playerSword.targetPosition;
+        angle.text             = " Sword Angle : "     + playerSword.angle;
+        timeCount.text         = " Time Count :   "    + playerSword.timeCount;
+        swordDirection.text = "Direction : " + playerSword.swordDirection;
     }
 }
