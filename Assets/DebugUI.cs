@@ -32,10 +32,10 @@ public class DebugUI: MonoBehaviour
 
     void SwordDebug()
     {
-        currentRotation.text = "Current Rotation : "  + playerSword.transform.rotation.eulerAngles;
-        currentSetRotation.text = "Current Set Rotation : "  + playerSword.currentRotation;
-        startingpos.text     = "Starting position : " + playerSword.startingPosition;
-        targetpos.text       = "Target position : "   + playerSword.targetPosition;
-        angle.text           = " Sword Angle : "      + playerSword.angle;
+        //currentRotation.text = "Current Rotation : "  + playerSword.transform.rotation.eulerAngles;
+        //currentSetRotation.text = "Current Set Rotation : "  + playerSword.currentRotation;
+        //startingpos.text     = "Starting position : " + playerSword.startingPosition;
+        //targetpos.text       = "Target position : "   + playerSword.targetPosition;
+        //angle.text           = " Sword Angle : "      + playerSword.angle;
     }
 }

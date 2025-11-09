@@ -8,51 +8,45 @@ using Vector3 = UnityEngine.Vector3;
 public class SwordManager : MonoBehaviour
 {
     //public SwordRotation  playerSword;
-    public GameObject     playerSwordGameObject;
-    public PlayerMovement player;
-    public float          swingCardinalRadius;
-    public float          swingDiagonalRadius;
-    bool                  diagonalMovement = false;
-    public float                 angle;
-    Vector3 swordDirection;
+    [SerializeField] private GameObject     playerSwordGameObject;
+    [SerializeField] private PlayerMovement player;
+    [SerializeField] private float          swingCardinalRadius;
+    [SerializeField] private float          swingDiagonalRadius;
+    [SerializeField] WeaponScriptableObject swordData;
+    [SerializeField] KnifeController        projectile;
 
-    [HideInInspector]
-    public float swingRadiusDividedbyTwo;
+    private bool  rotationActivated;
+    Vector3       swordDirection;
+    private float targetPosition = -45;
+    private float currentRotation;
+    private float timeCount;
+    private float angle = 45f;
+    private float swingRadiusDividedbyTwo;
+    private bool  diagonalMovement;
 
-    bool rotationActivated = true;
-
-    [HideInInspector]
-    public float startingPosition;
-    [HideInInspector]
-    public float targetPosition;
-    [HideInInspector]
-    public float timeCount;
-    [HideInInspector]
-    public float currentRotation;
-
-    public WeaponScriptableObject swordData;
-
-    [SerializeField] KnifeController projectile;
-    //public GameObject             swordParent;
-
-
+    
+    void Start()
+    {
+        StartCoroutine(SwordAttack()); //premier coup d'épée
+    }
+    
     public IEnumerator SwordAttack() // Active l'épée et règle la direction de son coup.
     {
 
         playerSwordGameObject.SetActive(false);
         yield return new WaitForSeconds(1);
         playerSwordGameObject.SetActive(true);
-        NewSetPlayerSwordOrientation(); //SwordDirection();
+        NewSetPlayerSwordOrientation();
         rotationActivated = true;
-        // projectile.LaunchProjectile(); // LANCE LE PROJECTILE A CHAQUE COUP D'EPEE.
+        projectile.LaunchProjectile(); // LANCE LE PROJECTILE A CHAQUE COUP D'EPEE.
     }
-    void NewSetPlayerSwordOrientation()
+    void NewSetPlayerSwordOrientation() //règle la direction de son coup.
     {
         swordDirection             = player.lastMovedVector;
         angle                      =  Mathf.Atan2(swordDirection.y, swordDirection.x) * Mathf.Rad2Deg;
         angle                      += 45f;
         transform.localEulerAngles =  new Vector3(0, 0, angle);
-        targetPosition             =  angle - swingCardinalRadius;
+        targetPosition             =  angle - swingCardinalRadius + 1;
     }
 
     
