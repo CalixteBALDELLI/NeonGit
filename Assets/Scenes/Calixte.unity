@@ -1686,6 +1686,14 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6938176074072043702, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
+      propertyPath: debugEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938176074072043702, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
+      propertyPath: swingCardinalRadius
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 8155351600392946605, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
       propertyPath: m_Name
       value: Sword Parent

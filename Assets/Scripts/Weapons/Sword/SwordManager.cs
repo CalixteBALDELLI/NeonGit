@@ -14,7 +14,8 @@ public class SwordManager : MonoBehaviour
     [SerializeField] private float          swingDiagonalRadius;
     [SerializeField] WeaponScriptableObject swordData;
     [SerializeField] KnifeController        projectile;
-
+    [SerializeField] private bool debugEnabled;
+    
     private bool  rotationActivated;
     Vector3       swordDirection;
     private float targetPosition = -45;
@@ -23,7 +24,6 @@ public class SwordManager : MonoBehaviour
     private float angle = 45f;
     private float swingRadiusDividedbyTwo;
     private bool  diagonalMovement;
-
     
     void Start()
     {
@@ -36,17 +36,28 @@ public class SwordManager : MonoBehaviour
         playerSwordGameObject.SetActive(false);
         yield return new WaitForSeconds(1);
         playerSwordGameObject.SetActive(true);
-        NewSetPlayerSwordOrientation();
+        SetPlayerSwordOrientation();
         rotationActivated = true;
         projectile.LaunchProjectile(); // LANCE LE PROJECTILE A CHAQUE COUP D'EPEE.
     }
-    void NewSetPlayerSwordOrientation() //règle la direction de son coup.
+    void SetPlayerSwordOrientation() // Règle la direction du coup d'épée.
     {
         swordDirection             = player.lastMovedVector;
         angle                      =  Mathf.Atan2(swordDirection.y, swordDirection.x) * Mathf.Rad2Deg;
-        angle                      += 45f;
-        transform.localEulerAngles =  new Vector3(0, 0, angle);
+        Debug.Log("Pure Angle = " + angle);
+        
+        swingRadiusDividedbyTwo =  swingCardinalRadius / 2;
+        angle                   -= swingRadiusDividedbyTwo; // Divise par deux l'angle du point de départ de l'épée pour qu'elle passe devant le centre du personnage.
+        angle                   += swingCardinalRadius; // Décalage
+        
         targetPosition             =  angle - swingCardinalRadius + 1;
+        
+        if (player.lastMovedVector.x == -1 || player.lastMovedVector.y == -1) // conserver le même point de départ entre les différentes directions.
+        {
+            angle          -= swingCardinalRadius;
+            targetPosition += swingCardinalRadius;
+        }
+        transform.localEulerAngles =  new Vector3(0, 0, angle);
     }
 
     
@@ -59,6 +70,12 @@ public class SwordManager : MonoBehaviour
 
     void Update()
     {
+        if (debugEnabled)
+        { 
+            Debug.Log("Angle = " + angle + " Target Position = " + targetPosition + " Time Count = " + timeCount + " Current Rotation = " + currentRotation + " Sword Direction = " + swordDirection + " Swing Radius Divided by Two = " + swingRadiusDividedbyTwo);
+        }
+
+        
         if (rotationActivated)
         {
             SwordMovement();

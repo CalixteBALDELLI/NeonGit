@@ -11,7 +11,7 @@ public class EnemyStat : MonoBehaviour
 
     [Header("Référence vers le prefab du ModuleManager")]
     public ModuleManager moduleManagerPrefab;
-    private static ModuleManager moduleManagerInstance;
+    //private static ModuleManager moduleManagerInstance;
 
     public KnockBackModule knockBackModule;
     // Current stats
@@ -29,11 +29,11 @@ public class EnemyStat : MonoBehaviour
         playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
 
         // 👇 Vérifie si le ModuleManager existe déjà dans la scène
-        if (moduleManagerInstance == null)
+        //if (moduleManagerInstance == null)
         {
-            moduleManagerInstance = Instantiate(moduleManagerPrefab);
-            moduleManagerInstance.name = "ModuleManager (Instance)";
-            DontDestroyOnLoad(moduleManagerInstance.gameObject); // garde-le si tu changes de scène
+            //moduleManagerInstance = Instantiate(moduleManagerPrefab);
+            //moduleManagerInstance.name = "ModuleManager (Instance)";
+            //DontDestroyOnLoad(moduleManagerInstance.gameObject); // garde-le si tu changes de scène
         }
     }
 
@@ -71,7 +71,7 @@ public class EnemyStat : MonoBehaviour
         {
             TakeDamage(playerSword.Damage);
             StartCoroutine(knockBackModule.Knockback());
-            moduleManagerInstance.Propagation();
+            //moduleManagerInstance.Propagation();
         }
     }
 }
