@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 5101090137655071331}
   - component: {fileID: 6046002240566187758}
   - component: {fileID: 5846819970631973800}
-  - component: {fileID: 832013442484031679}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -283,20 +282,6 @@ MonoBehaviour:
   level: 1
   experienceCap: 0
   levelRanges: []
---- !u!114 &832013442484031679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4204516607395110230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 576515252a597a2468680f0c1951ed59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swordManager: {fileID: -7589304863014747336, guid: a67782b67afba854284a295948edb53c, type: 3}
-  swordParent: {fileID: 2365028836465035875, guid: a67782b67afba854284a295948edb53c, type: 3}
 --- !u!1 &5559179481854786815
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,6 +732,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6403680393271680711, guid: a67782b67afba854284a295948edb53c, type: 3}
   m_PrefabInstance: {fileID: 5908692062606723534}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3917080703150890319 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7467988551737578625, guid: a67782b67afba854284a295948edb53c, type: 3}
+  m_PrefabInstance: {fileID: 5908692062606723534}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8155351600392946605 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2365028836465035875, guid: a67782b67afba854284a295948edb53c, type: 3}
@@ -764,12 +754,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e5893942ca771d44a9526327b1e44e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSwordGameObject: {fileID: 3917080703150890319}
   player: {fileID: 6046002240566187758}
   swingCardinalRadius: 90
   swingDiagonalRadius: 45
-  angle: 0
-  swordDirection: {x: 0, y: 0, z: 0}
   swingRadiusDividedbyTwo: 0
+  startingPosition: 315
   targetPosition: 405
   timeCount: 0
   currentRotation: 0

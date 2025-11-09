@@ -14,7 +14,6 @@ public class HealthManager : MonoBehaviour
     }
     void Update()
     {
-
         if (playerStats.currentHealth <= 0)
         {
             gameOverCanvas.SetActive(true);
