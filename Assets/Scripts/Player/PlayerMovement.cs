@@ -5,11 +5,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public InputActionReference move;  // reference à l'action move
-    public InputActionReference fire;
-    public Rigidbody2D rb; //reference au rigidbody
-    public CharacterScriptableObject characterData;
-    
+    public           InputActionReference      move;  // reference à l'action move
+    public           InputActionReference      fire;
+    public           Rigidbody2D               rb; //reference au rigidbody
+    public           CharacterScriptableObject characterData;
+    [SerializeField] bool logValues;
     [HideInInspector]
     public Vector2 moveDirection; // moving direction
     [HideInInspector]
@@ -29,6 +29,11 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update() //Direction Checker
     {
+        if (logValues)
+        {
+            Debug.Log("Last Moved Vector = " + lastMovedVector + " Move Direction = " + moveDirection);
+        }
+        
         moveDirection = move.action.ReadValue<Vector2>(); // détection des input, transfert du résultat vers la variable de direction
         
         if (moveDirection.x != 0 && moveDirection.y == 0 && lastVerticalVector != 0) // Si déplacement de l'avatar horizontal

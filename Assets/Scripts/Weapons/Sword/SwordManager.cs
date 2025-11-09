@@ -8,13 +8,12 @@ using Vector3 = UnityEngine.Vector3;
 public class SwordManager : MonoBehaviour
 {
     //public SwordRotation  playerSword;
-    [SerializeField] private GameObject     playerSwordGameObject;
-    [SerializeField] private PlayerMovement player;
-    [SerializeField] private float          swingCardinalRadius;
-    [SerializeField] private float          swingDiagonalRadius;
-    [SerializeField] WeaponScriptableObject swordData;
-    [SerializeField] KnifeController        projectile;
-    [SerializeField] private bool debugEnabled;
+    [SerializeField] private GameObject             playerSwordGameObject;
+    [SerializeField] private PlayerMovement         player;
+    [SerializeField] public float                   swingCardinalRadius;
+    [SerializeField]         WeaponScriptableObject swordData;
+    [SerializeField]         KnifeController        projectile;
+    [SerializeField]         bool                   logValues;
     
     private bool  rotationActivated;
     Vector3       swordDirection;
@@ -23,7 +22,6 @@ public class SwordManager : MonoBehaviour
     private float timeCount;
     private float angle = 45f;
     private float swingRadiusDividedbyTwo;
-    private bool  diagonalMovement;
     
     void Start()
     {
@@ -44,7 +42,6 @@ public class SwordManager : MonoBehaviour
     {
         swordDirection             = player.lastMovedVector;
         angle                      =  Mathf.Atan2(swordDirection.y, swordDirection.x) * Mathf.Rad2Deg;
-        Debug.Log("Pure Angle = " + angle);
         
         swingRadiusDividedbyTwo =  swingCardinalRadius / 2;
         angle                   -= swingRadiusDividedbyTwo; // Divise par deux l'angle du point de départ de l'épée pour qu'elle passe devant le centre du personnage.
@@ -52,14 +49,14 @@ public class SwordManager : MonoBehaviour
         
         targetPosition             =  angle - swingCardinalRadius + 1;
         
-        if (player.lastMovedVector.x == -1 || player.lastMovedVector.y == -1) // conserver le même point de départ entre les différentes directions.
+        if (player.lastMovedVector.x == -1 || player.lastMovedVector.y == -1 || player.lastMovedVector.x is < 0 and > -1 && player.lastMovedVector.y is < 1 and > 0 || player.lastMovedVector.x is < 0 and > -1 && player.lastMovedVector.y is < 0 and > -1) // conserver le même point de départ entre les différentes directions.
         {
             angle          -= swingCardinalRadius;
             targetPosition += swingCardinalRadius;
         }
+        
         transform.localEulerAngles =  new Vector3(0, 0, angle);
     }
-
     
     void SwordMovement() // rotation de l'épée du point de départ vers le point d'arrivée à une certaine vitesse.
     {
@@ -70,7 +67,7 @@ public class SwordManager : MonoBehaviour
 
     void Update()
     {
-        if (debugEnabled)
+        if (logValues)
         { 
             Debug.Log("Angle = " + angle + " Target Position = " + targetPosition + " Time Count = " + timeCount + " Current Rotation = " + currentRotation + " Sword Direction = " + swordDirection + " Swing Radius Divided by Two = " + swingRadiusDividedbyTwo);
         }
@@ -87,7 +84,6 @@ public class SwordManager : MonoBehaviour
             currentRotation            = 0;
             timeCount                  = 0;
             rotationActivated          = false;
-            diagonalMovement           = false;
             StartCoroutine(SwordAttack());
         }
     }

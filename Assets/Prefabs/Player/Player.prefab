@@ -255,6 +255,7 @@ MonoBehaviour:
   fire: {fileID: -6863618858964191, guid: 189c225c90f342d47819dcdaec895259, type: 3}
   rb: {fileID: 6662800625405998616}
   characterData: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
+  logValues: 0
   moveDirection: {x: 0, y: 0}
   lastMovedVector: {x: 0, y: 0}
   lastHorizontalVector: 0
@@ -278,6 +279,7 @@ MonoBehaviour:
   critChancesToAdd: 0
   swordDistanceToAdd: 0
   swordRadiusToAdd: 0
+  swordManager: {fileID: 0}
   experience: 0
   level: 1
   experienceCap: 0
@@ -720,6 +722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 151065802621400904, guid: a67782b67afba854284a295948edb53c, type: 3}
+    - {fileID: 3824619733216329926, guid: a67782b67afba854284a295948edb53c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -757,14 +760,9 @@ MonoBehaviour:
   playerSwordGameObject: {fileID: 3917080703150890319}
   player: {fileID: 6046002240566187758}
   swingCardinalRadius: 90
-  swingDiagonalRadius: 45
-  swingRadiusDividedbyTwo: 0
-  startingPosition: 315
-  targetPosition: 405
-  timeCount: 0
-  currentRotation: 0
   swordData: {fileID: 11400000, guid: df3380266ee08c344b02ef88c329d05a, type: 2}
   projectile: {fileID: 6935302280865147188}
+  logValues: 0
 --- !u!1001 &6207011136834234950
 PrefabInstance:
   m_ObjectHideFlags: 0
