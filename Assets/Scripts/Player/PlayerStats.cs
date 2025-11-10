@@ -8,19 +8,26 @@ public class PlayerStats : MonoBehaviour
     
     //Stats actuelles
     //[HideInInspector] 
-    public float currentHealth;
-    float        currentRecovery;
-    float        currentMoveSpeed;
-    float        currentMight;
-    float        currentProjectileSpeed;
-    float        currentDamages;
-    public float speedToAdd;
-    public float damagesToAdd;
-    public float critChancesToAdd;
-    public float swordDistanceToAdd;
-    public float  swordRadiusToAdd;
-    [SerializeField] SwordManager swordManager;
-    [SerializeField] GameObject   swordChildren;
+    public float                            currentHealth; 
+    float                                   currentRecovery;
+    public float                            currentMoveSpeed;
+    float                                   currentMight;
+    float                                   currentProjectileSpeed;
+    public           float                  currentSwordDamages;
+    public           float                  currentSwordSwingSpeed;
+    public           float                  currentSwordCooldown;
+    public           float                  currentSwordAndModulesUprade;
+    public           float                  speedToAdd;
+    public           float                  damagesToAdd;
+    public           float                  critChancesToAdd;
+    public           float                  swordDistanceToAdd;
+    public           float                  swordRadiusToAdd;
+    public           int                    xpToExchange;
+    [SerializeField] SwordManager           swordManager;
+    [SerializeField] GameObject             swordChildren;
+    [SerializeField] Canvas                 upgradesMenu;
+    [SerializeField] InGameUpgrades         inGameUpgrades;
+    [SerializeField] WeaponScriptableObject swordData;
 
     //Experience and level of the player
     [Header("Experience/Level")]
@@ -46,13 +53,14 @@ public class PlayerStats : MonoBehaviour
     void StatsReset()
     {
         currentHealth          = characterData.MaxHealth;
+        currentSwordSwingSpeed = swordData.Speed;
         currentRecovery        = characterData.Recovery;
         currentMoveSpeed       = characterData.MovingSpeed;
         currentMight           = characterData.Might;
         currentProjectileSpeed = characterData.ProjectileSpeed;
 
-        currentDamages += damagesToAdd;
-        currentMoveSpeed += speedToAdd;
+        currentSwordAndModulesUprade += damagesToAdd;
+        currentMoveSpeed             += speedToAdd;
     }
     void Start()
     {
@@ -63,15 +71,20 @@ public class PlayerStats : MonoBehaviour
     public void IncreaseExperience(int amount)
     {
         experience += amount;
-        
         LevelUpChecker();
     }
 
+    public void ModuleExchange()
+    {
+        IncreaseExperience(xpToExchange);
+    }
+    
     void LevelUpChecker()
     {
         if (experience >= experienceCap)
         {
             level++;
+            upgradesMenu.enabled = true;
             experience -= experienceCap;
 
             int experienceCapIncrease = 0;
@@ -87,25 +100,41 @@ public class PlayerStats : MonoBehaviour
         }
     }
     
+    
+    
     // In Game Upgrades
-    public void UpgradeDamage()
+    public void UpgradePlayerDamage()
     {
-        currentDamages++;
+        currentSwordAndModulesUprade += inGameUpgrades.SwordAndModulesUprade;
     }
 
+    public void UpgradeSwordDamage()
+    {
+        currentSwordDamages += inGameUpgrades.swordDamages;
+    }
     public void UpgradeSpeed()
     {
-        currentMoveSpeed++;
+        currentMoveSpeed += inGameUpgrades.playerSpeed;
     }
 
     public void UpgradeSwordLength()
     {
-        swordChildren.transform.localScale += new Vector3(0.3f,0,0);
+        swordChildren.transform.localScale += new Vector3(inGameUpgrades.swordLength,0,0);
     }
 
     public void UpgradeSwordRadius()
     {
-        swordManager.swingCardinalRadius += 22;
+        swordManager.swingCardinalRadius += inGameUpgrades.swordRadius;
+    }
+
+    public void UpgradeSwordSpeed()
+    {
+        currentSwordSwingSpeed += inGameUpgrades.swordSpeed;
+    }
+
+    public void UpgradeSwordCooldown()
+    {
+        currentSwordCooldown -= inGameUpgrades.swordCooldownToDecrease;
     }
 
     public void UpgradeCriticalChance()
@@ -114,7 +143,7 @@ public class PlayerStats : MonoBehaviour
     }
 
     // Out Game Upgrades
-    public void UpgradeOutGameDamages()
+    public void OutGameUpgradeDamages()
     {
         damagesToAdd++;
     }

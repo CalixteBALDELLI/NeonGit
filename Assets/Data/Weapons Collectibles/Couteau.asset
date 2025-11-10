@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Couteau
   weaponId: 0
+  xpValue: 5

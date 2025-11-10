@@ -9,7 +9,9 @@ public class PlayerMovement : MonoBehaviour
     public           InputActionReference      fire;
     public           Rigidbody2D               rb; //reference au rigidbody
     public           CharacterScriptableObject characterData;
+    [SerializeField] PlayerStats playerStats;
     [SerializeField] bool logValues;
+    
     [HideInInspector]
     public Vector2 moveDirection; // moving direction
     [HideInInspector]
@@ -70,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new  Vector2(moveDirection.x, moveDirection.y) * characterData.MovingSpeed; // deplacement du personnage sur la carte (mulitpipplication du vecteur de direction par la  valeur de vitesse réglable) 
+        rb.linearVelocity = new  Vector2(moveDirection.x, moveDirection.y) * playerStats.currentMoveSpeed; // deplacement du personnage sur la carte (mulitpipplication du vecteur de direction par la  valeur de vitesse réglable) 
     }
     
     // tir

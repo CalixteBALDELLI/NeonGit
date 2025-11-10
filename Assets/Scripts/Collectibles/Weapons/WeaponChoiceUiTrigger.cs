@@ -3,16 +3,20 @@ using UnityEngine;
 
 public class WeaponChoiceUiTrigger : MonoBehaviour
 {
-    Canvas             canvas;
+    Canvas                        canvas;
     public WeaponScriptableObject weaponData;
+    public WeaponCollectibleData  weaponDataCollectible;
     InventoryManager              inventory;
+    PlayerStats                   playerStats;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        canvas = GameObject.Find("Weapon Choice").GetComponent<Canvas>();
-        canvas.enabled = true;
-        inventory               = GameObject.Find("GameManager").GetComponent<InventoryManager>();
-        inventory.weaponToEquip = weaponData.weaponId;
-        inventory.pickedWeapon = gameObject;
+        playerStats = other.GetComponent<PlayerStats>();
+        canvas                   = GameObject.Find("Weapon Choice").GetComponent<Canvas>();
+        canvas.enabled           = true;
+        inventory                = GameObject.Find("GameManager").GetComponent<InventoryManager>();
+        inventory.weaponToEquip  = weaponData.weaponId;
+        playerStats.xpToExchange = weaponDataCollectible.xpValue;
+        inventory.pickedWeapon   = gameObject;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

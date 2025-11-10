@@ -10,8 +10,8 @@ public class SwordManager : MonoBehaviour
     //public SwordRotation  playerSword;
     [SerializeField] private GameObject             playerSwordGameObject;
     [SerializeField] private PlayerMovement         player;
-    [SerializeField] public float                   swingCardinalRadius;
-    [SerializeField]         WeaponScriptableObject swordData;
+    [SerializeField]         PlayerStats            playerStats;
+    [SerializeField] public  float                  swingCardinalRadius;
     [SerializeField]         KnifeController        projectile;
     [SerializeField]         bool                   logValues;
     
@@ -22,6 +22,7 @@ public class SwordManager : MonoBehaviour
     private float timeCount;
     private float angle = 45f;
     private float swingRadiusDividedbyTwo;
+    float         currentSwingSpeed;
     
     void Start()
     {
@@ -45,7 +46,7 @@ public class SwordManager : MonoBehaviour
         
         swingRadiusDividedbyTwo =  swingCardinalRadius / 2;
         angle                   -= swingRadiusDividedbyTwo; // Divise par deux l'angle du point de départ de l'épée pour qu'elle passe devant le centre du personnage.
-        angle                   += swingCardinalRadius; // Décalage
+        angle                   += swingCardinalRadius;     // Angle auquel l'avatar lève l'épée
         
         targetPosition             =  angle - swingCardinalRadius + 1;
         
@@ -62,7 +63,7 @@ public class SwordManager : MonoBehaviour
     {
         currentRotation            = Mathf.Lerp(angle, targetPosition, timeCount);
         transform.localEulerAngles = new Vector3(0, 0, currentRotation);
-        timeCount                  = timeCount += swordData.Speed * Time.deltaTime;
+        timeCount                  = timeCount += playerStats.currentSwordSwingSpeed * Time.deltaTime;
     }
 
     void Update()
