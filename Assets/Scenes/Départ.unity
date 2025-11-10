@@ -752,6 +752,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827986636}
   m_CullTransparentMesh: 1
+--- !u!114 &863436852 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5846819970631973800, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
+  m_PrefabInstance: {fileID: 807375579}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e33340dc7272c2f499fa7cf6657e3776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &907068671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1777,7 +1788,7 @@ PrefabInstance:
     - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
       propertyPath: waves.Array.data[1].enemyGroups.Array.data[1].enemyPrefab
       value: 
-      objectReference: {fileID: 8745270701351364792, guid: 60f6c99402ccddb4cb546bb79f917545, type: 3}
+      objectReference: {fileID: 8745270701351364792, guid: 39ee848ccf6aa014da7c10bb260c603c, type: 3}
     - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
       propertyPath: waves.Array.data[2].enemyGroups.Array.data[0].enemyPrefab
       value: 
@@ -1785,7 +1796,7 @@ PrefabInstance:
     - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
       propertyPath: waves.Array.data[2].enemyGroups.Array.data[1].enemyPrefab
       value: 
-      objectReference: {fileID: 8745270701351364792, guid: 60f6c99402ccddb4cb546bb79f917545, type: 3}
+      objectReference: {fileID: 8745270701351364792, guid: 39ee848ccf6aa014da7c10bb260c603c, type: 3}
     - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
       propertyPath: waves.Array.data[3].enemyGroups.Array.data[0].enemyPrefab
       value: 
@@ -1793,7 +1804,7 @@ PrefabInstance:
     - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
       propertyPath: waves.Array.data[3].enemyGroups.Array.data[1].enemyPrefab
       value: 
-      objectReference: {fileID: 8745270701351364792, guid: 60f6c99402ccddb4cb546bb79f917545, type: 3}
+      objectReference: {fileID: 8745270701351364792, guid: 39ee848ccf6aa014da7c10bb260c603c, type: 3}
     - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
       propertyPath: waves.Array.data[4].enemyGroups.Array.data[0].enemyPrefab
       value: 
@@ -1801,7 +1812,7 @@ PrefabInstance:
     - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
       propertyPath: waves.Array.data[4].enemyGroups.Array.data[1].enemyPrefab
       value: 
-      objectReference: {fileID: 8745270701351364792, guid: 60f6c99402ccddb4cb546bb79f917545, type: 3}
+      objectReference: {fileID: 8745270701351364792, guid: 39ee848ccf6aa014da7c10bb260c603c, type: 3}
     - target: {fileID: 4067012299165644048, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1863,6 +1874,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5507292390785704494, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 863436852}
     - target: {fileID: 5507292390785704494, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: gameOverCanvas
       value: 

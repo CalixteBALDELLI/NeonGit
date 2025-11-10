@@ -8,11 +8,8 @@ public class EnemyStat : MonoBehaviour
     PlayerStats playerStats;
     public WeaponScriptableObject playerSword;
     [SerializeField] DropRateManager dropRateManager;
-
-    [Header("Référence vers le prefab du ModuleManager")]
-    public ModuleManager moduleManagerPrefab;
-    //private static ModuleManager moduleManagerInstance;
-
+    
+    public ModuleManager moduleManager;
     public KnockBackModule knockBackModule;
     // Current stats
     float currentMoveSpeed;
@@ -27,14 +24,7 @@ public class EnemyStat : MonoBehaviour
         currentDamage    = enemyData.Damage;
 
         playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
-
-        // 👇 Vérifie si le ModuleManager existe déjà dans la scène
-        //if (moduleManagerInstance == null)
-        {
-            //moduleManagerInstance = Instantiate(moduleManagerPrefab);
-            //moduleManagerInstance.name = "ModuleManager (Instance)";
-            //DontDestroyOnLoad(moduleManagerInstance.gameObject); // garde-le si tu changes de scène
-        }
+        
     }
 
     public void TakeDamage(float dmg)
@@ -71,7 +61,7 @@ public class EnemyStat : MonoBehaviour
         {
             TakeDamage(playerSword.Damage);
             StartCoroutine(knockBackModule.Knockback());
-            //moduleManagerInstance.Propagation();
+            moduleManager.Propagation();
         }
     }
 }
