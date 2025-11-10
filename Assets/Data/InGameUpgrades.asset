@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 625782ea73e1fe348886067bcf222d80, type: 3}
-  m_Name: Sword
+  m_Script: {fileID: 11500000, guid: 9cc7e62b363736243ae4e58b87077a29, type: 3}
+  m_Name: InGameUpgrades
   m_EditorClassIdentifier: 
-  weaponId: 0
-  prefab: {fileID: 0}
-  damage: 1
-  speed: 4
-  cooldownDuration: 0
-  pierce: 0
+  SwordAndModulesUprade: 0
+  playerSpeed: 1
+  swordRadius: 22
+  swordLength: 0.3
+  swordDamages: 0
+  swordSpeed: 0
+  swordCooldownToDecrease: 0
