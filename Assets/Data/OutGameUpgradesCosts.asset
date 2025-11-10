@@ -9,13 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cc7e62b363736243ae4e58b87077a29, type: 3}
-  m_Name: InGameUpgrades
+  m_Script: {fileID: 11500000, guid: 7be7e27f979e83244a9639bfe9d1a1ff, type: 3}
+  m_Name: OutGameUpgradesCosts
   m_EditorClassIdentifier: 
-  swordAndModulesUpgrade: 0.5
-  playerSpeed: 1
-  swordRadius: 22
-  swordLength: 0.3
+  maxHealth: 0
+  autoHealthRegeneration: 0
+  xpGain: 0
+  swordAndModulesUpgrade: 0
+  playerSpeed: 20
+  swordRadius: 30
+  swordLength: 40
   swordDamages: 0
   swordSpeed: 0
   swordCooldownToDecrease: 0

@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "InGameUpgrades", menuName = "ScriptableObjects/InGameUpgrades")]
 public class InGameUpgrades : ScriptableObject
 {
-    public float SwordAndModulesUprade;
+    public float swordAndModulesUpgrade;
     public float playerSpeed;
     public float swordRadius;
     public float swordLength;

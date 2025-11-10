@@ -60,7 +60,7 @@ public class EnemyStat : MonoBehaviour
 
         if (cl2D.CompareTag("PlayerSword"))
         {
-            TakeDamage(playerSword.Damage);
+            TakeDamage(playerStats.currentSwordDamages);
             StartCoroutine(knockBackModule.Knockback());
             moduleManager.Propagation();
             

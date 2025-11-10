@@ -8,6 +8,7 @@ TagManager:
   - WeaponMenu
   - XP
   - PlayerSword
+  - PropagationCollider
   layers:
   - Default
   - TransparentFX

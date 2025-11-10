@@ -42,7 +42,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2459730909182841648}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 604cd950e6ca7114a8d38a6e1400939b, type: 3}
   m_Name: 
@@ -62,8 +62,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerWeapons:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5375285779180958177, guid: 8d04ecf366e744745947000f0d05d266, type: 3}
+  - {fileID: 5375285779180958177, guid: 1b069192383e1d84d8c6dc606d2d522f, type: 3}
   equippedWeapons: 0
   weaponToEquip: 0
   pickedWeapon: {fileID: 0}
@@ -86,8 +86,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2459730909182841648}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c753803ad7c2a594597f9168f8a2c06d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  propagationBool: 1

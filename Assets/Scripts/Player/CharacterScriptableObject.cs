@@ -28,4 +28,9 @@ public class CharacterScriptableObject : ScriptableObject
     [SerializeField]
     float projectileSpeed;
     public float ProjectileSpeed { get => projectileSpeed; private set => projectileSpeed = value; }
+    
+    [SerializeField]
+    float autoHealthRegeneration;
+    public float AutoHealthRegeneration { get => autoHealthRegeneration; private set => autoHealthRegeneration = value; }
 }
+

@@ -8,26 +8,34 @@ public class PlayerStats : MonoBehaviour
     
     //Stats actuelles
     //[HideInInspector] 
-    public float                            currentHealth; 
-    float                                   currentRecovery;
+    public float                            currentHealth;
+    public float                            maxHealth; 
+    float                                   currentAutoHealthRegeneration;
     public float                            currentMoveSpeed;
-    float                                   currentMight;
     float                                   currentProjectileSpeed;
     public           float                  currentSwordDamages;
+    public           float                  currentModulesDamages;
     public           float                  currentSwordSwingSpeed;
     public           float                  currentSwordCooldown;
-    public           float                  currentSwordAndModulesUprade;
+    public           float                  currentSwordAndModulesUpgrade;
+    public           float                  currentXpGain;
+    public           int                    currentMoney;
     public           float                  speedToAdd;
-    public           float                  damagesToAdd;
     public           float                  critChancesToAdd;
     public           float                  swordDistanceToAdd;
     public           float                  swordRadiusToAdd;
+    public           float                  swordAndModulesUpgradeToAdd;
     public           int                    xpToExchange;
     [SerializeField] SwordManager           swordManager;
     [SerializeField] GameObject             swordChildren;
     [SerializeField] Canvas                 upgradesMenu;
     [SerializeField] InGameUpgrades         inGameUpgrades;
+    [SerializeField] OutGameUpgrades        outGameUpgrades;
+    [SerializeField] OutGameUpgradesCosts   outGameUpgradesCosts;
     [SerializeField] WeaponScriptableObject swordData;
+    [SerializeField] HUDUpdate              hudUpdater;
+
+
 
     //Experience and level of the player
     [Header("Experience/Level")]
@@ -52,15 +60,18 @@ public class PlayerStats : MonoBehaviour
     }
     void StatsReset()
     {
-        currentHealth          = characterData.MaxHealth;
-        currentSwordSwingSpeed = swordData.Speed;
-        currentRecovery        = characterData.Recovery;
-        currentMoveSpeed       = characterData.MovingSpeed;
-        currentMight           = characterData.Might;
-        currentProjectileSpeed = characterData.ProjectileSpeed;
+        // Setup des variables au début du jeu selon les données par défaut
+        currentHealth                 = characterData.MaxHealth;
+        maxHealth                     = characterData.MaxHealth;
+        currentAutoHealthRegeneration = characterData.AutoHealthRegeneration;
+        currentMoveSpeed              = characterData.MovingSpeed;
+        currentProjectileSpeed        = characterData.ProjectileSpeed;
+        currentSwordSwingSpeed        = swordData.Speed;
+        currentSwordDamages           = swordData.Damage;
 
-        currentSwordAndModulesUprade += damagesToAdd;
-        currentMoveSpeed             += speedToAdd;
+        //application des améliorations faites Out Game
+        currentMoveSpeed      += speedToAdd;
+        currentSwordDamages   += swordAndModulesUpgradeToAdd;
     }
     void Start()
     {
@@ -100,12 +111,17 @@ public class PlayerStats : MonoBehaviour
         }
     }
     
-    
+    public void AddMoney(int moneyToAdd)
+    {
+        currentMoney += moneyToAdd;
+        hudUpdater.RefreshText();
+    }
     
     // In Game Upgrades
-    public void UpgradePlayerDamage()
+    public void UpgradeSwordAndModulesDamage()
     {
-        currentSwordAndModulesUprade += inGameUpgrades.SwordAndModulesUprade;
+        currentSwordDamages += inGameUpgrades.swordAndModulesUpgrade;
+        currentSwordAndModulesUpgrade += inGameUpgrades.swordAndModulesUpgrade;
     }
 
     public void UpgradeSwordDamage()
@@ -137,7 +153,7 @@ public class PlayerStats : MonoBehaviour
         currentSwordCooldown -= inGameUpgrades.swordCooldownToDecrease;
     }
 
-    public void UpgradeCriticalChance()
+    public void UpgradeCriticalHitChance()
     {
         
     }
@@ -145,9 +161,68 @@ public class PlayerStats : MonoBehaviour
     // Out Game Upgrades
     public void OutGameUpgradeDamages()
     {
-        damagesToAdd++;
+        float cost = outGameUpgradesCosts.swordAndModulesUpgrade;
+        if (cost < currentMoney)
+        {
+            currentSwordAndModulesUpgrade += outGameUpgrades.swordAndModulesUpgrade; 
+        }
+        else
+        {
+            Debug.Log("Pas assez de sous");
+        }
     }
-    
-    
+
+    public void OutGameUpgradeSpeed()
+    {
+        float cost = outGameUpgradesCosts.playerSpeed;
+        if (cost < currentMoney)
+        { 
+            speedToAdd += outGameUpgrades.playerSpeed;
+        }
+        else
+        {
+            Debug.Log("Pas assez de sous");
+        }
+    }
+
+    public void OutGameUpgradeMaxHealth()
+    {
+        float cost = outGameUpgradesCosts.maxHealth;
+        if (cost < currentMoney)
+        {
+            maxHealth += outGameUpgrades.maxHealth;
+        }
+        else
+        {
+            Debug.Log("Pas assez de sous");
+        }
+    }
+
+    public void OutGameUpgradeXpGain()
+    {
+        float cost = outGameUpgradesCosts.xpGain;
+        if (cost < currentMoney)
+        {
+             currentXpGain += outGameUpgrades.xpGain;
+        }
+        else
+        {
+            Debug.Log("Pas assez de sous");
+        }
+    }
+
+    public void OutGameUpgradeAutoHealthRegeneration()
+    {
+        float cost = outGameUpgradesCosts.maxHealth;
+        if (cost < currentMoney)
+        {
+            currentAutoHealthRegeneration += outGameUpgrades.autoHealthRegeneration;
+        }
+        else
+        {
+            Debug.Log("Pas assez de sous");
+        }
+    }
 }
+
 
