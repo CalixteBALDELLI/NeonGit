@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class ModuleManager : MonoBehaviour
 {
+    public bool bite = true;
+    
+
     public void Propagation()
     {
-        Debug.Log("propagation");
+      if (bite == true)
+          {
+             Debug.Log("Propagation");
+          }  
     }
+    
+    
     
 
 

@@ -159,6 +159,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword Parent
       objectReference: {fileID: 0}
+    - target: {fileID: 4506605668441840863, guid: a67782b67afba854284a295948edb53c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 807375582}
     - target: {fileID: 6403680393271680711, guid: a67782b67afba854284a295948edb53c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.56
@@ -214,22 +218,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7467988551737578625, guid: a67782b67afba854284a295948edb53c, type: 3}
   m_PrefabInstance: {fileID: 174359351}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &174359355 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2033128531844918024, guid: a67782b67afba854284a295948edb53c, type: 3}
-  m_PrefabInstance: {fileID: 174359351}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174359353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e5893942ca771d44a9526327b1e44e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &181871116 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8554186542624039100, guid: 2593a01f64129054b940323a1c9ae65f, type: 3}
   m_PrefabInstance: {fileID: 7300437249824627545}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &243301603 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4506605668441840863, guid: a67782b67afba854284a295948edb53c, type: 3}
+  m_PrefabInstance: {fileID: 174359351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5893942ca771d44a9526327b1e44e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &383531593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -709,7 +713,7 @@ PrefabInstance:
     - target: {fileID: 5846819970631973800, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
       propertyPath: swordManager
       value: 
-      objectReference: {fileID: 174359355}
+      objectReference: {fileID: 243301603}
     - target: {fileID: 5846819970631973800, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
       propertyPath: swordChildren
       value: 
@@ -2014,6 +2018,10 @@ PrefabInstance:
     - target: {fileID: 1715591624887759432, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: playerSwordGameObject
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: isPropagationTrue
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2459730909182841648, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: m_Name

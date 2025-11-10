@@ -25,6 +25,7 @@ public class EnemyStat : MonoBehaviour
 
         playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
         
+        
     }
 
     public void TakeDamage(float dmg)
@@ -62,6 +63,8 @@ public class EnemyStat : MonoBehaviour
             TakeDamage(playerSword.Damage);
             StartCoroutine(knockBackModule.Knockback());
             moduleManager.Propagation();
+            
+            
         }
     }
 }
