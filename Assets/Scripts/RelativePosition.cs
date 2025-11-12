@@ -18,38 +18,22 @@ public class RelativePosition : MonoBehaviour
     [SerializeField] Collider2D       col;
     bool                              propagationNotStarted = true;
     [SerializeField] int                               enemiesInCollider;
-    void OnTriggerEnter2D(Collider2D other)
+    
+	void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
         {
             enemiesInFocus.Add(other.gameObject);
         }
-    }
+    }  
 
-    IEnumerator StartPropagation()
-    {
-        yield return new WaitForSeconds(0.5f); // délai le temps que la liste soit à jour avec tous les ennemis présents dans le collider.
-        DistanceBetweenEnemies();
-        
-    }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+	public void DistanceBetweenEnemies()
     {
-        StartCoroutine(StartPropagation());
+        propagationNotStarted = false;
         enemiesInFocus.Remove(enemy1);
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    void DistanceBetweenEnemies()
-    {
-        Debug.Log("Distance between enemies");
-        foreach (GameObject inFocus in enemiesInFocus)
+        
+		foreach (GameObject inFocus in enemiesInFocus)
         {
             relativePositions.Add(Vector3.Distance(inFocus.transform.position, enemy1.transform.position));
         }
