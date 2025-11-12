@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be7e27f979e83244a9639bfe9d1a1ff, type: 3}
+  m_Name: OutGameUpgradesCosts
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  autoHealthRegeneration: 0
+  xpGain: 0
+  swordAndModulesUpgrade: 0
+  playerSpeed: 20
+  swordRadius: 30
+  swordLength: 40
+  swordDamages: 0
+  swordSpeed: 0
+  swordCooldownToDecrease: 0

@@ -1,41 +1,46 @@
-using JetBrains.Annotations;
-using Unity.VisualScripting;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
 {
-
-    public EnemyScriptableObject  enemyData;
-    PlayerStats                   playerStats;
+    public EnemyScriptableObject enemyData;
+    PlayerStats playerStats;
     public WeaponScriptableObject playerSword;
+    [SerializeField] DropRateManager dropRateManager;
     
-    //Current stats
+    public ModuleManager moduleManager;
+    public KnockBackModule knockBackModule;
+    // Current stats
     float currentMoveSpeed;
     float currentHealth;
     float currentDamage;
 
     void Awake()
     {
+        // Initialisation des stats
         currentMoveSpeed = enemyData.MoveSpeed;
         currentHealth    = enemyData.MaxHealth;
         currentDamage    = enemyData.Damage;
+
         playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
+        
+        
     }
 
     public void TakeDamage(float dmg)
     {
-
         currentHealth -= dmg;
 
         if (currentHealth <= 0)
         {
-            kill();
+            Kill();
         }
-
     }
 
-    public void kill()
+    public void Kill()
     {
+        dropRateManager.BottleDrop();
         Destroy(gameObject);
     }
 
@@ -46,18 +51,20 @@ public class EnemyStat : MonoBehaviour
             es.OnEnemyKilled();
     }
 
-    
-
     public void OnTriggerEnter2D(Collider2D cl2D)
     {
-        if (cl2D.gameObject.tag == "Player")
+        if (cl2D.CompareTag("Player"))
         {
             playerStats.currentHealth -= enemyData.Damage;
         }
-        
-        if (cl2D.gameObject.tag == "PlayerSword")
+
+        if (cl2D.CompareTag("PlayerSword"))
         {
-            TakeDamage(playerSword.Damage);
+            TakeDamage(playerStats.currentSwordDamages);
+            StartCoroutine(knockBackModule.Knockback());
+            moduleManager.Propagation();
+            
+            
         }
     }
 }

@@ -40,7 +40,6 @@ public class ProjectileWeaponBehavior : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D col)
     {   
-		Debug.Log(0);
         //Reference the script from the collider and deal damage using TakeDamage
         if (col.CompareTag("Enemy"))
         {

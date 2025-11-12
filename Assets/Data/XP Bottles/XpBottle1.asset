@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bcaf0f9a11f434f8f0fce278b0d19c, type: 3}
   m_Name: XpBottle1
   m_EditorClassIdentifier: 
-  xpGift: 15
+  xpGift: 1

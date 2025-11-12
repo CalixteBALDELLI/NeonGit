@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class KnifeController : WeaponCOntroller
+public class KnifeController : WeaponController
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
@@ -8,7 +8,7 @@ public class KnifeController : WeaponCOntroller
         base.Start();
     }
 
-    protected override void Attack()
+    public void LaunchProjectile()
     {
         base.Attack(); // Spawn avec réglage de la direction du couteau
         GameObject spawnedKnife = Instantiate(weaponData.Prefab); 

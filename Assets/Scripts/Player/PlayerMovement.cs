@@ -5,10 +5,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public InputActionReference move;  // reference à l'action move
-    public InputActionReference fire;
-    public Rigidbody2D rb; //reference au rigidbody
-    public CharacterScriptableObject characterData;
+    public           InputActionReference      move;  // reference à l'action move
+    public           InputActionReference      fire;
+    public           Rigidbody2D               rb; //reference au rigidbody
+    public           CharacterScriptableObject characterData;
+    [SerializeField] PlayerStats playerStats;
+    [SerializeField] bool logValues;
     
     [HideInInspector]
     public Vector2 moveDirection; // moving direction
@@ -24,11 +26,16 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         player = gameObject;
-        DontDestroyOnLoad(player);
+        //DontDestroyOnLoad(player);
         lastMovedVector = new Vector2(1, 0f);
     }
     private void Update() //Direction Checker
     {
+        if (logValues)
+        {
+            Debug.Log("Last Moved Vector = " + lastMovedVector + " Move Direction = " + moveDirection);
+        }
+        
         moveDirection = move.action.ReadValue<Vector2>(); // détection des input, transfert du résultat vers la variable de direction
         
         if (moveDirection.x != 0 && moveDirection.y == 0 && lastVerticalVector != 0) // Si déplacement de l'avatar horizontal
@@ -65,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new  Vector2(moveDirection.x, moveDirection.y) * characterData.MovingSpeed; // deplacement du personnage sur la carte (mulitpipplication du vecteur de direction par la  valeur de vitesse réglable) 
+        rb.linearVelocity = new  Vector2(moveDirection.x, moveDirection.y) * playerStats.currentMoveSpeed; // deplacement du personnage sur la carte (mulitpipplication du vecteur de direction par la  valeur de vitesse réglable) 
     }
     
     // tir

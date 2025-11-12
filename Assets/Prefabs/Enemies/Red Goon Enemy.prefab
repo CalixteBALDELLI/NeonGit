@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2064473439258034773}
-  - component: {fileID: 9024858487180829317}
   - component: {fileID: 5318108029185307242}
+  - component: {fileID: -3949810189180238684}
+  - component: {fileID: 6970144066063837735}
+  - component: {fileID: 9024858487180829317}
+  - component: {fileID: -1120164654502768160}
   - component: {fileID: -4390385675418812344}
-  - component: {fileID: -662496154140549720}
-  - component: {fileID: 804009395005956057}
-  - component: {fileID: 227300478535214226}
-  - component: {fileID: 7511955047700940496}
+  - component: {fileID: 1161815033490814516}
   m_Layer: 3
   m_Name: Red Goon Enemy
   m_TagString: Enemy
@@ -38,19 +38,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9024858487180829317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745270701351364792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fbb6d920ff78dc4fb4676a30d457d4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 2e9e89caee6d0d94e8992c4360cfa491, type: 2}
 --- !u!212 &5318108029185307242
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -106,20 +93,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4390385675418812344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745270701351364792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c032be3dc0ed58645b32189e6307d811, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: b0908b8f1681ea043b44d8555ab758df, type: 2}
---- !u!70 &-662496154140549720
+--- !u!70 &-3949810189180238684
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,7 +130,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.08, y: 1.73}
   m_Direction: 0
---- !u!50 &804009395005956057
+--- !u!50 &6970144066063837735
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -168,9 +142,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 1
+  m_AngularDamping: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -179,11 +153,11 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 2
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &227300478535214226
+--- !u!114 &9024858487180829317
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,11 +166,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 8745270701351364792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11d433de56bfffd478ac4b95e1e3f796, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fbb6d920ff78dc4fb4676a30d457d4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: b0908b8f1681ea043b44d8555ab758df, type: 2}
+  isKnockedBack: 0
+  knockbackForce: 10
+  rb: {fileID: 6970144066063837735}
+--- !u!114 &-1120164654502768160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745270701351364792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b5723fbb1e676e43bc842d666b80fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ennemyMovement: {fileID: 9024858487180829317}
+--- !u!114 &-4390385675418812344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745270701351364792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c032be3dc0ed58645b32189e6307d811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 2e9e89caee6d0d94e8992c4360cfa491, type: 2}
---- !u!114 &7511955047700940496
+  playerSword: {fileID: 11400000, guid: df3380266ee08c344b02ef88c329d05a, type: 2}
+  dropRateManager: {fileID: 1161815033490814516}
+  moduleManagerPrefab: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+  knockBackModule: {fileID: -1120164654502768160}
+--- !u!114 &1161815033490814516
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,8 +212,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8745270701351364792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1fe970f1601b3343b5d6963020176e9, type: 3}
+  m_Script: {fileID: 11500000, guid: fa1967bf895e34349b21a16d43a70322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ennemyStats: {fileID: -4390385675418812344}
-  playerSword: {fileID: 11400000, guid: df3380266ee08c344b02ef88c329d05a, type: 2}
+  drops:
+  - name: Xp Point
+    itemPrefab: {fileID: 9034295119827784896, guid: 0c511ab59d42ed340bea61838ea812bc, type: 3}
+    dropRate: 50
