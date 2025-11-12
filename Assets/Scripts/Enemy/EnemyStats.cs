@@ -63,9 +63,7 @@ public class EnemyStat : MonoBehaviour
         if (cl2D.CompareTag("PlayerSword"))
         {
             StartCoroutine(knockBackModule.Knockback());
-            {
-                propagationCollider.SetActive(true);
-            }
+            propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
             TakeDamage(playerStats.currentSwordDamages);
             //moduleManager.Propagation();
             

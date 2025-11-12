@@ -21,7 +21,7 @@ public class ModuleManager : MonoBehaviour
 
     void Start()
     {
-        hitBoxCollider2D.enabled = true;
+        hitBoxCollider2D.enabled = true; // Activation de la HitBox
     }
     
     void OnTriggerEnter2D(Collider2D other) // Ajoute dans une liste tous les ennemis présents dans la HitBox.
@@ -35,7 +35,7 @@ public class ModuleManager : MonoBehaviour
 
     void Update()
     {
-        if(propagationNotStarted)
+        if(propagationNotStarted) // Si une propagation n'a pas déjà eu lieu, démarrage d'une propagation (dans Update(); sinon elle démarre avant que tous les ennemis dans le collider n'aient été listés)..
         { 
             Propagation();
         }
@@ -82,7 +82,7 @@ public class ModuleManager : MonoBehaviour
         float minVal      = distances.Min();
         shortestDistanceIndex = distances.IndexOf(minVal);
         ChangeEnemyColor();
-        propagationNotStarted = false;
+        propagationNotStarted = false; // marque la propagation comme terminée, pour éviter qu'une autre ne se déclenche automatiquement.
     }
     void ChangeEnemyColor() // Changement de couleur représentant la prise de dégâts par l'ennemi
     {
