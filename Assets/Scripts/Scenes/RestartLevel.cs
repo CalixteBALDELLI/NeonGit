@@ -20,7 +20,7 @@ public class RestartLevel : MonoBehaviour
             Time.timeScale ++;
         }
 
-        if (Input.GetKeyDown(KeyCode.AltGr))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             Time.timeScale = 1;
         }

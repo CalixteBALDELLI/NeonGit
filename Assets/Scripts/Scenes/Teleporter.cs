@@ -9,7 +9,7 @@ public class Teleporter : MonoBehaviour
     //GameObject       player;
     
     GameObject triggeredTeleporter;
-
+    [SerializeField] PlayerStats player;
     void Start()
     {
         //player = GameObject.Find("Player");
@@ -17,7 +17,13 @@ public class Teleporter : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D boxCollider)
     {
-        //triggeredTeleporter     = gameObject;
+        if (player.teleporterKeyObtained)
+        {
         mapChoiceCanvas.enabled = true;
+        }
+        else
+        {
+            Debug.Log("Pas la clé du téléporteuyr");
+        }
     }
 }

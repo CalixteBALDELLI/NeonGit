@@ -9,8 +9,10 @@ public class EnemyStat : MonoBehaviour
     public WeaponScriptableObject playerSword;
     [SerializeField] DropRateManager dropRateManager;
     
-    public ModuleManager moduleManager;
-    public KnockBackModule knockBackModule;
+    public ModuleManager   moduleManager;
+    public ModuleManager knockBackModule;
+    [SerializeField] GameObject        propagationCollider;
+
     // Current stats
     float currentMoveSpeed;
     float currentHealth;
@@ -60,10 +62,10 @@ public class EnemyStat : MonoBehaviour
 
         if (cl2D.CompareTag("PlayerSword"))
         {
-            TakeDamage(playerStats.currentSwordDamages);
             StartCoroutine(knockBackModule.Knockback());
-            moduleManager.Propagation();
-            
+            propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
+            TakeDamage(playerStats.currentSwordDamages);
+            //moduleManager.Propagation();
             
         }
     }
