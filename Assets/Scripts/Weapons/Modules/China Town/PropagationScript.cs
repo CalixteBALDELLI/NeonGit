@@ -14,10 +14,11 @@ public class RelativePosition : MonoBehaviour
     int                               shortestDistanceIndex;
     bool                              propagationNotStarted = true;
     [SerializeField] Collider2D       hitBoxCollider2D;
-    [SerializeField] ModuleManager moduleManager = FindAnyObjectByType<ModuleManager>();
+    ModuleManager moduleManager;
 
     void Start()
     {
+        moduleManager = GameObject.Find("GameManager").GetComponent<ModuleManager>();
     }
     
     void OnTriggerEnter2D(Collider2D other) // Ajoute dans une liste tous les ennemis présents dans la HitBox.

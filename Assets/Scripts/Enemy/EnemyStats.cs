@@ -8,9 +8,9 @@ public class EnemyStat : MonoBehaviour
     PlayerStats playerStats;
     public WeaponScriptableObject playerSword;
     [SerializeField] DropRateManager dropRateManager;
+    [SerializeField] EnemyMouvement enemyMouvement;
     
-    public ModuleManager   moduleManager;
-    public ModuleManager knockBackModule;
+    [HideInInspector] public ModuleManager   moduleManager;
     [SerializeField] GameObject        propagationCollider;
 
     // Current stats
@@ -26,8 +26,18 @@ public class EnemyStat : MonoBehaviour
         currentDamage    = enemyData.Damage;
 
         playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
-        
-        
+        moduleManager = GameObject.Find("GameManager").GetComponent<ModuleManager>();
+    }
+
+    IEnumerator Knockback()
+    {
+        if (moduleManager.knockbackAcquired)
+        {
+            Debug.Log("Knockback");
+            enemyMouvement.isKnockedBack = true;
+            yield return new WaitForSeconds(0.5f);
+            enemyMouvement.isKnockedBack = false;
+        }
     }
 
     public void TakeDamage(float dmg)
@@ -62,11 +72,17 @@ public class EnemyStat : MonoBehaviour
 
         if (cl2D.CompareTag("PlayerSword"))
         {
-            StartCoroutine(knockBackModule.Knockback());
-            propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
-            TakeDamage(playerStats.currentSwordDamages);
-            //moduleManager.Propagation();
+            if (moduleManager.knockbackAcquired)
+            {
+            StartCoroutine(Knockback());
+            }
             
+            if (moduleManager.propagationAcquired)
+            {
+            propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
+            }
+            
+            TakeDamage(playerStats.currentSwordDamages);
         }
     }
 }

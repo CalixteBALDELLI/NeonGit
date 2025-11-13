@@ -7,33 +7,48 @@ using UnityEngine.InputSystem;
 
 public class ModuleManager : MonoBehaviour
 {
-    [SerializeField]        KnifeController projectileController;
-    [SerializeField] public bool            propagationAcquired;
-    [SerializeField] public bool            knockbackAcquired;
+    [SerializeField] KnifeController      projectileController;
+    [SerializeField] GameObject projectileControllerGameObject;
 
-    public EnemyMouvement enemyMovement;
+    [SerializeField] public bool       propagationAcquired;
+    [SerializeField] public bool       knockbackAcquired;
+    [SerializeField] public bool       projectileAcquired;
     
-    
-    
+    [HideInInspector]
+    public int          weaponToEquip;
+    [HideInInspector]
+    public GameObject   pickedWeapon;
+    [HideInInspector]
+    public int          equippedWeapons;
+    Canvas              weaponChoiceCanvas;
 
-    void ActivateProjectile()
+    public void WeaponEquiping()
     {
-        projectileController.enabled = true;
-    }
-
-    void ActivatePropagation()
-    {
-        propagationAcquired = true;
-    }
-    
-    public IEnumerator Knockback()
-    {
-        if (knockbackAcquired)
+        if (equippedWeapons == 3)
         {
-            Debug.Log("Knockback");
-            enemyMovement.isKnockedBack = true;
-            yield return new WaitForSeconds(0.5f);
-            enemyMovement.isKnockedBack     = false;
+            Debug.Log("Inventory Full");
+        }
+        else
+        {
+            weaponChoiceCanvas = GameObject.Find("Weapon Choice").GetComponent<Canvas>();
+            Debug.Log("equiped");
+            if (weaponToEquip == 0)
+            {
+                projectileAcquired  = true;
+                projectileControllerGameObject.SetActive(true);
+            }
+            else if (weaponToEquip == 1)
+            {
+                knockbackAcquired = true;
+            }
+            else if (weaponToEquip == 2)
+            {
+                propagationAcquired = true;
+            }
+
+            equippedWeapons++;
+            weaponChoiceCanvas.enabled = false;
+            Destroy(pickedWeapon);
         }
     }
     

@@ -180,4 +180,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 17a8d5d3ab2d40340ac769ebde4c3870, type: 2}
-  weaponDataCollectible: {fileID: 11400000, guid: 3f694a8c5bedd124bb15a64b7238c901, type: 2}
+  weaponCollectibleData: {fileID: 11400000, guid: 31240e6c758501c489ab7cfed14cca8c, type: 2}
