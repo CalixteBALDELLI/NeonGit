@@ -15,6 +15,7 @@ public class MonyManager : MonoBehaviour
     void Start()
     {
         RefreshText();
+        DontDestroyOnLoad(gameObject);
     }
 
     public void AddScore(int scoreToAdd)

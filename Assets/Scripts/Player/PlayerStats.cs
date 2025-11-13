@@ -1,6 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -27,9 +31,14 @@ public class PlayerStats : MonoBehaviour
         public int endLevel;
         public int experienceCapIncrease;
     }
-    
-    public List<LevelRange> levelRanges;
 
+	[Header("UI")]   
+	public Image healthBar;
+	public Image expBar; 
+	public Text  levelText;
+	
+	
+    public List<LevelRange> levelRanges;
     void Awake()
     {
         currentHealth = characterData.MaxHealth;
@@ -43,6 +52,10 @@ public class PlayerStats : MonoBehaviour
     {
         //Initialise le cap d'xp au premier cap d'xp d'augmentation de niveau
         experienceCap = levelRanges[0].experienceCapIncrease;
+        
+        UpdateExpBar();
+        //UpdateHealthBar();
+        UpdateLevelText();
     }
 
     public void IncreaseExperience(int amount)
@@ -50,6 +63,8 @@ public class PlayerStats : MonoBehaviour
         experience += amount;
         
         LevelUpChecker();
+        
+        UpdateExpBar();
     }
 
     void LevelUpChecker()
@@ -69,6 +84,30 @@ public class PlayerStats : MonoBehaviour
                 }
             }
             experienceCap += experienceCapIncrease;
-        }
+      
+			UpdateLevelText();
+
+
+		  }
     }
+
+	void UpdateExpBar()
+	{
+		// Update exp bar fill amount
+		expBar.fillAmount = (float)experience / experienceCap;
+	}
+
+	void UpdateLevelText()
+	{    //	Update level text
+		levelText.text = "LV" + level.ToString();
+	}
+
+
 }
+
+class headerAttribute : Attribute
+{
+}
+
+
+

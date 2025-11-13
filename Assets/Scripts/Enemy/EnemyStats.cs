@@ -8,7 +8,8 @@ public class EnemyStat : MonoBehaviour
     public EnemyScriptableObject  enemyData;
     PlayerStats                   playerStats;
     public WeaponScriptableObject playerSword;
-    
+    public AudioClip              bruitagedegas;
+    public int                    MoneyToAdd = 10;
     //Current stats
     float currentMoveSpeed;
     float currentHealth;
@@ -20,6 +21,7 @@ public class EnemyStat : MonoBehaviour
         currentHealth    = enemyData.MaxHealth;
         currentDamage    = enemyData.Damage;
         playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
+        
     }
 
     public void TakeDamage(float dmg)
@@ -30,6 +32,7 @@ public class EnemyStat : MonoBehaviour
         if (currentHealth <= 0)
         {
             kill();
+            AudioSource.PlayClipAtPoint(bruitagedegas, transform.position);
         }
 
     }
@@ -44,6 +47,7 @@ public class EnemyStat : MonoBehaviour
         EnemySpawner es = FindObjectOfType<EnemySpawner>();
         if (es != null)
             es.OnEnemyKilled();
+        MonyManager.instance.AddScore(MoneyToAdd);
     }
 
     
