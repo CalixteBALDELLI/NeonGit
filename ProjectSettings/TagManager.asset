@@ -9,6 +9,31 @@ TagManager:
   - XP
   - PlayerSword
   - PropagationCollider
+  - "D\xE9charge"
+  - "N\xE9on 1"
+  - "N\xE9on 2"
+  - "N\xE9on 3"
+  - "N\xE9on 4"
+  - "N\xE9on 5"
+  - "N\xE9on 6"
+  - Industriel 1
+  - Industriel 2
+  - Industriel 3
+  - Industriel 4
+  - Industriel 5
+  - Industriel 6
+  - Pauvre 1
+  - Pauvre 2
+  - Pauvre 3
+  - Pauvre 4
+  - Pauvre 5
+  - Pauvre 6
+  - China Town 1
+  - China Town 2
+  - China Town 3
+  - China Town 4
+  - China Town 5
+  - China Town 6
   layers:
   - Default
   - TransparentFX
