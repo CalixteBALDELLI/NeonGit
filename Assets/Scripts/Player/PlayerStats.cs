@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    public static PlayerStats instance;
     public CharacterScriptableObject characterData;
     
     //Stats actuelles
     //[HideInInspector] 
+    public float                            currentPlayerDamage;
     public float                            currentHealth;
     public float                            maxHealth; 
     float                                   currentAutoHealthRegeneration;
@@ -57,6 +59,14 @@ public class PlayerStats : MonoBehaviour
 
     void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         StatsReset();
     }
     void StatsReset()
