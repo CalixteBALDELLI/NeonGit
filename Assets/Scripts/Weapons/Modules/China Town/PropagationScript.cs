@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
+using Unity.Android.Gradle.Manifest;
+using Unity.VisualScripting.Dependencies.NCalc;
+using Unity.VisualScripting.FullSerializer;
 using UnityEditor.U2D.Animation;
 using UnityEngine;
 
@@ -14,12 +17,9 @@ public class RelativePosition : MonoBehaviour
     int                               shortestDistanceIndex;
     bool                              propagationNotStarted = true;
     [SerializeField] Collider2D       hitBoxCollider2D;
-    ModuleManager moduleManager;
-
-    void Start()
-    {
-        moduleManager = GameObject.Find("GameManager").GetComponent<ModuleManager>();
-    }
+    [SerializeField] ModuleManager    moduleManager = FindAnyObjectByType<ModuleManager>();
+    int                               howManyTimeDamagingEnemyIsCalled = 10;
+    float                             delayTimeBetweenDamage = 2f; //en seconde
     
     void OnTriggerEnter2D(Collider2D other) // Ajoute dans une liste tous les ennemis présents dans la HitBox.
     {
@@ -32,6 +32,7 @@ public class RelativePosition : MonoBehaviour
     
     void Update()
     {
+        
         if (moduleManager.propagationAcquired)
         {
             hitBoxCollider2D.enabled = true; // Activation de la HitBox une fois le module Propagation obtenu.
@@ -44,26 +45,25 @@ public class RelativePosition : MonoBehaviour
     }
     public void Propagation()
     {
+        Debug.Log("Propagation");
+        if (propagationNotStarted)
         {
-            Debug.Log("Propagation");
-            if (propagationNotStarted)
-            {
-                DistanceBetweenEnemies();
+            StartCoroutine(CallDamagingEnemyRepeatedly());
+            DistanceBetweenEnemies();
               
-                //Debug.Log("propagationBool = false");
-                //Debug.Log("prend l'enemies frappé par l'epper et le met dans la variable enemyTargeted");
-                //Debug.Log("créer un while qui dur aussi longtemp que les stat du scriptable object du module propagation");
-                //Debug.Log("Appelle la fonction propagation Effect");
-                //Debug.Log("créé hit box autour de enemy targeted");
-                //Debug.Log("récupere tout les ennemies dans la hitbox");
-                //Debug.Log("prend le premiere ennemie stock le dans la variable closestEnemy ");
-                //Debug.Log("prend le deuxiemme enemy et compare si il est plus proche de enemy targeted que cosestEnemy n'est");
-                //Debug.Log("remplace l'enemy dans la variable si oui");
-                //Debug.Log("continue a faire ça pour chaque enemies dans la hit box");
-                //Debug.Log("puis met closestEnemy dans enemyTargeted");
-                //Debug.Log("une fois la boucle finis propagationbool = true");
-            }
-        }  
+            //Debug.Log("propagationBool = false");
+            //Debug.Log("prend l'enemies frappé par l'epper et le met dans la variable enemyTargeted");
+            //Debug.Log("créer un while qui dur aussi longtemp que les stat du scriptable object du module propagation");
+            //Debug.Log("Appelle la fonction propagation Effect");
+            //Debug.Log("créé hit box autour de enemy targeted");
+            //Debug.Log("récupere tout les ennemies dans la hitbox");
+            //Debug.Log("prend le premiere ennemie stock le dans la variable closestEnemy ");
+            //Debug.Log("prend le deuxiemme enemy et compare si il est plus proche de enemy targeted que cosestEnemy n'est");
+            //Debug.Log("remplace l'enemy dans la variable si oui");
+            //Debug.Log("continue a faire ça pour chaque enemies dans la hit box");
+            //Debug.Log("puis met closestEnemy dans enemyTargeted");
+            //Debug.Log("une fois la boucle finis propagationbool = true");
+        }
     }
 
     
@@ -88,7 +88,35 @@ public class RelativePosition : MonoBehaviour
     }
     void ChangeEnemyColor() // Changement de couleur représentant la prise de dégâts par l'ennemi
     {
-        focusedEnemies[shortestDistanceIndex].GetComponent<SpriteRenderer>().color = Color.yellow; 
+        focusedEnemies[shortestDistanceIndex].GetComponent<SpriteRenderer>().color = Color.yellow;   
     }
+
+    IEnumerator CallDamagingEnemyRepeatedly()
+    {
+        var dataEnemy = EnemyStat.instance;
+        
+        
+        for (int i = 0; i < howManyTimeDamagingEnemyIsCalled; i++)
+        {
+            Debug.Log(dataEnemy.currentHealth);
+            DamagingEnemy();
+
+            if (dataEnemy.currentHealth <= 0)
+            {
+                Debug.Log("Ennemi vaincu");
+                yield break; 
+            }
+
+            yield return new WaitForSeconds(delayTimeBetweenDamage); // attend X secondes
+        }
+        Debug.Log("Boucle fini");
+    }
+    void DamagingEnemy()
+    {
+        var dataPlayer = PlayerStats.instance;
+        var dataEnemy = EnemyStat.instance;
+        dataEnemy.currentHealth -= dataPlayer.currentPlayerDamage / dataPlayer.currentModulesDamages;
+    }
+    
     
 }
