@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
 {
-    public static EnemyStat instance;
     public EnemyScriptableObject enemyData;
     PlayerStats playerStats;
     public WeaponScriptableObject playerSword;
     [SerializeField] DropRateManager dropRateManager;
+    [SerializeField] EnemyMouvement enemyMouvement;
     
-    public ModuleManager   moduleManager;
-    public ModuleManager knockBackModule;
+    [HideInInspector] public ModuleManager   moduleManager;
     [SerializeField] GameObject        propagationCollider;
 
     // Current stats
     float currentMoveSpeed;
-    public float currentHealth;
+    float currentHealth;
     float currentDamage;
 
     void Awake()
@@ -27,16 +26,18 @@ public class EnemyStat : MonoBehaviour
         currentDamage    = enemyData.Damage;
 
         playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
+        moduleManager = GameObject.Find("GameManager").GetComponent<ModuleManager>();
+    }
 
-        if (instance == null)
+    IEnumerator Knockback()
+    {
+        if (moduleManager.knockbackAcquired)
         {
-            instance = this;
+            Debug.Log("Knockback");
+            enemyMouvement.isKnockedBack = true;
+            yield return new WaitForSeconds(0.5f);
+            enemyMouvement.isKnockedBack = false;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
-        
     }
 
     public void TakeDamage(float dmg)
@@ -71,11 +72,17 @@ public class EnemyStat : MonoBehaviour
 
         if (cl2D.CompareTag("PlayerSword"))
         {
-            StartCoroutine(knockBackModule.Knockback());
-            propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
-            TakeDamage(playerStats.currentSwordDamages);
-            //moduleManager.Propagation();
+            if (moduleManager.knockbackAcquired)
+            {
+            StartCoroutine(Knockback());
+            }
             
+            if (moduleManager.propagationAcquired)
+            {
+            propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
+            }
+            
+            TakeDamage(playerStats.currentSwordDamages);
         }
     }
 }

@@ -11,14 +11,14 @@ GameObject:
   - component: {fileID: 2018381051067300431}
   - component: {fileID: 7775800071990845135}
   - component: {fileID: 2784664642519852964}
-  - component: {fileID: 3544477650809912747}
+  - component: {fileID: 326990980748170173}
   m_Layer: 0
   m_Name: Propagation Collider
   m_TagString: PropagationCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2018381051067300431
 Transform:
   m_ObjectHideFlags: 0
@@ -105,7 +105,7 @@ BoxCollider2D:
     m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3544477650809912747
+--- !u!114 &326990980748170173
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,11 +144,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5502453454140112419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c753803ad7c2a594597f9168f8a2c06d, type: 3}
+  m_Script: {fileID: 11500000, guid: ff76f35ff2197c34ebc569aa53e0c083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  propagationAcquired: 1
-  propagationStartingPoint: {fileID: 0}
   distances: []
   focusedEnemies: []
   hitBoxCollider2D: {fileID: 2784664642519852964}
