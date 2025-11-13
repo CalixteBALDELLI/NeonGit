@@ -24,5 +24,8 @@ public class WeaponScriptableObject :ScriptableObject
     [SerializeField]
     public int pierce;
     public int Pierce { get => pierce; private set => pierce = value; }
+    
+    [SerializeField]
+    string description;
 }
 

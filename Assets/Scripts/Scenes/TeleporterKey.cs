@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class TeleporterKey : MonoBehaviour
 {
-    [SerializeField] PlayerStats  player;
-    [SerializeField] EnemySpawner enemySpawner;
+    PlayerStats  player;
+    EnemySpawner enemySpawner;
     
     void OnTriggerEnter2D(Collider2D collider)
     {
+	    Debug.Log(collider.name);
+	    player                        = GameObject.Find("Player").GetComponent<PlayerStats>();
+	    enemySpawner                  = FindAnyObjectByType<EnemySpawner>();
 	    player.teleporterKeyObtained  = true;
 	    enemySpawner.currentWaveCount = 4;
 	    Destroy(gameObject);

@@ -10,12 +10,14 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] DropRateManager dropRateManager;
     [SerializeField] EnemyMouvement enemyMouvement;
     
-    [HideInInspector] public ModuleManager   moduleManager;
-    [SerializeField] GameObject        propagationCollider;
+    [HideInInspector] public ModuleManager moduleManager;
+    [SerializeField]         GameObject    propagationCollider;
+    [SerializeField]         bool          isABoss;
+    [SerializeField]         GameObject    teleporterKey;
 
     // Current stats
     float currentMoveSpeed;
-    float currentHealth;
+    [SerializeField] float currentHealth;
     float currentDamage;
 
     void Awake()
@@ -46,6 +48,10 @@ public class EnemyStat : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            if (isABoss)
+            {
+                Instantiate(teleporterKey, transform.position, Quaternion.identity);
+            }
             Kill();
         }
     }
