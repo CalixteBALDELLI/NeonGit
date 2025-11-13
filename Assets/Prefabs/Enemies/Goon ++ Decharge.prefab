@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -4390385675418812344}
   - component: {fileID: 1161815033490814516}
   m_Layer: 3
-  m_Name: Powerful Enemy
+  m_Name: Goon ++ Decharge
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,10 +32,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5193179677398412695}
+  - {fileID: 3924105364804990744}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5318108029185307242
@@ -81,9 +81,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_Sprite: {fileID: 8862273612299370736, guid: 3131a3f1c0c9fef499ed7127ac7be8eb, type: 3}
-  m_Color: {r: 0.82530254, g: 0.6084906, b: 1, a: 1}
+  m_Color: {r: 0.31132078, g: 0.3098523, b: 0.3098523, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbb6d920ff78dc4fb4676a30d457d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 3dc57e46a0b27204ca8fb7554e0da29b, type: 2}
+  enemyData: {fileID: 11400000, guid: 60a91f7affa6ff84c90a5c05b69cc250, type: 2}
   isKnockedBack: 0
   knockbackForce: 10
   rb: {fileID: 6970144066063837735}
@@ -185,12 +185,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c032be3dc0ed58645b32189e6307d811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 3dc57e46a0b27204ca8fb7554e0da29b, type: 2}
+  enemyData: {fileID: 11400000, guid: 60a91f7affa6ff84c90a5c05b69cc250, type: 2}
   playerSword: {fileID: 11400000, guid: df3380266ee08c344b02ef88c329d05a, type: 2}
   dropRateManager: {fileID: 1161815033490814516}
   enemyMouvement: {fileID: 9024858487180829317}
-  moduleManager: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
-  propagationCollider: {fileID: 1751900232549313019}
+  moduleManager: {fileID: 0}
+  propagationCollider: {fileID: 7362021541057229684}
   currentHealth: 0
 --- !u!114 &1161815033490814516
 MonoBehaviour:
@@ -208,7 +208,7 @@ MonoBehaviour:
   - name: Xp Point
     itemPrefab: {fileID: 9034295119827784896, guid: 0c511ab59d42ed340bea61838ea812bc, type: 3}
     dropRate: 50
---- !u!1001 &6058286776624273368
+--- !u!1001 &3060059429523754327
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -218,11 +218,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.48
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -265,13 +265,13 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
---- !u!1 &1751900232549313019 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5502453454140112419, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
-  m_PrefabInstance: {fileID: 6058286776624273368}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5193179677398412695 stripped
+--- !u!4 &3924105364804990744 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
-  m_PrefabInstance: {fileID: 6058286776624273368}
+  m_PrefabInstance: {fileID: 3060059429523754327}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7362021541057229684 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5502453454140112419, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
+  m_PrefabInstance: {fileID: 3060059429523754327}
   m_PrefabAsset: {fileID: 0}

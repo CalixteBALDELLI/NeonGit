@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb60c578595716c4ca134e41ad915c26, type: 3}
   m_Name: KnockBack
   m_EditorClassIdentifier: 
-  weaponName: Couteau
+  weaponName: KnockBack
   weaponId: 1
   xpValue: 35
+  description: "Repousse les ennemis touch\xE9s par toute attaque."

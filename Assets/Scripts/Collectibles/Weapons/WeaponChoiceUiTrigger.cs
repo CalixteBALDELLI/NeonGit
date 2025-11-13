@@ -20,12 +20,13 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
         weaponChoiceTexts.weaponNameText.text  = weaponCollectibleData.weaponName;
         weaponChoiceTexts.descriptionText.text = weaponCollectibleData.description;
         //weaponChoiceTexts.upgradeText.text     = weaponCollectibleData;
-        weaponChoiceTexts.
+        weaponChoiceTexts.damagesAndCooldownText.text = "Dégâts : " + weaponData.Damage             + " Cooldown : " + weaponData.cooldownDuration;
+        weaponChoiceTexts.xpGainText.text             = "+ "        + weaponCollectibleData.xpValue + " XP";
         weaponChoiceCanvas.enabled             = true;
         moduleManager.weaponToEquip            = weaponCollectibleData.weaponId;
         playerStats.xpToExchange               = weaponCollectibleData.xpValue;
         moduleManager.pickedWeapon             = gameObject;
-        
+
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

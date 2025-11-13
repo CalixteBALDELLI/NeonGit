@@ -17,10 +17,15 @@ public class RelativePosition : MonoBehaviour
     int                               shortestDistanceIndex;
     bool                              propagationNotStarted = true;
     [SerializeField] Collider2D       hitBoxCollider2D;
-    [SerializeField] ModuleManager    moduleManager = FindAnyObjectByType<ModuleManager>();
+    [SerializeField] ModuleManager    moduleManager;
     int                               howManyTimeDamagingEnemyIsCalled = 10;
-    float                             delayTimeBetweenDamage = 2f; //en seconde
-    
+    float                             delayTimeBetweenDamage           = 2f; //en seconde
+
+    void Start()
+    {
+        moduleManager = FindAnyObjectByType<ModuleManager>();
+    }
+
     void OnTriggerEnter2D(Collider2D other) // Ajoute dans une liste tous les ennemis présents dans la HitBox.
     {
         if (other.CompareTag("Enemy"))
@@ -93,15 +98,15 @@ public class RelativePosition : MonoBehaviour
 
     IEnumerator CallDamagingEnemyRepeatedly()
     {
-        var dataEnemy = EnemyStat.instance;
+        //var dataEnemy = EnemyStat.instance;
         
         
         for (int i = 0; i < howManyTimeDamagingEnemyIsCalled; i++)
         {
-            Debug.Log(dataEnemy.currentHealth);
+            //Debug.Log(dataEnemy.currentHealth);
             DamagingEnemy();
 
-            if (dataEnemy.currentHealth <= 0)
+            //if (dataEnemy.currentHealth <= 0)
             {
                 Debug.Log("Ennemi vaincu");
                 yield break; 
@@ -114,8 +119,8 @@ public class RelativePosition : MonoBehaviour
     void DamagingEnemy()
     {
         var dataPlayer = PlayerStats.instance;
-        var dataEnemy = EnemyStat.instance;
-        dataEnemy.currentHealth -= dataPlayer.currentPlayerDamage / dataPlayer.currentModulesDamages;
+        //var dataEnemy = EnemyStat.instance;
+        //dataEnemy.currentHealth -= dataPlayer.currentPlayerDamage / dataPlayer.currentModulesDamages;
     }
     
     

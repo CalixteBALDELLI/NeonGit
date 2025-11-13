@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb60c578595716c4ca134e41ad915c26, type: 3}
-  m_Name: Propagation
+  m_Script: {fileID: 11500000, guid: 018cd20e7ca6e1b4dacc375d84f7c36f, type: 3}
+  m_Name: "Goon D\xE9charge"
   m_EditorClassIdentifier: 
-  weaponName: Propagation
-  weaponId: 2
-  xpValue: 100
-  description: "Electrise les ennemis touch\xE9s par toute attaque. Se propage aux
-    ennemis alentours."
+  moveSpeed: 3
+  maxHealth: 1
+  damage: 5

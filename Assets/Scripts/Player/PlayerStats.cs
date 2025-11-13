@@ -133,8 +133,8 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
-        xpBar.fillAmount     = (float)experience / experienceCap;
-        healthBar.fillAmount = currentHealth     / characterData.MaxHealth;
+        //xpBar.fillAmount     = (float)experience / experienceCap;
+        //healthBar.fillAmount = currentHealth     / characterData.MaxHealth;
     }
     
     void UpdateLevelText()
