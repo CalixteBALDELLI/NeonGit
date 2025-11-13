@@ -1,4 +1,4 @@
-	using System.Collections;
+using System.Collections;
 using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -8,12 +8,13 @@ using Vector3 = UnityEngine.Vector3;
 public class SwordManager : MonoBehaviour
 {
     //public SwordRotation  playerSword;
-    [SerializeField] private GameObject             playerSwordGameObject;
-    [SerializeField] private PlayerMovement         player;
-    [SerializeField]         PlayerStats            playerStats;
-    [SerializeField] public  float                  swingCardinalRadius;
-    [SerializeField]         KnifeController        projectile;
-    [SerializeField]         bool                   logValues;
+    [SerializeField] private GameObject      playerSwordGameObject;
+    [SerializeField] private PlayerMovement  player;
+    [SerializeField]         PlayerStats     playerStats;
+    [SerializeField] public  float           swingCardinalRadius;
+    [SerializeField]         KnifeController projectile;
+    [SerializeField]         ModuleManager   moduleManager;
+    [SerializeField]         bool            logValues;
     
     private bool  rotationActivated;
     Vector3       swordDirection;
@@ -37,8 +38,13 @@ public class SwordManager : MonoBehaviour
         playerSwordGameObject.SetActive(true);
         SetPlayerSwordOrientation();
         rotationActivated = true;
-        //projectile.LaunchProjectile(); // LANCE LE PROJECTILE A CHAQUE COUP D'EPEE.
+        if (moduleManager.projectileAcquired)
+        {
+            Debug.Log("Projectile launched");
+            projectile.LaunchProjectile(); // LANCE LE PROJECTILE A CHAQUE COUP D'EPEE.
+        } 
     }
+    
     void SetPlayerSwordOrientation() // Règle la direction du coup d'épée.
     {
         swordDirection             = player.lastMovedVector;

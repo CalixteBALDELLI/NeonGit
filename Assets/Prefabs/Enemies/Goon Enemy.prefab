@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: -3949810189180238684}
   - component: {fileID: 6970144066063837735}
   - component: {fileID: 9024858487180829317}
-  - component: {fileID: -1120164654502768160}
   - component: {fileID: -4390385675418812344}
   - component: {fileID: 1161815033490814516}
   m_Layer: 3
@@ -174,19 +173,6 @@ MonoBehaviour:
   isKnockedBack: 0
   knockbackForce: 10
   rb: {fileID: 6970144066063837735}
---- !u!114 &-1120164654502768160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8745270701351364792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b5723fbb1e676e43bc842d666b80fde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ennemyMovement: {fileID: 9024858487180829317}
 --- !u!114 &-4390385675418812344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,8 +188,8 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: b0908b8f1681ea043b44d8555ab758df, type: 2}
   playerSword: {fileID: 11400000, guid: df3380266ee08c344b02ef88c329d05a, type: 2}
   dropRateManager: {fileID: 1161815033490814516}
+  enemyMouvement: {fileID: 9024858487180829317}
   moduleManager: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
-  knockBackModule: {fileID: -1120164654502768160}
   propagationCollider: {fileID: 1751900232549313019}
 --- !u!114 &1161815033490814516
 MonoBehaviour:
@@ -269,25 +255,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2784664642519852964, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 3544477650809912747, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
-      propertyPath: propagationAcquired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5502453454140112419, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
       propertyPath: m_Name
       value: Propagation Collider
-      objectReference: {fileID: 0}
-    - target: {fileID: 5502453454140112419, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7775800071990845135, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
