@@ -1,21 +1,42 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.Mime;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
     public CharacterScriptableObject characterData;
     
     //Stats actuelles
-    [HideInInspector] public float currentHealth;
-    float currentRecovery;
-    float currentMoveSpeed;
-    float currentMight;
-    float currentProjectileSpeed;
+    //[HideInInspector] 
+    public float                            currentHealth;
+    public float                            maxHealth; 
+    float                                   currentAutoHealthRegeneration;
+    public float                            currentMoveSpeed;
+    float                                   currentProjectileSpeed;
+    public float                            currentSwordDamages;
+    public float                            currentModulesDamages;
+    public float                            currentSwordSwingSpeed;
+    public float                            currentSwordCooldown;
+    public float                            currentSwordAndModulesUpgrade;
+    public float                            currentXpGain;
+    public int                              currentMoney;
+    public float                            speedToAdd;
+    public float                            critChancesToAdd;
+    public float                            swordDistanceToAdd;
+    public float                            swordRadiusToAdd;
+    public float                            swordAndModulesUpgradeToAdd;
+    public int                              xpToExchange;
+    public bool                                    teleporterKeyObtained;
+    [SerializeField] SwordManager           swordManager;
+    [SerializeField] GameObject             swordChildren;
+    [SerializeField] Canvas                 upgradesMenu;
+    [SerializeField] InGameUpgrades         inGameUpgrades;
+    [SerializeField] OutGameUpgrades        outGameUpgrades;
+    [SerializeField] OutGameUpgradesCosts   outGameUpgradesCosts;
+    [SerializeField] WeaponScriptableObject swordData;
+    [SerializeField] HUDUpdate              hudUpdater;
+
+
 
     //Experience and level of the player
     [Header("Experience/Level")]
@@ -31,47 +52,51 @@ public class PlayerStats : MonoBehaviour
         public int endLevel;
         public int experienceCapIncrease;
     }
-
-	[Header("UI")]   
-	public Image healthBar;
-	public Image expBar; 
-	public Text  levelText;
-	
-	
+    
     public List<LevelRange> levelRanges;
+
     void Awake()
     {
-        currentHealth = characterData.MaxHealth;
-        currentRecovery = characterData.Recovery;
-        currentMoveSpeed = characterData.MovingSpeed;
-        currentMight = characterData.Might;
-        currentProjectileSpeed = characterData.ProjectileSpeed;
+        StatsReset();
     }
+    void StatsReset()
+    {
+        // Setup des variables au début du jeu selon les données par défaut
+        currentHealth                 = characterData.MaxHealth;
+        maxHealth                     = characterData.MaxHealth;
+        currentAutoHealthRegeneration = characterData.AutoHealthRegeneration;
+        currentMoveSpeed              = characterData.MovingSpeed;
+        currentProjectileSpeed        = characterData.ProjectileSpeed;
+        currentSwordSwingSpeed        = swordData.Speed;
+        currentSwordDamages           = swordData.Damage;
 
+        //application des améliorations faites Out Game
+        currentMoveSpeed      += speedToAdd;
+        currentSwordDamages   += swordAndModulesUpgradeToAdd;
+    }
     void Start()
     {
         //Initialise le cap d'xp au premier cap d'xp d'augmentation de niveau
         experienceCap = levelRanges[0].experienceCapIncrease;
-        
-        UpdateExpBar();
-        //UpdateHealthBar();
-        UpdateLevelText();
     }
 
     public void IncreaseExperience(int amount)
     {
         experience += amount;
-        
         LevelUpChecker();
-        
-        UpdateExpBar();
     }
 
+    public void ModuleExchange()
+    {
+        IncreaseExperience(xpToExchange);
+    }
+    
     void LevelUpChecker()
     {
         if (experience >= experienceCap)
         {
             level++;
+            upgradesMenu.enabled = true;
             experience -= experienceCap;
 
             int experienceCapIncrease = 0;
@@ -84,30 +109,121 @@ public class PlayerStats : MonoBehaviour
                 }
             }
             experienceCap += experienceCapIncrease;
-      
-			UpdateLevelText();
-
-
-		  }
+        }
+    }
+    
+    public void AddMoney(int moneyToAdd)
+    {
+        currentMoney += moneyToAdd;
+        hudUpdater.RefreshText();
+    }
+    
+    // In Game Upgrades
+    public void UpgradeSwordAndModulesDamage()
+    {
+        currentSwordDamages += inGameUpgrades.swordAndModulesUpgrade;
+        currentSwordAndModulesUpgrade += inGameUpgrades.swordAndModulesUpgrade;
     }
 
-	void UpdateExpBar()
-	{
-		// Update exp bar fill amount
-		expBar.fillAmount = (float)experience / experienceCap;
-	}
+    public void UpgradeSwordDamage()
+    {
+        currentSwordDamages += inGameUpgrades.swordDamages;
+    }
+    public void UpgradeSpeed()
+    {
+        currentMoveSpeed += inGameUpgrades.playerSpeed;
+    }
 
-	void UpdateLevelText()
-	{    //	Update level text
-		levelText.text = "LV" + level.ToString();
-	}
+    public void UpgradeSwordLength()
+    {
+        swordChildren.transform.localScale += new Vector3(inGameUpgrades.swordLength,0,0);
+    }
 
+    public void UpgradeSwordRadius()
+    {
+        swordManager.swingCardinalRadius += inGameUpgrades.swordRadius;
+    }
 
+    public void UpgradeSwordSpeed()
+    {
+        currentSwordSwingSpeed += inGameUpgrades.swordSpeed;
+    }
+
+    public void UpgradeSwordCooldown()
+    {
+        currentSwordCooldown -= inGameUpgrades.swordCooldownToDecrease;
+    }
+
+    public void UpgradeCriticalHitChance()
+    {
+        
+    }
+
+    // Out Game Upgrades
+    public void OutGameUpgradeDamages()
+    {
+        float cost = outGameUpgradesCosts.swordAndModulesUpgrade;
+        if (cost < currentMoney)
+        {
+            currentSwordAndModulesUpgrade += outGameUpgrades.swordAndModulesUpgrade; 
+        }
+        else
+        {
+            Debug.Log("Pas assez de sous");
+        }
+    }
+
+    public void OutGameUpgradeSpeed()
+    {
+        float cost = outGameUpgradesCosts.playerSpeed;
+        if (cost < currentMoney)
+        { 
+            speedToAdd += outGameUpgrades.playerSpeed;
+        }
+        else
+        {
+            Debug.Log("Pas assez de sous");
+        }
+    }
+
+    public void OutGameUpgradeMaxHealth()
+    {
+        float cost = outGameUpgradesCosts.maxHealth;
+        if (cost < currentMoney)
+        {
+            maxHealth += outGameUpgrades.maxHealth;
+        }
+        else
+        {
+            Debug.Log("Pas assez de sous");
+        }
+    }
+
+    public void OutGameUpgradeXpGain()
+    {
+        float cost = outGameUpgradesCosts.xpGain;
+        if (cost < currentMoney)
+        {
+             currentXpGain += outGameUpgrades.xpGain;
+        }
+        else
+        {
+            Debug.Log("Pas assez de sous");
+        }
+    }
+
+    public void OutGameUpgradeAutoHealthRegeneration()
+    {
+        float cost = outGameUpgradesCosts.maxHealth;
+        if (cost < currentMoney)
+        {
+            currentAutoHealthRegeneration += outGameUpgrades.autoHealthRegeneration;
+        }
+        else
+        {
+            Debug.Log("Pas assez de sous");
+        }
+    }
 }
-
-class headerAttribute : Attribute
-{
-}
-
 
 

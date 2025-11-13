@@ -4,5 +4,7 @@ using UnityEngine;
 public class WeaponCollectibleData : ScriptableObject
 {
     public string weaponName;
-    public int weaponId;
+    public int    weaponId;
+    public int    xpValue;
+
 }

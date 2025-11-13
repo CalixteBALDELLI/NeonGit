@@ -1,44 +1,58 @@
-using JetBrains.Annotations;
-using Unity.VisualScripting;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
 {
-
-    public EnemyScriptableObject  enemyData;
-    PlayerStats                   playerStats;
+    public EnemyScriptableObject enemyData;
+    PlayerStats playerStats;
     public WeaponScriptableObject playerSword;
-    public AudioClip              bruitagedegas;
-    public int                    MoneyToAdd = 10;
-    //Current stats
+    [SerializeField] DropRateManager dropRateManager;
+    [SerializeField] EnemyMouvement enemyMouvement;
+    
+    [HideInInspector] public ModuleManager   moduleManager;
+    [SerializeField] GameObject        propagationCollider;
+
+    // Current stats
     float currentMoveSpeed;
     float currentHealth;
     float currentDamage;
 
     void Awake()
     {
+        // Initialisation des stats
         currentMoveSpeed = enemyData.MoveSpeed;
         currentHealth    = enemyData.MaxHealth;
         currentDamage    = enemyData.Damage;
+
         playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
-        
+        moduleManager = GameObject.Find("GameManager").GetComponent<ModuleManager>();
+    }
+
+    IEnumerator Knockback()
+    {
+        if (moduleManager.knockbackAcquired)
+        {
+            Debug.Log("Knockback");
+            enemyMouvement.isKnockedBack = true;
+            yield return new WaitForSeconds(0.5f);
+            enemyMouvement.isKnockedBack = false;
+        }
     }
 
     public void TakeDamage(float dmg)
     {
-
         currentHealth -= dmg;
 
         if (currentHealth <= 0)
         {
-            kill();
-            AudioSource.PlayClipAtPoint(bruitagedegas, transform.position);
+            Kill();
         }
-
     }
 
-    public void kill()
+    public void Kill()
     {
+        dropRateManager.BottleDrop();
         Destroy(gameObject);
     }
 
@@ -47,21 +61,28 @@ public class EnemyStat : MonoBehaviour
         EnemySpawner es = FindObjectOfType<EnemySpawner>();
         if (es != null)
             es.OnEnemyKilled();
-        MonyManager.instance.AddScore(MoneyToAdd);
     }
-
-    
 
     public void OnTriggerEnter2D(Collider2D cl2D)
     {
-        if (cl2D.gameObject.tag == "Player")
+        if (cl2D.CompareTag("Player"))
         {
             playerStats.currentHealth -= enemyData.Damage;
         }
-        
-        if (cl2D.gameObject.tag == "PlayerSword")
+
+        if (cl2D.CompareTag("PlayerSword"))
         {
-            TakeDamage(playerSword.Damage);
+            if (moduleManager.knockbackAcquired)
+            {
+            StartCoroutine(Knockback());
+            }
+            
+            if (moduleManager.propagationAcquired)
+            {
+            propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
+            }
+            
+            TakeDamage(playerStats.currentSwordDamages);
         }
     }
 }

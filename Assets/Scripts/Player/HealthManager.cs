@@ -11,8 +11,8 @@ public class HealthManager : MonoBehaviour
     GameObject        gameManager;
     void Start()
     {
-        gameManager = gameObject;
-        DontDestroyOnLoad(gameManager);
+        gameManager    = gameObject;
+        //DontDestroyOnLoad(gameManager);
     }
     void Update()
     {

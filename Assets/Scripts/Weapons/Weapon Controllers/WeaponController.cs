@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WeaponCOntroller : MonoBehaviour
+public class WeaponController : MonoBehaviour
 {
     [Header("Weapon Stats")] 
     public WeaponScriptableObject weaponData;
@@ -22,7 +22,7 @@ public class WeaponCOntroller : MonoBehaviour
         currentCooldown -= Time.deltaTime;
         if (currentCooldown <= 0f)
         { 
-            Attack();
+            //Attack();
         }
         
     }
