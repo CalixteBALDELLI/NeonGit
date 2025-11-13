@@ -2,26 +2,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using NUnit.Framework;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class ModuleManager : MonoBehaviour
+public class RelativePosition : MonoBehaviour
 {
-
-    public bool propagationAcquired = true;
-
-
     // Variables module Propagation
-    [SerializeField] GameObject       propagationStartingPoint; // Variable temporaire correpondant à l'ennemi ayant inité la propagation. Dans la version finalisée ce sera surement "gameobject".
     [SerializeField] List<float>      distances      = new List<float>();
     [SerializeField] List<GameObject> focusedEnemies = new List<GameObject>();
     int                               shortestDistanceIndex;
     bool                              propagationNotStarted = true;
     [SerializeField] Collider2D       hitBoxCollider2D;
+    [SerializeField] ModuleManager moduleManager = FindAnyObjectByType<ModuleManager>();
 
     void Start()
     {
-        hitBoxCollider2D.enabled = true; // Activation de la HitBox
     }
     
     void OnTriggerEnter2D(Collider2D other) // Ajoute dans une liste tous les ennemis présents dans la HitBox.
@@ -32,9 +28,14 @@ public class ModuleManager : MonoBehaviour
         }
     }
 
-
+    
     void Update()
     {
+        if (moduleManager.propagationAcquired)
+        {
+            hitBoxCollider2D.enabled = true; // Activation de la HitBox une fois le module Propagation obtenu.
+
+        }
         if(propagationNotStarted) // Si une propagation n'a pas déjà eu lieu, démarrage d'une propagation (dans Update(); sinon elle démarre avant que tous les ennemis dans le collider n'aient été listés)..
         { 
             Propagation();
@@ -44,7 +45,7 @@ public class ModuleManager : MonoBehaviour
     {
         {
             Debug.Log("Propagation");
-            if (propagationAcquired)
+            if (propagationNotStarted)
             {
                 DistanceBetweenEnemies();
               
@@ -88,17 +89,5 @@ public class ModuleManager : MonoBehaviour
     {
         focusedEnemies[shortestDistanceIndex].GetComponent<SpriteRenderer>().color = Color.yellow; 
     }
-
     
-    
-    
-    public void PropagationEffect()
-    {
-        Debug.Log("Met x degat par frame a l'ennemie et set la vitesse de l'enemie a 0.5");  
-    }
-    
-    public void TirEnergie()
-    {
-        Debug.Log("tire energie");
-    }
 }

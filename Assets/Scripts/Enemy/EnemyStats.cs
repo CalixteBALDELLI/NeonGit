@@ -10,7 +10,7 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] DropRateManager dropRateManager;
     
     public ModuleManager   moduleManager;
-    public KnockBackModule knockBackModule;
+    public ModuleManager knockBackModule;
     [SerializeField] GameObject        propagationCollider;
 
     // Current stats
