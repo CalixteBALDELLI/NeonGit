@@ -127,34 +127,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 863436850}
     m_Modifications:
-    - target: {fileID: 324649097703447725, guid: a67782b67afba854284a295948edb53c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2033128531844918024, guid: a67782b67afba854284a295948edb53c, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 807375582}
-    - target: {fileID: 2033128531844918024, guid: a67782b67afba854284a295948edb53c, type: 3}
-      propertyPath: logValues
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2033128531844918024, guid: a67782b67afba854284a295948edb53c, type: 3}
-      propertyPath: swordData
-      value: 
-      objectReference: {fileID: 11400000, guid: df3380266ee08c344b02ef88c329d05a, type: 2}
-    - target: {fileID: 2033128531844918024, guid: a67782b67afba854284a295948edb53c, type: 3}
-      propertyPath: projectile
-      value: 
-      objectReference: {fileID: 387190327}
-    - target: {fileID: 2033128531844918024, guid: a67782b67afba854284a295948edb53c, type: 3}
-      propertyPath: swingCardinalRadius
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 2033128531844918024, guid: a67782b67afba854284a295948edb53c, type: 3}
-      propertyPath: playerSwordGameObject
-      value: 
-      objectReference: {fileID: 174359353}
     - target: {fileID: 2365028836465035875, guid: a67782b67afba854284a295948edb53c, type: 3}
       propertyPath: m_Name
       value: Sword Parent
@@ -163,6 +135,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 807375582}
+    - target: {fileID: 4506605668441840863, guid: a67782b67afba854284a295948edb53c, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 387190327}
+    - target: {fileID: 4506605668441840863, guid: a67782b67afba854284a295948edb53c, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 863436852}
     - target: {fileID: 6403680393271680711, guid: a67782b67afba854284a295948edb53c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.56
@@ -2020,16 +2000,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: isPropagationTrue
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: knockbackAcquired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: propagationAcquired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: projectileController
+      value: 
+      objectReference: {fileID: 387190327}
     - target: {fileID: 2459730909182841648, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 5507292390785704494, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5507292390785704494, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: playerStats
