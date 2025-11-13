@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
 {
+    public static EnemyStat instance;
     public EnemyScriptableObject enemyData;
     PlayerStats playerStats;
     public WeaponScriptableObject playerSword;
@@ -15,7 +16,7 @@ public class EnemyStat : MonoBehaviour
 
     // Current stats
     float currentMoveSpeed;
-    float currentHealth;
+    public float currentHealth;
     float currentDamage;
 
     void Awake()
@@ -27,6 +28,14 @@ public class EnemyStat : MonoBehaviour
 
         playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
         moduleManager = GameObject.Find("GameManager").GetComponent<ModuleManager>();
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     IEnumerator Knockback()
