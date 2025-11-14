@@ -46,11 +46,14 @@ public class PlayerStats : MonoBehaviour
     //Experience and level of the player
     [Header("Experience/Level")]
     public int experience = 0;
-    public int   level = 1;
-    public int   experienceCap;
-    public Image healthBar;
-    public TextMeshProUGUI  xpText;
-    public Image xpBar;
+    public int             level = 1;
+    public int             experienceCap;
+    public Image           healthBar;
+    public TextMeshProUGUI xpText;
+    public Image           xpBar;
+    public TextMeshProUGUI MoneyText;
+    
+    
     
     //Class pour définir un objectif de niveau et la correspondance du cap d'xp qui augmente pour cet objectif
     [System.Serializable]
@@ -74,7 +77,13 @@ public class PlayerStats : MonoBehaviour
             Destroy(gameObject);
         }
         StatsReset();
+        
     }
+    
+    
+    
+    
+    
     void StatsReset()
     {
         // Setup des variables au début du jeu selon les données par défaut
@@ -94,6 +103,7 @@ public class PlayerStats : MonoBehaviour
     {
         //Initialise le cap d'xp au premier cap d'xp d'augmentation de niveau
         experienceCap = levelRanges[0].experienceCapIncrease;
+        
     }
 
     public void IncreaseExperience(int amount)
@@ -133,20 +143,27 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
-        //xpBar.fillAmount     = (float)experience / experienceCap;
-        //healthBar.fillAmount = currentHealth     / characterData.MaxHealth;
+        xpBar.fillAmount     = (float)experience / experienceCap;
+        healthBar.fillAmount = currentHealth     / characterData.MaxHealth;
+        MoneyText.text       = " " +  currentMoney;
+        RefreshText();
     }
     
     void UpdateLevelText()
     {
         xpText.text = "LV: " + level.ToString();
     }
-    
+
     
     public void AddMoney(int moneyToAdd)
     {
         currentMoney += moneyToAdd;
         hudUpdater.RefreshText();
+    }
+    
+    void RefreshText()
+    {
+        MoneyText.text = " " +  currentMoney;
     }
     
     // In Game Upgrades

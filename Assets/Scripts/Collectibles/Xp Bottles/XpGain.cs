@@ -5,6 +5,7 @@ public class XpGain : MonoBehaviour
     PlayerStats                playerStats;
     public Bottle1ScriptableObject bottleData;
     
+    
     public void OnTriggerEnter2D(Collider2D cl2D)
     {
         if (cl2D.gameObject.tag == "Player")
