@@ -5,13 +5,22 @@ public class MapMenu : MonoBehaviour
     [SerializeField] GameObject mapMenuPanel;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            mapMenuPanel.SetActive(true);
+            if (mapMenuPanel.activeSelf == true)
+            {
+                mapMenuPanel.SetActive(false);
+                Time.timeScale = 1;
+            }
+            else if (mapMenuPanel.activeSelf == false)
+            {
+                mapMenuPanel.SetActive(true);
+                Time.timeScale = 0;
+            }
+            
+            
         }
-        else if (Input.GetKeyUp(KeyCode.Tab))
-        {
-            mapMenuPanel.SetActive(false);
-        }
+        
+       
     }
 }
