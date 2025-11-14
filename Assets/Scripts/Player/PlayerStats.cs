@@ -18,20 +18,20 @@ public class PlayerStats : MonoBehaviour
     float                                   currentAutoHealthRegeneration;
     public float                            currentMoveSpeed;
     float                                   currentProjectileSpeed;
-    public float                            currentSwordDamages;
-    public float                            currentModulesDamages;
-    public float                            currentSwordSwingSpeed;
-    public float                            currentSwordCooldown;
-    public float                            currentSwordAndModulesUpgrade;
-    public float                            currentXpGain;
-    public int                              currentMoney;
-    public float                            speedToAdd;
-    public float                            critChancesToAdd;
-    public float                            swordDistanceToAdd;
-    public float                            swordRadiusToAdd;
-    public float                            swordAndModulesUpgradeToAdd;
-    public int                              xpToExchange;
-    public bool                                    teleporterKeyObtained;
+    public           float                  currentSwordDamages;
+    public           float                  currentModulesDamages;
+    public           float                  currentSwordSwingSpeed;
+    public           float                  currentSwordCooldown;
+    public           float                  currentSwordAndModulesUpgrade;
+    public           float                  currentXpGain;
+    public           int                    currentMoney;
+    public           float                  speedToAdd;
+    public           float                  critChancesToAdd;
+    public           float                  swordDistanceToAdd;
+    public           float                  swordRadiusToAdd;
+    public           float                  swordAndModulesUpgradeToAdd;
+    public           int                    xpToExchange;
+    public           bool                   teleporterKeyObtained;
     [SerializeField] SwordManager           swordManager;
     [SerializeField] GameObject             swordChildren;
     [SerializeField] Canvas                 upgradesMenu;
@@ -40,7 +40,6 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] OutGameUpgradesCosts   outGameUpgradesCosts;
     [SerializeField] WeaponScriptableObject swordData;
     [SerializeField] HUDUpdate              hudUpdater;
-
 
 
     //Experience and level of the player
@@ -80,6 +79,10 @@ public class PlayerStats : MonoBehaviour
         
     }
     
+    
+    
+    
+    
     void StatsReset()
     {
         // Setup des variables au début du jeu selon les données par défaut
@@ -90,7 +93,7 @@ public class PlayerStats : MonoBehaviour
         currentProjectileSpeed        = characterData.ProjectileSpeed;
         currentSwordSwingSpeed        = swordData.Speed;
         currentSwordDamages           = swordData.Damage;
-
+        currentPlayerDamage           = characterData.damages;
         //application des améliorations faites Out Game
         currentMoveSpeed      += speedToAdd;
         currentSwordDamages   += swordAndModulesUpgradeToAdd;

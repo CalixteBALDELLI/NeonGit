@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyStat : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
-    PlayerStats playerStats;
+    [HideInInspector] public PlayerStats playerStats;
     public WeaponScriptableObject[] knockbackData;
     
     [SerializeField] DropRateManager dropRateManager;
@@ -13,14 +13,15 @@ public class EnemyStat : MonoBehaviour
     
     [SerializeField] CharacterScriptableObject playerScriptableObject;
     
-    [HideInInspector] public ModuleManager moduleManager;
-    [SerializeField]         GameObject    propagationCollider;
-    [SerializeField]         bool          isABoss;
-    [SerializeField]         GameObject    teleporterKey;
+    [HideInInspector] public ModuleManager     moduleManager;
+    [SerializeField]         GameObject        propagationCollider;
+    [SerializeField]         PropagationScript propagationScript;
+    [SerializeField]         bool              isABoss;
+    [SerializeField]         GameObject        teleporterKey;
 
     // Current stats
     float currentMoveSpeed;
-    [SerializeField] float currentHealth;
+    public float currentHealth;
     float currentDamage;
 
     void Awake()
@@ -81,31 +82,53 @@ public class EnemyStat : MonoBehaviour
 
         if (cl2D.CompareTag("PlayerSword"))
         {
-            if (moduleManager.knockbackAcquired == 1)
-            {
-                enemyMouvement.currentKnockbackForce = knockbackData[0].Speed;
-                StartCoroutine(Knockback());
-            }
-            else if (moduleManager.knockbackAcquired == 2)
-            {
-                Debug.Log("Knockback 2");
-                enemyMouvement.currentKnockbackForce = knockbackData[1].Speed;
-                StartCoroutine(Knockback());
-            }
-            else if (moduleManager.knockbackAcquired == 3)
-            {
-                Debug.Log("Knockback 3");
-                enemyMouvement.currentKnockbackForce = knockbackData[2].Speed;
-                StartCoroutine(Knockback());
-            }
-            
-            
-            if (moduleManager.propagationAcquired == 1)
-            {
-            propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
-            }
-            
+            ModulesCheck();
             TakeDamage(playerScriptableObject.damages);
         }
+
+        if (cl2D.CompareTag("Projectile"))
+        {
+            ModulesCheck();
+        }
+
+        if (cl2D.CompareTag("Enemy"))
+        {
+            //EnemyStat touchedEnemy = cl2D.GetComponent<EnemyStat>;
+            
+        }
+    }
+
+    void ModulesCheck()
+    {
+        if (moduleManager.propagationAcquired == 1 && moduleManager.propagationInProgress == false)
+        {
+            Propage();
+            StartCoroutine(moduleManager.BackupTimer());
+            moduleManager.BACKUPTIMER = 0;
+        }
+
+        if (moduleManager.knockbackAcquired == 1)
+        {
+            enemyMouvement.currentKnockbackForce = knockbackData[0].Speed;
+            StartCoroutine(Knockback());
+        }
+        else if (moduleManager.knockbackAcquired == 2)
+        {
+            Debug.Log("Knockback 2");
+            enemyMouvement.currentKnockbackForce = knockbackData[1].Speed;
+            StartCoroutine(Knockback());
+        }
+        else if (moduleManager.knockbackAcquired == 3)
+        {
+            Debug.Log("Knockback 3");
+            enemyMouvement.currentKnockbackForce = knockbackData[2].Speed;
+            StartCoroutine(Knockback());
+        }
+    }
+
+    public void Propage()
+    {
+        propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
+        StartCoroutine(propagationScript.CallDamagingEnemyRepeatedly());
     }
 }
