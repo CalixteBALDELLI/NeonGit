@@ -105,7 +105,7 @@ public class EnemyStat : MonoBehaviour
             propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
             }
             
-            //TakeDamage(playerScriptableObject.damages);
+            TakeDamage(playerScriptableObject.damages);
         }
     }
 }

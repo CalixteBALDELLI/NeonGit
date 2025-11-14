@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   startingWeapon: {fileID: 0}
-  maxHealth: 100
+  maxHealth: 200
   recovery: 0
-  movingSpeed: 17.13
+  movingSpeed: 17
   might: 0
   projectileSpeed: 5
   autoHealthRegeneration: 0

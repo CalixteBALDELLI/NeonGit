@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 public class Teleporter : MonoBehaviour
 {
-    Canvas        mapChoiceCanvas;
+    [SerializeField] Canvas        mapChoiceCanvas;
     
     //GameObject       player;
     
-    GameObject                   triggeredTeleporter;
+    GameObject   triggeredTeleporter;
     [SerializeField] PlayerStats player;
     [SerializeField] Canvas lockedMessage;
     void Start()
@@ -23,7 +23,7 @@ public class Teleporter : MonoBehaviour
         mapChoiceCanvas.enabled = true;
         }
         else
-        {
+        { 
             lockedMessage.enabled = true;
         }
     }
