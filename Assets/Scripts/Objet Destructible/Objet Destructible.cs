@@ -10,7 +10,7 @@ public class DestructibleFurniture : MonoBehaviour
 	private AudioSource    audioSource;
 	private SpriteRenderer spriteRenderer;
 	private bool           isDestroyed = false;
-
+	public  int            MoneyToAdd  = 10;
 	void Start()
 	{
 		spriteRenderer = GetComponent<SpriteRenderer>();
@@ -27,8 +27,12 @@ public class DestructibleFurniture : MonoBehaviour
 			if (destroyedSprite != null) spriteRenderer.sprite = destroyedSprite;
 			if (destructionSounds.Length > 0)
 			{
+				
+				
 				AudioClip clip = destructionSounds[Random.Range(0, destructionSounds.Length)];
 				audioSource.PlayOneShot(clip, volume);
+				PlayerStats.instance.AddMoney(MoneyToAdd);
+					
 			}
 		}
 	}

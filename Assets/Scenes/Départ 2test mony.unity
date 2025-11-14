@@ -332,6 +332,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3034354433338648147, guid: 80ce93dd1a40e6b44b634a395173b49a, type: 3}
+      propertyPath: MoneyToAdd
+      value: 1646
+      objectReference: {fileID: 0}
     - target: {fileID: 4081079604744392503, guid: 80ce93dd1a40e6b44b634a395173b49a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.632506
@@ -877,6 +881,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5846819970631973800, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
+      propertyPath: Money
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846819970631973800, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
       propertyPath: level
       value: 0
       objectReference: {fileID: 0}
@@ -893,11 +901,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1448287789}
     - target: {fileID: 5846819970631973800, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
+      propertyPath: MoneyText
+      value: 
+      objectReference: {fileID: 288343813}
+    - target: {fileID: 5846819970631973800, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 118192633}
     - target: {fileID: 5846819970631973800, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
       propertyPath: experience
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846819970631973800, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
+      propertyPath: currentMoney
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5846819970631973800, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
@@ -1730,27 +1746,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2455332903509820025, guid: 8f02c3836bed9324f8f76afd18dba755, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2455332903509820025, guid: 8f02c3836bed9324f8f76afd18dba755, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2455332903509820025, guid: 8f02c3836bed9324f8f76afd18dba755, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2455332903509820025, guid: 8f02c3836bed9324f8f76afd18dba755, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2455332903509820025, guid: 8f02c3836bed9324f8f76afd18dba755, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1923.052
+      value: 1603.052
       objectReference: {fileID: 0}
     - target: {fileID: 2455332903509820025, guid: 8f02c3836bed9324f8f76afd18dba755, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 56.761505
+      value: 56.761475
       objectReference: {fileID: 0}
     - target: {fileID: 2455332903509820025, guid: 8f02c3836bed9324f8f76afd18dba755, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1782,11 +1798,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2455332903509820025, guid: 8f02c3836bed9324f8f76afd18dba755, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.062927246
+      value: -960.0629
       objectReference: {fileID: 0}
     - target: {fileID: 2455332903509820025, guid: 8f02c3836bed9324f8f76afd18dba755, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 512.8125
+      value: -29
       objectReference: {fileID: 0}
     - target: {fileID: 2455332903509820025, guid: 8f02c3836bed9324f8f76afd18dba755, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1804,6 +1820,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Healh / XP
       objectReference: {fileID: 0}
+    - target: {fileID: 4384717117080249007, guid: 8f02c3836bed9324f8f76afd18dba755, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384717117080249007, guid: 8f02c3836bed9324f8f76afd18dba755, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384717117080249007, guid: 8f02c3836bed9324f8f76afd18dba755, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909423457898279556, guid: 8f02c3836bed9324f8f76afd18dba755, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1814,71 +1846,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2455332903509820025, guid: 8f02c3836bed9324f8f76afd18dba755, type: 3}
   m_PrefabInstance: {fileID: 2641142657207160855}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &6667014216276364875
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4116995074251211724, guid: 676b56447c48d6f4e9c1fa5f383b4091, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116995074251211724, guid: 676b56447c48d6f4e9c1fa5f383b4091, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116995074251211724, guid: 676b56447c48d6f4e9c1fa5f383b4091, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116995074251211724, guid: 676b56447c48d6f4e9c1fa5f383b4091, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116995074251211724, guid: 676b56447c48d6f4e9c1fa5f383b4091, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116995074251211724, guid: 676b56447c48d6f4e9c1fa5f383b4091, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116995074251211724, guid: 676b56447c48d6f4e9c1fa5f383b4091, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116995074251211724, guid: 676b56447c48d6f4e9c1fa5f383b4091, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116995074251211724, guid: 676b56447c48d6f4e9c1fa5f383b4091, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4116995074251211724, guid: 676b56447c48d6f4e9c1fa5f383b4091, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6919497074208973850, guid: 676b56447c48d6f4e9c1fa5f383b4091, type: 3}
-      propertyPath: Money
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6919497074208973850, guid: 676b56447c48d6f4e9c1fa5f383b4091, type: 3}
-      propertyPath: MoneyText
-      value: 
-      objectReference: {fileID: 288343813}
-    - target: {fileID: 7251166933161401164, guid: 676b56447c48d6f4e9c1fa5f383b4091, type: 3}
-      propertyPath: m_Name
-      value: Mony Manager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 676b56447c48d6f4e9c1fa5f383b4091, type: 3}
 --- !u!1001 &7992850271628607702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2064,6 +2031,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2814015308202238374, guid: 99eb8d0f085e66c4fb7f42315404281c, type: 3}
+      propertyPath: m_Name
+      value: Money text
+      objectReference: {fileID: 0}
     - target: {fileID: 9139887159261162339, guid: 99eb8d0f085e66c4fb7f42315404281c, type: 3}
       propertyPath: m_Name
       value: Argent
@@ -2148,7 +2119,6 @@ SceneRoots:
   - {fileID: 1731983485}
   - {fileID: 1682231248}
   - {fileID: 1990611384}
-  - {fileID: 6667014216276364875}
   - {fileID: 1031560820}
   - {fileID: 503618892}
   - {fileID: 1259201666}
