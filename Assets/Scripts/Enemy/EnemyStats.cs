@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
 {
-    public static EnemyStat instance;
     public EnemyScriptableObject enemyData;
     PlayerStats playerStats;
     public WeaponScriptableObject playerSword;
     [SerializeField] DropRateManager dropRateManager;
     [SerializeField] EnemyMouvement enemyMouvement;
     
-    [HideInInspector] public ModuleManager   moduleManager;
-    [SerializeField] GameObject        propagationCollider;
+    [HideInInspector] public ModuleManager moduleManager;
+    [SerializeField]         GameObject    propagationCollider;
+    [SerializeField]         bool          isABoss;
+    [SerializeField]         GameObject    teleporterKey;
 
     // Current stats
     float currentMoveSpeed;
-    public float currentHealth;
+    [SerializeField] float currentHealth;
     float currentDamage;
 
     void Awake()
@@ -28,14 +29,6 @@ public class EnemyStat : MonoBehaviour
 
         playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
         moduleManager = GameObject.Find("GameManager").GetComponent<ModuleManager>();
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
     }
 
     IEnumerator Knockback()
@@ -55,6 +48,10 @@ public class EnemyStat : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            if (isABoss)
+            {
+                Instantiate(teleporterKey, transform.position, Quaternion.identity);
+            }
             Kill();
         }
     }

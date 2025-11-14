@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] float                timerInSeconds;
-    string               timerText;
+    [SerializeField] float           timerInSeconds;
+    string                           timerText;
     [SerializeField] TextMeshProUGUI timerTextMesh;
+    [SerializeField] GameObject      powerfulEnemy;
     void Start()
     {
         timerTextMesh.text = timerText;
@@ -24,9 +25,9 @@ public class Timer : MonoBehaviour
             timerTextMesh.text = timerText;
             StartCoroutine(GameTimer());
         }
-        else 
+        else
         {
-            Debug.Log("Time has passed");
+            powerfulEnemy.SetActive(true);
         }
     }
     

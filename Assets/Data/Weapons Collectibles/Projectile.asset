@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb60c578595716c4ca134e41ad915c26, type: 3}
   m_Name: Projectile
   m_EditorClassIdentifier: 
-  weaponName: Couteau
+  weaponName: Projectile
   weaponId: 0
   xpValue: 25
+  description: "Lance un projectile qui traverse les ennemis \xE0 chaque coup d'\xE9pee."

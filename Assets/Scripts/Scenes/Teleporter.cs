@@ -8,8 +8,9 @@ public class Teleporter : MonoBehaviour
     
     //GameObject       player;
     
-    GameObject triggeredTeleporter;
+    GameObject                   triggeredTeleporter;
     [SerializeField] PlayerStats player;
+    [SerializeField] Canvas lockedMessage;
     void Start()
     {
         //player = GameObject.Find("Player");
@@ -23,7 +24,7 @@ public class Teleporter : MonoBehaviour
         }
         else
         {
-            Debug.Log("Pas la clé du téléporteuyr");
+            lockedMessage.enabled = true;
         }
     }
 }

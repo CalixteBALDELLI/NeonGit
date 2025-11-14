@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using UnityEditor.Build.Content;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -43,8 +46,11 @@ public class PlayerStats : MonoBehaviour
     //Experience and level of the player
     [Header("Experience/Level")]
     public int experience = 0;
-    public int level = 1;
-    public int experienceCap;
+    public int   level = 1;
+    public int   experienceCap;
+    public Image healthBar;
+    public TextMeshProUGUI  xpText;
+    public Image xpBar;
     
     //Class pour définir un objectif de niveau et la correspondance du cap d'xp qui augmente pour cet objectif
     [System.Serializable]
@@ -119,8 +125,23 @@ public class PlayerStats : MonoBehaviour
                 }
             }
             experienceCap += experienceCapIncrease;
+            
+            UpdateLevelText();
+            
         }
     }
+
+    void Update()
+    {
+        //xpBar.fillAmount     = (float)experience / experienceCap;
+        //healthBar.fillAmount = currentHealth     / characterData.MaxHealth;
+    }
+    
+    void UpdateLevelText()
+    {
+        xpText.text = "LV: " + level.ToString();
+    }
+    
     
     public void AddMoney(int moneyToAdd)
     {

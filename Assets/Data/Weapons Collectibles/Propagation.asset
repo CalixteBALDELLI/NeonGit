@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb60c578595716c4ca134e41ad915c26, type: 3}
   m_Name: Propagation
   m_EditorClassIdentifier: 
-  weaponName: Couteau
+  weaponName: Propagation
   weaponId: 2
   xpValue: 100
+  description: "Electrise les ennemis touch\xE9s par toute attaque. Se propage aux
+    ennemis alentours."

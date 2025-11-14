@@ -21,6 +21,14 @@ public class HealthManager : MonoBehaviour
             gameOverCanvas.SetActive(true);
             Time.timeScale = 0;
         }
+
+        UpdateHealthBar();
+
+    }
+
+    void UpdateHealthBar()
+    {
+        throw new System.NotImplementedException();
     }
 
     public void Restart()

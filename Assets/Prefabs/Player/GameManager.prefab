@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8842742955450646885}
   - component: {fileID: 5507292390785704494}
-  - component: {fileID: 489376007098039883}
   - component: {fileID: 6114761339648453574}
   - component: {fileID: 2186516233191138354}
+  - component: {fileID: 651058581322839038}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -49,24 +49,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 0}
   gameOverCanvas: {fileID: 0}
---- !u!114 &489376007098039883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2459730909182841648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e25e375a6dcd0ba4e8b63c2adca3fe39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerWeapons:
-  - {fileID: 5375285779180958177, guid: 8d04ecf366e744745947000f0d05d266, type: 3}
-  - {fileID: 5375285779180958177, guid: 1b069192383e1d84d8c6dc606d2d522f, type: 3}
-  equippedWeapons: 0
-  weaponToEquip: 0
-  pickedWeapon: {fileID: 0}
 --- !u!114 &6114761339648453574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,3 +81,17 @@ MonoBehaviour:
   weaponToEquip: 0
   pickedWeapon: {fileID: 0}
   equippedWeapons: 0
+--- !u!114 &651058581322839038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2459730909182841648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d39dfcc9d1a275842b929a75cf06a976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerInSeconds: 75
+  timerTextMesh: {fileID: 0}

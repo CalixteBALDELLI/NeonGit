@@ -5,11 +5,14 @@ using UnityEngine;
 public class WeaponSpawner : MonoBehaviour
 {
     
-    public  int        whichweapon;
-    private int        spawnTime;
-    public  MapData    mapData;
-    public  int        minSpawnTime;
-    public  int        maxSpawnTime;
+    public  int           whichweapon;
+    private int           spawnTime;
+    public  MapData       mapData;
+    public  int           minSpawnTime;
+    public  int           maxSpawnTime;
+    bool                  weaponSpawned;
+    bool                  spawnerActive;
+    WeaponSpawnersManager weaponSpawnersManager;
     
     void Start()
     {
@@ -27,10 +30,13 @@ public class WeaponSpawner : MonoBehaviour
     
     IEnumerator Weaponspawn()
     {
-        whichweapon = Random.Range(0,            mapData.playerWeapons.Length);
-        spawnTime   = Random.Range(minSpawnTime, maxSpawnTime);
-        yield return new WaitForSeconds(spawnTime);
-        Instantiate(mapData.playerWeapons[whichweapon], transform);
+        if(spawnerActive)
+        {
+            whichweapon = Random.Range(0,            mapData.playerWeapons.Length);
+            spawnTime   = Random.Range(minSpawnTime, maxSpawnTime);
+            yield return new WaitForSeconds(spawnTime);
+            Instantiate(mapData.playerWeapons[whichweapon], transform);
+            weaponSpawned = true; 
+        }
     }
-    
 }
