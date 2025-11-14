@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -115,10 +113,10 @@ public class PlayerStats : MonoBehaviour
     {
         if (experience >= experienceCap)
         {
-            Time.timeScale       = 0;
             Debug.Log("Level up");
             level++;
             upgradesMenu.enabled = true;
+            Time.timeScale       = 0;
             experience -= experienceCap;
 
             int experienceCapIncrease = 0;
@@ -159,7 +157,6 @@ public class PlayerStats : MonoBehaviour
     public void AddMoney(int moneyToAdd)
     {
         currentMoney += moneyToAdd;
-        hudUpdater.RefreshText();
     }
     
     void RefreshText()

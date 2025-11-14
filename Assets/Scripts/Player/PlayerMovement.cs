@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         player = gameObject;
-        //DontDestroyOnLoad(player);
+        DontDestroyOnLoad(player);
         lastMovedVector = new Vector2(1, 0f);
     }
     private void Update() //Direction Checker

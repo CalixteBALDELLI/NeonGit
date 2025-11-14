@@ -8,9 +8,11 @@ public class Teleporter : MonoBehaviour
     
     //GameObject       player;
     
-    GameObject   triggeredTeleporter;
+    GameObject                   triggeredTeleporter;
+    [SerializeField] bool isOnfinalMap;
     [SerializeField] PlayerStats player;
-    [SerializeField] Canvas lockedMessage;
+    [SerializeField] Canvas      lockedMessage;
+    [SerializeField] Canvas      victoryScreen;
     void Start()
     {
         //player = GameObject.Find("Player");
@@ -20,6 +22,11 @@ public class Teleporter : MonoBehaviour
     {
         if (player.teleporterKeyObtained)
         {
+            if (isOnfinalMap)
+            {
+                victoryScreen.enabled = true;
+                Time.timeScale = 0;
+            }
             mapChoiceCanvas.enabled = true;
             Time.timeScale          = 0;
         }
@@ -27,7 +34,6 @@ public class Teleporter : MonoBehaviour
         { 
             lockedMessage.enabled = true;
             Time.timeScale        = 0;
-
         }
     }
 }

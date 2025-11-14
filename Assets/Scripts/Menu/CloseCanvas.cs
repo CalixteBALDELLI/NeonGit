@@ -6,9 +6,9 @@ public class CloseCanvas : MonoBehaviour
 
     public void DisableCanvas()
     {
-        Time.timeScale        = 1;
         canvasComponent.enabled = false;
         Debug.Log("COLLEC");
+        Time.timeScale        = 1;
     }
     
 }

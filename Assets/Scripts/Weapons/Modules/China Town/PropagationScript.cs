@@ -25,6 +25,22 @@ public class PropagationScript : MonoBehaviour
 
     void Start()
     {
+        playerStats   = GameObject.Find("Player").GetComponent<PlayerStats>();
+        moduleManager = GameObject.Find("GameManager").GetComponent<ModuleManager>();
+        if (moduleManager.projectileAcquired == 1)
+        {
+            maxPropagationSteps = 2;
+        }
+        
+        if (moduleManager.propagationAcquired == 2)
+        {
+            maxPropagationSteps = 4;
+        }
+
+        if (moduleManager.propagationAcquired == 3)
+        {
+            maxPropagationSteps = 6;
+        }
         hitBoxCollider2D.enabled = true;
     }
 
@@ -39,9 +55,6 @@ public class PropagationScript : MonoBehaviour
 
     public IEnumerator CallDamagingEnemyRepeatedly()
     {
-        //var dataEnemy = EnemyStat.instance;
-        playerStats   = GameObject.Find("Player").GetComponent<PlayerStats>();
-        moduleManager = GameObject.Find("GameManager").GetComponent<ModuleManager>();
         for (int i = 0; i < howManyTimeDamagingEnemyIsCalled; i++)
         {
             enemyMouvement.isElectrocuted       = true;

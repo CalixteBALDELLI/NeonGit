@@ -18,10 +18,11 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
         weaponChoiceCanvas                     = GameObject.Find("Weapon Choice").GetComponent<Canvas>();
         weaponChoiceTexts                      = weaponChoiceCanvas.GetComponent<WeaponChoiceTexts>();
         Time.timeScale                         = 0;
+        
         weaponChoiceTexts.weaponNameText.text  = weaponCollectibleData.weaponName;
         weaponChoiceTexts.descriptionText.text = weaponCollectibleData.description;
         //weaponChoiceTexts.upgradeText.text     = weaponCollectibleData;
-        weaponChoiceTexts.damagesAndCooldownText.text = "Dégâts : " + weaponData.Damage             + " Cooldown : " + weaponData.cooldownDuration;
+        //weaponChoiceTexts.damagesAndCooldownText.text = "Dégâts : " + weaponData.Damage             + " Cooldown : " + weaponData.cooldownDuration;
         weaponChoiceTexts.xpGainText.text             = "+ "        + weaponCollectibleData.xpValue + " XP";
         weaponChoiceCanvas.enabled             = true;
         moduleManager.weaponToEquip            = weaponCollectibleData.weaponId;

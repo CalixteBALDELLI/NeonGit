@@ -13,7 +13,7 @@ public class HealthManager : MonoBehaviour
     void Start()
     {
         gameManager    = gameObject;
-        //DontDestroyOnLoad(gameManager);
+        DontDestroyOnLoad(gameManager);
     }
     void Update()
     {
