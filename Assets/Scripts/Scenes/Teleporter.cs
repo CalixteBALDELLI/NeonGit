@@ -20,11 +20,14 @@ public class Teleporter : MonoBehaviour
     {
         if (player.teleporterKeyObtained)
         {
-        mapChoiceCanvas.enabled = true;
+            mapChoiceCanvas.enabled = true;
+            Time.timeScale          = 0;
         }
         else
         { 
             lockedMessage.enabled = true;
+            Time.timeScale        = 0;
+
         }
     }
 }

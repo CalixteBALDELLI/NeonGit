@@ -17,6 +17,7 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
         moduleManager                          = GameObject.Find("GameManager").GetComponent<ModuleManager>();
         weaponChoiceCanvas                     = GameObject.Find("Weapon Choice").GetComponent<Canvas>();
         weaponChoiceTexts                      = weaponChoiceCanvas.GetComponent<WeaponChoiceTexts>();
+        Time.timeScale                         = 0;
         weaponChoiceTexts.weaponNameText.text  = weaponCollectibleData.weaponName;
         weaponChoiceTexts.descriptionText.text = weaponCollectibleData.description;
         //weaponChoiceTexts.upgradeText.text     = weaponCollectibleData;
@@ -26,7 +27,7 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
         moduleManager.weaponToEquip            = weaponCollectibleData.weaponId;
         playerStats.xpToExchange               = weaponCollectibleData.xpValue;
         moduleManager.pickedWeapon             = gameObject;
-
+        Destroy(gameObject);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

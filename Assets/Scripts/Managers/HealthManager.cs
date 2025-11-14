@@ -3,10 +3,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class HealthManager : MonoBehaviour
 {
-    public PlayerStats playerStats;
-    public Canvas  gameOverCanvas;
-    public Image healthBar;
-    
+    public           PlayerStats playerStats;
+    public           Canvas      gameOverCanvas;
+    public           Image       healthBar;
+    [SerializeField] Canvas[]    canvasToDisableAtGameOver;
+
     
     GameObject        gameManager;
     void Start()
@@ -18,6 +19,10 @@ public class HealthManager : MonoBehaviour
     {
         if (playerStats.currentHealth <= 0)
         {
+            foreach (var canvas in canvasToDisableAtGameOver)
+            {
+                enabled = false;
+            }
             gameOverCanvas.enabled = true;
             Time.timeScale = 0;
         }
