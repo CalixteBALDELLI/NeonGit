@@ -32,5 +32,7 @@ public class CharacterScriptableObject : ScriptableObject
     [SerializeField]
     float autoHealthRegeneration;
     public float AutoHealthRegeneration { get => autoHealthRegeneration; private set => autoHealthRegeneration = value; }
+
+    public float damages;
 }
 

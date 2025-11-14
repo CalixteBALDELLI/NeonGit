@@ -9,15 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c49e352f2314da448ad997244f04cbd8, type: 3}
-  m_Name: CharacterScriptableObject
+  m_Script: {fileID: 11500000, guid: 625782ea73e1fe348886067bcf222d80, type: 3}
+  m_Name: Propagation lvl.1
   m_EditorClassIdentifier: 
-  currentHealth: 0
-  startingWeapon: {fileID: 0}
-  maxHealth: 100
-  recovery: 0
-  movingSpeed: 17.13
-  might: 0
-  projectileSpeed: 5
-  autoHealthRegeneration: 0
-  damages: 1
+  weaponId: 1
+  prefab: {fileID: 6997200509264440334, guid: cff74ebaa97c56c4cabf8537c433bc66, type: 3}
+  damage: 10
+  speed: 30
+  cooldownDuration: 0.3
+  pierce: 1

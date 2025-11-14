@@ -27,5 +27,7 @@ public class WeaponScriptableObject :ScriptableObject
     
     [SerializeField]
     string description;
+    
+    
 }
 

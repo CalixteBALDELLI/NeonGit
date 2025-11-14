@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: b0908b8f1681ea043b44d8555ab758df, type: 2}
   isKnockedBack: 0
-  knockbackForce: 10
+  enemyStat: {fileID: -4390385675418812344}
   rb: {fileID: 6970144066063837735}
 --- !u!114 &-4390385675418812344
 MonoBehaviour:
@@ -186,11 +186,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: b0908b8f1681ea043b44d8555ab758df, type: 2}
-  playerSword: {fileID: 11400000, guid: df3380266ee08c344b02ef88c329d05a, type: 2}
+  knockbackData: {fileID: 11400000, guid: 08b878763729bd74caf7579df7ad1687, type: 2}
   dropRateManager: {fileID: 1161815033490814516}
   enemyMouvement: {fileID: 0}
+  playerScriptableObject: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
   moduleManager: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
   propagationCollider: {fileID: 1751900232549313019}
+  isABoss: 0
+  teleporterKey: {fileID: 0}
   currentHealth: 0
 --- !u!114 &1161815033490814516
 MonoBehaviour:

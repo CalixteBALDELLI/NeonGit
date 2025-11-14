@@ -38,7 +38,7 @@ public class RelativePosition : MonoBehaviour
     void Update()
     {
         
-        if (moduleManager.propagationAcquired)
+        if (moduleManager.propagationAcquired == 1)
         {
             hitBoxCollider2D.enabled = true; // Activation de la HitBox une fois le module Propagation obtenu.
 

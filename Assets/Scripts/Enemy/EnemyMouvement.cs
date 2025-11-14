@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class EnemyMouvement : MonoBehaviour
 {
-    public EnemyScriptableObject enemyData;
-    private Transform player;
-    public bool isKnockedBack;
-    public float knockbackForce = 10f;
-    public Rigidbody2D rb;
+    public  EnemyScriptableObject enemyData;
+    private Transform             player;
+    public  bool                  isKnockedBack;
+    public  EnemyStat             enemyStat;
+    public float                         currentKnockbackForce;
+    public  Rigidbody2D           rb;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,6 +32,6 @@ public class EnemyMouvement : MonoBehaviour
     void KnockbackMovement()
     {
         Vector2 knockbackDirection = (rb.position - (Vector2) player.transform.position).normalized;
-        rb.linearVelocity = knockbackDirection * knockbackForce;
+        rb.linearVelocity = knockbackDirection * currentKnockbackForce;
     }
 }
