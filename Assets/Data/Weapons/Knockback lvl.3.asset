@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625782ea73e1fe348886067bcf222d80, type: 3}
+  m_Name: Knockback lvl.3
+  m_EditorClassIdentifier: 
+  weaponId: 1
+  prefab: {fileID: 6997200509264440334, guid: cff74ebaa97c56c4cabf8537c433bc66, type: 3}
+  damage: 8
+  speed: 13
+  cooldownDuration: 0.3
+  pierce: 0
+  description: 

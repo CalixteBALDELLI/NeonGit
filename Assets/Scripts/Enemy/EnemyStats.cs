@@ -6,9 +6,12 @@ public class EnemyStat : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
     PlayerStats playerStats;
-    public WeaponScriptableObject playerSword;
+    public WeaponScriptableObject[] knockbackData;
+    
     [SerializeField] DropRateManager dropRateManager;
     [SerializeField] EnemyMouvement enemyMouvement;
+    
+    [SerializeField] CharacterScriptableObject playerScriptableObject;
     
     [HideInInspector] public ModuleManager moduleManager;
     [SerializeField]         GameObject    propagationCollider;
@@ -33,7 +36,7 @@ public class EnemyStat : MonoBehaviour
 
     IEnumerator Knockback()
     {
-        if (moduleManager.knockbackAcquired)
+        if (moduleManager.knockbackAcquired > 0)
         {
             Debug.Log("Knockback");
             enemyMouvement.isKnockedBack = true;
@@ -78,17 +81,31 @@ public class EnemyStat : MonoBehaviour
 
         if (cl2D.CompareTag("PlayerSword"))
         {
-            if (moduleManager.knockbackAcquired)
+            if (moduleManager.knockbackAcquired == 1)
             {
-            StartCoroutine(Knockback());
+                enemyMouvement.currentKnockbackForce = knockbackData[0].Speed;
+                StartCoroutine(Knockback());
+            }
+            else if (moduleManager.knockbackAcquired == 2)
+            {
+                Debug.Log("Knockback 2");
+                enemyMouvement.currentKnockbackForce = knockbackData[1].Speed;
+                StartCoroutine(Knockback());
+            }
+            else if (moduleManager.knockbackAcquired == 3)
+            {
+                Debug.Log("Knockback 3");
+                enemyMouvement.currentKnockbackForce = knockbackData[2].Speed;
+                StartCoroutine(Knockback());
             }
             
-            if (moduleManager.propagationAcquired)
+            
+            if (moduleManager.propagationAcquired == 1)
             {
             propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
             }
             
-            TakeDamage(playerStats.currentSwordDamages);
+            TakeDamage(playerScriptableObject.damages);
         }
     }
 }

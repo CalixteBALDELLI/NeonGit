@@ -150,3 +150,4 @@ MonoBehaviour:
   distances: []
   focusedEnemies: []
   hitBoxCollider2D: {fileID: 2784664642519852964}
+  moduleManager: {fileID: 0}

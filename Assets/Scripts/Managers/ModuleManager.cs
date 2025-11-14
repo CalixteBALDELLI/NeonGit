@@ -1,18 +1,22 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class ModuleManager : MonoBehaviour
 {
     [SerializeField] KnifeController      projectileController;
     [SerializeField] GameObject projectileControllerGameObject;
 
-    [SerializeField] public bool       propagationAcquired;
-    [SerializeField] public bool       knockbackAcquired;
-    [SerializeField] public bool       projectileAcquired;
+    [SerializeField] public int propagationAcquired;
+    [SerializeField] public int knockbackAcquired;
+    [SerializeField] public int projectileAcquired;
+
+    [SerializeField] public WeaponScriptableObject projectileLvl2;
+    [SerializeField] public WeaponScriptableObject projectileLvl3;
+
+    [SerializeField] public WeaponScriptableObject knockbackLvl2;
+    [SerializeField] public WeaponScriptableObject knockbackLvl3;
+    
+    [SerializeField]        KnifeController       weaponController;
+
     
     [HideInInspector]
     public int          weaponToEquip;
@@ -32,19 +36,35 @@ public class ModuleManager : MonoBehaviour
         {
             weaponChoiceCanvas = GameObject.Find("Weapon Choice").GetComponent<Canvas>();
             Debug.Log("equiped");
-            if (weaponToEquip == 0)
+            if (weaponToEquip == 0 && projectileAcquired == 0)
             {
-                projectileAcquired  = true;
+                projectileAcquired++;
                 projectileControllerGameObject.SetActive(true);
             }
-            else if (weaponToEquip == 1)
+            else if (weaponToEquip == 0 && projectileAcquired == 1 || projectileAcquired == 2)
             {
-                knockbackAcquired = true;
+                projectileAcquired++;
+                if (projectileAcquired == 2)
+                {
+                    weaponController.weaponData = projectileLvl2;
+                }
+                else if (projectileAcquired == 3)
+                {
+                    weaponController.weaponData = projectileLvl3;
+                }
             }
-            else if (weaponToEquip == 2)
+            
+            
+            if (weaponToEquip == 1)
             {
-                propagationAcquired = true;
+                knockbackAcquired++;
             }
+            
+            if (weaponToEquip == 2)
+            {
+                propagationAcquired++;
+            }
+
 
             equippedWeapons++;
             weaponChoiceCanvas.enabled = false;

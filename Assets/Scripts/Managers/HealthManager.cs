@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class HealthManager : MonoBehaviour
 {
     public PlayerStats playerStats;
-    public GameObject  gameOverCanvas;
+    public Canvas  gameOverCanvas;
     public Image healthBar;
     
     
@@ -18,18 +18,11 @@ public class HealthManager : MonoBehaviour
     {
         if (playerStats.currentHealth <= 0)
         {
-            gameOverCanvas.SetActive(true);
+            gameOverCanvas.enabled = true;
             Time.timeScale = 0;
         }
-
-        UpdateHealthBar();
-
     }
-
-    void UpdateHealthBar()
-    {
-        throw new System.NotImplementedException();
-    }
+    
 
     public void Restart()
     { 

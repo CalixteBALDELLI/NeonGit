@@ -1,12 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using NUnit.Framework;
-using Unity.Android.Gradle.Manifest;
-using Unity.VisualScripting.Dependencies.NCalc;
-using Unity.VisualScripting.FullSerializer;
-using UnityEditor.U2D.Animation;
 using UnityEngine;
 
 public class RelativePosition : MonoBehaviour
@@ -38,7 +32,7 @@ public class RelativePosition : MonoBehaviour
     void Update()
     {
         
-        if (moduleManager.propagationAcquired)
+        if (moduleManager.propagationAcquired == 1)
         {
             hitBoxCollider2D.enabled = true; // Activation de la HitBox une fois le module Propagation obtenu.
 
