@@ -80,10 +80,6 @@ public class PlayerStats : MonoBehaviour
         
     }
     
-    
-    
-    
-    
     void StatsReset()
     {
         // Setup des variables au début du jeu selon les données par défaut
@@ -112,15 +108,12 @@ public class PlayerStats : MonoBehaviour
         LevelUpChecker();
     }
 
-    public void ModuleExchange()
-    {
-        IncreaseExperience(xpToExchange);
-    }
-    
     void LevelUpChecker()
     {
         if (experience >= experienceCap)
         {
+            Time.timeScale       = 0;
+            Debug.Log("Level up");
             level++;
             upgradesMenu.enabled = true;
             experience -= experienceCap;
@@ -140,6 +133,11 @@ public class PlayerStats : MonoBehaviour
             
         }
     }
+    public void ModuleExchange()
+    {
+        IncreaseExperience(xpToExchange);
+    }
+    
 
     void Update()
     {

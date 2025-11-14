@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponId: 1
   prefab: {fileID: 6997200509264440334, guid: cff74ebaa97c56c4cabf8537c433bc66, type: 3}
   damage: 8
-  speed: 13
+  speed: 15
   cooldownDuration: 0.3
   pierce: 0
   description: 

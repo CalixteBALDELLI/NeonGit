@@ -5,28 +5,30 @@ using UnityEngine;
 public class ProjectileWeaponBehavior : MonoBehaviour
 {
     public WeaponScriptableObject weaponData;
-    
+    ModuleManager                 moduleManager;
+
     protected Vector3 direction;
     public float destroyAfterSeconds;
     
     //Curent stat
-    protected float currentDamage;
-    protected float currentSpeed;
-    protected float currentCooldownDuration;
-    protected int currentPierce;
-    
+    [SerializeField] protected float currentDamage;
+    [SerializeField] protected int   currentPierce;
+
     void Awake()
     {
-        currentDamage = weaponData.Damage;
-        currentSpeed = weaponData.Speed;
-        currentCooldownDuration = weaponData.CooldownDuration;
-        currentPierce = weaponData.Pierce;
+	    RefreshStats();
+    }
+
+    public void RefreshStats()
+    {
+        currentDamage           = weaponData.Damage;
+	    currentPierce           = weaponData.Pierce;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
-        Destroy(gameObject, destroyAfterSeconds);
+	    Destroy(gameObject, destroyAfterSeconds);
     }
 
     public void DirectionChecker(Vector3 dir) 
@@ -46,6 +48,7 @@ public class ProjectileWeaponBehavior : MonoBehaviour
             EnemyStat enemy = col.GetComponent<EnemyStat>();
             enemy.TakeDamage(currentDamage); //make sur to use currentDamage instead of weaponData.Damage in case of damage multiplier in the future
         	ReducePierce();
+	        Debug.Log(currentPierce);
 		}
 	}
 

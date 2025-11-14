@@ -15,7 +15,7 @@ public class ModuleManager : MonoBehaviour
     [SerializeField] public WeaponScriptableObject knockbackLvl2;
     [SerializeField] public WeaponScriptableObject knockbackLvl3;
     
-    [SerializeField]        KnifeController       weaponController;
+    [SerializeField] KnifeController weaponController;
 
     
     [HideInInspector]
@@ -28,7 +28,7 @@ public class ModuleManager : MonoBehaviour
 
     public void WeaponEquiping()
     {
-        if (equippedWeapons == 3)
+        if (equippedWeapons == 6)
         {
             Debug.Log("Inventory Full");
         }
@@ -68,6 +68,7 @@ public class ModuleManager : MonoBehaviour
 
             equippedWeapons++;
             weaponChoiceCanvas.enabled = false;
+            Time.timeScale             = 1;
             Destroy(pickedWeapon);
         }
     }
