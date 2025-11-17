@@ -76,7 +76,7 @@ public class PropagationScript : MonoBehaviour
         Propagation();
     }
 
-    
+
     void DamagingEnemy()
     {
         StartCoroutine(ChangeEnemyColor());

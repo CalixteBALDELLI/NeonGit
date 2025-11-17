@@ -51,6 +51,8 @@ public class EnemyStat : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         currentHealth -= dmg;
+        StartCoroutine(damageFlash());
+        
 
         if (currentHealth <= 0)
         {
@@ -132,5 +134,16 @@ public class EnemyStat : MonoBehaviour
     {
         propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
         StartCoroutine(propagationScript.CallDamagingEnemyRepeatedly());
+    }
+    IEnumerator damageFlash()
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(.2f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        yield return new WaitForSeconds(.2f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(.2f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        
     }
 }
