@@ -18,7 +18,7 @@ public class EnemyStat : MonoBehaviour
     [SerializeField]         PropagationScript propagationScript;
     [SerializeField]         bool              isABoss;
     [SerializeField]         GameObject        teleporterKey;
-    [SerializeField]         Canvas            KeyObtained;
+    Canvas            KeyObtained;
 
     // Current stats
     float currentMoveSpeed;
@@ -34,7 +34,7 @@ public class EnemyStat : MonoBehaviour
 
         playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
         moduleManager = GameObject.Find("GameManager").GetComponent<ModuleManager>();
-        KeyObtained = GameObject.Find("KeyObtained").GetComponent<Canvas>();
+        //KeyObtained = GameObject.Find("KeyObtained").GetComponent<Canvas>();
     }
 
     IEnumerator Knockback()

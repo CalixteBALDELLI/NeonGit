@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 578821407326725844}
   - component: {fileID: 2361722532191046951}
   - component: {fileID: 437966186553515709}
+  - component: {fileID: 1817762659312175017}
   m_Layer: 5
   m_Name: Inventory Full Message
   m_TagString: Untagged
@@ -104,6 +105,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1817762659312175017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471765662348454300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e4950ee5b280b49a963a77fc450bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &667910117247443212
 GameObject:
   m_ObjectHideFlags: 0
