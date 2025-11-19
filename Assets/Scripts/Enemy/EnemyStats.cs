@@ -85,7 +85,7 @@ public class EnemyStat : MonoBehaviour
         if (cl2D.CompareTag("PlayerSword"))
         {
             ModulesCheck();
-            TakeDamage(playerScriptableObject.damages);
+            //TakeDamage(playerScriptableObject.damages);
         }
 
         if (cl2D.CompareTag("Projectile"))
@@ -131,6 +131,7 @@ public class EnemyStat : MonoBehaviour
     public void Propage()
     {
         propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
+        Debug.Log("Collider Activated");
         StartCoroutine(propagationScript.CallDamagingEnemyRepeatedly());
     }
 }
