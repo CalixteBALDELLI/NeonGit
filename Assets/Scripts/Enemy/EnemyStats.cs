@@ -102,11 +102,10 @@ public class EnemyStat : MonoBehaviour
 
     void ModulesCheck()
     {
-        if (moduleManager.propagationAcquired == 1 && moduleManager.propagationInProgress == false)
+        if (moduleManager.propagationAcquired > 0 && moduleManager.propagationInProgress == false)
         {
+            moduleManager.propagationInProgress = true;
             Propage();
-            StartCoroutine(moduleManager.BackupTimer());
-            moduleManager.BACKUPTIMER = 0;
         }
 
         if (moduleManager.knockbackAcquired == 1)
