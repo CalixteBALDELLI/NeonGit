@@ -20,7 +20,7 @@ public class Teleporter : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D boxCollider)
     {
-        if (player.teleporterKeyObtained)
+        if (PlayerStats.SINGLETON.teleporterKeyObtained)
         {
             if (isOnFinalMap)
             {

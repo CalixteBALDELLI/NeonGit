@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class PropagationScript : MonoBehaviour
 {
+    
+    
     // Variables module Propagation
     [SerializeField] List<float>            distances      = new List<float>();
     [SerializeField] List<EnemyStat>        focusedEnemies = new List<EnemyStat>();
@@ -30,8 +32,8 @@ public class PropagationScript : MonoBehaviour
     
     void Awake()
     {
-        playerStats   = GameObject.Find("Player").GetComponent<PlayerStats>();
-        moduleManager = GameObject.Find("GameManager").GetComponent<ModuleManager>();
+        playerStats   = PlayerStats.SINGLETON;
+        moduleManager = ModuleManager.SINGLETON;
         if (moduleManager.projectileAcquired == 1)
         {
             maxPropagationSteps = 2;

@@ -5,14 +5,15 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    public static PlayerStats instance;
+    public static PlayerStats SINGLETON;
     public CharacterScriptableObject characterData;
     
     //Stats actuelles
-    //[HideInInspector] 
+    //[HideInInspector]
+    [Header("Current Stats")]
     public float                            currentPlayerDamage;
     public float                            currentHealth;
-    public float                            maxHealth; 
+    public float                            currentmaxHealth; 
     float                                   currentAutoHealthRegeneration;
     public float                            currentMoveSpeed;
     float                                   currentProjectileSpeed;
@@ -23,21 +24,23 @@ public class PlayerStats : MonoBehaviour
     public           float                  currentSwordAndModulesUpgrade;
     public           float                  currentXpGain;
     public           int                    currentMoney;
+    public           int                    xpToExchange;
+    [Header("Current Out Game Upgrades")]
     public           float                  speedToAdd;
     public           float                  critChancesToAdd;
     public           float                  swordDistanceToAdd;
     public           float                  swordRadiusToAdd;
     public           float                  swordAndModulesUpgradeToAdd;
-    public           int                    xpToExchange;
     public           bool                   teleporterKeyObtained;
+    [Header("Player GameObjects")]
     [SerializeField] SwordManager           swordManager;
     [SerializeField] GameObject             swordChildren;
-    [SerializeField] Canvas                 upgradesMenu;
+    [Header("Upgrades Data + Upgrades Menu")]
     [SerializeField] InGameUpgrades         inGameUpgrades;
     [SerializeField] OutGameUpgrades        outGameUpgrades;
     [SerializeField] OutGameUpgradesCosts   outGameUpgradesCosts;
     [SerializeField] WeaponScriptableObject swordData;
-    HUDUpdate              hudUpdater;
+    [SerializeField] Canvas                 upgradesMenu;
 
 
     //Experience and level of the player
@@ -65,16 +68,15 @@ public class PlayerStats : MonoBehaviour
 
     void Awake()
     {
-        if (instance == null)
+        if (SINGLETON == null)
         {
-            instance = this;
+            SINGLETON = this;
         }
         else
         {
             Destroy(gameObject);
         }
         StatsReset();
-        
     }
     
     
@@ -85,7 +87,7 @@ public class PlayerStats : MonoBehaviour
     {
         // Setup des variables au début du jeu selon les données par défaut
         currentHealth                 = characterData.MaxHealth;
-        maxHealth                     = characterData.MaxHealth;
+        currentmaxHealth              = characterData.MaxHealth;
         currentAutoHealthRegeneration = characterData.AutoHealthRegeneration;
         currentMoveSpeed              = characterData.MovingSpeed;
         currentProjectileSpeed        = characterData.ProjectileSpeed;
@@ -237,7 +239,7 @@ public class PlayerStats : MonoBehaviour
         float cost = outGameUpgradesCosts.maxHealth;
         if (cost < currentMoney)
         {
-            maxHealth += outGameUpgrades.maxHealth;
+            currentmaxHealth += outGameUpgrades.maxHealth;
         }
         else
         {

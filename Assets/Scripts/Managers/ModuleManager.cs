@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ModuleManager : MonoBehaviour
 {
-    [SerializeField] KnifeController      projectileController;
+    public static ModuleManager SINGLETON;
+    [SerializeField] ProjectileController      projectileController;
     [SerializeField] GameObject projectileControllerGameObject;
 
     [SerializeField] public int propagationAcquired;
@@ -17,8 +19,8 @@ public class ModuleManager : MonoBehaviour
     [SerializeField] public WeaponScriptableObject knockbackLvl2;
     [SerializeField] public WeaponScriptableObject knockbackLvl3;
     
-    [SerializeField] KnifeController weaponController;
-    [SerializeField] Canvas          inventoryFullMessage;
+    [SerializeField] ProjectileController weaponController;
+    [SerializeField] Canvas               inventoryFullMessage;
 
     public bool propagationInProgress;
     public int  currentPropagationStep;
@@ -31,6 +33,18 @@ public class ModuleManager : MonoBehaviour
     [HideInInspector]
     public int          equippedWeapons;
     Canvas              weaponChoiceCanvas;
+
+    void Awake()
+    {
+        if (SINGLETON == null)
+        {
+            SINGLETON = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void WeaponEquiping()
     {

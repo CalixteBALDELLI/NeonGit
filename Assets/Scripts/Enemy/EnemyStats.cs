@@ -13,12 +13,11 @@ public class EnemyStat : MonoBehaviour
     
     [SerializeField] CharacterScriptableObject playerScriptableObject;
     
-    [HideInInspector] public ModuleManager     moduleManager;
     [SerializeField]         GameObject        propagationCollider;
     [SerializeField]         PropagationScript propagationScript;
     [SerializeField]         bool              isABoss;
     [SerializeField]         GameObject        teleporterKey;
-    Canvas            KeyObtained;
+    Canvas                                     KeyObtained;
 
     // Current stats
     float currentMoveSpeed;
@@ -32,14 +31,12 @@ public class EnemyStat : MonoBehaviour
         currentHealth    = enemyData.MaxHealth;
         currentDamage    = enemyData.Damage;
 
-        playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
-        moduleManager = GameObject.Find("GameManager").GetComponent<ModuleManager>();
         //KeyObtained = GameObject.Find("KeyObtained").GetComponent<Canvas>();
     }
 
     IEnumerator Knockback()
     {
-        if (moduleManager.knockbackAcquired > 0)
+        if (ModuleManager.SINGLETON.knockbackAcquired > 0)
         {
             Debug.Log("Knockback");
             enemyMouvement.isKnockedBack = true;
@@ -56,7 +53,7 @@ public class EnemyStat : MonoBehaviour
         {
             if (isABoss)
             {
-                playerStats.teleporterKeyObtained = true;
+                PlayerStats.SINGLETON.teleporterKeyObtained = true;
             }
             Kill();
         }
@@ -70,7 +67,7 @@ public class EnemyStat : MonoBehaviour
 
     private void OnDestroy()
     {
-        EnemySpawner es = FindObjectOfType<EnemySpawner>();
+        EnemySpawner es = FindAnyObjectByType<EnemySpawner>();
         if (es != null)
             es.OnEnemyKilled();
     }
@@ -79,13 +76,13 @@ public class EnemyStat : MonoBehaviour
     {
         if (cl2D.CompareTag("Player"))
         {
-            playerStats.currentHealth -= enemyData.Damage;
+           PlayerStats.SINGLETON.currentHealth -= enemyData.Damage;
         }
 
         if (cl2D.CompareTag("PlayerSword"))
         {
             ModulesCheck();
-            //TakeDamage(playerScriptableObject.damages);
+            TakeDamage(playerScriptableObject.damages);
         }
 
         if (cl2D.CompareTag("Projectile"))
@@ -102,24 +99,24 @@ public class EnemyStat : MonoBehaviour
 
     void ModulesCheck()
     {
-        if (moduleManager.propagationAcquired > 0 && moduleManager.propagationInProgress == false)
+        if (ModuleManager.SINGLETON.propagationAcquired > 0 && ModuleManager.SINGLETON.propagationInProgress == false)
         {
-            moduleManager.propagationInProgress = true;
+            ModuleManager.SINGLETON.propagationInProgress = true;
             Propage();
         }
 
-        if (moduleManager.knockbackAcquired == 1)
+        if (ModuleManager.SINGLETON.knockbackAcquired == 1)
         {
             enemyMouvement.currentKnockbackForce = knockbackData[0].Speed;
             StartCoroutine(Knockback());
         }
-        else if (moduleManager.knockbackAcquired == 2)
+        else if (ModuleManager.SINGLETON.knockbackAcquired == 2)
         {
             Debug.Log("Knockback 2");
             enemyMouvement.currentKnockbackForce = knockbackData[1].Speed;
             StartCoroutine(Knockback());
         }
-        else if (moduleManager.knockbackAcquired == 3)
+        else if (ModuleManager.SINGLETON.knockbackAcquired == 3)
         {
             Debug.Log("Knockback 3");
             enemyMouvement.currentKnockbackForce = knockbackData[2].Speed;
