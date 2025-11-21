@@ -18,7 +18,7 @@ public class EnemyStat : MonoBehaviour
     [SerializeField]         PropagationScript propagationScript;
     [SerializeField]         bool              isABoss;
     [SerializeField]         GameObject        teleporterKey;
-    [SerializeField]         Canvas            KeyObtained;
+    Canvas            KeyObtained;
 
     // Current stats
     float currentMoveSpeed;
@@ -34,7 +34,7 @@ public class EnemyStat : MonoBehaviour
 
         playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
         moduleManager = GameObject.Find("GameManager").GetComponent<ModuleManager>();
-        KeyObtained = GameObject.Find("KeyObtained").GetComponent<Canvas>();
+        //KeyObtained = GameObject.Find("KeyObtained").GetComponent<Canvas>();
     }
 
     IEnumerator Knockback()
@@ -87,7 +87,7 @@ public class EnemyStat : MonoBehaviour
         if (cl2D.CompareTag("PlayerSword"))
         {
             ModulesCheck();
-            TakeDamage(playerScriptableObject.damages);
+            //TakeDamage(playerScriptableObject.damages);
         }
 
         if (cl2D.CompareTag("Projectile"))
@@ -104,11 +104,10 @@ public class EnemyStat : MonoBehaviour
 
     void ModulesCheck()
     {
-        if (moduleManager.propagationAcquired == 1 && moduleManager.propagationInProgress == false)
+        if (moduleManager.propagationAcquired > 0 && moduleManager.propagationInProgress == false)
         {
+            moduleManager.propagationInProgress = true;
             Propage();
-            StartCoroutine(moduleManager.BackupTimer());
-            moduleManager.BACKUPTIMER = 0;
         }
 
         if (moduleManager.knockbackAcquired == 1)
@@ -133,6 +132,7 @@ public class EnemyStat : MonoBehaviour
     public void Propage()
     {
         propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
+        Debug.Log("Collider Activated");
         StartCoroutine(propagationScript.CallDamagingEnemyRepeatedly());
     }
     IEnumerator damageFlash()

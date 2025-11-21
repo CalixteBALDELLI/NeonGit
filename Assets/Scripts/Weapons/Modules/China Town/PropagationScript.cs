@@ -18,12 +18,17 @@ public class PropagationScript : MonoBehaviour
     [SerializeField]         EnemyStat      enemyStat;
     [HideInInspector] public PlayerStats    playerStats;
     [HideInInspector] public ModuleManager  moduleManager;
-    [SerializeField]         Color          baseColor;
     [SerializeField]         SpriteRenderer spriteRenderer;
-    [SerializeField]         int            maxPropagationSteps;
     [SerializeField]         EnemyMouvement enemyMouvement;
+    [SerializeField]         int            maxPropagationSteps;
+    [SerializeField]         Color          baseColor;
 
-    void Start()
+    void OnTriggerEnter2D(Collider2D other) // Ajoute dans une liste tous les ennemis présents dans la HitBox.
+    {
+        focusedEnemies.Add(other.GetComponent<EnemyStat>());
+    }
+    
+    void Awake()
     {
         playerStats   = GameObject.Find("Player").GetComponent<PlayerStats>();
         moduleManager = GameObject.Find("GameManager").GetComponent<ModuleManager>();
@@ -41,100 +46,93 @@ public class PropagationScript : MonoBehaviour
         {
             maxPropagationSteps = 6;
         }
-        hitBoxCollider2D.enabled = true;
     }
 
-    void OnTriggerEnter2D(Collider2D other) // Ajoute dans une liste tous les ennemis présents dans la HitBox.
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            Debug.Log(other.name);
-            focusedEnemies.Add(other.GetComponent<EnemyStat>());
-        }
-    }
 
     public IEnumerator CallDamagingEnemyRepeatedly()
     {
+        enemyMouvement.isElectrocuted       = true;
         for (int i = 0; i < howManyTimeDamagingEnemyIsCalled; i++)
         {
-            enemyMouvement.isElectrocuted       = true;
-            moduleManager.propagationInProgress = true;
-            DamagingEnemy();
-
-            if (enemyStat.currentHealth <= 1)
-            {
-                Propagation();
-                moduleManager.propagationInProgress = true;
-                yield break;
-            }
-
+            DamageEnemy();
             yield return new WaitForSeconds(delayTimeBetweenDamage); // attend X secondes
+            if (i < howManyTimeDamagingEnemyIsCalled - 1)
+            {
+                hitBoxCollider2D.enabled      = true;
+            }
         }
-
-        Debug.Log("Boucle fini");
+        //Debug.Log("Boucle finie");
         enemyMouvement.isElectrocuted = false;
-        Propagation();
+        DistanceBetweenEnemies();
     }
 
-
-    void DamagingEnemy()
+    
+    void DamageEnemy()
     {
         StartCoroutine(ChangeEnemyColor());
         enemyStat.currentHealth -= playerStats.currentPlayerDamage / currentModuleDamages;
     }
-
-    public void Propagation()
+    
+	public void DistanceBetweenEnemies() // Mesure la distance de chacun d'eux par rapport à l'ennemi initiateur de la propagation (en excluant ce dernier) et l'ajoute dans une liste.
     {
-        Debug.Log("Propagation");
-        DistanceBetweenEnemies();
-            
-            //Debug.Log("propagationBool = false");
-            //Debug.Log("prend l'enemies frappé par l'epper et le met dans la variable enemyTargeted");
-            //Debug.Log("créer un while qui dur aussi longtemp que les stat du scriptable object du module propagation");
-            //Debug.Log("Appelle la fonction propagation Effect");
-            //Debug.Log("créé hit box autour de enemy targeted");
-            //Debug.Log("récupere tout les ennemies dans la hitbox");
-            //Debug.Log("prend le premiere ennemie stock le dans la variable closestEnemy ");
-            //Debug.Log("prend le deuxiemme enemy et compare si il est plus proche de enemy targeted que cosestEnemy n'est");
-            //Debug.Log("remplace l'enemy dans la variable si oui");
-            //Debug.Log("continue a faire ça pour chaque enemies dans la hit box");
-            //Debug.Log("puis met closestEnemy dans enemyTargeted");
-            //Debug.Log("une fois la boucle finis propagationbool = true");
-    }
-
-
-    public void DistanceBetweenEnemies() // Mesure la distance de chacun d'eux par rapport à l'ennemi initiateur de la propagation (en excluant ce dernier) et l'ajoute dans une liste.
-    {
-        Debug.Log("Distance between enemies");
+        //Debug.Log("Distance between enemies");
         focusedEnemies.Remove(enemyStat);
         foreach (EnemyStat inFocus in focusedEnemies)
         {
             distances.Add(Vector3.Distance(inFocus.transform.position, gameObject.transform.position));
         }
-        LookForSmallestDistance();
+
+        if (distances.Count > 0)
+        {
+            LookForSmallestDistance();
+        }
+        else
+        {
+            EndPropagation();
+        }
     }
 
     void LookForSmallestDistance() // Sélectionne la distance la plus petite dans la liste, correspondant à l'ennemi le plus proche de celui initiateur de la propagation.
     {
-        Debug.Log("Looking for smallest distance");
+        //Debug.Log("Looking for smallest distance");
         float minVal = distances.Min();
+        
+		//Debug.Log(minVal);
         shortestDistanceIndex = distances.IndexOf(minVal);
         TransmitToNextEnemy();
+        
     }
 
     void TransmitToNextEnemy()
     {
         if (moduleManager.currentPropagationStep < maxPropagationSteps)
         {
+            if (focusedEnemies[shortestDistanceIndex].CompareTag("Enemy"))
+            {
+            //Debug.Log(moduleManager.currentPropagationStep);
             focusedEnemies[shortestDistanceIndex].Propage();
             moduleManager.currentPropagationStep++;
+            distances.Clear();
             gameObject.SetActive(false);
+            }
+            else
+            {
+                focusedEnemies.RemoveAt(shortestDistanceIndex);
+                LookForSmallestDistance();
+            }
         }
         else if (moduleManager.currentPropagationStep == maxPropagationSteps)
         {
-            moduleManager.propagationInProgress = false;
-            moduleManager.currentPropagationStep = 0;
+            EndPropagation();
         }
+    }
+
+    void EndPropagation()
+    {
+        moduleManager.propagationInProgress  = false;
+        moduleManager.currentPropagationStep = 0;
+        distances.Clear();
+        gameObject.SetActive(false);
     }
 
     IEnumerator ChangeEnemyColor() // Changement de couleur représentant la prise de dégâts par l'ennemi

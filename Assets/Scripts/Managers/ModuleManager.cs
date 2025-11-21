@@ -19,7 +19,6 @@ public class ModuleManager : MonoBehaviour
     
     [SerializeField] KnifeController weaponController;
     [SerializeField] Canvas          inventoryFullMessage;
-    [SerializeField] public int           BACKUPTIMER = 30;
 
     public bool propagationInProgress;
     public int  currentPropagationStep;
@@ -78,30 +77,8 @@ public class ModuleManager : MonoBehaviour
             Destroy(pickedWeapon);
         }
     }
-
-    public IEnumerator BackupTimer()
-    {
-        
-        if (propagationInProgress && BACKUPTIMER == 30)
-        {
-            propagationInProgress = false;
-            BACKUPTIMER           = 0;
-        }
-        else
-        {
-            yield return new WaitForSeconds(1);
-            BACKUPTIMER++;
-            StartCoroutine(BackupTimer());
-        }
-    }
     
     
-    
-    
-    public void PropagationEffect()
-    {
-        Debug.Log("Met x degat par frame a l'ennemie et set la vitesse de l'enemie a 0.5");  
-    }
 
     public void TirEnergie()
     {

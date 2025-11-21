@@ -37,7 +37,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] OutGameUpgrades        outGameUpgrades;
     [SerializeField] OutGameUpgradesCosts   outGameUpgradesCosts;
     [SerializeField] WeaponScriptableObject swordData;
-    [SerializeField] HUDUpdate              hudUpdater;
+    HUDUpdate              hudUpdater;
 
 
     //Experience and level of the player
