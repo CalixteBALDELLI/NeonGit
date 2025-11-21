@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ModuleManager : MonoBehaviour
 {
@@ -25,14 +26,15 @@ public class ModuleManager : MonoBehaviour
     public bool propagationInProgress;
     public int  currentPropagationStep;
 
+    [SerializeField] Image[] inventoryIcons;
+    [SerializeField] Image[] inventoryBackgrounds;
+    int                      weaponIconIndex;
     
-    [HideInInspector]
-    public int          weaponToEquip;
-    [HideInInspector]
-    public GameObject   pickedWeapon;
-    [HideInInspector]
-    public int          equippedWeapons;
-    Canvas              weaponChoiceCanvas;
+    [HideInInspector] public int        weaponToEquip;
+    [HideInInspector] public Sprite     weaponToEquipSprite;
+    [HideInInspector] public GameObject pickedWeapon;
+    [HideInInspector] public int        equippedWeapons;
+    Canvas                              weaponChoiceCanvas;
 
     void Awake()
     {
@@ -59,6 +61,7 @@ public class ModuleManager : MonoBehaviour
             {
                 projectileAcquired++;
                 projectileControllerGameObject.SetActive(true);
+                InventoryUiUpdate();
             }
             else if (weaponToEquip == 0 && projectileAcquired == 1 || projectileAcquired == 2)
             {
@@ -66,10 +69,12 @@ public class ModuleManager : MonoBehaviour
                 if (projectileAcquired == 2)
                 {
                     weaponController.weaponData = projectileLvl2;
+                    InventoryUiUpdate();
                 }
                 else if (projectileAcquired == 3)
                 {
                     weaponController.weaponData = projectileLvl3;
+                    InventoryUiUpdate();
                 }
             }
             
@@ -77,11 +82,14 @@ public class ModuleManager : MonoBehaviour
             if (weaponToEquip == 1)
             {
                 knockbackAcquired++;
+                InventoryUiUpdate();
+
             }
             
             if (weaponToEquip == 2)
             {
                 propagationAcquired++;
+                InventoryUiUpdate();
             }
 
 
@@ -91,8 +99,14 @@ public class ModuleManager : MonoBehaviour
             Destroy(pickedWeapon);
         }
     }
-    
-    
+
+    void InventoryUiUpdate()
+    {
+        inventoryIcons[weaponIconIndex].sprite  = weaponToEquipSprite;
+        inventoryIcons[weaponIconIndex].enabled = true;
+        weaponIconIndex++;
+        Debug.Log(weaponIconIndex);
+    }
 
     public void TirEnergie()
     {

@@ -17,3 +17,4 @@ MonoBehaviour:
   xpValue: 100
   description: "Electrise les ennemis touch\xE9s par toute attaque. Se propage sucessivement
     \xE0 6 ennemis alentours. "
+  weaponIcon: {fileID: 64134209812282044, guid: ddea4e977feb94f4ebe946ca81bc6cc2, type: 3}

@@ -16,3 +16,4 @@ MonoBehaviour:
   weaponId: 1
   xpValue: 35
   description: "Repousse les ennemis touch\xE9s par toute attaque."
+  weaponIcon: {fileID: -5337365177324631326, guid: 39b77b34dfd268b4481bae060064f97f, type: 3}

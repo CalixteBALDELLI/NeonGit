@@ -16,11 +16,12 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
         weaponChoiceTexts.descriptionText.text = weaponCollectibleData.description;
         //weaponChoiceTexts.upgradeText.text     = weaponCollectibleData;
         //weaponChoiceTexts.damagesAndCooldownText.text = "Dégâts : " + weaponData.Damage             + " Cooldown : " + weaponData.cooldownDuration;
-        weaponChoiceTexts.xpGainText.text     = "+ "        + weaponCollectibleData.xpValue + " XP";
-        weaponChoiceCanvas.enabled            = true;
-        ModuleManager.SINGLETON.weaponToEquip = weaponCollectibleData.weaponId;
-        PlayerStats.SINGLETON.xpToExchange    = weaponCollectibleData.xpValue;
-        ModuleManager.SINGLETON.pickedWeapon  = gameObject;
+        weaponChoiceTexts.xpGainText.text           = "+ "        + weaponCollectibleData.xpValue + " XP";
+        weaponChoiceCanvas.enabled                  = true;
+        ModuleManager.SINGLETON.weaponToEquip       = weaponCollectibleData.weaponId;
+        ModuleManager.SINGLETON.weaponToEquipSprite = weaponCollectibleData.weaponIcon;
+        PlayerStats.SINGLETON.xpToExchange          = weaponCollectibleData.xpValue;
+        ModuleManager.SINGLETON.pickedWeapon        = gameObject;
         Destroy(gameObject);
     }
     
