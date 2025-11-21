@@ -1,11 +1,8 @@
-using System;
-using TMPro;
 using UnityEngine;
 
 public class WeaponChoiceUiTrigger : MonoBehaviour
 {
     Canvas                                  weaponChoiceCanvas;
-    [SerializeField] WeaponScriptableObject weaponData;
     [SerializeField] WeaponCollectibleData  weaponCollectibleData;
     WeaponChoiceTexts                       weaponChoiceTexts;
     

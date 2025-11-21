@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    public static PlayerStats SINGLETON;
-    public CharacterScriptableObject characterData;
+    public static PlayerStats               SINGLETON;
+    public        CharacterScriptableObject characterData;
+    public        bool                      hasLeveledUp;
     
     //Stats actuelles
     //[HideInInspector]
@@ -79,10 +80,6 @@ public class PlayerStats : MonoBehaviour
         StatsReset();
     }
     
-    
-    
-    
-    
     void StatsReset()
     {
         // Setup des variables au début du jeu selon les données par défaut
@@ -115,7 +112,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (experience >= experienceCap)
         {
-            Debug.Log("Level up");
+            hasLeveledUp = true;
             level++;
             upgradesMenu.enabled = true;
             Time.timeScale       = 0;
@@ -169,37 +166,44 @@ public class PlayerStats : MonoBehaviour
     // In Game Upgrades
     public void UpgradeSwordAndModulesDamage()
     {
-        currentSwordDamages += inGameUpgrades.swordAndModulesUpgrade;
+        currentSwordDamages           += inGameUpgrades.swordAndModulesUpgrade;
         currentSwordAndModulesUpgrade += inGameUpgrades.swordAndModulesUpgrade;
+        hasLeveledUp                  =  false;
     }
 
     public void UpgradeSwordDamage()
     {
         currentSwordDamages += inGameUpgrades.swordDamages;
+        hasLeveledUp        =  false;
     }
     public void UpgradeSpeed()
     {
         currentMoveSpeed += inGameUpgrades.playerSpeed;
+        hasLeveledUp     =  false;
     }
 
     public void UpgradeSwordLength()
     {
         swordChildren.transform.localScale += new Vector3(inGameUpgrades.swordLength,0,0);
+        hasLeveledUp                       =  false;
     }
 
     public void UpgradeSwordRadius()
     {
         swordManager.swingCardinalRadius += inGameUpgrades.swordRadius;
+        hasLeveledUp                     =  false;
     }
 
     public void UpgradeSwordSpeed()
     {
         currentSwordSwingSpeed += inGameUpgrades.swordSpeed;
+        hasLeveledUp           =  false;
     }
 
     public void UpgradeSwordCooldown()
     {
         currentSwordCooldown -= inGameUpgrades.swordCooldownToDecrease;
+        hasLeveledUp         =  false;
     }
 
     public void UpgradeCriticalHitChance()
@@ -213,7 +217,7 @@ public class PlayerStats : MonoBehaviour
         float cost = outGameUpgradesCosts.swordAndModulesUpgrade;
         if (cost < currentMoney)
         {
-            currentSwordAndModulesUpgrade += outGameUpgrades.swordAndModulesUpgrade; 
+            currentSwordAndModulesUpgrade += outGameUpgrades.swordAndModulesUpgrade;
         }
         else
         {
