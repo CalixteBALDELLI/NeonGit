@@ -34,6 +34,7 @@ TagManager:
   - China Town 4
   - China Town 5
   - China Town 6
+  - Projectile
   layers:
   - Default
   - TransparentFX

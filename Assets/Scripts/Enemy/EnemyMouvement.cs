@@ -6,8 +6,9 @@ public class EnemyMouvement : MonoBehaviour
     private Transform             player;
     public  bool                  isKnockedBack;
     public  EnemyStat             enemyStat;
-    public float                         currentKnockbackForce;
+    public  float                 currentKnockbackForce;
     public  Rigidbody2D           rb;
+    public  bool                  isElectrocuted;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,12 +19,12 @@ public class EnemyMouvement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isKnockedBack == false)
+        if (isKnockedBack == false && isElectrocuted == false)
         { 
             rb.linearVelocity = Vector2.zero;
             transform.position               = Vector2.MoveTowards(transform.position, player.transform.position, enemyData.MoveSpeed * Time.deltaTime);
         }
-        else
+        else if (isKnockedBack && isElectrocuted == false)
         {
             KnockbackMovement();   
         }

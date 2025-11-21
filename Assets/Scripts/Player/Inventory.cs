@@ -12,13 +12,13 @@ public class InventoryManager : MonoBehaviour
     public int          weaponToEquip;
     [HideInInspector]
     public GameObject   pickedWeapon;
-    
+
 
     public void WeaponEquiping()
     {
         if (equippedWeapons == 3)
         {
-            Debug.Log("Inventory Full");
+            
         }
         else
         {

@@ -11,11 +11,13 @@ public class DestructibleFurniture : MonoBehaviour
 	private SpriteRenderer spriteRenderer;
 	private bool           isDestroyed = false;
 	public  int            MoneyToAdd  = 10;
+	PlayerStats playerStats;
 	void Start()
 	{
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		audioSource    = GetComponent<AudioSource>();
 		if (audioSource  == null) audioSource          = gameObject.AddComponent<AudioSource>();
+		playerStats   = FindAnyObjectByType<PlayerStats>();
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -31,7 +33,7 @@ public class DestructibleFurniture : MonoBehaviour
 				
 				AudioClip clip = destructionSounds[Random.Range(0, destructionSounds.Length)];
 				audioSource.PlayOneShot(clip, volume);
-				PlayerStats.instance.AddMoney(MoneyToAdd);
+				playerStats.AddMoney(MoneyToAdd);
 					
 			}
 		}

@@ -15,5 +15,5 @@ MonoBehaviour:
   weaponName: Propagation
   weaponId: 2
   xpValue: 100
-  description: "Electrise les ennemis touch\xE9s par toute attaque. Se propage aux
-    ennemis alentours."
+  description: "Electrise les ennemis touch\xE9s par toute attaque. Se propage successivement
+    \xE0 2 ennemis alentours."

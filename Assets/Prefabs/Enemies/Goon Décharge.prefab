@@ -174,6 +174,7 @@ MonoBehaviour:
   enemyStat: {fileID: -4390385675418812344}
   currentKnockbackForce: 0
   rb: {fileID: 6970144066063837735}
+  isElectrocuted: 0
 --- !u!114 &-4390385675418812344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: b0908b8f1681ea043b44d8555ab758df, type: 2}
+  playerStats: {fileID: 0}
   knockbackData:
   - {fileID: 11400000, guid: 08b878763729bd74caf7579df7ad1687, type: 2}
   - {fileID: 11400000, guid: d78f2ea71c8d0b2479804bf50fd75c26, type: 2}
@@ -196,6 +198,7 @@ MonoBehaviour:
   playerScriptableObject: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
   moduleManager: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
   propagationCollider: {fileID: 1751900232549313019}
+  propagationScript: {fileID: 5808217629363700837}
   isABoss: 0
   teleporterKey: {fileID: 0}
   currentHealth: 0
@@ -223,13 +226,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2064473439258034773}
     m_Modifications:
+    - target: {fileID: 326990980748170173, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
+      propertyPath: enemyStat
+      value: 
+      objectReference: {fileID: -4390385675418812344}
+    - target: {fileID: 326990980748170173, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
+      propertyPath: enemyMouvement
+      value: 
+      objectReference: {fileID: 9024858487180829317}
+    - target: {fileID: 326990980748170173, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 5318108029185307242}
     - target: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.48
+      value: 0.083
       objectReference: {fileID: 0}
     - target: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.69
+      value: 1.36
       objectReference: {fileID: 0}
     - target: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -263,25 +278,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2784664642519852964, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 3544477650809912747, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
-      propertyPath: propagationAcquired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5502453454140112419, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
       propertyPath: m_Name
       value: Propagation Collider
-      objectReference: {fileID: 0}
-    - target: {fileID: 5502453454140112419, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7775800071990845135, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -298,3 +297,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
   m_PrefabInstance: {fileID: 6058286776624273368}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5808217629363700837 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 326990980748170173, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
+  m_PrefabInstance: {fileID: 6058286776624273368}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751900232549313019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff76f35ff2197c34ebc569aa53e0c083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

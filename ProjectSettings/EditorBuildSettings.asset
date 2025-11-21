@@ -32,6 +32,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/4.unity
     guid: 6e91b7fe4584abe4bb492c0dff862fba
+  - enabled: 1
+    path: Assets/Scenes/ScenesBuild/ChinaTown.unity
+    guid: a491b8277b8025144aa2a250e00c75ab
+  - enabled: 1
+    path: Assets/Scenes/ScenesBuild/Neon.unity
+    guid: 3534847f3b3e2e449927ccf5dc2c069a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

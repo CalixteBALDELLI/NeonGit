@@ -15,4 +15,5 @@ MonoBehaviour:
   weaponName: Projectile
   weaponId: 0
   xpValue: 25
-  description: "Lance un projectile qui traverse les ennemis \xE0 chaque coup d'\xE9pee."
+  description: "Lance un projectile qui traverse les ennemis \xE0 chaque coup d'\xE9pee.
+    Peut traverser 2 ennemis."

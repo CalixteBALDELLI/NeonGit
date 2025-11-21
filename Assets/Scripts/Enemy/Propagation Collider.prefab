@@ -96,7 +96,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5502453454140112419}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -150,4 +150,10 @@ MonoBehaviour:
   distances: []
   focusedEnemies: []
   hitBoxCollider2D: {fileID: 2784664642519852964}
+  currentModuleDamages: 1
+  enemyStat: {fileID: 0}
+  playerStats: {fileID: 0}
   moduleManager: {fileID: 0}
+  baseColor: {r: 0.5568628, g: 0.5568628, b: 0.5568628, a: 1}
+  spriteRenderer: {fileID: 0}
+  maxPropagationSteps: 2

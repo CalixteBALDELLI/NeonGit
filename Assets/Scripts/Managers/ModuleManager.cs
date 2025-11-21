@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ModuleManager : MonoBehaviour
@@ -16,6 +18,11 @@ public class ModuleManager : MonoBehaviour
     [SerializeField] public WeaponScriptableObject knockbackLvl3;
     
     [SerializeField] KnifeController weaponController;
+    [SerializeField] Canvas          inventoryFullMessage;
+    [SerializeField] public int           BACKUPTIMER = 30;
+
+    public bool propagationInProgress;
+    public int  currentPropagationStep;
 
     
     [HideInInspector]
@@ -30,12 +37,11 @@ public class ModuleManager : MonoBehaviour
     {
         if (equippedWeapons == 6)
         {
-            Debug.Log("Inventory Full");
+            inventoryFullMessage.enabled = true;        
         }
         else
         {
             weaponChoiceCanvas = GameObject.Find("Weapon Choice").GetComponent<Canvas>();
-            Debug.Log("equiped");
             if (weaponToEquip == 0 && projectileAcquired == 0)
             {
                 projectileAcquired++;
@@ -72,8 +78,22 @@ public class ModuleManager : MonoBehaviour
             Destroy(pickedWeapon);
         }
     }
-    
-    
+
+    public IEnumerator BackupTimer()
+    {
+        
+        if (propagationInProgress && BACKUPTIMER == 30)
+        {
+            propagationInProgress = false;
+            BACKUPTIMER           = 0;
+        }
+        else
+        {
+            yield return new WaitForSeconds(1);
+            BACKUPTIMER++;
+            StartCoroutine(BackupTimer());
+        }
+    }
     
     
     

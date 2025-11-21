@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 5331096453131454266}
   m_Layer: 8
   m_Name: Knife
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,6 +137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 17a8d5d3ab2d40340ac769ebde4c3870, type: 2}
   destroyAfterSeconds: 3
+  currentDamage: 0
+  currentPierce: 0
 --- !u!50 &5842290136543409348
 Rigidbody2D:
   serializedVersion: 5
