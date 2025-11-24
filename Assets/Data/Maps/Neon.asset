@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Neon
   m_EditorClassIdentifier: 
   mapName: Neon
-  mapId: 10
+  mapId: 5
   playerWeapons: []
   cameraFOV: 14

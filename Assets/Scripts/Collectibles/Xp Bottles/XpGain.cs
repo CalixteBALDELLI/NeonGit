@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class XpGain : MonoBehaviour
 {
-    PlayerStats                    playerStats;
     public Bottle1ScriptableObject bottleData;
     public AudioSource             recuperation;
     private Transform player;
@@ -21,8 +20,7 @@ public class XpGain : MonoBehaviour
         
         if (cl2D.gameObject.tag == "Player")
         {
-            playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
-            playerStats.IncreaseExperience(bottleData.xpGift);
+            PlayerStats.SINGLETON.IncreaseExperience(bottleData.xpGift);
 
             // Détache l'audio de l'objet
             recuperation.transform.parent = null;
