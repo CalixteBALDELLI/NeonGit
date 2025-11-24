@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2694794853207797761}
   m_Layer: 14
   m_Name: ZoneFoudre
-  m_TagString: Untagged
+  m_TagString: FoudreHitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.8562, y: 2.8562, z: 2.8562}
+  m_LocalScale: {x: 1.3652154, y: 1.3652154, z: 1.3652154}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -137,3 +137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d375250197c72f40a4fdf417658c14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStats: {fileID: 0}
+  enemyStat: {fileID: 0}
+  foudreModuleDamages: 5
+  durationFoudre: 7
+  speedDamage: 0.25
