@@ -35,6 +35,7 @@ TagManager:
   - China Town 5
   - China Town 6
   - Projectile
+  - FoudreHitBox
   layers:
   - Default
   - TransparentFX

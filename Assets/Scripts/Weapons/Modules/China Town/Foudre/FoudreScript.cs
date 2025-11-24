@@ -3,36 +3,51 @@ using UnityEngine;
 
 public class FoudreScript : MonoBehaviour
 {
+    public Transform player;
     public GameObject hitboxPrefab;
-    public float timeUntilNextAoe = 0f;
+    public float timeUntilNextAoe = 2f;
     Camera cam;
+    public bool foudreAcquired = true;
 
     void Start()
     {
         cam = Camera.main;
-        //HitZone();
+        HitZone();
+        StartCoroutine(Delay());
     }
 
     
     void HitZone()
     {
-        float x = Random.value;
-        float y = Random.value;
+        float height = cam.orthographicSize * 2f;
+        float width = height * cam.aspect;
 
-        Vector3 randomPoint = cam.ViewportToWorldPoint(new Vector3(x, y, cam.nearClipPlane));
-        randomPoint.y = 0f;
+        // centre de la caméra
+        Vector3 camPos = cam.transform.position;
 
-        Debug.Log("Point aléatoire : " + randomPoint);
+        // point aléatoire dans la zone visible
+        float randomX = Random.Range(camPos.x - width , camPos.x + width );
 
-        // Spawn hitbox
-        Instantiate(hitboxPrefab, randomPoint, Quaternion.identity);
+        // Hauteur identique au joueur
+        float randomY = Random.Range(camPos.x - height, camPos.x + height );
+
+        Vector3 spawnPoint = new Vector3(randomX, randomY, 0f);
+
+        Debug.Log("Point de spawn 2D : " + spawnPoint);
+
+        // On spawn le préfab
+        Instantiate(hitboxPrefab, spawnPoint, Quaternion.identity);
     }
 
     public IEnumerator Delay()
     {
-        Debug.unityLogger.Log("Delay");
-        yield return new WaitForSeconds(timeUntilNextAoe);
-        
+        while (foudreAcquired == true)
+        {
+            yield return new WaitForSeconds(timeUntilNextAoe);
+            HitZone();
+        }
+
+
     }
     
     
