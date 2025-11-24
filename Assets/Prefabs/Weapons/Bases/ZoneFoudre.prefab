@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3678072484325124820}
   - component: {fileID: 3414701900187877248}
   - component: {fileID: 4298677698100980019}
-  - component: {fileID: 2694794853207797761}
+  - component: {fileID: 4384074132593677021}
   m_Layer: 14
   m_Name: ZoneFoudre
   m_TagString: FoudreHitBox
@@ -125,7 +125,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 2
---- !u!114 &2694794853207797761
+--- !u!114 &4384074132593677021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 0}
-  enemyStat: {fileID: 0}
-  foudreModuleDamages: 5
-  durationFoudre: 7
+  foudreModuleDamages: 10
   speedDamage: 0.25
+  durationFoudre: 10
+  enemyStat: {fileID: 0}

@@ -56,12 +56,18 @@ public class DégatFoudreScript : MonoBehaviour
         {
             foreach (EnemyStat enemy in enemiesInZone)
             {
+                if (enemy == null) continue; // sécurité si l’ennemi meurt entre temps
+
                 Debug.Log(enemy.name + " Before Damage: " + enemy.currentHealth);
-                enemy.currentHealth -= playerStats.currentPlayerDamage * foudreModuleDamages;
+
+                enemy.TakeDamage(playerStats.currentPlayerDamage / foudreModuleDamages);
+
                 Debug.Log(enemy.name + " took damage. Health now: " + enemy.currentHealth);
             }
+
             yield return new WaitForSeconds(speedDamage);
         }
+
         isDamaging = false;
     }
 
