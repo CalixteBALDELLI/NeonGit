@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
@@ -50,8 +51,22 @@ public class EnemyStat : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
-        currentHealth -= dmg;
+        // Santé après dégâts
+        float newHealth = currentHealth - dmg;
 
+        // Afficher le texte SEULEMENT si l'ennemi survit
+        if (newHealth > 0 && dmg > 0)
+        {
+            ModuleManager.GenerateFloatingText(
+                Mathf.FloorToInt(dmg).ToString(),
+                transform
+            );
+        }
+
+        // Appliquer les dégâts
+        currentHealth = newHealth;
+
+        // Meurt → ne pas afficher de texte
         if (currentHealth <= 0)
         {
             if (isABoss)
@@ -61,6 +76,8 @@ public class EnemyStat : MonoBehaviour
             Kill();
         }
     }
+
+
 
     public void Kill()
     {

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ModuleManager : MonoBehaviour
 {
@@ -24,6 +26,12 @@ public class ModuleManager : MonoBehaviour
     public bool propagationInProgress;
     public int  currentPropagationStep;
 
+    [Header("Damage Text Settings")]
+    public Canvas damageTextCanvas;
+    public float         textFontSize = 20;
+    public TMP_FontAsset textFont;
+    public Camera        referenceCamera;
+    public static ModuleManager instance;
     
     [HideInInspector]
     public int          weaponToEquip;
@@ -94,11 +102,59 @@ public class ModuleManager : MonoBehaviour
             StartCoroutine(BackupTimer());
         }
     }
-    
-    
-    
-    
-    public void PropagationEffect()
+
+    public static void GenerateFloatingText(string text, Transform target, float duration = 1f, float speed = 1f)
+    {
+        
+        if (!instance.damageTextCanvas) return;
+        
+        if (!instance.referenceCamera) instance.referenceCamera = Camera.main;
+        
+        instance.StartCoroutine(instance.GenerateFloatingTextCoroutine(
+             text, target, duration, speed 
+        ));
+    }
+
+    IEnumerator GenerateFloatingTextCoroutine(string text, Transform target, float duration = 1f, float speed = 50f)
+    {
+        GameObject    textObj =new GameObject("Damage Floating Text");
+        RectTransform rect    = textObj.AddComponent<RectTransform>();
+        TextMeshProUGUI   tmPro   = textObj.AddComponent<TextMeshProUGUI>();
+        tmPro.text = "-"+text;
+        tmPro.horizontalAlignment = HorizontalAlignmentOptions.Center;
+        tmPro.fontSize = textFontSize;
+        if(textFont) tmPro.font = textFont;
+        rect.position = referenceCamera.WorldToScreenPoint(target.position);
+        
+        Destroy(textObj,duration);
+        
+        textObj.transform.SetParent(instance.damageTextCanvas.transform);
+        
+        WaitForEndOfFrame w = new WaitForEndOfFrame();
+        float t = 0;
+        float yOffset = 0;
+        while(t < duration)
+        {
+            
+            
+            yield return w;
+            t+=Time.deltaTime;
+
+            tmPro.color = new Color(tmPro.color.r, tmPro.color.g, tmPro.color.b, 1-t/ duration);
+            
+            yOffset += speed * Time.deltaTime;
+            rect.position = referenceCamera.WorldToScreenPoint(target.position + new Vector3(0, yOffset, 0));
+            
+            
+        }
+
+    }
+    void Awake()
+    {
+        instance = this;
+    }
+
+        public void PropagationEffect()
     {
         Debug.Log("Met x degat par frame a l'ennemie et set la vitesse de l'enemie a 0.5");  
     }
@@ -108,3 +164,5 @@ public class ModuleManager : MonoBehaviour
         Debug.Log("tire energie");
     }
 }
+
+

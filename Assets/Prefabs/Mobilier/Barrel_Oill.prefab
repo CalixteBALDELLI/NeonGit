@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructTag: PlayerSword
-  destroyedSprite: {fileID: 1525030838326562727, guid: 9c721103ed159c64098bdfaaad45bb02, type: 3}
+  destroyedSprite: {fileID: 119550002390874199, guid: d14c0144ba6d86046a5537685a224eb7, type: 3}
   destructionSounds:
   - {fileID: 8300000, guid: 013597f901acf544d8e70c2de2ff6207, type: 3}
   - {fileID: 8300000, guid: 2ec5fca7bd347f94c9f4811fdd417c3a, type: 3}
