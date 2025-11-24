@@ -64,10 +64,14 @@ public class PropagationScript : MonoBehaviour
             }
         }
         // Boucle terminée
-        enemyStat.isElectrocuted                            = false;
-        enemyMouvement.isStunned                            = false;
-        spriteRenderer.GetComponent<SpriteRenderer>().color = baseColor;
-        DistanceBetweenEnemies();
+        if (enemyStat.isDead == false)
+        {
+            enemyStat.isElectrocuted                            = false;
+            enemyMouvement.isStunned                            = false;
+            spriteRenderer.GetComponent<SpriteRenderer>().color = baseColor;
+            DistanceBetweenEnemies();
+        }
+        
     }
 
     
@@ -120,8 +124,8 @@ public class PropagationScript : MonoBehaviour
                 if (focusedEnemies[shortestDistanceIndex].CompareTag("Enemy"))
                 {
                     Debug.Log(transform.position + " Transmitted");
+                    ModuleManager.SINGLETON.currentPropagationStep++;
                     focusedEnemies[shortestDistanceIndex].Propage();
-                    moduleManager.currentPropagationStep++;
                     distances.Clear();
                     hitBoxCollider2D.enabled = false;
                     gameObject.SetActive(false);
