@@ -55,14 +55,19 @@ public class EnemyStat : MonoBehaviour
             {
                 PlayerStats.SINGLETON.teleporterKeyObtained = true;
             }
-            Kill();
+            
+            if (ModuleManager.SINGLETON.propagationAcquired > 0 && ModuleManager.SINGLETON.currentPropagationStep < propagationScript.maxPropagationSteps && ModuleManager.SINGLETON.propagationInProgress == false)
+            {
+                propagationScript.enemyDetection = true;
+                propagationScript.DistanceBetweenEnemies();
+                //Kill();
+            }
         }
     }
-
     public void Kill()
     {
-        dropRateManager.BottleDrop();
         Destroy(gameObject);
+        dropRateManager.BottleDrop();
     }
 
     private void OnDestroy()
@@ -101,8 +106,8 @@ public class EnemyStat : MonoBehaviour
     {
         if (ModuleManager.SINGLETON.propagationAcquired > 0 && ModuleManager.SINGLETON.propagationInProgress == false)
         {
-            ModuleManager.SINGLETON.propagationInProgress = true;
-            Propage();
+            //ModuleManager.SINGLETON.propagationInProgress = true;
+            //Propage();
         }
 
         if (ModuleManager.SINGLETON.knockbackAcquired == 1)
@@ -126,7 +131,7 @@ public class EnemyStat : MonoBehaviour
 
     public void Propage()
     {
-        propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
+        propagationScript.enemyDetection = true; // Active le collider et exécute le code pour la propagation.
         Debug.Log("Collider Activated");
         StartCoroutine(propagationScript.CallDamagingEnemyRepeatedly());
     }

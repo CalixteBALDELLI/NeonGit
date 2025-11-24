@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PropagationScript : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class PropagationScript : MonoBehaviour
     [SerializeField] List<float>            distances      = new List<float>();
     [SerializeField] List<EnemyStat>        focusedEnemies = new List<EnemyStat>();
     int                                     shortestDistanceIndex;
-    [SerializeField] Collider2D             hitBoxCollider2D;
+    [SerializeField] public Collider2D      hitBoxCollider2D;
     int                                     howManyTimeDamagingEnemyIsCalled = 10;
     float                                   delayTimeBetweenDamage           = 0.5f; //en seconde
     [SerializeField]         float          currentModuleDamages;
@@ -22,12 +23,17 @@ public class PropagationScript : MonoBehaviour
     [HideInInspector] public ModuleManager  moduleManager;
     [SerializeField]         SpriteRenderer spriteRenderer;
     [SerializeField]         EnemyMouvement enemyMouvement;
-    [SerializeField]         int            maxPropagationSteps;
+    [SerializeField] public  int            maxPropagationSteps;
     [SerializeField]         Color          baseColor;
+    [SerializeField] public  bool           enemyDetection;
 
     void OnTriggerEnter2D(Collider2D other) // Ajoute dans une liste tous les ennemis présents dans la HitBox.
     {
-        focusedEnemies.Add(other.GetComponent<EnemyStat>());
+        if (enemyDetection)
+        {
+            Debug.LogWarning("Enemy Dtteted");
+            focusedEnemies.Add(other.GetComponent<EnemyStat>());
+        }
     }
     
     void Awake()
@@ -60,10 +66,9 @@ public class PropagationScript : MonoBehaviour
             yield return new WaitForSeconds(delayTimeBetweenDamage); // attend X secondes
             if (i < howManyTimeDamagingEnemyIsCalled - 1)
             {
-                hitBoxCollider2D.enabled      = true;
+                enemyDetection = true;
             }
         }
-        //Debug.Log("Boucle finie");
         enemyMouvement.isElectrocuted = false;
         DistanceBetweenEnemies();
     }
@@ -81,7 +86,11 @@ public class PropagationScript : MonoBehaviour
         focusedEnemies.Remove(enemyStat);
         foreach (EnemyStat inFocus in focusedEnemies)
         {
-            distances.Add(Vector3.Distance(inFocus.transform.position, gameObject.transform.position));
+            if (inFocus != null)
+            {
+                Debug.Log("Enemy Added");
+                distances.Add(Vector3.Distance(inFocus.transform.position, gameObject.transform.position));
+            }
         }
 
         if (distances.Count > 0)
@@ -90,6 +99,7 @@ public class PropagationScript : MonoBehaviour
         }
         else
         {
+            Debug.Log("propagaton eneded");
             EndPropagation();
         }
     }
@@ -109,16 +119,18 @@ public class PropagationScript : MonoBehaviour
     {
         if (moduleManager.currentPropagationStep < maxPropagationSteps)
         {
-            if (focusedEnemies[shortestDistanceIndex].CompareTag("Enemy"))
+            if (focusedEnemies[shortestDistanceIndex].CompareTag("Enemy") && focusedEnemies[shortestDistanceIndex] != null)
             {
-            //Debug.Log(moduleManager.currentPropagationStep);
-            focusedEnemies[shortestDistanceIndex].Propage();
-            moduleManager.currentPropagationStep++;
-            distances.Clear();
-            gameObject.SetActive(false);
+                //Debug.Log(moduleManager.currentPropagationStep);
+                focusedEnemies[shortestDistanceIndex].Propage();
+                moduleManager.currentPropagationStep++;
+                distances.Clear();
+                enemyDetection = false;
+                //gameObject.SetActive(false);
             }
             else
             {
+                Debug.Log("Enemy not found");
                 focusedEnemies.RemoveAt(shortestDistanceIndex);
                 LookForSmallestDistance();
             }
@@ -134,7 +146,7 @@ public class PropagationScript : MonoBehaviour
         moduleManager.propagationInProgress  = false;
         moduleManager.currentPropagationStep = 0;
         distances.Clear();
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
     IEnumerator ChangeEnemyColor() // Changement de couleur représentant la prise de dégâts par l'ennemi
