@@ -19,23 +19,21 @@ public class FoudreScript : MonoBehaviour
     
     void HitZone()
     {
-        float height = cam.orthographicSize * 2f;
-        float width = height * cam.aspect;
+        // tailles en unité monde
+        float halfHeight = cam.orthographicSize;
+        float halfWidth = halfHeight * cam.aspect;
 
-        // centre de la caméra
+        // centre caméra
         Vector3 camPos = cam.transform.position;
 
-        // point aléatoire dans la zone visible
-        float randomX = Random.Range(camPos.x - width , camPos.x + width );
-
-        // Hauteur identique au joueur
-        float randomY = Random.Range(camPos.x - height, camPos.x + height );
+        // Point aléatoire dans la zone visible
+        float randomX = Random.Range(camPos.x - halfWidth, camPos.x + halfWidth);
+        float randomY = Random.Range(camPos.y - halfHeight, camPos.y + halfHeight);
 
         Vector3 spawnPoint = new Vector3(randomX, randomY, 0f);
 
         Debug.Log("Point de spawn 2D : " + spawnPoint);
 
-        // On spawn le préfab
         Instantiate(hitboxPrefab, spawnPoint, Quaternion.identity);
     }
 
