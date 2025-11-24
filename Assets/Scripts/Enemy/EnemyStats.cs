@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
@@ -14,13 +12,15 @@ public class EnemyStat : MonoBehaviour
     
     [SerializeField] CharacterScriptableObject playerScriptableObject;
     
-    [HideInInspector] public ModuleManager     moduleManager;
-    [SerializeField]         GameObject        propagationCollider;
-    [SerializeField]         PropagationScript propagationScript;
-    [SerializeField]         bool              isABoss;
-    [SerializeField]         GameObject        teleporterKey;
-    [SerializeField]         Canvas            KeyObtained;
-
+    [SerializeField]        GameObject        propagationCollider;
+    [SerializeField]        PropagationScript propagationScript;
+    [SerializeField]        bool              isABoss;
+    [SerializeField]        GameObject        teleporterKey;
+    [SerializeField] public bool              isElectrocuted;
+    [SerializeField] public bool              hitBySword;
+    public                  bool              isDead;
+    Canvas                                    KeyObtained;
+    
     // Current stats
     float currentMoveSpeed;
     public float currentHealth;
@@ -33,14 +33,12 @@ public class EnemyStat : MonoBehaviour
         currentHealth    = enemyData.MaxHealth;
         currentDamage    = enemyData.Damage;
 
-        playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
-        moduleManager = GameObject.Find("GameManager").GetComponent<ModuleManager>();
-        KeyObtained = GameObject.Find("KeyObtained").GetComponent<Canvas>();
+        //KeyObtained = GameObject.Find("KeyObtained").GetComponent<Canvas>();
     }
 
     IEnumerator Knockback()
     {
-        if (moduleManager.knockbackAcquired > 0)
+        if (ModuleManager.SINGLETON.knockbackAcquired > 0)
         {
             Debug.Log("Knockback");
             enemyMouvement.isKnockedBack = true;
@@ -51,43 +49,56 @@ public class EnemyStat : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
-        // Santé après dégâts
-        float newHealth = currentHealth - dmg;
+        propagationCollider.SetActive(true);
+        propagationScript.hitBoxCollider2D.enabled =  true;
+        enemyMouvement.isStunned                   =  true;
+        currentHealth                              -= dmg;
+        StartCoroutine(damageFlash());
+    }
 
-        // Afficher le texte SEULEMENT si l'ennemi survit
-        if (newHealth > 0 && dmg > 0)
-        {
-            ModuleManager.GenerateFloatingText(
-                Mathf.FloorToInt(dmg).ToString(),
-                transform
-            );
-        }
-
-        // Appliquer les dégâts
-        currentHealth = newHealth;
-
-        // Meurt → ne pas afficher de texte
+    void HealthCheck()
+    {
+        Debug.Log("Health Check");
         if (currentHealth <= 0)
         {
+            isDead = true;
             if (isABoss)
             {
-                playerStats.teleporterKeyObtained = true;
+                PlayerStats.SINGLETON.teleporterKeyObtained = true;
+            }
+            
+            if (isABoss == false && isElectrocuted && ModuleManager.SINGLETON.propagationInProgress)
+            {
+                if (ModuleManager.SINGLETON.currentPropagationStep < propagationScript.maxPropagationSteps)
+                {
+                    Debug.Log("Distance");
+                    propagationScript.DistanceBetweenEnemies();
+                    //ModuleManager.SINGLETON.currentPropagationStep--;
+                }
+                else if(ModuleManager.SINGLETON.currentPropagationStep == propagationScript.maxPropagationSteps)
+                {
+                    ModuleManager.SINGLETON.propagationInProgress = false;
+                    ModuleManager.SINGLETON.currentPropagationStep = 0;
+                }
             }
             Kill();
         }
+        else
+        {
+            propagationCollider.SetActive(false);
+            enemyMouvement.isStunned = false;
+        }
     }
-
-
 
     public void Kill()
     {
-        dropRateManager.BottleDrop();
         Destroy(gameObject);
+        dropRateManager.BottleDrop();
     }
 
     private void OnDestroy()
     {
-        EnemySpawner es = FindObjectOfType<EnemySpawner>();
+        EnemySpawner es = FindAnyObjectByType<EnemySpawner>();
         if (es != null)
             es.OnEnemyKilled();
     }
@@ -96,7 +107,7 @@ public class EnemyStat : MonoBehaviour
     {
         if (cl2D.CompareTag("Player"))
         {
-            playerStats.currentHealth -= enemyData.Damage;
+           PlayerStats.SINGLETON.currentHealth -= enemyData.Damage;
         }
 
         if (cl2D.CompareTag("PlayerSword"))
@@ -119,25 +130,24 @@ public class EnemyStat : MonoBehaviour
 
     void ModulesCheck()
     {
-        if (moduleManager.propagationAcquired == 1 && moduleManager.propagationInProgress == false)
+        if (ModuleManager.SINGLETON.propagationAcquired > 0 && ModuleManager.SINGLETON.propagationInProgress == false)
         {
+            ModuleManager.SINGLETON.propagationInProgress = true;
             Propage();
-            StartCoroutine(moduleManager.BackupTimer());
-            moduleManager.BACKUPTIMER = 0;
         }
 
-        if (moduleManager.knockbackAcquired == 1)
+        if (ModuleManager.SINGLETON.knockbackAcquired == 1)
         {
             enemyMouvement.currentKnockbackForce = knockbackData[0].Speed;
             StartCoroutine(Knockback());
         }
-        else if (moduleManager.knockbackAcquired == 2)
+        else if (ModuleManager.SINGLETON.knockbackAcquired == 2)
         {
             Debug.Log("Knockback 2");
             enemyMouvement.currentKnockbackForce = knockbackData[1].Speed;
             StartCoroutine(Knockback());
         }
-        else if (moduleManager.knockbackAcquired == 3)
+        else if (ModuleManager.SINGLETON.knockbackAcquired == 3)
         {
             Debug.Log("Knockback 3");
             enemyMouvement.currentKnockbackForce = knockbackData[2].Speed;
@@ -148,6 +158,19 @@ public class EnemyStat : MonoBehaviour
     public void Propage()
     {
         propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
+        Debug.Log("Collider Activated");
         StartCoroutine(propagationScript.CallDamagingEnemyRepeatedly());
+    }
+    IEnumerator damageFlash()
+    {
+        enemyMouvement.isStunned                          = true;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(.2f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        yield return new WaitForSeconds(.2f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(.2f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        HealthCheck();
     }
 }

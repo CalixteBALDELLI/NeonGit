@@ -1,20 +1,13 @@
-using System;
-using TMPro;
 using UnityEngine;
 
 public class WeaponChoiceUiTrigger : MonoBehaviour
 {
     Canvas                                  weaponChoiceCanvas;
-    [SerializeField] WeaponScriptableObject weaponData;
     [SerializeField] WeaponCollectibleData  weaponCollectibleData;
-    ModuleManager                           moduleManager;
-    PlayerStats                             playerStats;
     WeaponChoiceTexts                       weaponChoiceTexts;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        playerStats                            = GameObject.Find("Player").GetComponent<PlayerStats>();
-        moduleManager                          = GameObject.Find("GameManager").GetComponent<ModuleManager>();
         weaponChoiceCanvas                     = GameObject.Find("Weapon Choice").GetComponent<Canvas>();
         weaponChoiceTexts                      = weaponChoiceCanvas.GetComponent<WeaponChoiceTexts>();
         Time.timeScale                         = 0;
@@ -23,27 +16,13 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
         weaponChoiceTexts.descriptionText.text = weaponCollectibleData.description;
         //weaponChoiceTexts.upgradeText.text     = weaponCollectibleData;
         //weaponChoiceTexts.damagesAndCooldownText.text = "Dégâts : " + weaponData.Damage             + " Cooldown : " + weaponData.cooldownDuration;
-        weaponChoiceTexts.xpGainText.text             = "+ "        + weaponCollectibleData.xpValue + " XP";
-        weaponChoiceCanvas.enabled             = true;
-        moduleManager.weaponToEquip            = weaponCollectibleData.weaponId;
-        playerStats.xpToExchange               = weaponCollectibleData.xpValue;
-        moduleManager.pickedWeapon             = gameObject;
+        weaponChoiceTexts.xpGainText.text           = "+ "        + weaponCollectibleData.xpValue + " XP";
+        weaponChoiceCanvas.enabled                  = true;
+        ModuleManager.SINGLETON.weaponToEquip       = weaponCollectibleData.weaponId;
+        ModuleManager.SINGLETON.weaponToEquipSprite = weaponCollectibleData.weaponIcon;
+        PlayerStats.SINGLETON.xpToExchange          = weaponCollectibleData.xpValue;
+        ModuleManager.SINGLETON.pickedWeapon        = gameObject;
         Destroy(gameObject);
     }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-        
-        //button.onClick.AddListener(WeaponEquiping);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     
 }

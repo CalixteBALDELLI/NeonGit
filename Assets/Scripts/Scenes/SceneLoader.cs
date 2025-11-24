@@ -1,8 +1,6 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -17,18 +15,9 @@ public class SceneLoader : MonoBehaviour
         buttonText.text = mapData.mapName;
         playerCamera = Camera.main;
     }
-
-    private void OnDestroy()
-    {
-        
-    }
     public void LoadScene()
     {
-        Debug.Log("LOAD");
-        DontDestroyOnLoad(GameObject.Find("Player"));
-        DontDestroyOnLoad(GameObject.Find("GameManager"));
         SceneManager.LoadScene(mapData.mapId);
         playerCamera.fieldOfView = mapData.cameraFOV;
     }
-
 }

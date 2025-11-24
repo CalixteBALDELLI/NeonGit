@@ -174,7 +174,7 @@ MonoBehaviour:
   enemyStat: {fileID: -4390385675418812344}
   currentKnockbackForce: 0
   rb: {fileID: 6970144066063837735}
-  isElectrocuted: 0
+  isStunned: 0
 --- !u!114 &-4390385675418812344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,11 +196,12 @@ MonoBehaviour:
   dropRateManager: {fileID: 1161815033490814516}
   enemyMouvement: {fileID: 9024858487180829317}
   playerScriptableObject: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
-  moduleManager: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
   propagationCollider: {fileID: 1751900232549313019}
-  propagationScript: {fileID: 0}
+  propagationScript: {fileID: 5808217629363700837}
   isABoss: 1
   teleporterKey: {fileID: 1696656462747023363, guid: c08e5787a1c008245926913678fd7790, type: 3}
+  isElectrocuted: 0
+  hitBySword: 0
   currentHealth: 0
 --- !u!114 &1161815033490814516
 MonoBehaviour:
@@ -297,3 +298,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
   m_PrefabInstance: {fileID: 6058286776624273368}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5808217629363700837 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 326990980748170173, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
+  m_PrefabInstance: {fileID: 6058286776624273368}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751900232549313019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff76f35ff2197c34ebc569aa53e0c083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

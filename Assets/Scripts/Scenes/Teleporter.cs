@@ -9,7 +9,7 @@ public class Teleporter : MonoBehaviour
     //GameObject       player;
     
     GameObject                   triggeredTeleporter;
-    [SerializeField] bool isOnfinalMap;
+    [SerializeField] bool isOnFinalMap;
     [SerializeField] PlayerStats player;
     [SerializeField] Canvas      lockedMessage;
     [SerializeField] Canvas      victoryScreen;
@@ -20,9 +20,9 @@ public class Teleporter : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D boxCollider)
     {
-        if (player.teleporterKeyObtained)
+        if (PlayerStats.SINGLETON.teleporterKeyObtained)
         {
-            if (isOnfinalMap)
+            if (isOnFinalMap)
             {
                 victoryScreen.enabled = true;
                 Time.timeScale = 0;

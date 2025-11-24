@@ -15,28 +15,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/Menu Options.unity
     guid: e23ed1978b63c254d956aa37cef2ef35
   - enabled: 1
-    path: "Assets/Scenes/ScenesBuild/D\xE9charge.unity"
+    path: "Assets/Scenes/Jeu/D\xE9charge.unity"
     guid: 8cd1c529d0f57614e80140d8dc37cabc
   - enabled: 1
-    path: Assets/Scenes/Test.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/Scenes/1.unity
-    guid: b7775820e7165e34ca44c2bb24397be6
-  - enabled: 1
-    path: Assets/Scenes/2.unity
-    guid: c46f393ca342b3e4ca0bfe1e92c6075a
-  - enabled: 1
-    path: Assets/Scenes/3.unity
-    guid: 8402673aa30c17e4ebaef75615dc1f94
-  - enabled: 1
-    path: Assets/Scenes/4.unity
-    guid: 6e91b7fe4584abe4bb492c0dff862fba
-  - enabled: 1
-    path: Assets/Scenes/ScenesBuild/ChinaTown.unity
+    path: Assets/Scenes/Jeu/ChinaTown.unity
     guid: a491b8277b8025144aa2a250e00c75ab
   - enabled: 1
-    path: Assets/Scenes/ScenesBuild/Neon.unity
+    path: Assets/Scenes/Jeu/Neon.unity
     guid: 3534847f3b3e2e449927ccf5dc2c069a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

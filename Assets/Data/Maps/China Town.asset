@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: China Town
   m_EditorClassIdentifier: 
   mapName: China Town
-  mapId: 9
+  mapId: 4
   playerWeapons: []
   cameraFOV: 17

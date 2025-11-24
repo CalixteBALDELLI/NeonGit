@@ -8,13 +8,13 @@ using Vector3 = UnityEngine.Vector3;
 public class SwordManager : MonoBehaviour
 {
     //public SwordRotation  playerSword;
-    [SerializeField] private GameObject      playerSwordGameObject;
-    [SerializeField] private PlayerMovement  player;
-    [SerializeField]         PlayerStats     playerStats;
-    [SerializeField] public  float           swingCardinalRadius;
-    [SerializeField]         KnifeController projectile;
-    [SerializeField]         ModuleManager   moduleManager;
-    [SerializeField]         bool            logValues;
+    [SerializeField] private GameObject           playerSwordGameObject;
+    [SerializeField] private PlayerMovement       player;
+    [SerializeField]         PlayerStats          playerStats;
+    [SerializeField] public  float                swingCardinalRadius;
+    [SerializeField]         ProjectileController projectile;
+    [SerializeField]         ModuleManager        moduleManager;
+    [SerializeField]         bool                 logValues;
     
     private bool  rotationActivated;
     Vector3       swordDirection;
@@ -68,7 +68,7 @@ public class SwordManager : MonoBehaviour
     {
         currentRotation            = Mathf.Lerp(angle, targetPosition, timeCount);
         transform.localEulerAngles = new Vector3(0, 0, currentRotation);
-        timeCount                  = timeCount += playerStats.currentSwordSwingSpeed * Time.deltaTime;
+        timeCount                  = timeCount += PlayerStats.SINGLETON.currentSwordSwingSpeed * Time.deltaTime;
     }
 
     void Update()

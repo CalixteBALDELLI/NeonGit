@@ -269,3 +269,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottleData: {fileID: 11400000, guid: 84471d9762d9a2a4fbf1e2f81dbf09dd, type: 2}
   recuperation: {fileID: 5257179560728460891}
+  speedBottle: 10

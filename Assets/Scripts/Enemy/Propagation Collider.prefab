@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7775800071990845135}
   - component: {fileID: 2784664642519852964}
   - component: {fileID: 326990980748170173}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Propagation Collider
   m_TagString: PropagationCollider
   m_Icon: {fileID: 0}
@@ -154,6 +154,8 @@ MonoBehaviour:
   enemyStat: {fileID: 0}
   playerStats: {fileID: 0}
   moduleManager: {fileID: 0}
-  baseColor: {r: 0.5568628, g: 0.5568628, b: 0.5568628, a: 1}
   spriteRenderer: {fileID: 0}
+  enemyMouvement: {fileID: 0}
   maxPropagationSteps: 2
+  baseColor: {r: 0.5568628, g: 0.5568628, b: 0.5568628, a: 1}
+  enemyDetection: 0
