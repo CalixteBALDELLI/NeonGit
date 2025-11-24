@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
@@ -13,12 +12,14 @@ public class EnemyStat : MonoBehaviour
     
     [SerializeField] CharacterScriptableObject playerScriptableObject;
     
-    [SerializeField]         GameObject        propagationCollider;
-    [SerializeField]         PropagationScript propagationScript;
-    [SerializeField]         bool              isABoss;
-    [SerializeField]         GameObject        teleporterKey;
-    Canvas                                     KeyObtained;
-
+    [SerializeField]        GameObject        propagationCollider;
+    [SerializeField]        PropagationScript propagationScript;
+    [SerializeField]        bool              isABoss;
+    [SerializeField]        GameObject        teleporterKey;
+    [SerializeField] public bool              isElectrocuted;
+    [SerializeField]        bool              hitBySword;
+    Canvas                                    KeyObtained;
+    
     // Current stats
     float currentMoveSpeed;
     public float currentHealth;
@@ -47,24 +48,54 @@ public class EnemyStat : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
-        currentHealth -= dmg;
+        propagationCollider.SetActive(true);
+        propagationScript.hitBoxCollider2D.enabled =  true;
+        enemyMouvement.isStunned                   =  true;
+        currentHealth                              -= dmg;
         StartCoroutine(damageFlash());
-        
+    }
 
+    void HealthCheck()
+    {
+        Debug.Log("Health Check");
         if (currentHealth <= 0)
         {
             if (isABoss)
             {
                 PlayerStats.SINGLETON.teleporterKeyObtained = true;
             }
+            
+            if (isABoss == false && isElectrocuted && ModuleManager.SINGLETON.propagationInProgress)
+            {
+                if (ModuleManager.SINGLETON.currentPropagationStep < propagationScript.maxPropagationSteps)
+                {
+                    Debug.Log("Distance");
+                    propagationScript.DistanceBetweenEnemies();
+                    if (hitBySword)
+                    {
+                        ModuleManager.SINGLETON.currentPropagationStep--;
+                    }
+                }
+                else if(ModuleManager.SINGLETON.currentPropagationStep == propagationScript.maxPropagationSteps)
+                {
+                    ModuleManager.SINGLETON.propagationInProgress = false;
+                    ModuleManager.SINGLETON.currentPropagationStep = 0;
+                }
+            }
             Kill();
+        }
+        else
+        {
+            hitBySword = false;
+            propagationCollider.SetActive(false);
+            enemyMouvement.isStunned = false;
         }
     }
 
     public void Kill()
     {
-        dropRateManager.BottleDrop();
         Destroy(gameObject);
+        dropRateManager.BottleDrop();
     }
 
     private void OnDestroy()
@@ -134,6 +165,7 @@ public class EnemyStat : MonoBehaviour
     }
     IEnumerator damageFlash()
     {
+        enemyMouvement.isStunned                          = true;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(.2f);
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
@@ -141,6 +173,6 @@ public class EnemyStat : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(.2f);
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        
+        HealthCheck();
     }
 }

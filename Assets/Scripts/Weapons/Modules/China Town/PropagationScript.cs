@@ -1,8 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PropagationScript : MonoBehaviour
@@ -13,7 +11,7 @@ public class PropagationScript : MonoBehaviour
     [SerializeField] List<float>            distances      = new List<float>();
     [SerializeField] List<EnemyStat>        focusedEnemies = new List<EnemyStat>();
     int                                     shortestDistanceIndex;
-    [SerializeField] Collider2D             hitBoxCollider2D;
+    [SerializeField] public Collider2D      hitBoxCollider2D;
     int                                     howManyTimeDamagingEnemyIsCalled = 10;
     float                                   delayTimeBetweenDamage           = 0.5f; //en seconde
     [SerializeField]         float          currentModuleDamages;
@@ -22,7 +20,7 @@ public class PropagationScript : MonoBehaviour
     [HideInInspector] public ModuleManager  moduleManager;
     [SerializeField]         SpriteRenderer spriteRenderer;
     [SerializeField]         EnemyMouvement enemyMouvement;
-    [SerializeField]         int            maxPropagationSteps;
+    [SerializeField] public  int            maxPropagationSteps;
     [SerializeField]         Color          baseColor;
 
     void OnTriggerEnter2D(Collider2D other) // Ajoute dans une liste tous les ennemis présents dans la HitBox.
@@ -53,35 +51,43 @@ public class PropagationScript : MonoBehaviour
 
     public IEnumerator CallDamagingEnemyRepeatedly()
     {
-        enemyMouvement.isElectrocuted       = true;
+        
+        enemyStat.isElectrocuted = true;
+        enemyMouvement.isStunned = true;
         for (int i = 0; i < howManyTimeDamagingEnemyIsCalled; i++)
         {
             DamageEnemy();
             yield return new WaitForSeconds(delayTimeBetweenDamage); // attend X secondes
             if (i < howManyTimeDamagingEnemyIsCalled - 1)
             {
-                hitBoxCollider2D.enabled      = true;
+                hitBoxCollider2D.enabled = true;
             }
         }
-        //Debug.Log("Boucle finie");
-        enemyMouvement.isElectrocuted = false;
+        // Boucle terminée
+        enemyStat.isElectrocuted                            = false;
+        enemyMouvement.isStunned                            = false;
+        spriteRenderer.GetComponent<SpriteRenderer>().color = baseColor;
         DistanceBetweenEnemies();
     }
 
     
     void DamageEnemy()
     {
-        StartCoroutine(ChangeEnemyColor());
-        enemyStat.currentHealth -= playerStats.currentPlayerDamage / currentModuleDamages;
+        spriteRenderer.GetComponent<SpriteRenderer>().color = Color.yellow;
+        enemyStat.TakeDamage(playerStats.currentPlayerDamage / currentModuleDamages);
     }
     
 	public void DistanceBetweenEnemies() // Mesure la distance de chacun d'eux par rapport à l'ennemi initiateur de la propagation (en excluant ce dernier) et l'ajoute dans une liste.
     {
-        //Debug.Log("Distance between enemies");
+        Debug.Log("Distance between enemies");
         focusedEnemies.Remove(enemyStat);
         foreach (EnemyStat inFocus in focusedEnemies)
         {
-            distances.Add(Vector3.Distance(inFocus.transform.position, gameObject.transform.position));
+            if (inFocus != null)
+            {
+                Debug.Log("Enemy Added");
+                distances.Add(Vector3.Distance(inFocus.transform.position, gameObject.transform.position));
+            }
         }
 
         if (distances.Count > 0)
@@ -90,37 +96,42 @@ public class PropagationScript : MonoBehaviour
         }
         else
         {
+            Debug.Log("propagaton eneded");
             EndPropagation();
         }
     }
 
     void LookForSmallestDistance() // Sélectionne la distance la plus petite dans la liste, correspondant à l'ennemi le plus proche de celui initiateur de la propagation.
     {
-        //Debug.Log("Looking for smallest distance");
+        Debug.Log("Looking for smallest distance");
         float minVal = distances.Min();
         
 		//Debug.Log(minVal);
         shortestDistanceIndex = distances.IndexOf(minVal);
         TransmitToNextEnemy();
-        
     }
 
     void TransmitToNextEnemy()
     {
         if (moduleManager.currentPropagationStep < maxPropagationSteps)
         {
-            if (focusedEnemies[shortestDistanceIndex].CompareTag("Enemy"))
+            if (focusedEnemies[shortestDistanceIndex] != null)
             {
-            //Debug.Log(moduleManager.currentPropagationStep);
-            focusedEnemies[shortestDistanceIndex].Propage();
-            moduleManager.currentPropagationStep++;
-            distances.Clear();
-            gameObject.SetActive(false);
-            }
-            else
-            {
-                focusedEnemies.RemoveAt(shortestDistanceIndex);
-                LookForSmallestDistance();
+                if (focusedEnemies[shortestDistanceIndex].CompareTag("Enemy"))
+                {
+                    Debug.Log(transform.position + " Transmitted");
+                    focusedEnemies[shortestDistanceIndex].Propage();
+                    moduleManager.currentPropagationStep++;
+                    distances.Clear();
+                    hitBoxCollider2D.enabled = false;
+                    gameObject.SetActive(false);
+                }
+                else
+                {
+                    Debug.Log("Enemy not found");
+                    focusedEnemies.RemoveAt(shortestDistanceIndex);
+                    LookForSmallestDistance();
+                }
             }
         }
         else if (moduleManager.currentPropagationStep == maxPropagationSteps)
