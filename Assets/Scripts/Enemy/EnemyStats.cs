@@ -17,14 +17,19 @@ public class EnemyStat : MonoBehaviour
     [SerializeField]        bool              isABoss;
     [SerializeField]        GameObject        teleporterKey;
     [SerializeField] public bool              isElectrocuted;
-    [SerializeField]        bool              hitBySword;
+    [SerializeField] public bool              hitBySword;
+    public                  bool              isDead;
     Canvas                                    KeyObtained;
+
     
     // Current stats
     float currentMoveSpeed;
     public float currentHealth;
     float currentDamage;
-
+    
+    [Header("Audio")]
+    public  AudioClip Damage;
+    public  AudioClip kill;
     void Awake()
     {
         // Initialisation des stats
@@ -49,17 +54,27 @@ public class EnemyStat : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         propagationCollider.SetActive(true);
-        propagationScript.hitBoxCollider2D.enabled =  true;
-        enemyMouvement.isStunned                   =  true;
-        currentHealth                              -= dmg;
+        propagationScript.hitBoxCollider2D.enabled = true;
+        enemyMouvement.isStunned                   = true;
+
+        currentHealth -= dmg;
+
+        
+        if (currentHealth > 0)
+        {
+            ModuleManager.GenerateFloatingText(dmg.ToString(), transform);
+        }
+
         StartCoroutine(damageFlash());
     }
 
+    
     void HealthCheck()
     {
         Debug.Log("Health Check");
         if (currentHealth <= 0)
         {
+            isDead = true;
             if (isABoss)
             {
                 PlayerStats.SINGLETON.teleporterKeyObtained = true;
@@ -71,10 +86,7 @@ public class EnemyStat : MonoBehaviour
                 {
                     Debug.Log("Distance");
                     propagationScript.DistanceBetweenEnemies();
-                    if (hitBySword)
-                    {
-                        ModuleManager.SINGLETON.currentPropagationStep--;
-                    }
+                    //ModuleManager.SINGLETON.currentPropagationStep--;
                 }
                 else if(ModuleManager.SINGLETON.currentPropagationStep == propagationScript.maxPropagationSteps)
                 {
@@ -86,7 +98,6 @@ public class EnemyStat : MonoBehaviour
         }
         else
         {
-            hitBySword = false;
             propagationCollider.SetActive(false);
             enemyMouvement.isStunned = false;
         }
