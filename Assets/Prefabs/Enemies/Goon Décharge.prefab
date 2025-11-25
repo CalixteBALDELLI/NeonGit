@@ -174,7 +174,7 @@ MonoBehaviour:
   enemyStat: {fileID: -4390385675418812344}
   currentKnockbackForce: 0
   rb: {fileID: 6970144066063837735}
-  isElectrocuted: 0
+  isStunned: 0
 --- !u!114 &-4390385675418812344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +200,12 @@ MonoBehaviour:
   propagationScript: {fileID: 5808217629363700837}
   isABoss: 0
   teleporterKey: {fileID: 0}
+  isElectrocuted: 0
+  hitBySword: 0
+  isDead: 0
   currentHealth: 0
+  Damage: {fileID: 8300000, guid: 41961aaa321b6fb409bb1ce12e907c20, type: 3}
+  kill: {fileID: 8300000, guid: 41961aaa321b6fb409bb1ce12e907c20, type: 3}
 --- !u!114 &1161815033490814516
 MonoBehaviour:
   m_ObjectHideFlags: 0

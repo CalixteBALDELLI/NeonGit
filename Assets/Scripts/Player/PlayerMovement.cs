@@ -52,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
         {
             lastHorizontalVector = 0;
             
-            
         }
         
         if (moveDirection.x != 0)

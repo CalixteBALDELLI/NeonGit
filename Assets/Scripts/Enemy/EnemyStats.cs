@@ -19,12 +19,16 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] public bool              isElectrocuted;
     [SerializeField] public bool              hitBySword;
     Canvas                                    KeyObtained;
+
     
     // Current stats
     float currentMoveSpeed;
     public float currentHealth;
     float currentDamage;
-
+    
+    [Header("Audio")]
+    public  AudioClip Damage;
+    public  AudioClip kill;
     void Awake()
     {
         // Initialisation des stats
