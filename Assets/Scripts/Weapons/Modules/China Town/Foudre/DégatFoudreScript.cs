@@ -32,7 +32,7 @@ public class DégatFoudreScript : MonoBehaviour
                 if (!isDamaging)
                 {
                     isDamaging = true;
-                    StartCoroutine(DamageEnemies());
+                    StartCoroutine(DamageEnemiesFoudre());
                 }
             }
         }
@@ -50,7 +50,7 @@ public class DégatFoudreScript : MonoBehaviour
         }
     }
 
-    IEnumerator DamageEnemies()
+    IEnumerator DamageEnemiesFoudre()
     {
         while (enemiesInZone.Count > 0)
         {

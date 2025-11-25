@@ -56,7 +56,7 @@ public class PropagationScript : MonoBehaviour
         enemyMouvement.isStunned = true;
         for (int i = 0; i < howManyTimeDamagingEnemyIsCalled; i++)
         {
-            DamageEnemy();
+            DamageEnemyPropagation();
             yield return new WaitForSeconds(delayTimeBetweenDamage); // attend X secondes
             if (i < howManyTimeDamagingEnemyIsCalled - 1)
             {
@@ -71,7 +71,7 @@ public class PropagationScript : MonoBehaviour
     }
 
     
-    void DamageEnemy()
+    void DamageEnemyPropagation()
     {
         spriteRenderer.GetComponent<SpriteRenderer>().color = Color.yellow;
         enemyStat.TakeDamage(playerStats.currentPlayerDamage / currentModuleDamages);
