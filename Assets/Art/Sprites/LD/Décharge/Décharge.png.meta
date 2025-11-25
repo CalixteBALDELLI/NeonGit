@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3202145a786f2804b9531aa4fa055c37
+guid: 341a718c652250246949bf645713933b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5778109613707237557
-    second: Neon_0
+      213: 7342546631438593744
+    second: "D\xE9charge_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -178,13 +178,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Neon_0
+      name: "D\xE9charge_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 8000
-        height: 8000
+        width: 4000
+        height: 4000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5b81a467418ff2050800000000000000
-      internalID: 5778109613707237557
+      spriteID: 0de63a14247f5e560800000000000000
+      internalID: 7342546631438593744
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Neon_0: 5778109613707237557
+      "D\xE9charge_0": 7342546631438593744
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

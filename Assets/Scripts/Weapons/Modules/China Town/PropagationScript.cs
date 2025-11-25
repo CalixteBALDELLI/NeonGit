@@ -64,32 +64,30 @@ public class PropagationScript : MonoBehaviour
             }
         }
         // Boucle terminée
-        if (enemyStat.isDead == false)
-        {
-            enemyStat.isElectrocuted                            = false;
-            enemyMouvement.isStunned                            = false;
-            spriteRenderer.GetComponent<SpriteRenderer>().color = baseColor;
-            DistanceBetweenEnemies();
-        }
+        Debug.Log("Boucle finie");
         
+        enemyStat.isElectrocuted                            = false;
+        enemyMouvement.isStunned                            = false;
+        spriteRenderer.GetComponent<SpriteRenderer>().color = baseColor;
+        DistanceBetweenEnemies();
     }
 
     
     void DamageEnemy()
     {
-        spriteRenderer.GetComponent<SpriteRenderer>().color = Color.yellow;
-        enemyStat.TakeDamage(playerStats.currentPlayerDamage / currentModuleDamages);
+        enemyStat.currentHealth -= currentModuleDamages / playerStats.currentPlayerDamage;
+        StartCoroutine(ChangeEnemyColor());
     }
     
 	public void DistanceBetweenEnemies() // Mesure la distance de chacun d'eux par rapport à l'ennemi initiateur de la propagation (en excluant ce dernier) et l'ajoute dans une liste.
     {
-        Debug.Log("Distance between enemies");
+        Debug.Log(transform.position + "Added Distances between enemies");
         focusedEnemies.Remove(enemyStat);
         foreach (EnemyStat inFocus in focusedEnemies)
         {
             if (inFocus != null)
             {
-                Debug.Log("Enemy Added");
+//                Debug.Log("Enemy Added");
                 distances.Add(Vector3.Distance(inFocus.transform.position, gameObject.transform.position));
             }
         }
@@ -100,14 +98,14 @@ public class PropagationScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("propagaton eneded");
+//            Debug.Log("propagaton eneded");
             EndPropagation();
         }
     }
 
     void LookForSmallestDistance() // Sélectionne la distance la plus petite dans la liste, correspondant à l'ennemi le plus proche de celui initiateur de la propagation.
     {
-        Debug.Log("Looking for smallest distance");
+        Debug.Log(transform.position + "Looked for smallest distance");
         float minVal = distances.Min();
         
 		//Debug.Log(minVal);
@@ -123,10 +121,15 @@ public class PropagationScript : MonoBehaviour
             {
                 if (focusedEnemies[shortestDistanceIndex].CompareTag("Enemy"))
                 {
-                    Debug.Log(transform.position + " Transmitted");
+                    Debug.LogWarning(transform.position + " Transmitted");
                     ModuleManager.SINGLETON.currentPropagationStep++;
                     focusedEnemies[shortestDistanceIndex].Propage();
                     distances.Clear();
+                    enemyStat.HealthCheck();
+                    if (enemyStat.hitBySword)
+                    {
+                        enemyStat.TakeDamage(playerStats.currentPlayerDamage);
+                    }
                     hitBoxCollider2D.enabled = false;
                     gameObject.SetActive(false);
                 }
@@ -144,7 +147,7 @@ public class PropagationScript : MonoBehaviour
         }
     }
 
-    void EndPropagation()
+    public void EndPropagation()
     {
         moduleManager.propagationInProgress  = false;
         moduleManager.currentPropagationStep = 0;
@@ -154,7 +157,7 @@ public class PropagationScript : MonoBehaviour
 
     IEnumerator ChangeEnemyColor() // Changement de couleur représentant la prise de dégâts par l'ennemi
     {
-        spriteRenderer.GetComponent<SpriteRenderer>().color = Color.yellow;
+        spriteRenderer.GetComponent<SpriteRenderer>().color = Color.yellow; // A CHANGER EN UN GLISSER DEPOSER
         yield return new WaitForSeconds(0.25f);
         spriteRenderer.GetComponent<SpriteRenderer>().color = baseColor;
     }

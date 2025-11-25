@@ -18,7 +18,6 @@ public class EnemyStat : MonoBehaviour
     [SerializeField]        GameObject        teleporterKey;
     [SerializeField] public bool              isElectrocuted;
     [SerializeField] public bool              hitBySword;
-    public                  bool              isDead;
     Canvas                                    KeyObtained;
     
     // Current stats
@@ -49,43 +48,42 @@ public class EnemyStat : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
-        propagationCollider.SetActive(true);
-        propagationScript.hitBoxCollider2D.enabled =  true;
         enemyMouvement.isStunned                   =  true;
         currentHealth                              -= dmg;
-        StartCoroutine(damageFlash());
+        StartCoroutine(DamageFlash());
+        if (isElectrocuted == false)
+        {
+            HealthCheck();
+        }
+    }
+    // ReSharper disable Unity.PerformanceAnalysis
+    public IEnumerator DamageFlash()
+    {
+        Debug.Log(transform.position + "DamageFlash");
+        enemyMouvement.isStunned                          = true;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(.2f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        yield return new WaitForSeconds(.2f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(.2f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+
     }
 
-    void HealthCheck()
+    public void HealthCheck()
     {
         Debug.Log("Health Check");
         if (currentHealth <= 0)
         {
-            isDead = true;
             if (isABoss)
             {
                 PlayerStats.SINGLETON.teleporterKeyObtained = true;
-            }
-            
-            if (isABoss == false && isElectrocuted && ModuleManager.SINGLETON.propagationInProgress)
-            {
-                if (ModuleManager.SINGLETON.currentPropagationStep < propagationScript.maxPropagationSteps)
-                {
-                    Debug.Log("Distance");
-                    propagationScript.DistanceBetweenEnemies();
-                    //ModuleManager.SINGLETON.currentPropagationStep--;
-                }
-                else if(ModuleManager.SINGLETON.currentPropagationStep == propagationScript.maxPropagationSteps)
-                {
-                    ModuleManager.SINGLETON.propagationInProgress = false;
-                    ModuleManager.SINGLETON.currentPropagationStep = 0;
-                }
             }
             Kill();
         }
         else
         {
-            propagationCollider.SetActive(false);
             enemyMouvement.isStunned = false;
         }
     }
@@ -112,8 +110,15 @@ public class EnemyStat : MonoBehaviour
 
         if (cl2D.CompareTag("PlayerSword"))
         {
-            ModulesCheck();
-            TakeDamage(playerScriptableObject.damages);
+            if (ModuleManager.SINGLETON.propagationAcquired == 0 || ModuleManager.SINGLETON.propagationInProgress)
+            {
+                TakeDamage(playerScriptableObject.damages);
+            }
+            else
+            {
+                hitBySword = true;
+                ModulesCheck();
+            }
         }
 
         if (cl2D.CompareTag("Projectile"))
@@ -157,20 +162,9 @@ public class EnemyStat : MonoBehaviour
 
     public void Propage()
     {
+        Debug.Log(transform.position + "Propaged");
         propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
-        Debug.Log("Collider Activated");
+//        Debug.Log("Collider Activated");
         StartCoroutine(propagationScript.CallDamagingEnemyRepeatedly());
-    }
-    IEnumerator damageFlash()
-    {
-        enemyMouvement.isStunned                          = true;
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        yield return new WaitForSeconds(.2f);
-        gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        yield return new WaitForSeconds(.2f);
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        yield return new WaitForSeconds(.2f);
-        gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        HealthCheck();
     }
 }

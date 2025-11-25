@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 3202145a786f2804b9531aa4fa055c37
+guid: ca50eaf1d36a4cb498c26591efedf688
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5778109613707237557
-    second: Neon_0
+      213: -4346244404228752641
+    second: Arrow_0
+  - first:
+      213: -6662812116773042688
+    second: Arrow_1
+  - first:
+      213: -2292719611878453243
+    second: Arrow_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -178,23 +184,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Neon_0
+      name: Arrow_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 8000
-        height: 8000
+        x: 47
+        y: 267
+        width: 635
+        height: 206
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5b81a467418ff2050800000000000000
-      internalID: 5778109613707237557
+      spriteID: 3a402c43f54e35c49806c29f0047e0d6
+      internalID: 859454205
       vertices: []
       indices: 
       edges: []
@@ -203,7 +209,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2f248d8cf9b4b8e44bac743de9b17148
     internalID: 0
     vertices: []
     indices: 
@@ -213,7 +219,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Neon_0: 5778109613707237557
+      Arrow_0: -4346244404228752641
+      Arrow_1: -6662812116773042688
+      Arrow_2: -2292719611878453243
+      Arrow_3: 859454205
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
