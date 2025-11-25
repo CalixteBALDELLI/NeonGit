@@ -20,12 +20,16 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] public bool              hitBySword;
     public                  bool              isDead;
     Canvas                                    KeyObtained;
+
     
     // Current stats
     float currentMoveSpeed;
     public float currentHealth;
     float currentDamage;
-
+    
+    [Header("Audio")]
+    public  AudioClip Damage;
+    public  AudioClip kill;
     void Awake()
     {
         // Initialisation des stats
@@ -50,12 +54,21 @@ public class EnemyStat : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         propagationCollider.SetActive(true);
-        propagationScript.hitBoxCollider2D.enabled =  true;
-        enemyMouvement.isStunned                   =  true;
-        currentHealth                              -= dmg;
+        propagationScript.hitBoxCollider2D.enabled = true;
+        enemyMouvement.isStunned                   = true;
+
+        currentHealth -= dmg;
+
+        
+        if (currentHealth > 0)
+        {
+            ModuleManager.GenerateFloatingText(dmg.ToString(), transform);
+        }
+
         StartCoroutine(damageFlash());
     }
 
+    
     void HealthCheck()
     {
         Debug.Log("Health Check");
