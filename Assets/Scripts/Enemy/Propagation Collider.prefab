@@ -158,4 +158,4 @@ MonoBehaviour:
   enemyMouvement: {fileID: 0}
   maxPropagationSteps: 2
   baseColor: {r: 0.5568628, g: 0.5568628, b: 0.5568628, a: 1}
-  enemyDetection: 0
+  colliderDisabled: 0

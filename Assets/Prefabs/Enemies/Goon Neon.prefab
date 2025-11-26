@@ -36,6 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5193179677398412695}
+  - {fileID: 1925137745191784710}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5318108029185307242
@@ -174,7 +175,7 @@ MonoBehaviour:
   enemyStat: {fileID: -4390385675418812344}
   currentKnockbackForce: 0
   rb: {fileID: 6970144066063837735}
-  isElectrocuted: 0
+  isStunned: 0
 --- !u!114 &-4390385675418812344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,12 +197,17 @@ MonoBehaviour:
   dropRateManager: {fileID: 1161815033490814516}
   enemyMouvement: {fileID: 9024858487180829317}
   playerScriptableObject: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
-  moduleManager: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
   propagationCollider: {fileID: 1751900232549313019}
   propagationScript: {fileID: 5808217629363700837}
   isABoss: 0
   teleporterKey: {fileID: 0}
+  isElectrocuted: 0
+  hitBySword: 0
+  hitBoxCollider2D: {fileID: 0}
+  attacker: {fileID: 0}
   currentHealth: 0
+  Damage: {fileID: 0}
+  kill: {fileID: 0}
 --- !u!114 &1161815033490814516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +244,10 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 5318108029185307242}
+    - target: {fileID: 326990980748170173, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
+      propertyPath: electrocutionLight
+      value: 
+      objectReference: {fileID: 4791758991643201492}
     - target: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.48
@@ -306,5 +316,78 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff76f35ff2197c34ebc569aa53e0c083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &8346107389191898181
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2064473439258034773}
+    m_Modifications:
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898014330321174964, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_Name
+      value: Electrocution Light
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+--- !u!4 &1925137745191784710 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+  m_PrefabInstance: {fileID: 8346107389191898181}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4791758991643201492 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3579494297200135057, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+  m_PrefabInstance: {fileID: 8346107389191898181}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -19,6 +19,8 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] public bool              isElectrocuted;
     [SerializeField] public bool              hitBySword;
     Canvas                                    KeyObtained;
+    [SerializeField] public Collider2D        hitBoxCollider2D;
+    public EnemyStat                                 attacker;
 
     
     // Current stats
@@ -63,7 +65,7 @@ public class EnemyStat : MonoBehaviour
     // ReSharper disable Unity.PerformanceAnalysis
     public IEnumerator DamageFlash()
     {
-        Debug.Log(transform.position + "DamageFlash");
+//        Debug.Log(transform.position + "DamageFlash");
         enemyMouvement.isStunned                          = true;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(.2f);
@@ -77,13 +79,14 @@ public class EnemyStat : MonoBehaviour
 
     public void HealthCheck()
     {
-        Debug.Log("Health Check");
+        Debug.Log(transform.position + " Health Check");
         if (currentHealth <= 0)
         {
             if (isABoss)
             {
                 PlayerStats.SINGLETON.teleporterKeyObtained = true;
             }
+            Debug.LogWarning(transform.position + " DIED");
             Kill();
         }
         else
@@ -141,7 +144,7 @@ public class EnemyStat : MonoBehaviour
     {
         if (ModuleManager.SINGLETON.propagationAcquired > 0 && ModuleManager.SINGLETON.propagationInProgress == false)
         {
-            ModuleManager.SINGLETON.propagationInProgress = true;
+            //ModuleManager.SINGLETON.propagationInProgress = true;
             Propage();
         }
 
@@ -167,8 +170,10 @@ public class EnemyStat : MonoBehaviour
     public void Propage()
     {
         Debug.Log(transform.position + "Propaged");
-        propagationCollider.SetActive(true); // Active le collider et exécute le code pour la propagation.
-//        Debug.Log("Collider Activated");
-        StartCoroutine(propagationScript.CallDamagingEnemyRepeatedly());
+        propagationCollider.SetActive(true);
+        //StartCoroutine(propagationScript.CheckColliderActivation());
+        // Active le collider et exécute le code pour la propagation.
+//      Debug.Log("Collider Activated");
+         //propagationScript.DistanceBetweenEnemies();
     }
 }
