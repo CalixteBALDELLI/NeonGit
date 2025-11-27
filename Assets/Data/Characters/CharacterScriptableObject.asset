@@ -20,4 +20,4 @@ MonoBehaviour:
   might: 0
   projectileSpeed: 5
   autoHealthRegeneration: 0
-  damages: 1
+  damages: 0

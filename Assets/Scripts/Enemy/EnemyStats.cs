@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using NUnit.Framework;
+using Unity.VisualScripting;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
+
 
 public class EnemyStat : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
     [HideInInspector] public PlayerStats playerStats;
-    public WeaponScriptableObject[] knockbackData;
     
     [SerializeField] DropRateManager dropRateManager;
     [SerializeField] EnemyMouvement enemyMouvement;
@@ -23,6 +26,7 @@ public class EnemyStat : MonoBehaviour
     Canvas                                    KeyObtained;
     [SerializeField] public Collider2D        hitBoxCollider2D;
     public EnemyStat                                 attacker;
+    public Vector3 spawnPosition;
     
     // Current stats
     float currentMoveSpeed;
@@ -39,19 +43,11 @@ public class EnemyStat : MonoBehaviour
         currentHealth    = enemyData.MaxHealth;
         currentDamage    = enemyData.Damage;
 
+        spawnPosition = transform.position;
         //KeyObtained = GameObject.Find("KeyObtained").GetComponent<Canvas>();
     }
 
-    IEnumerator Knockback()
-    {
-        if (ModuleManager.SINGLETON.knockbackAcquired > 0)
-        {
-            Debug.Log("Knockback");
-            enemyMouvement.isKnockedBack = true;
-            yield return new WaitForSeconds(0.5f);
-            enemyMouvement.isKnockedBack = false;
-        }
-    }
+    
 
     public void TakeDamage(float dmg)
     {
@@ -121,6 +117,7 @@ public class EnemyStat : MonoBehaviour
             if (ModuleManager.SINGLETON.propagationAcquired == 0 || ModuleManager.SINGLETON.propagationInProgress)
             {
                 TakeDamage(playerScriptableObject.damages);
+                ModulesCheck();
             }
             else
             {
@@ -133,14 +130,24 @@ public class EnemyStat : MonoBehaviour
         {
             ModulesCheck();
         }
-
-        if (cl2D.CompareTag("Enemy"))
-        {
-            //EnemyStat touchedEnemy = cl2D.GetComponent<EnemyStat>;
-            
-        }
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collision");
+        if (enemyMouvement.isKnockedBack)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                //Debug.Log(collision.gameObject.name);    
+                EnemyMouvement touchedEnemyMouvement = collision.gameObject.GetComponent<EnemyMouvement>();
+                Debug.Log(touchedEnemyMouvement.currentKnockbackForce);
+                touchedEnemyMouvement.KnockbackSetup();
+                //EnemyStat touchedEnemy = cl2D.GetComponent<EnemyStat>;
+            }
+        }
+    }
+    
     void ModulesCheck()
     {
         if (ModuleManager.SINGLETON.propagationAcquired > 0 && ModuleManager.SINGLETON.propagationInProgress == false)
@@ -149,22 +156,9 @@ public class EnemyStat : MonoBehaviour
             Propage();
         }
 
-        if (ModuleManager.SINGLETON.knockbackAcquired == 1)
+        if (ModuleManager.SINGLETON.knockbackAcquired > 0)
         {
-            enemyMouvement.currentKnockbackForce = knockbackData[0].Speed;
-            StartCoroutine(Knockback());
-        }
-        else if (ModuleManager.SINGLETON.knockbackAcquired == 2)
-        {
-            Debug.Log("Knockback 2");
-            enemyMouvement.currentKnockbackForce = knockbackData[1].Speed;
-            StartCoroutine(Knockback());
-        }
-        else if (ModuleManager.SINGLETON.knockbackAcquired == 3)
-        {
-            Debug.Log("Knockback 3");
-            enemyMouvement.currentKnockbackForce = knockbackData[2].Speed;
-            StartCoroutine(Knockback());
+            enemyMouvement.KnockbackSetup();
         }
     }
 
