@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,19 +31,23 @@ public class ModuleManager : MonoBehaviour
     [SerializeField] Image[] inventoryIcons;
     [SerializeField] Image[] inventoryBackgrounds;
     int                      weaponIconIndex;
+    public Sprite[]          modulesIcons;
+    public List<int>         currentEquipedModules = new List<int>();
+    
     
     [HideInInspector] public int        weaponToEquip;
     [HideInInspector] public Sprite     weaponToEquipSprite;
     [HideInInspector] public GameObject pickedWeapon;
-    [HideInInspector] public int        equippedWeapons;
+    public                   int        equippedWeapons;
     Canvas                              weaponChoiceCanvas;
 
     [Header("Damage Text Settings")]
     public Canvas damageTextCanvas;
     public        float         textFontSize = 20;
-    public        TMP_Asset textFont;
+    public        TMP_Asset     textFont;
     public        Camera        referenceCamera;
     public static ModuleManager instance;
+
     void Awake()
     {
         if (SINGLETON == null)
@@ -57,7 +62,7 @@ public class ModuleManager : MonoBehaviour
 
     public void WeaponEquiping()
     {
-        
+        Debug.LogWarning("Module Equiped");
         instance = this;
         
         if (equippedWeapons == 6)
@@ -67,58 +72,49 @@ public class ModuleManager : MonoBehaviour
         else
         {
             weaponChoiceCanvas = GameObject.Find("Weapon Choice").GetComponent<Canvas>();
-            if (weaponToEquip == 0 && projectileAcquired == 0)
+            if (weaponToEquip == 0 && projectileAcquired == 0) // Equipement du Projectile
             {
                 projectileAcquired++;
                 projectileControllerGameObject.SetActive(true);
-                InventoryUiUpdate();
             }
-            else if (weaponToEquip == 0 && projectileAcquired == 1 || projectileAcquired == 2)
+            else if (weaponToEquip == 0 && projectileAcquired == 1 || projectileAcquired == 2) 
             {
                 projectileAcquired++;
                 if (projectileAcquired == 2)
                 {
                     weaponController.weaponData = projectileLvl2;
-                    InventoryUiUpdate();
-                }
+
+                }   
                 else if (projectileAcquired == 3)
                 {
                     weaponController.weaponData = projectileLvl3;
-                    InventoryUiUpdate();
                 }
             }
             
-            
-            if (weaponToEquip == 1)
+            if (weaponToEquip == 1) // Equipement du Knockback
             {
                 knockbackAcquired++;
-                InventoryUiUpdate();
-
             }
             
-            if (weaponToEquip == 2)
+            if (weaponToEquip == 2) // Equipement de la Propagation
             {
                 propagationAcquired++;
-                InventoryUiUpdate();
             }
-
 
             equippedWeapons++;
             weaponChoiceCanvas.enabled = false;
             Time.timeScale             = 1;
+            InventoryUiUpdate();
             Destroy(pickedWeapon);
         }
     }
     public static void GenerateFloatingText(string text, Transform target, float duration = 1f, float speed = 1f)
     {
-        
         if (!instance.damageTextCanvas) return;
         
         if (!instance.referenceCamera) instance.referenceCamera = Camera.main;
         
-        instance.StartCoroutine(instance.GenerateFloatingTextCoroutine(
-                                    text, target, duration, speed 
-                                ));
+        instance.StartCoroutine(instance.GenerateFloatingTextCoroutine(text, target, duration, speed));
     }
     
     
@@ -152,22 +148,29 @@ public class ModuleManager : MonoBehaviour
             
             yOffset       += speed * Time.deltaTime;
             rect.position =  referenceCamera.WorldToScreenPoint(target.position + new Vector3(0, yOffset, 0));
-            
-            
         }
 
     }
 
     void InventoryUiUpdate()
     {
-        inventoryIcons[weaponIconIndex].sprite  = weaponToEquipSprite;
-        inventoryIcons[weaponIconIndex].enabled = true;
-        weaponIconIndex++;
-        Debug.Log(weaponIconIndex);
-    }
-
-    public void TirEnergie()
-    {
-        Debug.Log("tire energie");
+        Debug.LogWarning("Inventory UI Update");
+        currentEquipedModules.Add(weaponToEquip);
+        Debug.Log("Added Module : " + weaponToEquip);
+        currentEquipedModules.Sort();
+        //int equippedModuleIconIndex = 0;
+        int inventoryIndex = 0;
+        foreach (int equippedModule in currentEquipedModules)
+        {
+            Debug.Log("Inventory Index : " + inventoryIndex);
+            Debug.Log("Eqquiped Module : " + equippedModule);
+            inventoryIcons[inventoryIndex].enabled = true;
+            inventoryIcons[inventoryIndex].sprite = modulesIcons[equippedModule];
+            inventoryIndex++;
+        }
+        //inventoryIcons[weaponIconIndex].sprite  = weaponToEquipSprite;
+        //inventoryIcons[weaponIconIndex].enabled = true;
+        //weaponIconIndex++;
+        //Debug.Log(weaponIconIndex);
     }
 }

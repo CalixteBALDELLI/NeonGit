@@ -49,7 +49,7 @@ public class PropagationScript : MonoBehaviour
         
         if (enemyStat.hitBySword)
         {
-            Debug.LogWarning(spawnPosition + " Hit by sword");
+            //Debug.LogWarning(spawnPosition + " Hit by sword");
         }
         enemyStat.isElectrocuted = true;
         hitBoxCollider2D.enabled = true;
@@ -63,7 +63,7 @@ public class PropagationScript : MonoBehaviour
         do
         {
             yield return null;
-            Debug.Log(spawnPosition + " Collider Not Effective");
+            //Debug.Log(spawnPosition + " Collider Not Effective");
 
         } while (enemiesAdded == false);
         
@@ -74,7 +74,7 @@ public class PropagationScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) // Ajoute dans une liste tous les ennemis présents dans la HitBox.
     {
-        Debug.Log(spawnPosition + " Has Detected : " + other.name);
+        //Debug.Log(spawnPosition + " Has Detected : " + other.name);
         focusedEnemies.Add(other.GetComponent<EnemyStat>());
         enemiesAdded = true;
     }
@@ -82,7 +82,7 @@ public class PropagationScript : MonoBehaviour
     // Mesure la distance de chacun d'eux par rapport à l'ennemi initiateur de la propagation (en excluant ce dernier) et l'ajoute dans une liste.
 	public void DistanceBetweenEnemies()
     {
-        Debug.Log(spawnPosition + "Added Distances between enemies");
+        //Debug.Log(spawnPosition + "Added Distances between enemies");
         hitBoxCollider2D.enabled = false;
         distances.Clear();
         focusedEnemies.Remove(enemyStat);
@@ -91,7 +91,7 @@ public class PropagationScript : MonoBehaviour
         {
             if (inFocus != null)
             {
-                Debug.Log(spawnPosition + " Added : " +  inFocus.name + " to the List.");
+//                Debug.Log(spawnPosition + " Added : " +  inFocus.name + " to the List.");
                 distances.Add(Vector3.Distance(inFocus.transform.position, gameObject.transform.position));
             }
         }
@@ -104,16 +104,16 @@ public class PropagationScript : MonoBehaviour
     {
         if (distances.Count > 0)
         {
-            Debug.Log(spawnPosition + "Looked for smallest distance");
+            //Debug.Log(spawnPosition + "Looked for smallest distance");
             float minVal = distances.Min();
             shortestDistanceIndex = distances.IndexOf(minVal);
-            Debug.Log(spawnPosition + " INDEX : "        + shortestDistanceIndex);
-            Debug.Log(spawnPosition + " Electrocuted : " + enemyStat.isElectrocuted);
+            //Debug.Log(spawnPosition + " INDEX : "        + shortestDistanceIndex);
+            //Debug.Log(spawnPosition + " Electrocuted : " + enemyStat.isElectrocuted);
             TransmitToNextEnemy();
         }
         else
         { 
-            Debug.Log(spawnPosition + " No enemy detected : Propagation Ended");
+            //Debug.Log(spawnPosition + " No enemy detected : Propagation Ended");
             EndPropagation();
         }
     }
@@ -124,14 +124,14 @@ public class PropagationScript : MonoBehaviour
         {
             if (focusedEnemies[shortestDistanceIndex] != null && focusedEnemies[shortestDistanceIndex].CompareTag("Enemy") && focusedEnemies[shortestDistanceIndex].isElectrocuted == false)
             {
-                Debug.LogWarning(spawnPosition + " Transmitted");
+                //Debug.LogWarning(spawnPosition + " Transmitted");
                 ModuleManager.SINGLETON.currentPropagationStep++;
                 focusedEnemies[shortestDistanceIndex].Propage();
                 focusedEnemies[shortestDistanceIndex].attacker = enemyStat;
             }
             else
             {
-                Debug.Log(spawnPosition + " Target Enemy was Dead");
+                //Debug.Log(spawnPosition + " Target Enemy was Dead");
                 focusedEnemies.RemoveAt(shortestDistanceIndex);
                 distances.RemoveAt(shortestDistanceIndex);
                 LookForSmallestDistance();
@@ -160,7 +160,7 @@ public class PropagationScript : MonoBehaviour
             yield return new WaitForSeconds(delayTimeBetweenDamage); // attend X secondes
         }
         // Boucle terminée
-        Debug.Log(spawnPosition + " Boucle finie");
+        //Debug.Log(spawnPosition + " Boucle finie");
         spriteRenderer.GetComponent<SpriteRenderer>().color = baseColor;
         if (moduleManager.currentPropagationStep == maxPropagationSteps)
         {

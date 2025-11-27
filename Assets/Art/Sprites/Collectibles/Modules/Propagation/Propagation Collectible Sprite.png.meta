@@ -178,7 +178,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pngtree-electric-lightning-bolt-logo-for-your-needs-png-image_9154879-removebg-preview_0
+      name: Propagation Collectible Sprite
       rect:
         serializedVersion: 2
         x: 145
@@ -186,7 +186,7 @@ TextureImporter:
         width: 209
         height: 398
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -203,7 +203,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 35d94cef560adf44ebdf20f1cdeb9d51
     internalID: 0
     vertices: []
     indices: 
@@ -213,7 +213,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pngtree-electric-lightning-bolt-logo-for-your-needs-png-image_9154879-removebg-preview_0: 64134209812282044
+      Propagation Collectible Sprite: 64134209812282044
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
@@ -21,7 +23,6 @@ public class EnemyStat : MonoBehaviour
     Canvas                                    KeyObtained;
     [SerializeField] public Collider2D        hitBoxCollider2D;
     public EnemyStat                                 attacker;
-
     
     // Current stats
     float currentMoveSpeed;
@@ -79,14 +80,14 @@ public class EnemyStat : MonoBehaviour
 
     public void HealthCheck()
     {
-        Debug.Log(transform.position + " Health Check");
+        //Debug.Log(transform.position + " Health Check");
         if (currentHealth <= 0)
         {
             if (isABoss)
             {
                 PlayerStats.SINGLETON.teleporterKeyObtained = true;
             }
-            Debug.LogWarning(transform.position + " DIED");
+//            Debug.LogWarning(transform.position + " DIED");
             Kill();
         }
         else
@@ -169,7 +170,7 @@ public class EnemyStat : MonoBehaviour
 
     public void Propage()
     {
-        Debug.Log(transform.position + "Propaged");
+//        Debug.Log(transform.position + "Propaged");
         propagationCollider.SetActive(true);
         //StartCoroutine(propagationScript.CheckColliderActivation());
         // Active le collider et exécute le code pour la propagation.

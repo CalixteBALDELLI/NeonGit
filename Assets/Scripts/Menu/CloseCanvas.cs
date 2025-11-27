@@ -8,7 +8,7 @@ public class CloseCanvas : MonoBehaviour
     public void DisableCanvas()
     {
         canvasComponent.enabled = false;
-        Debug.Log("COLLEC");
+//        Debug.Log("COLLEC");
         if (PlayerStats.SINGLETON.hasLeveledUp == false)
         {
             Time.timeScale        = 1;

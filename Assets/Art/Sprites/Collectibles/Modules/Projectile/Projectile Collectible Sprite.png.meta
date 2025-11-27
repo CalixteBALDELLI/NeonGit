@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 86bc8c8321ae4f44f86bda3822a263d3
+guid: 8b82b1b1e89a22340ac8887798340ae7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5337365177324631326
-    second: 7912267f517825e767b05b3f6dcb4f20-removebg-preview_0
-  - first:
-      213: -2967311585920143376
-    second: 7912267f517825e767b05b3f6dcb4f20-removebg-preview_1
+      213: 6989642852348889387
+    second: images-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -181,45 +178,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 7912267f517825e767b05b3f6dcb4f20-removebg-preview_0
+      name: Projectile Collectible Sprite
       rect:
         serializedVersion: 2
-        x: 62
-        y: 43
-        width: 250
-        height: 240
+        x: 81
+        y: 25
+        width: 104
+        height: 146
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 250, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2ea860956aedde5b0800000000000000
-      internalID: -5337365177324631326
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 7912267f517825e767b05b3f6dcb4f20-removebg-preview_1
-      rect:
-        serializedVersion: 2
-        x: 322
-        y: 108
-        width: 294
-        height: 110
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1050bc218f88bb842969037d064f58a7
-      internalID: -2967311585920143376
+      spriteID: b298a193423300160800000000000000
+      internalID: 6989642852348889387
       vertices: []
       indices: 
       edges: []
@@ -228,7 +203,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e684c0efcd6d07a4ba48ecfcd3a67a4e
+    spriteID: d01c6a67bd92a4b4fb6ee529e3b2799b
     internalID: 0
     vertices: []
     indices: 
@@ -238,8 +213,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      7912267f517825e767b05b3f6dcb4f20-removebg-preview_0: -5337365177324631326
-      7912267f517825e767b05b3f6dcb4f20-removebg-preview_1: -2967311585920143376
+      Projectile Collectible Sprite: 6989642852348889387
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
