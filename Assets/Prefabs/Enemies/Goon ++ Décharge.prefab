@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -4390385675418812344}
   - component: {fileID: 1161815033490814516}
   m_Layer: 3
-  m_Name: Goon ++ Decharge
+  m_Name: "Goon ++ D\xE9charge"
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

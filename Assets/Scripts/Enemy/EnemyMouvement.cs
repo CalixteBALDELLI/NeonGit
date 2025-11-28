@@ -13,6 +13,9 @@ public class EnemyMouvement : MonoBehaviour
     public           bool                     isStunned;
     [SerializeField] bool                     DONOTMOVE;
     public           WeaponScriptableObject[] knockbackData;
+    public           int                      currentKnockbackStep;
+    public           int                      maxKnockbackSteps;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,36 +40,55 @@ public class EnemyMouvement : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
         }
     }
-    
-    
+
+
     public void KnockbackSetup()
     {
-        if (ModuleManager.SINGLETON.knockbackAcquired == 1)
+        //maxKnockbackSteps = knockbackData[ModuleManager.SINGLETON.knockbackAcquired - 1].maxKnockBackSteps;
+        if (currentKnockbackStep < knockbackData[ModuleManager.SINGLETON.knockbackAcquired - 1].maxKnockBackSteps)
         {
-           currentKnockbackForce = knockbackData[0].Speed;
-           StartCoroutine(KnockbackStart());
+            //Debug.Log(enemyStat.spawnPosition + "Max Knockback Steps :  " + maxKnockbackSteps);
+            if (ModuleManager.SINGLETON.knockbackAcquired == 1)
+            {
+                currentKnockbackForce = knockbackData[ModuleManager.SINGLETON.knockbackAcquired - 1].knockbackForce;
+                if (currentKnockbackStep > 0)
+                {
+                    currentKnockbackForce /= currentKnockbackStep;
+                    Debug.Log(enemyStat.spawnPosition + " Knockback Force : " + currentKnockbackForce);
+                }
+
+                StartCoroutine(KnockbackStart());
+            }
+            else if (ModuleManager.SINGLETON.knockbackAcquired == 2)
+            {
+                Debug.Log("Knockback 2");
+                currentKnockbackForce = knockbackData[1].knockbackForce;
+                StartCoroutine(KnockbackStart());
+            }
+            else if (ModuleManager.SINGLETON.knockbackAcquired == 3)
+            {
+                Debug.Log("Knockback 3");
+                currentKnockbackForce = knockbackData[2].knockbackForce;
+                StartCoroutine(KnockbackStart());
+            }
         }
-        else if (ModuleManager.SINGLETON.knockbackAcquired == 2)
+        else
         {
-            Debug.Log("Knockback 2");
-            currentKnockbackForce = knockbackData[1].Speed;
-            StartCoroutine(KnockbackStart());
-        }
-        else if (ModuleManager.SINGLETON.knockbackAcquired == 3)
-        {
-            Debug.Log("Knockback 3");
-            currentKnockbackForce = knockbackData[2].Speed;
-            StartCoroutine(KnockbackStart());
+            Debug.Log(enemyStat.spawnPosition + " Max Knockbacks Reached");
+            currentKnockbackStep = 0;
         }
     }
+
     IEnumerator KnockbackStart()
         {
             if (ModuleManager.SINGLETON.knockbackAcquired > 0)
             {
-                Debug.Log(gameObject.name + " Knockback");
+//                Debug.Log(gameObject.name + " Knockback");
                 isKnockedBack = true;
                 yield return new WaitForSeconds(0.5f);
-                isKnockedBack = false;
+                isKnockedBack        = false;
+                currentKnockbackStep = 0;
+                //Debug.Log(enemyStat.spawnPosition + " Knockback Movement Finished");
             }
         }
     void KnockbackMovement()

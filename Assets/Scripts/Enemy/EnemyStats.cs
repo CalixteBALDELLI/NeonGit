@@ -10,7 +10,6 @@ using Vector3 = UnityEngine.Vector3;
 public class EnemyStat : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
-    [HideInInspector] public PlayerStats playerStats;
     
     [SerializeField] DropRateManager dropRateManager;
     [SerializeField] EnemyMouvement enemyMouvement;
@@ -25,8 +24,8 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] public bool              hitBySword;
     Canvas                                    KeyObtained;
     [SerializeField] public Collider2D        hitBoxCollider2D;
-    public EnemyStat                                 attacker;
-    public Vector3 spawnPosition;
+    public                  EnemyStat         attacker;
+    public                  Vector3           spawnPosition;
     
     // Current stats
     float currentMoveSpeed;
@@ -116,7 +115,7 @@ public class EnemyStat : MonoBehaviour
         {
             if (ModuleManager.SINGLETON.propagationAcquired == 0 || ModuleManager.SINGLETON.propagationInProgress)
             {
-                TakeDamage(playerScriptableObject.damages);
+                //TakeDamage(playerScriptableObject.damages);
                 ModulesCheck();
             }
             else
@@ -134,16 +133,18 @@ public class EnemyStat : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision");
+//        Debug.Log("Collision");
         if (enemyMouvement.isKnockedBack)
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
                 //Debug.Log(collision.gameObject.name);    
                 EnemyMouvement touchedEnemyMouvement = collision.gameObject.GetComponent<EnemyMouvement>();
-                Debug.Log(touchedEnemyMouvement.currentKnockbackForce);
+                touchedEnemyMouvement.currentKnockbackStep = enemyMouvement.currentKnockbackStep + 1;
+                Debug.Log(spawnPosition + " Current Knockback Step : " + touchedEnemyMouvement.currentKnockbackStep);
+                Debug.Log(spawnPosition + " Damages = " + PlayerStats.SINGLETON.currentPlayerDamage + " / " + touchedEnemyMouvement.currentKnockbackStep + " = " + (PlayerStats.SINGLETON.currentPlayerDamage / touchedEnemyMouvement.currentKnockbackStep));
+                touchedEnemyMouvement.enemyStat.TakeDamage(PlayerStats.SINGLETON.currentPlayerDamage / touchedEnemyMouvement.currentKnockbackStep);
                 touchedEnemyMouvement.KnockbackSetup();
-                //EnemyStat touchedEnemy = cl2D.GetComponent<EnemyStat>;
             }
         }
     }

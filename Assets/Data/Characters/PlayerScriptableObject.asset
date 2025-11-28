@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c49e352f2314da448ad997244f04cbd8, type: 3}
-  m_Name: CharacterScriptableObject
+  m_Name: PlayerScriptableObject
   m_EditorClassIdentifier: 
   currentHealth: 0
   startingWeapon: {fileID: 0}
@@ -20,4 +20,4 @@ MonoBehaviour:
   might: 0
   projectileSpeed: 5
   autoHealthRegeneration: 0
-  damages: 0
+  damages: 0.5

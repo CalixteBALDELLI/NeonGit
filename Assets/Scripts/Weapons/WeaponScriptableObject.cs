@@ -6,6 +6,9 @@ public class WeaponScriptableObject :ScriptableObject
     public int weaponId;
     //Base stats for weapons
     [SerializeField]
+    string description;
+    
+    [SerializeField]
     GameObject prefab; 
     public GameObject Prefab {get => prefab; private set => prefab = value; }
    
@@ -25,9 +28,11 @@ public class WeaponScriptableObject :ScriptableObject
     public int pierce;
     public int Pierce { get => pierce; private set => pierce = value; }
     
-    [SerializeField]
-    string description;
+    public float knockbackForce;
     
+    public int maxKnockBackSteps;
     
+
+
 }
 
