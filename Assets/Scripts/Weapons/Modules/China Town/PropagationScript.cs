@@ -96,8 +96,6 @@ public class PropagationScript : MonoBehaviour
             }
         }
         LookForSmallestDistance();
-
-        
     }
 
     void LookForSmallestDistance() // Sélectionne la distance la plus petite dans la liste, correspondant à l'ennemi le plus proche de celui initiateur de la propagation.
@@ -172,6 +170,7 @@ public class PropagationScript : MonoBehaviour
     {
         electrocutionLight.enabled = false;
         enemyStat.isElectrocuted   = false;
+        focusedEnemies.Clear();
         distances.Clear();
         if (enemyStat.hitBySword)
         {

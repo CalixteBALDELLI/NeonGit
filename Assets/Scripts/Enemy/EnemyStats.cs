@@ -113,7 +113,7 @@ public class EnemyStat : MonoBehaviour
 
         if (cl2D.CompareTag("PlayerSword"))
         {
-            if (ModuleManager.SINGLETON.propagationAcquired == 0 || ModuleManager.SINGLETON.propagationInProgress)
+            if (ModuleManager.SINGLETON.propagationAcquired == 0)
             {
                 //TakeDamage(playerScriptableObject.damages);
                 ModulesCheck();
@@ -151,10 +151,13 @@ public class EnemyStat : MonoBehaviour
     
     void ModulesCheck()
     {
-        if (ModuleManager.SINGLETON.propagationAcquired > 0 && ModuleManager.SINGLETON.propagationInProgress == false)
+        if (ModuleManager.SINGLETON.propagationAcquired > 0)
         {
-            //ModuleManager.SINGLETON.propagationInProgress = true;
-            Propage();
+            if (ModuleManager.SINGLETON.propagationCooldown <= 0)
+            {
+                Propage();
+                //StartCoroutine(ModuleManager.SINGLETON.PropagationCooldown());
+            }
         }
 
         if (ModuleManager.SINGLETON.knockbackAcquired > 0)
