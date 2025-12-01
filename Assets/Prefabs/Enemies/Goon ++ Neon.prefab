@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9024858487180829317}
   - component: {fileID: -4390385675418812344}
   - component: {fileID: 1161815033490814516}
+  - component: {fileID: 1873525881310760039}
   m_Layer: 3
   m_Name: Goon ++ Neon
   m_TagString: Enemy
@@ -181,6 +182,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 08b878763729bd74caf7579df7ad1687, type: 2}
   - {fileID: 11400000, guid: d78f2ea71c8d0b2479804bf50fd75c26, type: 2}
   - {fileID: 11400000, guid: 32c47545b709bf744a2b87249e9c652c, type: 2}
+  currentKnockbackStep: 0
+  maxKnockbackSteps: 0
 --- !u!114 &-4390385675418812344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +197,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: a33946b52780aae4ca64e1cb7f8ddbb2, type: 2}
-  playerStats: {fileID: 0}
   dropRateManager: {fileID: 1161815033490814516}
   enemyMouvement: {fileID: 9024858487180829317}
   playerScriptableObject: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
@@ -206,6 +208,7 @@ MonoBehaviour:
   hitBySword: 0
   hitBoxCollider2D: {fileID: 0}
   attacker: {fileID: 0}
+  spawnPosition: {x: 0, y: 0, z: 0}
   currentHealth: 0
   Damage: {fileID: 0}
   kill: {fileID: 0}
@@ -225,6 +228,21 @@ MonoBehaviour:
   - name: Xp Point
     itemPrefab: {fileID: 9034295119827784896, guid: 0c511ab59d42ed340bea61838ea812bc, type: 3}
     dropRate: 50
+--- !u!114 &1873525881310760039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745270701351364792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c1d4f69f85b954da454b52678915d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStat: {fileID: -4390385675418812344}
+  speedDamageSaignement: 0.25
+  damageSaignement: 0.25
 --- !u!1001 &3060059429523754327
 PrefabInstance:
   m_ObjectHideFlags: 0

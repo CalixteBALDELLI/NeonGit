@@ -52,6 +52,7 @@ public class EnemyStat : MonoBehaviour
     {
         enemyMouvement.isStunned                   =  true;
         currentHealth                              -= dmg;
+        GetComponent<Saignement>()?.CallSaignememnt();
         StartCoroutine(DamageFlash());
         if (isElectrocuted == false)
         {
@@ -115,7 +116,7 @@ public class EnemyStat : MonoBehaviour
         {
             if (ModuleManager.SINGLETON.propagationAcquired == 0 || ModuleManager.SINGLETON.propagationInProgress)
             {
-                //TakeDamage(playerScriptableObject.damages);
+                TakeDamage(playerScriptableObject.damages);
                 ModulesCheck();
             }
             else
