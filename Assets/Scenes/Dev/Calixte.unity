@@ -314,14 +314,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4610115151509211415, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265871152163762300, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8745270701351364792, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Name
       value: Goon Enemy (8)
@@ -390,6 +382,14 @@ PrefabInstance:
     - target: {fileID: 8745270701351364792, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
       propertyPath: m_Name
       value: Goon ++ Decharge (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024858487180829317, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
+      propertyPath: DONOTMOVE
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024858487180829317, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1145,6 +1145,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goon ++ Decharge (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9024858487180829317, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
+      propertyPath: DONOTMOVE
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024858487180829317, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1352,6 +1360,14 @@ PrefabInstance:
     - target: {fileID: 8745270701351364792, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
       propertyPath: m_Name
       value: Goon ++ Decharge (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024858487180829317, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
+      propertyPath: DONOTMOVE
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024858487180829317, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1752,6 +1768,11 @@ RectTransform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2064473439258034773, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
   m_PrefabInstance: {fileID: 1009660217}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &785211908 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3043376372723173969, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
+  m_PrefabInstance: {fileID: 807375579}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &786873861 stripped
 MonoBehaviour:
@@ -3625,6 +3646,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goon ++ Decharge
       objectReference: {fileID: 0}
+    - target: {fileID: 9024858487180829317, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
+      propertyPath: DONOTMOVE
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024858487180829317, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4276,6 +4305,10 @@ PrefabInstance:
       propertyPath: swordChildren
       value: 
       objectReference: {fileID: 1337250405}
+    - target: {fileID: 1025633784134975101, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 785211908}
     - target: {fileID: 1025633784134975101, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: levelRanges.Array.data[0].experienceCapIncrease
       value: 100

@@ -13,6 +13,7 @@ public class EnemyStat : MonoBehaviour
     
     [SerializeField] DropRateManager dropRateManager;
     [SerializeField] EnemyMouvement enemyMouvement;
+    [SerializeField] KnockBackModule knockBackModule;
     
     [SerializeField] CharacterScriptableObject playerScriptableObject;
     
@@ -139,8 +140,8 @@ public class EnemyStat : MonoBehaviour
             if (collision.gameObject.CompareTag("Enemy"))
             {
                 //Debug.Log(collision.gameObject.name);    
-                EnemyMouvement touchedEnemyMouvement = collision.gameObject.GetComponent<EnemyMouvement>();
-                touchedEnemyMouvement.currentKnockbackStep = enemyMouvement.currentKnockbackStep + 1;
+                KnockBackModule touchedEnemyMouvement = collision.gameObject.GetComponent<KnockBackModule>();
+                touchedEnemyMouvement.currentKnockbackStep = knockBackModule.currentKnockbackStep + 1;
                 Debug.Log(spawnPosition + " Current Knockback Step : " + touchedEnemyMouvement.currentKnockbackStep);
                 Debug.Log(spawnPosition + " Damages = " + PlayerStats.SINGLETON.currentPlayerDamage + " / " + touchedEnemyMouvement.currentKnockbackStep + " = " + (PlayerStats.SINGLETON.currentPlayerDamage / touchedEnemyMouvement.currentKnockbackStep));
                 touchedEnemyMouvement.enemyStat.TakeDamage(PlayerStats.SINGLETON.currentPlayerDamage / touchedEnemyMouvement.currentKnockbackStep);
@@ -162,7 +163,7 @@ public class EnemyStat : MonoBehaviour
 
         if (ModuleManager.SINGLETON.knockbackAcquired > 0)
         {
-            enemyMouvement.KnockbackSetup();
+            knockBackModule.KnockbackSetup();
         }
     }
 

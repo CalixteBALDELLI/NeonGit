@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public static PlayerStats               SINGLETON;
+    public        Transform                 playerTransform;
     public        CharacterScriptableObject characterData;
     public        bool                      hasLeveledUp;
     
