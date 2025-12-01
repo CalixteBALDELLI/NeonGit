@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6755035574309655071}
   - component: {fileID: 8522417850192440362}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "\u2014Pngtree\u2014circular gradient black shadow_7193183_0"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 7983091778026517874}
   - component: {fileID: 3013899044921229068}
   - component: {fileID: 3034354433338648147}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Barrel_Oill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

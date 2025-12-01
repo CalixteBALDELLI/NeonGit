@@ -11,46 +11,46 @@ public class ModuleManager : MonoBehaviour
     public static    ModuleManager        SINGLETON;
     [SerializeField] ProjectileController projectileController;
     [SerializeField] GameObject           projectileControllerGameObject;
-
+    
+    [Header("Player Inventory")]
     [SerializeField] public int propagationAcquired;
     [SerializeField] public int knockbackAcquired;
     [SerializeField] public int projectileAcquired;
-
+    
+    [Header("Modules Data")]
     [SerializeField] public WeaponScriptableObject projectileLvl2;
     [SerializeField] public WeaponScriptableObject projectileLvl3;
-
     [SerializeField] public WeaponScriptableObject knockbackLvl2;
     [SerializeField] public WeaponScriptableObject knockbackLvl3;
-
+    
+    [Header("Damage Text Settings")]
     [SerializeField] ProjectileController weaponController;
     [SerializeField] Canvas               inventoryFullMessage;
-
-    public bool propagationInProgress;
+    
+    [Header("InGame Propagation State")]
     public int  currentPropagationStep;
+    public bool propagationCooldownFinished = true;
 
+    [Header("Inventory UI")]
     [SerializeField] Image[] inventoryIcons;
     [SerializeField] Image[] inventoryBackgrounds;
     int                      weaponIconIndex;
     public Sprite[]          modulesIcons;
     public List<int>         currentEquipedModules = new List<int>();
 
-
+    [Header("InGame Inventory Management")]
     [HideInInspector] public int        weaponToEquip;
-    [HideInInspector] public Sprite     weaponToEquipSprite;
     [HideInInspector] public GameObject pickedWeapon;
     public                   int        equippedWeapons;
     Canvas                              weaponChoiceCanvas;
 
     [Header("Damage Text Settings")]
     public Canvas damageTextCanvas;
-
     public        float         textFontSize = 20;
     public        TMP_Asset     textFont;
     public        Camera        referenceCamera;
     public static ModuleManager instance;
 
-    //public float propagationCooldown;
-    public bool propagationCooldownFinished = true;
 
     void Awake()
     {
@@ -66,7 +66,7 @@ public class ModuleManager : MonoBehaviour
 
     public void WeaponEquiping()
     {
-        Debug.LogWarning("Module Equiped");
+        //Debug.LogWarning("Module Equipped");
         instance = this;
 
         if (equippedWeapons == 6)
@@ -173,10 +173,6 @@ public class ModuleManager : MonoBehaviour
             inventoryIcons[inventoryIndex].sprite  = modulesIcons[equippedModule];
             inventoryIndex++;
         }
-        //inventoryIcons[weaponIconIndex].sprite  = weaponToEquipSprite;
-        //inventoryIcons[weaponIconIndex].enabled = true;
-        //weaponIconIndex++;
-        //Debug.Log(weaponIconIndex);
     }
 
     public IEnumerator PropagationCooldown()

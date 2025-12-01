@@ -742,6 +742,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7467988551737578625, guid: a67782b67afba854284a295948edb53c, type: 3}
+      propertyPath: m_Name
+      value: Sword Children
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467988551737578625, guid: a67782b67afba854284a295948edb53c, type: 3}
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
