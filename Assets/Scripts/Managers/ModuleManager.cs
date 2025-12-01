@@ -49,7 +49,8 @@ public class ModuleManager : MonoBehaviour
     public        Camera        referenceCamera;
     public static ModuleManager instance;
 
-    public float propagationCooldown;
+    //public float propagationCooldown;
+    public bool propagationCooldownFinished = true;
 
     void Awake()
     {
@@ -181,15 +182,18 @@ public class ModuleManager : MonoBehaviour
     public IEnumerator PropagationCooldown()
     {
         Debug.LogWarning("Propagation Cooldown");
-        propagationCooldown = 2;
+        propagationCooldownFinished = false;
+        float propagationCooldown  = 2;
         float delayBetweenDecrease = 0.25f;
-        while (propagationCooldown > 0)
+        float cooldownReduction = 0.1f;
+        while (propagationCooldown >= cooldownReduction)
         {
-            propagationCooldown -= 0.1f ;
+            propagationCooldown -= cooldownReduction ;
             Debug.Log("Propagation Cooldown : " + propagationCooldown);
             yield return new WaitForSeconds(delayBetweenDecrease);
         }
         Debug.LogWarning("Propagation Cooldown Finished");
-        propagationCooldown = 0;
+        //propagationCooldown = 0;
+        propagationCooldownFinished = true;
     }
 }

@@ -26,8 +26,10 @@ public class PropagationScript : MonoBehaviour
     Vector3                                 spawnPosition;
     bool                                    enemiesAdded;
     [SerializeField] Light2D                electrocutionLight;
-    void Awake()
+    
+    public void PropagationSetup()
     {
+        Debug.Log(enemyStat.spawnPosition + " Propagation Started");
         playerStats   = PlayerStats.SINGLETON;
         moduleManager = ModuleManager.SINGLETON;
         if (moduleManager.projectileAcquired == 1)
@@ -55,6 +57,7 @@ public class PropagationScript : MonoBehaviour
         hitBoxCollider2D.enabled = true;
         electrocutionLight.enabled = true;
         StartCoroutine(CheckColliderActivation());
+        StartCoroutine(CallDamagingEnemyRepeatedly());
 
     }
 
@@ -66,9 +69,8 @@ public class PropagationScript : MonoBehaviour
             //Debug.Log(spawnPosition + " Collider Not Effective");
 
         } while (enemiesAdded == false);
-        
+
         DistanceBetweenEnemies();
-        
     }
     
 
@@ -139,7 +141,6 @@ public class PropagationScript : MonoBehaviour
         {
             EndPropagation();
         }
-        StartCoroutine(CallDamagingEnemyRepeatedly());
     }
 
 
@@ -154,12 +155,12 @@ public class PropagationScript : MonoBehaviour
         spriteRenderer.GetComponent<SpriteRenderer>().color = Color.yellow; // A CHANGER EN UN GLISSER DEPOSER
         for (int i = 0; i < howManyTimeDamagingEnemyIsCalled; i++)
         {
-            enemyStat.TakeDamage(0);   
+            enemyStat.TakeDamage(playerStats.currentPlayerDamage / currentModuleDamages);   
             yield return new WaitForSeconds(delayTimeBetweenDamage); // attend X secondes
         }
         // Boucle terminée
         //Debug.Log(spawnPosition + " Boucle finie");
-        spriteRenderer.GetComponent<SpriteRenderer>().color = baseColor;
+        spriteRenderer.GetComponent<SpriteRenderer>().color = baseColor; // PAREIL
         if (moduleManager.currentPropagationStep == maxPropagationSteps)
         {
             EndPropagation();
@@ -168,8 +169,10 @@ public class PropagationScript : MonoBehaviour
     }
     void DisableCollider()
     {
+        Debug.Log(spawnPosition + "Collider Disabled");
         electrocutionLight.enabled = false;
         enemyStat.isElectrocuted   = false;
+        enemiesAdded               = false;
         focusedEnemies.Clear();
         distances.Clear();
         if (enemyStat.hitBySword)

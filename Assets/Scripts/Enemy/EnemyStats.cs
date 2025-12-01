@@ -116,7 +116,7 @@ public class EnemyStat : MonoBehaviour
         {
             if (ModuleManager.SINGLETON.propagationAcquired == 0)
             {
-                //TakeDamage(playerScriptableObject.damages);
+                TakeDamage(playerScriptableObject.damages);
                 ModulesCheck();
             }
             else
@@ -142,8 +142,8 @@ public class EnemyStat : MonoBehaviour
                 //Debug.Log(collision.gameObject.name);    
                 KnockBackModule touchedEnemyMouvement = collision.gameObject.GetComponent<KnockBackModule>();
                 touchedEnemyMouvement.currentKnockbackStep = knockBackModule.currentKnockbackStep + 1;
-                Debug.Log(spawnPosition + " Current Knockback Step : " + touchedEnemyMouvement.currentKnockbackStep);
-                Debug.Log(spawnPosition + " Damages = " + PlayerStats.SINGLETON.currentPlayerDamage + " / " + touchedEnemyMouvement.currentKnockbackStep + " = " + (PlayerStats.SINGLETON.currentPlayerDamage / touchedEnemyMouvement.currentKnockbackStep));
+                //Debug.Log(spawnPosition + " Current Knockback Step : " + touchedEnemyMouvement.currentKnockbackStep);
+//                Debug.Log(spawnPosition + " Damages = " + PlayerStats.SINGLETON.currentPlayerDamage + " / " + touchedEnemyMouvement.currentKnockbackStep + " = " + (PlayerStats.SINGLETON.currentPlayerDamage / touchedEnemyMouvement.currentKnockbackStep));
                 touchedEnemyMouvement.enemyStat.TakeDamage(PlayerStats.SINGLETON.currentPlayerDamage / touchedEnemyMouvement.currentKnockbackStep);
                 touchedEnemyMouvement.KnockbackSetup();
             }
@@ -154,10 +154,10 @@ public class EnemyStat : MonoBehaviour
     {
         if (ModuleManager.SINGLETON.propagationAcquired > 0)
         {
-            if (ModuleManager.SINGLETON.propagationCooldown <= 0)
+            if (ModuleManager.SINGLETON.propagationCooldownFinished)
             {
                 Propage();
-                //StartCoroutine(ModuleManager.SINGLETON.PropagationCooldown());
+                StartCoroutine(ModuleManager.SINGLETON.PropagationCooldown());
             }
         }
 
@@ -169,11 +169,9 @@ public class EnemyStat : MonoBehaviour
 
     public void Propage()
     {
-//        Debug.Log(transform.position + "Propaged");
-        propagationCollider.SetActive(true);
-        //StartCoroutine(propagationScript.CheckColliderActivation());
         // Active le collider et exécute le code pour la propagation.
-//      Debug.Log("Collider Activated");
-         //propagationScript.DistanceBetweenEnemies();
+//      Debug.Log(transform.position + "Propaged");
+        propagationCollider.SetActive(true);
+        propagationScript.PropagationSetup();
     }
 }
