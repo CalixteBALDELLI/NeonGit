@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 618934815709003345}
+  - component: {fileID: 4716788365184659801}
   - component: {fileID: 7804494190798670213}
   - component: {fileID: 7611566278310189600}
   - component: {fileID: 6795886307639691130}
@@ -35,6 +36,23 @@ Transform:
   - {fileID: 1250929062708052444}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4716788365184659801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5054726515887004773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8716c94044a347a4aa7861fc986cd031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireLight: {fileID: 1452780661885037548}
+  minIntensity: 0.8
+  maxIntensity: 10
+  flickerSpeed: 10
+  fireSound: {fileID: 6795886307639691130}
 --- !u!212 &7804494190798670213
 SpriteRenderer:
   m_ObjectHideFlags: 0

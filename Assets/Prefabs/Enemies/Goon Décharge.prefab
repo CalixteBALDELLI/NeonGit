@@ -175,6 +175,11 @@ MonoBehaviour:
   currentKnockbackForce: 0
   rb: {fileID: 6970144066063837735}
   isStunned: 0
+  obstacleCheckDistance: 5
+  avoidStrength: 10
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 32768
 --- !u!114 &-4390385675418812344
 MonoBehaviour:
   m_ObjectHideFlags: 0

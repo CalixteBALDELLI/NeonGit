@@ -174,7 +174,12 @@ MonoBehaviour:
   enemyStat: {fileID: -4390385675418812344}
   currentKnockbackForce: 0
   rb: {fileID: 6970144066063837735}
-  isElectrocuted: 0
+  isStunned: 0
+  obstacleCheckDistance: 5
+  avoidStrength: 10
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 32768
 --- !u!114 &-4390385675418812344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,11 +201,13 @@ MonoBehaviour:
   dropRateManager: {fileID: 1161815033490814516}
   enemyMouvement: {fileID: 9024858487180829317}
   playerScriptableObject: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
-  moduleManager: {fileID: 0}
   propagationCollider: {fileID: 7362021541057229684}
   propagationScript: {fileID: 3386204744087854826}
   isABoss: 0
   teleporterKey: {fileID: 0}
+  isElectrocuted: 0
+  hitBySword: 0
+  isDead: 0
   currentHealth: 0
 --- !u!114 &1161815033490814516
 MonoBehaviour:

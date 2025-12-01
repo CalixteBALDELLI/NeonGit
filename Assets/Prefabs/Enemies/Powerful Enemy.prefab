@@ -175,6 +175,11 @@ MonoBehaviour:
   currentKnockbackForce: 0
   rb: {fileID: 6970144066063837735}
   isStunned: 0
+  obstacleCheckDistance: 5
+  avoidStrength: 10
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 32768
 --- !u!114 &-4390385675418812344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +207,7 @@ MonoBehaviour:
   teleporterKey: {fileID: 1696656462747023363, guid: c08e5787a1c008245926913678fd7790, type: 3}
   isElectrocuted: 0
   hitBySword: 0
+  isDead: 0
   currentHealth: 0
 --- !u!114 &1161815033490814516
 MonoBehaviour:
