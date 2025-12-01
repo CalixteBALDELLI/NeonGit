@@ -30,8 +30,8 @@ public class EnemyStat : MonoBehaviour
     float currentDamage;
     
     [Header("Audio")]
-    public  AudioClip Damage;
-    public  AudioClip kill;
+    private AudioSource  Dama;
+    private AudioSource  kill;
     void Awake()
     {
         // Initialisation des stats
