@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -4390385675418812344}
   - component: {fileID: 1161815033490814516}
   - component: {fileID: -4614484855479058701}
+  - component: {fileID: -6865097917304665639}
   m_Layer: 3
   m_Name: Goon ChinaTown
   m_TagString: Enemy
@@ -246,6 +247,21 @@ MonoBehaviour:
   maxKnockbackSteps: 0
   enemyStat: {fileID: -4390385675418812344}
   enemyMouvement: {fileID: 9024858487180829317}
+--- !u!114 &-6865097917304665639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745270701351364792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c1d4f69f85b954da454b52678915d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStat: {fileID: -4390385675418812344}
+  speedDamageSaignement: 0.125
+  damageSaignement: 0.05
 --- !u!1001 &2343828245220025111
 PrefabInstance:
   m_ObjectHideFlags: 0

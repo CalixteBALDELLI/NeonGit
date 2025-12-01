@@ -1,8 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
-using NUnit.Framework;
-using Unity.VisualScripting;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
@@ -48,7 +44,6 @@ public class EnemyStat : MonoBehaviour
     }
 
     
-
     public void TakeDamage(float dmg)
     {
         enemyMouvement.isStunned                   =  true;
@@ -60,7 +55,6 @@ public class EnemyStat : MonoBehaviour
             HealthCheck();
         }
     }
-    // ReSharper disable Unity.PerformanceAnalysis
     public IEnumerator DamageFlash()
     {
 //        Debug.Log(transform.position + "DamageFlash");
