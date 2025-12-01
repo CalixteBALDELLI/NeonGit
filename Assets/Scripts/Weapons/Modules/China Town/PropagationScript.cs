@@ -146,7 +146,6 @@ public class PropagationScript : MonoBehaviour
 
     public void EndPropagation()
     {
-        moduleManager.propagationInProgress  = false;
         moduleManager.currentPropagationStep = 0;
     }
 

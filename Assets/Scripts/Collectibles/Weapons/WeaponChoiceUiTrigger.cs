@@ -20,7 +20,6 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
 	    weaponChoiceTexts.xpGainText.text           = "+ " + weaponCollectibleData.xpValue + " XP";
 	    weaponChoiceCanvas.enabled                  = true;
 	    ModuleManager.SINGLETON.weaponToEquip       = weaponCollectibleData.weaponId;
-	    ModuleManager.SINGLETON.weaponToEquipSprite = weaponCollectibleData.weaponIcon;
 	    PlayerStats.SINGLETON.xpToExchange          = weaponCollectibleData.xpValue;
 	    ModuleManager.SINGLETON.pickedWeapon        = gameObject;
     }
