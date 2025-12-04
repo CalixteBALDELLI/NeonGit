@@ -16,5 +16,5 @@ MonoBehaviour:
   weaponId: 0
   xpValue: 25
   description: "Lance un projectile qui traverse les ennemis \xE0 chaque coup d'\xE9pee.
-    Peut traverser 2 ennemis."
+    Traverse 2 ennemis."
   weaponIcon: {fileID: 6989642852348889387, guid: 30294d24bff1e684abd5d55b962d902c, type: 3}

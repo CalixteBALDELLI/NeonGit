@@ -8,11 +8,11 @@ public class ProjectileBehavior : ProjectileWeaponBehavior
         moduleManager = ModuleManager.SINGLETON;
         if (moduleManager.projectileAcquired == 2)
         {
-            weaponData = moduleManager.projectileLvl2;
+            weaponData = moduleManager.modulesData[1];
         }
         else if (moduleManager.projectileAcquired == 3)
         {
-            weaponData = moduleManager.projectileLvl3;
+            weaponData = moduleManager.modulesData[2];
         }
         RefreshStats();
     }

@@ -49,7 +49,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33340dc7272c2f499fa7cf6657e3776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
   characterData: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
+  hasLeveledUp: 0
   currentPlayerDamage: 0
   currentHealth: 0
   currentmaxHealth: 0
@@ -134,20 +136,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileController: {fileID: 0}
   projectileControllerGameObject: {fileID: 0}
-  propagationAcquired: 0
+  propagationAcquired: 1
   knockbackAcquired: 0
   projectileAcquired: 0
-  projectileLvl2: {fileID: 11400000, guid: 631e0273377c51646a6d10d1b5d9eeae, type: 2}
-  projectileLvl3: {fileID: 11400000, guid: d416d2276c58b32478fbf49221a7a16d, type: 2}
-  knockbackLvl2: {fileID: 11400000, guid: d78f2ea71c8d0b2479804bf50fd75c26, type: 2}
-  knockbackLvl3: {fileID: 11400000, guid: 32c47545b709bf744a2b87249e9c652c, type: 2}
+  modulesData: []
   weaponController: {fileID: 0}
   inventoryFullMessage: {fileID: 0}
-  propagationInProgress: 0
   currentPropagationStep: 0
+  propagationCooldownFinished: 1
+  inventoryIcons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  inventoryBackgrounds: []
+  modulesIcons:
+  - {fileID: 6989642852348889387, guid: 8b82b1b1e89a22340ac8887798340ae7, type: 3}
+  - {fileID: -5337365177324631326, guid: 86bc8c8321ae4f44f86bda3822a263d3, type: 3}
+  - {fileID: 64134209812282044, guid: 1205032d0d9aa6444a2aac16a3130332, type: 3}
+  currentEquipedModules: 
   weaponToEquip: 0
   pickedWeapon: {fileID: 0}
   equippedWeapons: 0
+  damageTextCanvas: {fileID: 0}
+  textFontSize: 20
+  textFont: {fileID: 0}
+  referenceCamera: {fileID: 0}
 --- !u!114 &651058581322839038
 MonoBehaviour:
   m_ObjectHideFlags: 0

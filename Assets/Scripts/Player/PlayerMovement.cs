@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         DontDestroyOnLoad(player);
         lastMovedVector = new Vector2(1, 0f);
     }
+    
     private void Update() //Direction Checker
     {
         if (logValues)
@@ -45,33 +46,28 @@ public class PlayerMovement : MonoBehaviour
         if (moveDirection.x != 0 && moveDirection.y == 0 && lastVerticalVector != 0) // Si déplacement de l'avatar horizontal
         {
             lastVerticalVector = 0;
-            
         }
 
         if (moveDirection.x == 0 && moveDirection.y != 0 && lastHorizontalVector != 0) //Si déplacement de l'avatar vertical
         {
             lastHorizontalVector = 0;
-            
         }
         
         if (moveDirection.x != 0)
         {
             lastHorizontalVector = moveDirection.x;
             lastMovedVector = new Vector2(lastHorizontalVector, 0f); // Last moved x
-            
         }
 
         if (moveDirection.y != 0)
         {
             lastVerticalVector = moveDirection.y;
             lastMovedVector = new Vector2(0f, lastVerticalVector); //Last moved Y
-            
         }
 
         if (moveDirection.x != 0 && moveDirection.y != 0)
         {
             lastMovedVector = new Vector2(lastHorizontalVector, lastVerticalVector);
-            
         }
         
         if (rb.linearVelocity.magnitude > 0.1f)
@@ -85,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
                     int index = UnityEngine.Random.Range(0, footstepClips.Length);
                     footstepSource.PlayOneShot(footstepClips[index]);
                 }
-
                 footstepTimer = stepInterval;  // Reset timer
             }
         }
@@ -94,19 +89,14 @@ public class PlayerMovement : MonoBehaviour
             // Reset pour éviter les rafales quand on recommence à marcher
             footstepTimer = 0f;
         }
-        
     }
     
-    
-
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new  Vector2(moveDirection.x, moveDirection.y) * PlayerStats.SINGLETON.currentMoveSpeed; // deplacement du personnage sur la carte (mulitpipplication du vecteur de direction par la  valeur de vitesse réglable) 
+        rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * PlayerStats.SINGLETON.currentMoveSpeed; // deplacement du personnage sur la carte (mulitpipplication du vecteur de direction par la  valeur de vitesse réglable) 
     }
     
-    
-
     private void OnEnable()
     {
         fire.action.started += Fire;
@@ -121,5 +111,4 @@ public class PlayerMovement : MonoBehaviour
     {
         fire.action.started -= Fire;
     }
-    
 }

@@ -18,10 +18,7 @@ public class ModuleManager : MonoBehaviour
     [SerializeField] public int projectileAcquired;
     
     [Header("Modules Data")]
-    [SerializeField] public WeaponScriptableObject projectileLvl2;
-    [SerializeField] public WeaponScriptableObject projectileLvl3;
-    [SerializeField] public WeaponScriptableObject knockbackLvl2;
-    [SerializeField] public WeaponScriptableObject knockbackLvl3;
+    public WeaponScriptableObject[] modulesData;
     
     [Header("Damage Text Settings")]
     [SerializeField] ProjectileController weaponController;
@@ -86,12 +83,12 @@ public class ModuleManager : MonoBehaviour
                 projectileAcquired++;
                 if (projectileAcquired == 2)
                 {
-                    weaponController.weaponData = projectileLvl2;
+                    weaponController.weaponData = modulesData[1];
 
                 }
                 else if (projectileAcquired == 3)
                 {
-                    weaponController.weaponData = projectileLvl3;
+                    weaponController.weaponData = modulesData[2];
                 }
             }
 

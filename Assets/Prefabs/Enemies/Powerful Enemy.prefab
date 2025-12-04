@@ -206,8 +206,6 @@ MonoBehaviour:
   attacker: {fileID: 0}
   spawnPosition: {x: 0, y: 0, z: 0}
   currentHealth: 0
-  Damage: {fileID: 0}
-  kill: {fileID: 0}
 --- !u!114 &1161815033490814516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,11 +281,11 @@ PrefabInstance:
       objectReference: {fileID: 5318108029185307242}
     - target: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.48
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
       propertyPath: m_LocalPosition.z

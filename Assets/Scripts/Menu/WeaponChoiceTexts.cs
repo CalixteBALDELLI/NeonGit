@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class WeaponChoiceTexts : MonoBehaviour
 {
-    [SerializeField] public TextMeshProUGUI newModuleText;
-    [SerializeField] public TextMeshProUGUI weaponNameText;
-    [SerializeField] public TextMeshProUGUI descriptionText;
-    [SerializeField] public TextMeshProUGUI damagesAndCooldownText;
-    [SerializeField] public TextMeshProUGUI upgradeText;
-    [SerializeField] public TextMeshProUGUI xpGainText;
+    [SerializeField] public TextMeshProUGUI   newModuleText;
+    [SerializeField] public TextMeshProUGUI   weaponNameText;
+    [SerializeField] public TextMeshProUGUI   descriptionText;
+    [SerializeField] public TextMeshProUGUI   damagesAndCooldownText;
+    [SerializeField] public TextMeshProUGUI[] upgradesText;
+    [SerializeField] public TextMeshProUGUI   xpGainText;
+    [SerializeField] public TextMeshProUGUI   subDescriptionText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
