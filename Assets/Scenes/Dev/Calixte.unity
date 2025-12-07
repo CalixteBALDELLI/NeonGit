@@ -127,10 +127,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1240784755}
     m_Modifications:
-    - target: {fileID: 1751900232549313019, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2064473439258034773, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.79
@@ -171,33 +167,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5808217629363700837, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: baseColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5808217629363700837, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: baseColor.b
-      value: 0.5568628
-      objectReference: {fileID: 0}
-    - target: {fileID: 5808217629363700837, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: baseColor.g
-      value: 0.5568628
-      objectReference: {fileID: 0}
-    - target: {fileID: 5808217629363700837, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: baseColor.r
-      value: 0.5568628
-      objectReference: {fileID: 0}
     - target: {fileID: 8745270701351364792, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Name
       value: Goon Enemy (7)
       objectReference: {fileID: 0}
     - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: DONOTMOVE
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -319,12 +295,8 @@ PrefabInstance:
       value: Goon Enemy (8)
       objectReference: {fileID: 0}
     - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: DONOTMOVE
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -384,12 +356,8 @@ PrefabInstance:
       value: Goon ++ Decharge (3)
       objectReference: {fileID: 0}
     - target: {fileID: 9024858487180829317, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
-      propertyPath: DONOTMOVE
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024858487180829317, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -554,6 +522,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1240784755}
     m_Modifications:
+    - target: {fileID: -4390385675418812344, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
+      propertyPath: propagationCollider
+      value: 
+      objectReference: {fileID: 339845087}
     - target: {fileID: 2064473439258034773, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.69
@@ -594,11 +566,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4610115151509211415, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265871152163762300, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
+    - target: {fileID: 2455558169252713568, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -607,12 +575,8 @@ PrefabInstance:
       value: Goon Enemy (9)
       objectReference: {fileID: 0}
     - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: DONOTMOVE
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -667,25 +631,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4610115151509211415, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265871152163762300, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8745270701351364792, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Name
       value: Goon Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: DONOTMOVE
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -706,6 +658,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2064473439258034773, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
   m_PrefabInstance: {fileID: 51423174}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &339845087 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2627096259023400792, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
+  m_PrefabInstance: {fileID: 217892285}
   m_PrefabAsset: {fileID: 0}
 --- !u!223 &342685185 stripped
 Canvas:
@@ -1151,12 +1108,8 @@ PrefabInstance:
       value: Goon ++ Decharge (1)
       objectReference: {fileID: 0}
     - target: {fileID: 9024858487180829317, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
-      propertyPath: DONOTMOVE
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024858487180829317, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1216,25 +1169,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4610115151509211415, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265871152163762300, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8745270701351364792, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Name
       value: Goon Enemy (11)
       objectReference: {fileID: 0}
     - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: DONOTMOVE
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1367,12 +1308,8 @@ PrefabInstance:
       value: Goon ++ Decharge (2)
       objectReference: {fileID: 0}
     - target: {fileID: 9024858487180829317, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
-      propertyPath: DONOTMOVE
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024858487180829317, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2343,12 +2280,8 @@ PrefabInstance:
       value: Goon Enemy (6)
       objectReference: {fileID: 0}
     - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: DONOTMOVE
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2423,12 +2356,8 @@ PrefabInstance:
       value: Goon Enemy (1)
       objectReference: {fileID: 0}
     - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: DONOTMOVE
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2488,12 +2417,8 @@ PrefabInstance:
       value: Goon Enemy (3)
       objectReference: {fileID: 0}
     - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: DONOTMOVE
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2548,25 +2473,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4610115151509211415, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265871152163762300, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8745270701351364792, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Name
       value: Goon Enemy (12)
       objectReference: {fileID: 0}
     - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: DONOTMOVE
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2621,25 +2534,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4610115151509211415, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265871152163762300, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8745270701351364792, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Name
       value: Goon Enemy (10)
       objectReference: {fileID: 0}
     - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: DONOTMOVE
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2679,6 +2580,7 @@ Transform:
   - {fileID: 1756783590}
   - {fileID: 805953982}
   - {fileID: 452047004}
+  - {fileID: 1966830665}
   - {fileID: 1034670692}
   - {fileID: 1854969684}
   - {fileID: 2038785234}
@@ -2747,12 +2649,8 @@ PrefabInstance:
       value: Goon Enemy (4)
       objectReference: {fileID: 0}
     - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: DONOTMOVE
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2775,6 +2673,26 @@ PrefabInstance:
     - target: {fileID: 94588070673580202, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
       propertyPath: m_Name
       value: Weapon Choice
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183980009117613436, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242541265814838517, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242541265814838517, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242541265814838517, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242541265814838517, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3405142027440086277, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -2858,6 +2776,70 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4423845194531970109, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994774060778846917, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994774060778846917, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994774060778846917, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994774060778846917, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004681103491307689, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004681103491307689, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004681103491307689, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004681103491307689, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736207995587487784, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736207995587487784, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736207995587487784, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736207995587487784, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929243835274295515, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929243835274295515, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929243835274295515, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929243835274295515, guid: 805a21ad503ebd14fb70e0a4bb73254a, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2948,25 +2930,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4610115151509211415, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265871152163762300, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8745270701351364792, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Name
       value: Goon Enemy (13)
       objectReference: {fileID: 0}
     - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: DONOTMOVE
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3031,12 +3001,8 @@ PrefabInstance:
       value: Goon Enemy (5)
       objectReference: {fileID: 0}
     - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-      propertyPath: DONOTMOVE
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3120,6 +3086,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2064473439258034773, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
   m_PrefabInstance: {fileID: 1217184478}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1600983370
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1240784755}
+    m_Modifications:
+    - target: {fileID: 2064473439258034773, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064473439258034773, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064473439258034773, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064473439258034773, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064473439258034773, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064473439258034773, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064473439258034773, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064473439258034773, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064473439258034773, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064473439258034773, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8745270701351364792, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
+      propertyPath: m_Name
+      value: Goon Enemy (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024858487180829317, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
 --- !u!1001 &1632246384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3474,6 +3501,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4415a3c9b95d024b8a8600e3143d02b, type: 3}
+--- !u!4 &1966830665 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2064473439258034773, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
+  m_PrefabInstance: {fileID: 1600983370}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1997816009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3527,12 +3559,8 @@ PrefabInstance:
       value: Goon ++ Decharge
       objectReference: {fileID: 0}
     - target: {fileID: 9024858487180829317, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
-      propertyPath: DONOTMOVE
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024858487180829317, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3915,7 +3943,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9008725113772030793, guid: f82bd7d7a0a5b34488b6a4a2b8a419f4, type: 3}
   m_PrefabInstance: {fileID: 680554993}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &359743027566396138
+--- !u!1001 &24835274537065989
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -3923,119 +3951,59 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2667435228550248429, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
+    - target: {fileID: 2809771877204889217, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
+      propertyPath: m_Name
+      value: EnemySpawner 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809771877204889217, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296561577921226808, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2667435228550248429, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
+    - target: {fileID: 4296561577921226808, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2667435228550248429, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
+    - target: {fileID: 4296561577921226808, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2667435228550248429, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
+    - target: {fileID: 4296561577921226808, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2667435228550248429, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
+    - target: {fileID: 4296561577921226808, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2667435228550248429, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
+    - target: {fileID: 4296561577921226808, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2667435228550248429, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
+    - target: {fileID: 4296561577921226808, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2667435228550248429, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
+    - target: {fileID: 4296561577921226808, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2667435228550248429, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
+    - target: {fileID: 4296561577921226808, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2667435228550248429, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
+    - target: {fileID: 4296561577921226808, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
-      propertyPath: currentWaveCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
-      propertyPath: maxEnemiesAllowed
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
-      propertyPath: waves.Array.data[4].waveQuota
-      value: 3000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
-      propertyPath: waves.Array.data[4].spawnCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
-      propertyPath: waves.Array.data[4].spawnInterval
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
-      propertyPath: waves.Array.data[0].enemyGroups.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
-      propertyPath: waves.Array.data[0].enemyGroups.Array.data[1].enemyName
-      value: Goon Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
-      propertyPath: waves.Array.data[0].enemyGroups.Array.data[1].enemyCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
-      propertyPath: waves.Array.data[4].enemyGroups.Array.data[0].enemyCount
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
-      propertyPath: waves.Array.data[4].enemyGroups.Array.data[1].enemyCount
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
-      propertyPath: waves.Array.data[0].enemyGroups.Array.data[1].enemyPrefab
-      value: 
-      objectReference: {fileID: 8745270701351364792, guid: 7e5a80e7167ba22489bcaf92bc03f23b, type: 3}
-    - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
-      propertyPath: waves.Array.data[1].enemyGroups.Array.data[1].enemyPrefab
-      value: 
-      objectReference: {fileID: 8745270701351364792, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
-    - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
-      propertyPath: waves.Array.data[2].enemyGroups.Array.data[1].enemyPrefab
-      value: 
-      objectReference: {fileID: 8745270701351364792, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
-    - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
-      propertyPath: waves.Array.data[3].enemyGroups.Array.data[1].enemyPrefab
-      value: 
-      objectReference: {fileID: 8745270701351364792, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
-    - target: {fileID: 3990066798996674023, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
-      propertyPath: waves.Array.data[4].enemyGroups.Array.data[1].enemyPrefab
-      value: 
-      objectReference: {fileID: 8745270701351364792, guid: 0980b409b5f604e43b95a0080130e113, type: 3}
-    - target: {fileID: 8204891030824015204, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
-      propertyPath: m_Name
-      value: EnemySpawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 8204891030824015204, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bc36d465727bf7e4d9be65aeda94f020, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
 --- !u!1001 &375544707269958532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5354,7 +5322,6 @@ SceneRoots:
   - {fileID: 934086945}
   - {fileID: 3992506103678080483}
   - {fileID: 7300437249824627545}
-  - {fileID: 359743027566396138}
   - {fileID: 2056494382}
   - {fileID: 1345577727}
   - {fileID: 403605508}
@@ -5365,3 +5332,4 @@ SceneRoots:
   - {fileID: 381446081}
   - {fileID: 817762166}
   - {fileID: 3303432188456208127}
+  - {fileID: 24835274537065989}

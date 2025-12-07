@@ -36,6 +36,7 @@ TagManager:
   - China Town 6
   - Projectile
   - FoudreHitBox
+  - ColliderChecker
   layers:
   - Default
   - TransparentFX
