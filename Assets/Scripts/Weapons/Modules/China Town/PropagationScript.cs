@@ -17,15 +17,12 @@ public class PropagationScript : MonoBehaviour
     float                                   delayTimeBetweenDamage           = 0.5f; //en seconde
     [SerializeField]         float          currentModuleDamages;
     [SerializeField]         EnemyStat      enemyStat;
-    [HideInInspector] public PlayerStats    playerStats;
-    [HideInInspector] public ModuleManager  moduleManager;
     [SerializeField]         SpriteRenderer spriteRenderer;
     [SerializeField]         EnemyMouvement enemyMouvement;
     [SerializeField] public  int            maxPropagationSteps;
     [SerializeField]         Color          baseColor;
     public Vector3                                 spawnPosition;
     [SerializeField] Light2D                electrocutionLight;
-    public           EnemyStat              detectedEnemy;
     public           PropagationCollider    propagationCollider;
 
     public void AddEnemy()
@@ -35,7 +32,7 @@ public class PropagationScript : MonoBehaviour
     public void PropagationSetup()
     {
         Debug.LogWarning(enemyStat.spawnPosition + " Propagation Started");
-        playerStats   = PlayerStats.SINGLETON;
+        PlayerStats.SINGLETON   = PlayerStats.SINGLETON;
         ModuleManager.SINGLETON = ModuleManager.SINGLETON;
         if (ModuleManager.SINGLETON.projectileAcquired == 1)
         {
@@ -144,7 +141,7 @@ public class PropagationScript : MonoBehaviour
         electrocutionLight.enabled                          = true;
         for (int i = 0; i < howManyTimeDamagingEnemyIsCalled; i++)
         {
-            //enemyStat.TakeDamage(playerStats.currentPlayerDamage / currentModuleDamages);   
+            enemyStat.TakeDamage(PlayerStats.SINGLETON.currentPlayerDamage / currentModuleDamages);   
             yield return new WaitForSeconds(delayTimeBetweenDamage); // attend X secondes
         }
         // Boucle terminée
@@ -158,11 +155,11 @@ public class PropagationScript : MonoBehaviour
     }
     void DisableCollider()
     {
+        Debug.Log(spawnPosition + "Collider Disabled");
         if (enemyStat.hitBySword)
         {
-            //enemyStat.TakeDamage(playerStats.currentPlayerDamage);
+            enemyStat.TakeDamage(PlayerStats.SINGLETON.currentPlayerDamage);
         }
-        Debug.Log(spawnPosition + "Collider Disabled");
         enemyStat.HealthCheck();
         electrocutionLight.enabled       = false;
         enemyStat.isElectrocuted         = false;

@@ -48,7 +48,7 @@ public class EnemyStat : MonoBehaviour
     {
         enemyMouvement.isStunned                   =  true;
         currentHealth                              -= dmg;
-        GetComponent<Saignement>()?.CallSaignememnt();
+        //GetComponent<Saignement>()?.CallSaignememnt();
         StartCoroutine(DamageFlash());
         if (isElectrocuted == false)
         {
