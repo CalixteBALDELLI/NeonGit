@@ -9,26 +9,22 @@ public class PropagationScript : MonoBehaviour
     
     
     // Variables module Propagation
-    [SerializeField]        List<float>     distances      = new List<float>();
-    [SerializeField] public List<EnemyStat> focusedEnemies = new List<EnemyStat>();
-    int                                     shortestDistanceIndex;
-    [SerializeField] public Collider2D      hitBoxCollider2D;
-    int                                     howManyTimeDamagingEnemyIsCalled = 10;
-    float                                   delayTimeBetweenDamage           = 0.5f; //en seconde
-    [SerializeField]         float          currentModuleDamages;
-    [SerializeField]         EnemyStat      enemyStat;
-    [SerializeField]         SpriteRenderer spriteRenderer;
-    [SerializeField]         EnemyMouvement enemyMouvement;
-    [SerializeField] public  int            maxPropagationSteps;
-    [SerializeField]         Color          baseColor;
-    public Vector3                                 spawnPosition;
-    [SerializeField] Light2D                electrocutionLight;
-    public           PropagationCollider    propagationCollider;
-
-    public void AddEnemy()
-    {
-        
-    }
+    [SerializeField]        List<float>         distances      = new List<float>();
+    [SerializeField] public List<EnemyStat>     focusedEnemies = new List<EnemyStat>();
+    int                                         shortestDistanceIndex;
+    [SerializeField] public Collider2D          hitBoxCollider2D;
+    int                                         howManyTimeDamagingEnemyIsCalled = 10;
+    float                                       delayTimeBetweenDamage           = 0.5f; //en seconde
+    [SerializeField]        float               currentModuleDamages;
+    [SerializeField]        EnemyStat           enemyStat;
+    [SerializeField]        SpriteRenderer      spriteRenderer;
+    [SerializeField]        EnemyMouvement      enemyMouvement;
+    [SerializeField] public int                 maxPropagationSteps;
+    [SerializeField]        Color               baseColor;
+    public                  Vector3             spawnPosition;
+    [SerializeField]        Light2D             electrocutionLight;
+    public                  PropagationCollider propagationCollider;
+    
     public void PropagationSetup()
     {
         Debug.LogWarning(enemyStat.spawnPosition + " Propagation Started");
@@ -56,18 +52,14 @@ public class PropagationScript : MonoBehaviour
             //Debug.LogWarning(spawnPosition + " Hit by sword");
         }
         
-        //hitBoxCollider2D.enabled = true;
         DistanceBetweenEnemies();
         hitBoxCollider2D.enabled = false;
-        //StartCoroutine(propagationCollider.CheckColliderActivation());
-        //StartCoroutine(CallDamagingEnemyRepeatedly());
     }
     
     // Mesure la distance de chacun d'eux par rapport à l'ennemi initiateur de la propagation (en excluant ce dernier) et l'ajoute dans une liste.
 	public void DistanceBetweenEnemies()
     {
-        Debug.Log(spawnPosition + "Added Distances between enemies");
-        //hitBoxCollider2D.enabled = false;
+        //Debug.Log(spawnPosition + "Added Distances between enemies");
         distances.Clear();
         focusedEnemies.Remove(enemyStat);
         focusedEnemies.Remove(enemyStat.attacker);
@@ -86,7 +78,7 @@ public class PropagationScript : MonoBehaviour
     {
         if (distances.Count > 0)
         {
-            Debug.Log(spawnPosition + "Looked for smallest distance");
+            //Debug.Log(spawnPosition + "Looked for smallest distance");
             float minVal = distances.Min();
             shortestDistanceIndex = distances.IndexOf(minVal);
             //Debug.Log(spawnPosition + " INDEX : "        + shortestDistanceIndex);
@@ -95,8 +87,8 @@ public class PropagationScript : MonoBehaviour
         }
         else
         { 
-            Debug.Log(spawnPosition + " No enemy detected : Propagation Ended");
-            EndPropagation();
+           // Debug.Log(spawnPosition + " No enemy detected : Propagation Ended");
+           EndPropagation();
         }
     }
 
@@ -113,7 +105,7 @@ public class PropagationScript : MonoBehaviour
             }
             else
             {
-                Debug.Log(spawnPosition + " Target Enemy was Dead");
+                //Debug.Log(spawnPosition + " Target Enemy was Dead");
                 focusedEnemies.RemoveAt(shortestDistanceIndex);
                 distances.RemoveAt(shortestDistanceIndex);
                 LookForSmallestDistance();
@@ -136,17 +128,16 @@ public class PropagationScript : MonoBehaviour
         hitBoxCollider2D.enabled = true;
         yield return new WaitForFixedUpdate();
         StartCoroutine(propagationCollider.Propagate());
-        spriteRenderer.GetComponent<SpriteRenderer>().color = Color.yellow; // A CHANGER EN UN GLISSER DEPOSER
-        enemyStat.isElectrocuted                            = true;
-        electrocutionLight.enabled                          = true;
+        spriteRenderer.color       = Color.yellow;
+        enemyStat.isElectrocuted   = true;
+        electrocutionLight.enabled = true;
         for (int i = 0; i < howManyTimeDamagingEnemyIsCalled; i++)
         {
             enemyStat.TakeDamage(PlayerStats.SINGLETON.currentPlayerDamage / currentModuleDamages);   
             yield return new WaitForSeconds(delayTimeBetweenDamage); // attend X secondes
         }
-        // Boucle terminée
         //Debug.Log(spawnPosition + " Boucle finie");
-        spriteRenderer.GetComponent<SpriteRenderer>().color = baseColor; // PAREIL
+        spriteRenderer.color = baseColor;
         if (ModuleManager.SINGLETON.currentPropagationStep == maxPropagationSteps)
         {
             EndPropagation();
@@ -155,7 +146,7 @@ public class PropagationScript : MonoBehaviour
     }
     void DisableCollider()
     {
-        Debug.Log(spawnPosition + "Collider Disabled");
+        //Debug.Log(spawnPosition + "Collider Disabled");
         if (enemyStat.hitBySword)
         {
             enemyStat.TakeDamage(PlayerStats.SINGLETON.currentPlayerDamage);
@@ -163,10 +154,8 @@ public class PropagationScript : MonoBehaviour
         enemyStat.HealthCheck();
         electrocutionLight.enabled       = false;
         enemyStat.isElectrocuted         = false;
-        propagationCollider.enemiesAdded = false;
         focusedEnemies.Clear();
         distances.Clear();
         enemyMouvement.isStunned = false;
-        //gameObject.SetActive(false);
     }
 }

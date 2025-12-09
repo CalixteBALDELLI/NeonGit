@@ -129,7 +129,7 @@ public class EnemyStat : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision");
+//        Debug.Log("Collision");
         if (enemyMouvement.isKnockedBack)
         {
             if (collision.gameObject.CompareTag("Enemy"))
@@ -147,14 +147,12 @@ public class EnemyStat : MonoBehaviour
     
     void ModulesCheck()
     {
-        Debug.Log("ModulesCheck");
-        if (ModuleManager.SINGLETON.propagationAcquired > 0)
+        //Debug.Log("ModulesCheck");
+        if (ModuleManager.SINGLETON.propagationAcquired > 0 && ModuleManager.SINGLETON.propagationCooldownFinished)
         {
-            if (ModuleManager.SINGLETON.propagationCooldownFinished)
-            {
-                Propage();
-                StartCoroutine(ModuleManager.SINGLETON.PropagationCooldown());
-            }
+            Debug.Log("Cooldown Started");
+            ModuleManager.SINGLETON.StartPropagationCooldown();
+            Propage();
         }
 
         if (ModuleManager.SINGLETON.knockbackAcquired > 0)
@@ -165,9 +163,8 @@ public class EnemyStat : MonoBehaviour
 
     public void Propage()
     {
-        // Active le collider et exécute le code pour la propagation.
-//      Debug.Log(transform.position + "Propaged");
-        //propagationCollider.SetActive(true);
+        // Exécute le code pour la propagation.
+        //Debug.Log(transform.position + "Propaged");
         StartCoroutine(propagationScript.CallDamagingEnemyRepeatedly());
     }
 }

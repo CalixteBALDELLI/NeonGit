@@ -172,19 +172,23 @@ public class ModuleManager : MonoBehaviour
         }
     }
 
+    public void StartPropagationCooldown()
+    {
+        StartCoroutine(PropagationCooldown());
+    }
     public IEnumerator PropagationCooldown()
     {
         Debug.LogWarning("Propagation Cooldown");
         propagationCooldownFinished = false;
-        float propagationCooldown  = 2;
+        float propagationCooldown  = 3;
         float delayBetweenDecrease = 0.25f;
         float cooldownReduction = 0.1f;
-        while (propagationCooldown >= cooldownReduction)
+        do
         {
-            propagationCooldown -= cooldownReduction ;
+            propagationCooldown -= cooldownReduction;
             Debug.Log("Propagation Cooldown : " + propagationCooldown);
             yield return new WaitForSeconds(delayBetweenDecrease);
-        }
+        } while (propagationCooldown >= cooldownReduction);
         Debug.LogWarning("Propagation Cooldown Finished");
         //propagationCooldown = 0;
         propagationCooldownFinished = true;
