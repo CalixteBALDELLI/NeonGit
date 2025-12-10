@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public           InputActionReference      move;  // reference à l'action move
-    public           InputActionReference      fire;
     public           Rigidbody2D               rb; //reference au rigidbody
     public           CharacterScriptableObject characterData;
     [SerializeField] bool logValues;
@@ -90,25 +89,9 @@ public class PlayerMovement : MonoBehaviour
             footstepTimer = 0f;
         }
     }
-    
 
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * PlayerStats.SINGLETON.currentMoveSpeed; // deplacement du personnage sur la carte (mulitpipplication du vecteur de direction par la  valeur de vitesse réglable) 
-    }
-    
-    private void OnEnable()
-    {
-        fire.action.started += Fire;
-    }
-
-    private void Fire(InputAction.CallbackContext obj)
-    {
-        Debug.Log("Fire");
-    }
-
-    private void OnDisable()
-    {
-        fire.action.started -= Fire;
     }
 }

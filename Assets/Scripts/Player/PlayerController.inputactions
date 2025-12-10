@@ -7,15 +7,6 @@
             "id": "86c8689b-86dd-4636-98ca-2b322b1609ab",
             "actions": [
                 {
-                    "name": "Fire",
-                    "type": "Button",
-                    "id": "5b6f0977-4cc1-429e-b72f-d54df0a3004b",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Move",
                     "type": "PassThrough",
                     "id": "6e2d55c5-62a1-4f9e-b239-b849854909ff",
@@ -23,20 +14,18 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Aim",
+                    "type": "PassThrough",
+                    "id": "894afaed-496d-4b11-a7fc-1690fbab249b",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "8bc44086-74ec-416d-862c-06019fd5acbd",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "2D Vector",
                     "id": "e43326bb-8ee3-45e0-879a-ed7ea1923bef",
@@ -91,6 +80,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "67b8cce8-5efc-46b6-a362-c9a98f6f9639",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
