@@ -58,10 +58,11 @@ public class SwordManager : MonoBehaviour
         targetPosition             =  angle - swingCardinalRadius + 1;
         
         //if (player.lastMovedVector.x == -1 || player.lastMovedVector.y == -1 || player.lastMovedVector.x is < 0 and > -1 && player.lastMovedVector.y is < 1 and > 0 || player.lastMovedVector.x is < 0 and > -1 && player.lastMovedVector.y is < 0 and > -1) // conserver le même point de départ entre les différentes directions.
-        //if(mousePosition.x < Screen.width/2 || mousePosition.y < Screen.height/2)
+        //if(mousePosition.x < Screen.width/2 && mousePosition.y > Screen.height/2 || mousePosition.y < Screen.height/2 && mousePosition.x < Screen.width/2)
+        if(mousePosition.x < Screen.width/2)
         {
-            //angle          -= swingCardinalRadius;
-            //targetPosition += swingCardinalRadius;
+            angle          -= swingCardinalRadius;
+            targetPosition += swingCardinalRadius;
         }
         
         transform.localEulerAngles =  new Vector3(0, 0, angle);
