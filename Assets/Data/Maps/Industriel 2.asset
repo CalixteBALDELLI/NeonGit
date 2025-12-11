@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4cf8348f07297e409808649b5c26a61, type: 3}
-  m_Name: Neon
+  m_Name: Industriel 2
   m_EditorClassIdentifier: 
   mapName: Neon
-  mapId: 5
+  mapId: 15
   playerWeapons: []
   cameraFOV: 14

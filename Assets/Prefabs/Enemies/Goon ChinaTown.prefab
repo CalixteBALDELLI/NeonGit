@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 1161815033490814516}
   - component: {fileID: -4614484855479058701}
   - component: {fileID: -6865097917304665639}
+  - component: {fileID: 7972754980707647343}
   m_Layer: 3
   m_Name: Goon ChinaTown
   m_TagString: Enemy
@@ -365,12 +366,12 @@ MonoBehaviour:
   knockBackModule: {fileID: -4614484855479058701}
   playerScriptableObject: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
   propagationCollider: {fileID: 1751900232549313019}
-  propagationScript: {fileID: 5808217629363700837}
+  propagationScript: {fileID: 7972754980707647343}
   isABoss: 0
   teleporterKey: {fileID: 0}
   isElectrocuted: 0
   hitBySword: 0
-  hitBoxCollider2D: {fileID: 0}
+  hitBoxCollider2D: {fileID: 8265871152163762300}
   attacker: {fileID: 0}
   spawnPosition: {x: 0, y: 0, z: 0}
   currentHealth: 0
@@ -427,6 +428,30 @@ MonoBehaviour:
   enemyStat: {fileID: -4390385675418812344}
   speedDamageSaignement: 0.125
   damageSaignement: 0.05
+--- !u!114 &7972754980707647343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745270701351364792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff76f35ff2197c34ebc569aa53e0c083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distances: []
+  focusedEnemies: []
+  hitBoxCollider2D: {fileID: 8265871152163762300}
+  currentModuleDamages: 0
+  enemyStat: {fileID: -4390385675418812344}
+  spriteRenderer: {fileID: 5318108029185307242}
+  enemyMouvement: {fileID: 9024858487180829317}
+  maxPropagationSteps: 0
+  baseColor: {r: 0.68235296, g: 0.99215686, b: 1, a: 1}
+  spawnPosition: {x: 0, y: 0, z: 0}
+  electrocutionLight: {fileID: 1236827744629385350}
+  propagationCollider: {fileID: 8909928639491541802}
 --- !u!1001 &2343828245220025111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -603,14 +628,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
   m_PrefabInstance: {fileID: 6058286776624273368}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5808217629363700837 stripped
+--- !u!61 &8265871152163762300 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2784664642519852964, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
+  m_PrefabInstance: {fileID: 6058286776624273368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8909928639491541802 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 326990980748170173, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3437714766072372466, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
   m_PrefabInstance: {fileID: 6058286776624273368}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751900232549313019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff76f35ff2197c34ebc569aa53e0c083, type: 3}
+  m_Script: {fileID: 11500000, guid: 86ca0d6230cf80042ae3763d6d91d52d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

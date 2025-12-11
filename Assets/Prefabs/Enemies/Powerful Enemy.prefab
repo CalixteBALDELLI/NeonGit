@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1161815033490814516}
   - component: {fileID: -3416010661427898355}
   - component: {fileID: -5125560780950984761}
+  - component: {fileID: 6869097372620016865}
   m_Layer: 3
   m_Name: Powerful Enemy
   m_TagString: Enemy
@@ -38,6 +39,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5193179677398412695}
+  - {fileID: 3037475624193119206}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5318108029185307242
@@ -197,12 +199,12 @@ MonoBehaviour:
   knockBackModule: {fileID: -3416010661427898355}
   playerScriptableObject: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
   propagationCollider: {fileID: 1751900232549313019}
-  propagationScript: {fileID: 5808217629363700837}
+  propagationScript: {fileID: 6869097372620016865}
   isABoss: 1
   teleporterKey: {fileID: 1696656462747023363, guid: c08e5787a1c008245926913678fd7790, type: 3}
   isElectrocuted: 0
   hitBySword: 0
-  hitBoxCollider2D: {fileID: 0}
+  hitBoxCollider2D: {fileID: 8265871152163762300}
   attacker: {fileID: 0}
   spawnPosition: {x: 0, y: 0, z: 0}
   currentHealth: 0
@@ -259,6 +261,103 @@ MonoBehaviour:
   enemyStat: {fileID: -4390385675418812344}
   speedDamageSaignement: 0.125
   damageSaignement: 0.05
+--- !u!114 &6869097372620016865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745270701351364792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff76f35ff2197c34ebc569aa53e0c083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distances: []
+  focusedEnemies: []
+  hitBoxCollider2D: {fileID: 8265871152163762300}
+  currentModuleDamages: 0
+  enemyStat: {fileID: -4390385675418812344}
+  spriteRenderer: {fileID: 5318108029185307242}
+  enemyMouvement: {fileID: 9024858487180829317}
+  maxPropagationSteps: 0
+  baseColor: {r: 0.8235294, g: 0.60784316, b: 1, a: 1}
+  spawnPosition: {x: 0, y: 0, z: 0}
+  electrocutionLight: {fileID: 8281994382186859828}
+  propagationCollider: {fileID: 8909928639491541802}
+--- !u!1001 &4846828793070995109
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2064473439258034773}
+    m_Modifications:
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898014330321174964, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+      propertyPath: m_Name
+      value: Electrocution Light
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+--- !u!4 &3037475624193119206 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7594233248189879619, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+  m_PrefabInstance: {fileID: 4846828793070995109}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8281994382186859828 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3579494297200135057, guid: 003e1744fdffa864f9bc389dece37f0a, type: 3}
+  m_PrefabInstance: {fileID: 4846828793070995109}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6058286776624273368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -338,14 +437,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
   m_PrefabInstance: {fileID: 6058286776624273368}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5808217629363700837 stripped
+--- !u!61 &8265871152163762300 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2784664642519852964, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
+  m_PrefabInstance: {fileID: 6058286776624273368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8909928639491541802 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 326990980748170173, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3437714766072372466, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
   m_PrefabInstance: {fileID: 6058286776624273368}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751900232549313019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff76f35ff2197c34ebc569aa53e0c083, type: 3}
+  m_Script: {fileID: 11500000, guid: 86ca0d6230cf80042ae3763d6d91d52d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

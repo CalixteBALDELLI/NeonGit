@@ -21,7 +21,7 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] public bool              hitBySword;
     Canvas                                    KeyObtained;
     [SerializeField] public Collider2D        hitBoxCollider2D;
-    public                  EnemyStat         attacker;
+    [HideInInspector] public                  EnemyStat         attacker;
     public                  Vector3           spawnPosition;
     
     // Current stats

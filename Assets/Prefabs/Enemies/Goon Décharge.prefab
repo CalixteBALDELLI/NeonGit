@@ -378,7 +378,7 @@ MonoBehaviour:
   enemyMouvement: {fileID: 9024858487180829317}
   knockBackModule: {fileID: -8771028435617670071}
   playerScriptableObject: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
-  propagationCollider: {fileID: 0}
+  propagationCollider: {fileID: 2627096259023400792}
   propagationScript: {fileID: 1215140938464024287}
   isABoss: 0
   teleporterKey: {fileID: 0}
@@ -461,7 +461,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 5318108029185307242}
   enemyMouvement: {fileID: 9024858487180829317}
   maxPropagationSteps: 0
-  baseColor: {r: 0, g: 0, b: 0, a: 0}
+  baseColor: {r: 0.5568628, g: 0.5568628, b: 0.5568628, a: 1}
   spawnPosition: {x: 0, y: 0, z: 0}
   electrocutionLight: {fileID: 8162499901147809384}
   propagationCollider: {fileID: 676635470643274377}

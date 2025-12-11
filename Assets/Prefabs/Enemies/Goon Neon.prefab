@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 1161815033490814516}
   - component: {fileID: -2931946073952636291}
   - component: {fileID: -6566187942884578169}
+  - component: {fileID: 2683156527793266843}
   m_Layer: 3
   m_Name: Goon Neon
   m_TagString: Enemy
@@ -287,13 +288,13 @@ MonoBehaviour:
   knockBackModule: {fileID: -2931946073952636291}
   playerScriptableObject: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
   propagationCollider: {fileID: 1751900232549313019}
-  propagationScript: {fileID: 5808217629363700837}
+  propagationScript: {fileID: 2683156527793266843}
   isABoss: 0
   teleporterKey: {fileID: 0}
   isElectrocuted: 0
   hitBySword: 0
-  hitBoxCollider2D: {fileID: 0}
-  attacker: {fileID: 0}
+  hitBoxCollider2D: {fileID: 8265871152163762300}
+  attacker: {fileID: -4390385675418812344}
   spawnPosition: {x: 0, y: 0, z: 0}
   currentHealth: 0
 --- !u!114 &1161815033490814516
@@ -349,6 +350,30 @@ MonoBehaviour:
   enemyStat: {fileID: -4390385675418812344}
   speedDamageSaignement: 0.125
   damageSaignement: 0.05
+--- !u!114 &2683156527793266843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745270701351364792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff76f35ff2197c34ebc569aa53e0c083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distances: []
+  focusedEnemies: []
+  hitBoxCollider2D: {fileID: 8265871152163762300}
+  currentModuleDamages: 0
+  enemyStat: {fileID: -4390385675418812344}
+  spriteRenderer: {fileID: 5318108029185307242}
+  enemyMouvement: {fileID: 9024858487180829317}
+  maxPropagationSteps: 0
+  baseColor: {r: 1, g: 0.72156864, b: 0.72156864, a: 1}
+  spawnPosition: {x: 0, y: 0, z: 0}
+  electrocutionLight: {fileID: 4791758991643201492}
+  propagationCollider: {fileID: 8909928639491541802}
 --- !u!1001 &1187159273915320717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -523,15 +548,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
   m_PrefabInstance: {fileID: 6058286776624273368}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5808217629363700837 stripped
+--- !u!61 &8265871152163762300 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2784664642519852964, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
+  m_PrefabInstance: {fileID: 6058286776624273368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8909928639491541802 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 326990980748170173, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3437714766072372466, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
   m_PrefabInstance: {fileID: 6058286776624273368}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751900232549313019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff76f35ff2197c34ebc569aa53e0c083, type: 3}
+  m_Script: {fileID: 11500000, guid: 86ca0d6230cf80042ae3763d6d91d52d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &8346107389191898181
