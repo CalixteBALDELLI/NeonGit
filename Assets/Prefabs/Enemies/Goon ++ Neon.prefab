@@ -296,6 +296,7 @@ MonoBehaviour:
   hitBoxCollider2D: {fileID: 923975058305936115}
   attacker: {fileID: 0}
   spawnPosition: {x: 0, y: 0, z: 0}
+  isBleeding: 0
   currentHealth: 0
 --- !u!114 &1161815033490814516
 MonoBehaviour:
@@ -350,6 +351,12 @@ MonoBehaviour:
   enemyStat: {fileID: -4390385675418812344}
   speedDamageSaignement: 0.125
   damageSaignement: 0.05
+  damagesSteps: 0
+  saignementData:
+  - {fileID: 11400000, guid: c38313b5c3c51934d8dd3d46dba0ad64, type: 2}
+  - {fileID: 11400000, guid: bbad54af29e159244b4d7eaf9c247687, type: 2}
+  - {fileID: 11400000, guid: e18ba14fa35e6bb48939ad35fb0afde9, type: 2}
+  - {fileID: 11400000, guid: 8480e29e39c041d4682a36e9678ab34d, type: 2}
 --- !u!114 &1421777180657336548
 MonoBehaviour:
   m_ObjectHideFlags: 0

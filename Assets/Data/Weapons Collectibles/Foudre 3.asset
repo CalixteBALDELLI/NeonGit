@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Foudre 3
   m_EditorClassIdentifier: 
   weaponName: Propagation
-  weaponId: 2
+  weaponId: 3
   xpValue: 75
   description: "Cr\xE9er un anneau d'\xE9lectricit\xE9 qui affecte les ennemis pr\xE9sents."
   weaponIcon: {fileID: 64134209812282044, guid: ddea4e977feb94f4ebe946ca81bc6cc2, type: 3}
