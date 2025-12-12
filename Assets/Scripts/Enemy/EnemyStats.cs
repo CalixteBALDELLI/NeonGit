@@ -128,6 +128,7 @@ public class EnemyStat : MonoBehaviour
 
         if (cl2D.CompareTag("Projectile"))
         {
+            //TakeDamage(PlayerStats.SINGLETON.currentPlayerDamage);
             ModulesCheck();
         }
     }
@@ -150,7 +151,7 @@ public class EnemyStat : MonoBehaviour
         }
     }
     
-    void ModulesCheck()
+    public void ModulesCheck()
     {
         //Debug.Log("ModulesCheck");
         if (ModuleManager.SINGLETON.propagationAcquired > 0 && ModuleManager.SINGLETON.propagationCooldownFinished)

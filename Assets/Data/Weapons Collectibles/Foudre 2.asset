@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb60c578595716c4ca134e41ad915c26, type: 3}
   m_Name: Foudre 2
   m_EditorClassIdentifier: 
-  weaponName: Propagation
+  weaponName: Foudre
   weaponId: 3
   xpValue: 75
   description: "Cr\xE9er un anneau d'\xE9lectricit\xE9 qui affecte les ennemis pr\xE9sents."

@@ -52,6 +52,7 @@ public class DegatFoudreScript : MonoBehaviour
         {
             isDamaging = true;
             StartCoroutine(DamageLoop());
+            e.ModulesCheck();
         }
     }
 

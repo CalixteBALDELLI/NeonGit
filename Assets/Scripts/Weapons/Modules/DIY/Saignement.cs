@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Saignement : MonoBehaviour
 {
-    [SerializeField]         EnemyStat      enemyStat;
-    public float speedDamageSaignement;
-    public float damageSaignement;
-    public float damagesSteps;
-    [SerializeField] WeaponScriptableObject[] saignementData;
+    [SerializeField]         EnemyStat                enemyStat;
+    [HideInInspector] public float                    speedDamageSaignement;
+    [HideInInspector] public float                    damageSaignement;
+    [HideInInspector] public float                    damagesSteps;
+    [SerializeField]         WeaponScriptableObject[] saignementData;
     
     
 

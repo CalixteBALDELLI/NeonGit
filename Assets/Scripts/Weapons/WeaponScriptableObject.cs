@@ -14,6 +14,7 @@ public class WeaponScriptableObject :ScriptableObject
     public GameObject Prefab {get => prefab; private set => prefab = value; }
    
     public bool dealDamages;
+    public bool isAffliction;
     [SerializeField]
     float damage;
     public float Damage { get => damage; private set => damage = value; }
