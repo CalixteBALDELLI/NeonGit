@@ -16,3 +16,4 @@ MonoBehaviour:
   mapId: 7
   playerWeapons: []
   cameraFOV: 17
+  timeBeforeBoss: 180

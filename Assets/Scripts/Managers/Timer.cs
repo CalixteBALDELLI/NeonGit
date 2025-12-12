@@ -7,31 +7,49 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] float           timerInSeconds;
     string                           timerText;
+    string                           finalBossTimerTexto;
     [SerializeField] TextMeshProUGUI timerTextMesh;
-    [SerializeField] GameObject      powerfulEnemy;
+    [SerializeField] TextMeshProUGUI FinalBossTimerText;
+    [SerializeField] GameObject      powerfulEnemyPrefab;
+    [SerializeField] GameObject      finalBossPrefab;
+    [SerializeField] float           timeBeforeFinalBoss;
+
     void Start()
     {
-        timerTextMesh.text = timerText;
-        StartCoroutine(GameTimer());
+        SetBossTimer();
+        StartCoroutine(FinalBossTimer());
     }
-    
-    IEnumerator GameTimer()
+
+    void SetBossTimer()
     {
-        yield return new WaitForSeconds(1);
-        if (timerInSeconds > 0)
+        timerInSeconds     = MapDataHolding.SINGLETON.currentmapData.timeBeforeBoss;
+        timerTextMesh.text = timerText;
+        StartCoroutine(BossTimer());
+    }
+
+    IEnumerator BossTimer()
+    {
+        while (timerInSeconds > 0)
         {
             timerInSeconds--;
-            timerText       = System.TimeSpan.FromSeconds(timerInSeconds).ToString("hh':'mm':'ss");
+            timerText          = "Boss de Zone dans : " + System.TimeSpan.FromSeconds(timerInSeconds).ToString("hh':'mm':'ss");
             timerTextMesh.text = timerText;
-            StartCoroutine(GameTimer());
+            yield return new WaitForSeconds(1);
         }
-        else
-        {
-            powerfulEnemy.SetActive(true);
-        }
+        powerfulEnemyPrefab.SetActive(true);
     }
-    
-    void Update()
+
+    IEnumerator FinalBossTimer()
     {
+
+        while (timeBeforeFinalBoss > 0)
+        {
+            timeBeforeFinalBoss--;
+            finalBossTimerTexto     = "Boss Final dans : " + System.TimeSpan.FromSeconds(timeBeforeFinalBoss).ToString("hh':'mm':'ss");
+            FinalBossTimerText.text = finalBossTimerTexto;
+            yield return new WaitForSeconds(1);
+        }
+        finalBossPrefab.SetActive(true);
     }
 }
+

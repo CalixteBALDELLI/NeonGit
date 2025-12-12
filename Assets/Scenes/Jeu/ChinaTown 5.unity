@@ -625,6 +625,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 111069637}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &152962924
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5989766164689989864, guid: 9bf019aa3f5ee4e4d9a88d0f8e0a0390, type: 3}
+      propertyPath: m_Name
+      value: Projectile Collectable 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 9bf019aa3f5ee4e4d9a88d0f8e0a0390, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -75.42202
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 9bf019aa3f5ee4e4d9a88d0f8e0a0390, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 46.6101
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 9bf019aa3f5ee4e4d9a88d0f8e0a0390, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 9bf019aa3f5ee4e4d9a88d0f8e0a0390, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 9bf019aa3f5ee4e4d9a88d0f8e0a0390, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 9bf019aa3f5ee4e4d9a88d0f8e0a0390, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 9bf019aa3f5ee4e4d9a88d0f8e0a0390, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 9bf019aa3f5ee4e4d9a88d0f8e0a0390, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 9bf019aa3f5ee4e4d9a88d0f8e0a0390, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 9bf019aa3f5ee4e4d9a88d0f8e0a0390, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9bf019aa3f5ee4e4d9a88d0f8e0a0390, type: 3}
 --- !u!4 &161457364 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4081079604744392503, guid: 80ce93dd1a40e6b44b634a395173b49a, type: 3}
@@ -2523,6 +2580,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4081079604744392503, guid: 80ce93dd1a40e6b44b634a395173b49a, type: 3}
   m_PrefabInstance: {fileID: 1226166006}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &1193033436 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 1911331048349280809, guid: 025580189a52cfc449919f9496ddba4d, type: 3}
+  m_PrefabInstance: {fileID: 7334736885590810896}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1193033438 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5984381830683579955, guid: 025580189a52cfc449919f9496ddba4d, type: 3}
+  m_PrefabInstance: {fileID: 7334736885590810896}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf849e55bd3a8c640960ad25cc195e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1226166006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4062,11 +4135,11 @@ PrefabInstance:
     - target: {fileID: 8575406461301471705, guid: 9bf019aa3f5ee4e4d9a88d0f8e0a0390, type: 3}
       propertyPath: weaponChoiceTexts
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1193033438}
     - target: {fileID: 8575406461301471705, guid: 9bf019aa3f5ee4e4d9a88d0f8e0a0390, type: 3}
       propertyPath: weaponChoiceCanvas
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1193033436}
     - target: {fileID: 9008725113772030793, guid: 9bf019aa3f5ee4e4d9a88d0f8e0a0390, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.8336525
@@ -5259,5 +5332,6 @@ SceneRoots:
   - {fileID: 2113088851}
   - {fileID: 1263124119}
   - {fileID: 1342191867}
+  - {fileID: 152962924}
   - {fileID: 60658723}
   - {fileID: 1769183847}

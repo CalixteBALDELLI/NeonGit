@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: -5125560780950984761}
   - component: {fileID: 6869097372620016865}
   m_Layer: 3
-  m_Name: Powerful Enemy
+  m_Name: Final Boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +35,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 4.7235, y: 4.7235, z: 4.7235}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5193179677398412695}
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 8862273612299370736, guid: 3131a3f1c0c9fef499ed7127ac7be8eb, type: 3}
-  m_Color: {r: 0.82530254, g: 0.6084906, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.08318866, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -488,14 +488,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2784664642519852964, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3437714766072372466, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
-      propertyPath: propagationScript
-      value: 
-      objectReference: {fileID: 6869097372620016865}
     - target: {fileID: 5502453454140112419, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
       propertyPath: m_Name
       value: Propagation Collider
