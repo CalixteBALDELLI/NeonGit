@@ -2555,6 +2555,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Light 2D
       objectReference: {fileID: 0}
+    - target: {fileID: 4607369558877091952, guid: b46bde19e7a1c9f4a84e559022ce857c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8481612
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607369558877091952, guid: b46bde19e7a1c9f4a84e559022ce857c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607369558877091952, guid: b46bde19e7a1c9f4a84e559022ce857c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5366579773614563279, guid: b46bde19e7a1c9f4a84e559022ce857c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

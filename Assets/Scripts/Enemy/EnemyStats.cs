@@ -20,9 +20,11 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] public bool              isElectrocuted;
     [SerializeField] public bool              hitBySword;
     Canvas                                    KeyObtained;
-    [SerializeField] public Collider2D        hitBoxCollider2D;
-    [HideInInspector] public                  EnemyStat         attacker;
-    public                  Vector3           spawnPosition;
+    [SerializeField]  public Collider2D       hitBoxCollider2D;
+    [HideInInspector] public EnemyStat        attacker;
+    public                   Vector3          spawnPosition;
+    public                   bool             isBleeding;
+
     
     // Current stats
     float currentMoveSpeed;
@@ -48,7 +50,10 @@ public class EnemyStat : MonoBehaviour
     {
         enemyMouvement.isStunned                   =  true;
         currentHealth                              -= dmg;
-        //GetComponent<Saignement>()?.CallSaignememnt();
+        if (ModuleManager.SINGLETON.saignementAcquired > 0)
+        {
+            GetComponent<Saignement>()?.CallSaignememnt();
+        }
         StartCoroutine(DamageFlash());
         if (isElectrocuted == false)
         {

@@ -12,7 +12,7 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
 	    Debug.Log("Weapon Choice Trigger");
-	   // weaponChoiceCanvas                           = GameObject.Find("Weapon Choice").GetComponent<Canvas>();
+	   weaponChoiceCanvas                           = GameObject.Find("Weapon Choice").GetComponent<Canvas>();
 	    weaponChoiceTexts                            = weaponChoiceCanvas.GetComponent<WeaponChoiceTexts>();
 	    Time.timeScale                               = 0;
 

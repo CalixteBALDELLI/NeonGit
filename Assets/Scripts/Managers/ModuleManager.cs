@@ -16,9 +16,12 @@ public class ModuleManager : MonoBehaviour
     [SerializeField] public int propagationAcquired;
     [SerializeField] public int knockbackAcquired;
     [SerializeField] public int projectileAcquired;
+    [SerializeField] public int foudreAcquired;
+    [SerializeField] public int saignementAcquired;
     
-    [Header("Modules Data")]
+    [Header("Modules Data & Scripts")]
     public WeaponScriptableObject[] modulesData;
+    public FoudreScript foudreScript;
     
     [Header("Damage Text Settings")]
     [SerializeField] ProjectileController weaponController;
@@ -100,6 +103,18 @@ public class ModuleManager : MonoBehaviour
             if (weaponToEquip == 2) // Equipement de la Propagation
             {
                 propagationAcquired++;
+            }
+
+            if (weaponToEquip == 3)
+            {
+                foudreAcquired++;
+                foudreScript.HitZone();
+                StartCoroutine(foudreScript.Delay());
+            }
+
+            if (weaponToEquip == 4)
+            {
+                saignementAcquired++;
             }
 
             equippedWeapons++;

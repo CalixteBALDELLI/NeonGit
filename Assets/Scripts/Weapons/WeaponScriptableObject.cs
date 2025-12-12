@@ -35,6 +35,8 @@ public class WeaponScriptableObject :ScriptableObject
 
     public bool  hasKnockback;
     public float knockbackForce;
-    public int maxKnockBackSteps;
+    public int   maxKnockBackSteps;
+    public bool  hasDuration;
+    public float duration;
 }
 

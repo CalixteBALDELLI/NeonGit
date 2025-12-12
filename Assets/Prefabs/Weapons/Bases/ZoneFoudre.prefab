@@ -141,4 +141,7 @@ MonoBehaviour:
   foudreModuleDamages: 10
   speedDamage: 0.25
   durationFoudre: 10
-  enemyStat: {fileID: 0}
+  foudreData:
+  - {fileID: 11400000, guid: 72dc9b2b416f0c340a5a76bc137399ac, type: 2}
+  - {fileID: 11400000, guid: 6789cc277a53aa446b1f07193dc52b09, type: 2}
+  - {fileID: 11400000, guid: eada2437330a3a84495e57bcdd19a8a4, type: 2}

@@ -5,17 +5,21 @@ using UnityEngine;
 public class Saignement : MonoBehaviour
 {
     [SerializeField]         EnemyStat      enemyStat;
-    public float speedDamageSaignement = 0.125f;
-    public float damageSaignement = 0.05f;
-    private bool isBleeding = false; 
+    public float speedDamageSaignement;
+    public float damageSaignement;
+    public float damagesSteps;
+    [SerializeField] WeaponScriptableObject[] saignementData;
     
     
 
     public void CallSaignememnt()
     {
-        if (isBleeding == false)
+        speedDamageSaignement = saignementData[ModuleManager.SINGLETON.saignementAcquired - 1].Speed;
+        damageSaignement = saignementData[ModuleManager.SINGLETON.saignementAcquired - 1].Damage;
+        Debug.Log(damageSaignement);
+        if (enemyStat.isBleeding == false)
         {
-            isBleeding =  true;
+            enemyStat.isBleeding =  true;
             StartCoroutine(DamageEnemiesSaignement());
         }
         
@@ -23,14 +27,12 @@ public class Saignement : MonoBehaviour
 
     IEnumerator DamageEnemiesSaignement()
     {
+        
         while (true)
         {
             enemyStat.TakeDamage(damageSaignement);
             yield return new WaitForSeconds(speedDamageSaignement);
         }
-            
-            
-        
         
     }
     

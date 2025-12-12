@@ -3,21 +3,24 @@ using UnityEngine;
 
 public class FoudreScript : MonoBehaviour
 {
-    public Transform player;
-    public GameObject hitboxPrefab;
-    public float timeUntilNextAoe = 2f;
-    Camera cam;
-    public bool foudreAcquired = true;
+    public Transform                player;
+    public GameObject               hitboxPrefab;
+    public float                    timeUntilNextAoe;
+    Camera                          cam;
+    public WeaponScriptableObject[] foudreData;
 
     void Start()
     {
         cam = Camera.main;
-        HitZone();
-        StartCoroutine(Delay());
+        if (ModuleManager.SINGLETON.foudreAcquired > 0)
+        {
+            HitZone();
+            StartCoroutine(Delay());
+        }
     }
 
     
-    void HitZone()
+    public void HitZone()
     {
         // tailles en unité monde
         float halfHeight = cam.orthographicSize;
@@ -39,7 +42,8 @@ public class FoudreScript : MonoBehaviour
 
     public IEnumerator Delay()
     {
-        while (foudreAcquired == true)
+        timeUntilNextAoe = foudreData[ModuleManager.SINGLETON.foudreAcquired - 1].cooldownDuration;
+        while (ModuleManager.SINGLETON.foudreAcquired > 0)
         {
             yield return new WaitForSeconds(timeUntilNextAoe);
             HitZone();

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class DegatFoudreScript : MonoBehaviour
 {
-    public PlayerStats playerStats;
-    public float foudreModuleDamages = 10f;
-    public float speedDamage = 0.25f;
-    public float durationFoudre = 10f;
+    public PlayerStats              playerStats;
+    public float                    foudreModuleDamages = 10f;
+    public float                    speedDamage         = 0.25f;
+    public float                    durationFoudre      = 10f;
+    public WeaponScriptableObject[] foudreData;
+
 
     
     private readonly HashSet<EnemyStat> enemiesInZone = new HashSet<EnemyStat>();
@@ -22,8 +24,12 @@ public class DegatFoudreScript : MonoBehaviour
 
     void Awake()
     {
-        damageDelay = new WaitForSeconds(speedDamage);
-        destroyDelay = new WaitForSeconds(durationFoudre);
+        foudreModuleDamages = foudreData[ModuleManager.SINGLETON.foudreAcquired - 1].Damage;
+        speedDamage         = foudreData[ModuleManager.SINGLETON.foudreAcquired - 1].Speed;
+        durationFoudre      = foudreData[ModuleManager.SINGLETON.foudreAcquired - 1].duration;
+        Debug.Log("Foudre : " + durationFoudre);
+        damageDelay         = new WaitForSeconds(speedDamage);
+        destroyDelay        = new WaitForSeconds(durationFoudre);
     }
 
     void Start()
