@@ -16,7 +16,7 @@ public class PropagationScript : MonoBehaviour
     int                                         howManyTimeDamagingEnemyIsCalled = 10;
     float                                       delayTimeBetweenDamage           = 0.5f; //en seconde
     [SerializeField]        float               currentModuleDamages;
-    [SerializeField]        EnemyStat           enemyStat;
+    [SerializeField] public       EnemyStat           enemyStat;
     [SerializeField]        SpriteRenderer      spriteRenderer;
     [SerializeField]        EnemyMouvement      enemyMouvement;
     [SerializeField] public int                 maxPropagationSteps;
@@ -28,9 +28,7 @@ public class PropagationScript : MonoBehaviour
     public void PropagationSetup()
     {
         Debug.LogWarning(enemyStat.spawnPosition + " Propagation Started");
-        PlayerStats.SINGLETON   = PlayerStats.SINGLETON;
-        ModuleManager.SINGLETON = ModuleManager.SINGLETON;
-        if (ModuleManager.SINGLETON.projectileAcquired == 1)
+        if (ModuleManager.SINGLETON.propagationAcquired == 1)
         {
             maxPropagationSteps = 2;
         }
@@ -45,11 +43,11 @@ public class PropagationScript : MonoBehaviour
             maxPropagationSteps = 6;
         }
         
-        spawnPosition            = transform.position;
+        enemyStat.spawnPosition            = transform.position;
         
         if (enemyStat.hitBySword)
         {
-            //Debug.LogWarning(spawnPosition + " Hit by sword");
+            //Debug.LogWarning(enemyStat.spawnPosition + " Hit by sword");
         }
         
         DistanceBetweenEnemies();
@@ -59,7 +57,7 @@ public class PropagationScript : MonoBehaviour
     // Mesure la distance de chacun d'eux par rapport à l'ennemi initiateur de la propagation (en excluant ce dernier) et l'ajoute dans une liste.
 	public void DistanceBetweenEnemies()
     {
-        //Debug.Log(spawnPosition + "Added Distances between enemies");
+        Debug.Log(enemyStat.spawnPosition + "Added Distances between enemies");
         distances.Clear();
         focusedEnemies.Remove(enemyStat);
         focusedEnemies.Remove(enemyStat.attacker);
@@ -67,7 +65,7 @@ public class PropagationScript : MonoBehaviour
         {
             if (inFocus != null)
             {
-                //Debug.Log(spawnPosition + " Added : " +  inFocus.name + " to the List.");
+                //Debug.Log(enemyStat.spawnPosition + " Added : " +  inFocus.name + " to the List.");
                 distances.Add(Vector3.Distance(inFocus.transform.position, gameObject.transform.position));
             }
         }
@@ -78,16 +76,16 @@ public class PropagationScript : MonoBehaviour
     {
         if (distances.Count > 0)
         {
-            //Debug.Log(spawnPosition + "Looked for smallest distance");
+            Debug.Log(enemyStat.spawnPosition + "Looked for smallest distance");
             float minVal = distances.Min();
             shortestDistanceIndex = distances.IndexOf(minVal);
-            //Debug.Log(spawnPosition + " INDEX : "        + shortestDistanceIndex);
-            //Debug.Log(spawnPosition + " Electrocuted : " + enemyStat.isElectrocuted);
+            //Debug.Log(enemyStat.spawnPosition + " INDEX : "        + shortestDistanceIndex);
+            //Debug.Log(enemyStat.spawnPosition + " Electrocuted : " + enemyStat.isElectrocuted);
             TransmitToNextEnemy();
         }
         else
         { 
-           // Debug.Log(spawnPosition + " No enemy detected : Propagation Ended");
+           Debug.Log(enemyStat.spawnPosition + " No enemy detected : Propagation Ended");
            EndPropagation();
         }
     }
@@ -98,14 +96,14 @@ public class PropagationScript : MonoBehaviour
         {
             if (focusedEnemies[shortestDistanceIndex] != null && focusedEnemies[shortestDistanceIndex].CompareTag("Enemy") && focusedEnemies[shortestDistanceIndex].isElectrocuted == false)
             {
-                Debug.LogWarning(spawnPosition + " Transmitted");
+                Debug.LogWarning(enemyStat.spawnPosition + " Transmitted");
                 ModuleManager.SINGLETON.currentPropagationStep++;
                 focusedEnemies[shortestDistanceIndex].Propage();
                 focusedEnemies[shortestDistanceIndex].attacker = enemyStat;
             }
             else
             {
-                //Debug.Log(spawnPosition + " Target Enemy was Dead");
+                Debug.Log(enemyStat.spawnPosition + " Target Enemy was Dead");
                 focusedEnemies.RemoveAt(shortestDistanceIndex);
                 distances.RemoveAt(shortestDistanceIndex);
                 LookForSmallestDistance();
@@ -113,6 +111,7 @@ public class PropagationScript : MonoBehaviour
         }
         else
         {
+            Debug.LogWarning(enemyStat.spawnPosition + "Max Propagation Steps Reached");
             EndPropagation();
         }
     }
@@ -136,7 +135,7 @@ public class PropagationScript : MonoBehaviour
             enemyStat.TakeDamage(PlayerStats.SINGLETON.currentPlayerDamage / currentModuleDamages);   
             yield return new WaitForSeconds(delayTimeBetweenDamage); // attend X secondes
         }
-        //Debug.Log(spawnPosition + " Boucle finie");
+        Debug.Log(enemyStat.spawnPosition + " Boucle finie");
         spriteRenderer.color = baseColor;
         if (ModuleManager.SINGLETON.currentPropagationStep == maxPropagationSteps)
         {
@@ -146,7 +145,7 @@ public class PropagationScript : MonoBehaviour
     }
     void DisableCollider()
     {
-        //Debug.Log(spawnPosition + "Collider Disabled");
+        Debug.Log(enemyStat.spawnPosition + "Collider Disabled");
         if (enemyStat.hitBySword)
         {
             enemyStat.TakeDamage(PlayerStats.SINGLETON.currentPlayerDamage);
