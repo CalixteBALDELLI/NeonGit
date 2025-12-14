@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4cf8348f07297e409808649b5c26a61, type: 3}
   m_Name: DIY 4
   m_EditorClassIdentifier: 
-  mapName: Neon
+  mapName: DIY
   mapId: 13
   playerWeapons: []
   cameraFOV: 14

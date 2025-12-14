@@ -36,7 +36,7 @@ public class KnockBackModule : MonoBehaviour
                 currentKnockbackForce = knockbackData[1].knockbackForce;
                 StartCoroutine(KnockbackStart());
             }
-            else if (ModuleManager.SINGLETON.knockbackAcquired == 3)
+            else if (ModuleManager.SINGLETON.knockbackAcquired >= 3)
             {
                 //Debug.Log("Knockback 3");
                 currentKnockbackForce = knockbackData[2].knockbackForce;

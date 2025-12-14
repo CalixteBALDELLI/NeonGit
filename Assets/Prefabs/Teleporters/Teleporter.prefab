@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapChoiceCanvas: {fileID: 0}
-  isOnfinalMap: 0
+  isOnFinalMap: 0
   player: {fileID: 0}
   lockedMessage: {fileID: 0}
   victoryScreen: {fileID: 0}
@@ -411,85 +411,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5681150719699066549}
     m_Modifications:
-    - target: {fileID: 3376176669245283894, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376176669245283894, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376176669245283894, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376176669245283894, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376176669245283894, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -500
-      objectReference: {fileID: 0}
-    - target: {fileID: 3376176669245283894, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3393876588187420587, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584013419227702852, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584013419227702852, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584013419227702852, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584013419227702852, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584013419227702852, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584013419227702852, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7087254073493211949, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
       propertyPath: m_Name
       value: Map Choice
-      objectReference: {fileID: 0}
-    - target: {fileID: 8349141645273699508, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8349141645273699508, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8349141645273699508, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8349141645273699508, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8349141645273699508, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 160
-      objectReference: {fileID: 0}
-    - target: {fileID: 8349141645273699508, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 9219011395659892055, guid: e6668dc8e801f98458f0efb0fbf9d253, type: 3}
       propertyPath: m_Pivot.x

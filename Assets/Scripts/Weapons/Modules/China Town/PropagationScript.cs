@@ -38,7 +38,7 @@ public class PropagationScript : MonoBehaviour
             maxPropagationSteps = 4;
         }
 
-        if (ModuleManager.SINGLETON.propagationAcquired == 3)
+        if (ModuleManager.SINGLETON.propagationAcquired >= 3)
         {
             maxPropagationSteps = 6;
         }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2186516233191138354}
   - component: {fileID: 651058581322839038}
   - component: {fileID: 5181950233042040546}
+  - component: {fileID: 7670656611126362940}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -136,9 +137,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileController: {fileID: 0}
   projectileControllerGameObject: {fileID: 0}
-  propagationAcquired: 1
+  propagationAcquired: 0
   knockbackAcquired: 0
   projectileAcquired: 0
+  foudreAcquired: 0
+  saignementAcquired: 0
   modulesData:
   - {fileID: 11400000, guid: 17a8d5d3ab2d40340ac769ebde4c3870, type: 2}
   - {fileID: 11400000, guid: 631e0273377c51646a6d10d1b5d9eeae, type: 2}
@@ -151,6 +154,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 64e45669768ef994da056fbc55a66ad3, type: 2}
   - {fileID: 11400000, guid: 14633e93f02f0d149b4fb7f8348e139d, type: 2}
   - {fileID: 11400000, guid: acd84f6b304000440976b1a4c3499c03, type: 2}
+  foudreScript: {fileID: 0}
   weaponController: {fileID: 0}
   inventoryFullMessage: {fileID: 0}
   currentPropagationStep: 0
@@ -167,6 +171,8 @@ MonoBehaviour:
   - {fileID: 6989642852348889387, guid: 8b82b1b1e89a22340ac8887798340ae7, type: 3}
   - {fileID: -5337365177324631326, guid: 86bc8c8321ae4f44f86bda3822a263d3, type: 3}
   - {fileID: 64134209812282044, guid: 1205032d0d9aa6444a2aac16a3130332, type: 3}
+  - {fileID: 1897272322942515348, guid: 1be05156464d25a4e90a375e64cefe9b, type: 3}
+  - {fileID: -4347532159779508366, guid: c530acce33d296b4cb522401a4ce37c6, type: 3}
   currentEquipedModules: 
   weaponToEquip: 0
   pickedWeapon: {fileID: 0}
@@ -189,7 +195,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerInSeconds: 75
   timerTextMesh: {fileID: 0}
-  powerfulEnemy: {fileID: 0}
+  FinalBossTimerText: {fileID: 0}
+  powerfulEnemyPrefab: {fileID: 0}
+  finalBossPrefab: {fileID: 0}
+  timeBeforeFinalBoss: 0
 --- !u!114 &5181950233042040546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,3 +211,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3e4950ee5b280b49a963a77fc450bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7670656611126362940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2459730909182841648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029b7b06a3f6fe140966afdcf0b5b246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  hitboxPrefab: {fileID: 3614222281372839154, guid: bd7bb4cf8039d9341826378c5734ca42, type: 3}
+  timeUntilNextAoe: 2
+  foudreData:
+  - {fileID: 11400000, guid: 72dc9b2b416f0c340a5a76bc137399ac, type: 2}
+  - {fileID: 11400000, guid: 6789cc277a53aa446b1f07193dc52b09, type: 2}
+  - {fileID: 11400000, guid: eada2437330a3a84495e57bcdd19a8a4, type: 2}

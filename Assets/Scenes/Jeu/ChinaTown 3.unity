@@ -3113,6 +3113,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 966949259256695089, guid: 5c5601137fe792c4eaf709f470d7e6da, type: 3}
+      propertyPath: mapData
+      value: 
+      objectReference: {fileID: 11400000, guid: fbf27ceed2586ab41ac0dc2e93536953, type: 2}
     - target: {fileID: 1659070902740053258, guid: 5c5601137fe792c4eaf709f470d7e6da, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -3121,6 +3125,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2372057809718736976, guid: 5c5601137fe792c4eaf709f470d7e6da, type: 3}
+      propertyPath: mapData
+      value: 
+      objectReference: {fileID: 11400000, guid: 8876afc74c1131248adcdb1181b3212a, type: 2}
     - target: {fileID: 2397093237988029327, guid: 5c5601137fe792c4eaf709f470d7e6da, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -3129,6 +3137,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3733045956430430786, guid: 5c5601137fe792c4eaf709f470d7e6da, type: 3}
+      propertyPath: mapData
+      value: 
+      objectReference: {fileID: 11400000, guid: fa0c7b9e69070ab4087de0f531ed6ac8, type: 2}
     - target: {fileID: 3929374913496320335, guid: 5c5601137fe792c4eaf709f470d7e6da, type: 3}
       propertyPath: m_IsActive
       value: 1

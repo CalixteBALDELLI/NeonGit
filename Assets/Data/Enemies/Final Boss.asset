@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Final Boss
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  maxHealth: 45
+  maxHealth: 30
   damage: 30

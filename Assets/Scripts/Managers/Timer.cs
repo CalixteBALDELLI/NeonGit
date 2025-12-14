@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] float           timerInSeconds;
+    [SerializeField] public float           timerInSeconds;
     string                           timerText;
     string                           finalBossTimerTexto;
     [SerializeField] TextMeshProUGUI timerTextMesh;
@@ -13,16 +13,30 @@ public class Timer : MonoBehaviour
     [SerializeField] GameObject      powerfulEnemyPrefab;
     [SerializeField] GameObject      finalBossPrefab;
     [SerializeField] float           timeBeforeFinalBoss;
+    public static Timer SINGLETON;
 
+    void Awake()
+    {
+        if (SINGLETON == null)
+        {
+            SINGLETON = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    
     void Start()
     {
-        SetBossTimer();
+        SetBossTimer(75);
         StartCoroutine(FinalBossTimer());
     }
 
-    void SetBossTimer()
+    public void SetBossTimer(float time)
     {
-        timerInSeconds     = MapDataHolding.SINGLETON.currentmapData.timeBeforeBoss;
+        timerInSeconds = time;
+        //timerInSeconds     = MapDataHolding.SINGLETON.currentmapData.timeBeforeBoss;
         timerTextMesh.text = timerText;
         StartCoroutine(BossTimer());
     }
@@ -36,7 +50,10 @@ public class Timer : MonoBehaviour
             timerTextMesh.text = timerText;
             yield return new WaitForSeconds(1);
         }
-        powerfulEnemyPrefab.SetActive(true);
+
+        Debug.Log("Boss Timer finished");
+        Instantiate(powerfulEnemyPrefab);
+        //powerfulEnemyPrefab.SetActive(true);
     }
 
     IEnumerator FinalBossTimer()
@@ -49,7 +66,7 @@ public class Timer : MonoBehaviour
             FinalBossTimerText.text = finalBossTimerTexto;
             yield return new WaitForSeconds(1);
         }
-        finalBossPrefab.SetActive(true);
+        Instantiate(finalBossPrefab);
     }
 }
 

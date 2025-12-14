@@ -16,6 +16,7 @@ public class EnemyStat : MonoBehaviour
     [SerializeField]        GameObject        propagationCollider;
     [SerializeField]        PropagationScript propagationScript;
     [SerializeField]        bool              isABoss;
+    [SerializeField] public  bool isFinalBoss;
     [SerializeField]        GameObject        teleporterKey;
     [SerializeField] public bool              isElectrocuted;
     [SerializeField] public bool              hitBySword;
@@ -24,6 +25,7 @@ public class EnemyStat : MonoBehaviour
     [HideInInspector] public EnemyStat        attacker;
     public                   Vector3          spawnPosition;
     public                   bool             isBleeding;
+    [SerializeField] Canvas victoryScreen;
 
     
     // Current stats
@@ -82,6 +84,12 @@ public class EnemyStat : MonoBehaviour
             if (isABoss)
             {
                 PlayerStats.SINGLETON.teleporterKeyObtained = true;
+            }
+            if (isFinalBoss)
+            {
+                victoryScreen = GameObject.Find("Victory Screen").GetComponent<Canvas>();
+                victoryScreen.enabled = true;
+                Time.timeScale = 0;
             }
 //            Debug.LogWarning(transform.position + " DIED");
             Kill();

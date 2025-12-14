@@ -194,14 +194,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c032be3dc0ed58645b32189e6307d811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 3dc57e46a0b27204ca8fb7554e0da29b, type: 2}
+  enemyData: {fileID: 11400000, guid: 1a3c5fe9225ff62468c4214173b0c93d, type: 2}
   dropRateManager: {fileID: 1161815033490814516}
   enemyMouvement: {fileID: 9024858487180829317}
   knockBackModule: {fileID: -3416010661427898355}
   playerScriptableObject: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
   propagationCollider: {fileID: 1751900232549313019}
   propagationScript: {fileID: 6869097372620016865}
-  isABoss: 1
+  isABoss: 0
+  isFinalBoss: 1
   teleporterKey: {fileID: 1696656462747023363, guid: c08e5787a1c008245926913678fd7790, type: 3}
   isElectrocuted: 0
   hitBySword: 0
@@ -209,6 +210,7 @@ MonoBehaviour:
   attacker: {fileID: 0}
   spawnPosition: {x: 0, y: 0, z: 0}
   isBleeding: 0
+  victoryScreen: {fileID: 0}
   currentHealth: 0
 --- !u!114 &1161815033490814516
 MonoBehaviour:
@@ -276,7 +278,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8745270701351364792}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff76f35ff2197c34ebc569aa53e0c083, type: 3}
   m_Name: 
@@ -488,6 +490,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3437714766072372466, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
+      propertyPath: enemyStat
+      value: 
+      objectReference: {fileID: -4390385675418812344}
+    - target: {fileID: 3437714766072372466, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
+      propertyPath: propagationScript
+      value: 
+      objectReference: {fileID: 6869097372620016865}
     - target: {fileID: 5502453454140112419, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
       propertyPath: m_Name
       value: Propagation Collider
