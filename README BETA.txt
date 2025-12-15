@@ -8,9 +8,10 @@ Au bout de 15 minutes de jeu le Boss Final apparaît. Le joueur doit alors le va
 
 Bugs & Features manquantes :
 Equilibrage global et placement des zones à finir pour rendre les synergies réellement intéressantes.
-Menu principal désactivé car Meta Progression mise en standby.
+Meta Progression mise en standby.
 Bug empêchant de correctement relancer une partie depuis le menu principal. Il est obligatoire de refermer et lancer le jeu.
 Le téléporteur ne se verrouille pas une fois le BOSS Final apparu.
 Assets du personnage dessinés mais pas encore implémentés.
 Ecran final de victoire
+Optimisation du jeu lorsque beaucoup d'ennemis sont à l'écran. Problème lié au calcul des collisions.
 

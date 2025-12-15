@@ -7173,7 +7173,7 @@ PrefabInstance:
       objectReference: {fileID: 8745270701351364792, guid: c43c827e8b406b44287770b184c708ee, type: 3}
     - target: {fileID: 651058581322839038, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: timeBeforeFinalBoss
-      value: 1
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 1025633784134975101, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: xpBar
