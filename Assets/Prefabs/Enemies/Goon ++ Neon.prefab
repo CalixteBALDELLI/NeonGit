@@ -290,6 +290,7 @@ MonoBehaviour:
   propagationCollider: {fileID: 7362021541057229684}
   propagationScript: {fileID: 1421777180657336548}
   isABoss: 0
+  isFinalBoss: 0
   teleporterKey: {fileID: 0}
   isElectrocuted: 0
   hitBySword: 0
@@ -297,6 +298,7 @@ MonoBehaviour:
   attacker: {fileID: 0}
   spawnPosition: {x: 0, y: 0, z: 0}
   isBleeding: 0
+  victoryScreen: {fileID: 0}
   currentHealth: 0
 --- !u!114 &1161815033490814516
 MonoBehaviour:
@@ -505,6 +507,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784664642519852964, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5502453454140112419, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}

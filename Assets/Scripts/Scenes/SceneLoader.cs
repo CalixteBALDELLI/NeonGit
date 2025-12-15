@@ -18,6 +18,7 @@ public class SceneLoader : MonoBehaviour
     public void LoadScene()
     {
         SceneManager.LoadScene(mapData.mapId);
-        playerCamera.fieldOfView = mapData.cameraFOV;
+        playerCamera.fieldOfView                    = mapData.cameraFOV;
+        PlayerStats.SINGLETON.teleporterKeyObtained = false;
     }
 }

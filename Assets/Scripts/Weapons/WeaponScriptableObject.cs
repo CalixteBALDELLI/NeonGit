@@ -3,11 +3,20 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "WeaponScriptableObject", menuName = "ScriptableObjects/Weapon" )]
 public class WeaponScriptableObject :ScriptableObject
 {
-    public int weaponId;
+    public int    weaponId;
+    public string weaponName;
+    public string description;
+    public int    xpValue;
+    public Sprite weaponIcon;
     public bool isAnUpgrade;
     //Base stats for weapons
-    [SerializeField]
-    string description;
+    [Header("Module Type")]
+    public bool isPropagation;
+    public bool isFoudre;
+    public bool isProjectile;
+    public bool isSaignement;
+    public bool isKnockback;
+    
     
     [SerializeField]
     GameObject prefab; 

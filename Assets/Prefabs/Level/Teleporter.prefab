@@ -138,3 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb940b5f6f5732e499ef58186f5e432f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapChoiceCanvas: {fileID: 0}
+  isOnFinalMap: 0
+  player: {fileID: 0}
+  lockedMessage: {fileID: 0}
+  victoryScreen: {fileID: 0}

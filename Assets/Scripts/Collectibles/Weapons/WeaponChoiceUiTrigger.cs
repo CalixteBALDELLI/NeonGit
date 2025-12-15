@@ -5,26 +5,32 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
 {
     [SerializeField] Canvas                 weaponChoiceCanvas;
     [SerializeField] WeaponScriptableObject correspondingWeaponData;
-    [SerializeField] WeaponCollectibleData  weaponCollectibleData;
     [SerializeField] WeaponChoiceTexts      weaponChoiceTexts;
     
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-	    Debug.Log("Weapon Choice Trigger");
+	    
+	    //Debug.Log("Weapon Choice Trigger");
 	    weaponChoiceCanvas                           = GameObject.Find("Weapon Choice").GetComponent<Canvas>();
 	    weaponChoiceTexts                            = weaponChoiceCanvas.GetComponent<WeaponChoiceTexts>();
 	    Time.timeScale                               = 0;
 
-	    weaponChoiceTexts.weaponNameText.text  = weaponCollectibleData.weaponName;
-	    weaponChoiceTexts.descriptionText.text = weaponCollectibleData.description;
+	    foreach (var text in weaponChoiceTexts.upgradesText)
+	    {
+		    text.text = null;
+		    text.enabled = false;
+	    }
+	    
+	    weaponChoiceTexts.weaponNameText.text  = correspondingWeaponData.weaponName;
+	    weaponChoiceTexts.descriptionText.text = correspondingWeaponData.description;
 	    
 	    if (correspondingWeaponData.dealDamages)
 	    {
 		    weaponChoiceTexts.upgradesText[0].enabled = true;
-		    if (correspondingWeaponData.isAnUpgrade)
+		    if (CheckUpgrade())
 		    {
-			    weaponChoiceTexts.upgradesText[0].text = ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId - 1].Damage + " --) " + ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId].Damage;
+			    weaponChoiceTexts.upgradesText[0].text = "Dégâts : " + ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + IndexToAdd()].Damage + " --) " + ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + IndexToAdd() + 1].Damage;
 		    }
 		    else
 		    {
@@ -34,9 +40,10 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
 	    if (correspondingWeaponData.hasSpeed)
 	    {
 		    weaponChoiceTexts.upgradesText[1].enabled = true;
-		    if (correspondingWeaponData.isAnUpgrade)
+		    if (CheckUpgrade())
 		    {
-			    weaponChoiceTexts.upgradesText[1].text    = "Vitesse du projectile * " + ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId].Speed / ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId - 1].Speed;
+			    Debug.Log("Is Upgrade");
+			    weaponChoiceTexts.upgradesText[1].text    = "Vitesse du projectile * " + ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + IndexToAdd() + 1].Speed / ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId].Speed;
 		    }
 		    else
 		    {
@@ -46,9 +53,9 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
 	    if (correspondingWeaponData.hasCooldown)
 	    {
 		    weaponChoiceTexts.upgradesText[2].enabled = true;
-		    if (correspondingWeaponData.isAnUpgrade)
+		    if (CheckUpgrade())
 		    {
-			    weaponChoiceTexts.upgradesText[2].text    = "Cooldown : " + ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId - 1].cooldownDuration + " --) " + ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId].cooldownDuration;
+			    weaponChoiceTexts.upgradesText[2].text    = "Cooldown : " + ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + IndexToAdd()].cooldownDuration + " --) " + ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + IndexToAdd() + 1].cooldownDuration;
 			}
 		    else
 		    {
@@ -58,9 +65,9 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
 	    if (correspondingWeaponData.hasPierce)
 	    {
 		    weaponChoiceTexts.upgradesText[3].enabled = true;
-		    if (correspondingWeaponData.isAnUpgrade)
+		    if (CheckUpgrade())
 		    {
-			    weaponChoiceTexts.upgradesText[3].text    = "Transpercions max. : " + ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId - 1].pierce + " --) " + ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId].pierce;
+			    weaponChoiceTexts.upgradesText[3].text    = "Transpercions max. : " + ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + IndexToAdd()].pierce + " --) " + ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + IndexToAdd() + 1].pierce;
 		    }
 		    else
 		    {
@@ -70,21 +77,65 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
 	    if (correspondingWeaponData.hasKnockback)
 	    {
 		    weaponChoiceTexts.upgradesText[4].enabled = true;
-		    if (correspondingWeaponData.isAnUpgrade)
+		    if (CheckUpgrade())
 		    {
-			    weaponChoiceTexts.upgradesText[4].text    = "Force du recul * " + ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId].knockbackForce / ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId - 1].knockbackForce;
+			    weaponChoiceTexts.upgradesText[4].text    = "Force du recul * " + ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + IndexToAdd() + 1].knockbackForce / ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + IndexToAdd() + 1].knockbackForce;
 		    }
 		    else
 		    {
 			    weaponChoiceTexts.upgradesText[4].text    = "Force du recul : " + ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId].knockbackForce;
 		    }
 	    }
+
+	    int IndexToAdd()
+	    {
+		    int index = 0;
+		    if (correspondingWeaponData.isPropagation)
+		    {
+			    index = ModuleManager.SINGLETON.propagationAcquired;
+		    }
+
+		    if (correspondingWeaponData.isProjectile)
+		    {
+			    index = ModuleManager.SINGLETON.projectileAcquired;
+		    }
+
+		    if (correspondingWeaponData.isFoudre)
+		    {
+			    index = ModuleManager.SINGLETON.foudreAcquired;
+		    }
+
+		    if (correspondingWeaponData.isSaignement)
+		    {
+			    index = ModuleManager.SINGLETON.saignementAcquired;
+		    }
+
+		    if (correspondingWeaponData.isKnockback)
+		    {
+			    index = ModuleManager.SINGLETON.knockbackAcquired;
+		    }
+			
+		    Debug.Log("Index To Add : " + index);
+		    return index;
+	    }
+
+	    bool CheckUpgrade()
+	    {
+		    bool isUpgrade = correspondingWeaponData.isPropagation && ModuleManager.SINGLETON.propagationAcquired >= 1
+		                  || correspondingWeaponData.isProjectile  && ModuleManager.SINGLETON.projectileAcquired  >= 1
+		                  || correspondingWeaponData.isFoudre      && ModuleManager.SINGLETON.foudreAcquired      >= 1
+		                  || correspondingWeaponData.isKnockback  && ModuleManager.SINGLETON.knockbackAcquired  >= 1
+		                  || correspondingWeaponData.isSaignement && ModuleManager.SINGLETON.saignementAcquired >= 1;
+		    
+		    return isUpgrade;
+	    }
+
 	    //weaponChoiceTexts.upgradeText.text     =;
 	    //weaponChoiceTexts.damagesAndCooldownText.text = "Dégâts : " + weaponData.Damage             + " Cooldown : " + weaponData.cooldownDuration;
-	    weaponChoiceTexts.xpGainText.text           = "+ " + weaponCollectibleData.xpValue + " XP";
+	    weaponChoiceTexts.xpGainText.text           = "+ " + correspondingWeaponData.xpValue + " XP";
 	    weaponChoiceCanvas.enabled                  = true;
-	    ModuleManager.SINGLETON.weaponToEquip       = weaponCollectibleData.weaponId;
-	    PlayerStats.SINGLETON.xpToExchange          = weaponCollectibleData.xpValue;
+	    ModuleManager.SINGLETON.weaponToEquip       = correspondingWeaponData.weaponId;
+	    PlayerStats.SINGLETON.xpToExchange          = correspondingWeaponData.xpValue;
 	    ModuleManager.SINGLETON.pickedWeapon        = gameObject;
     }
 }

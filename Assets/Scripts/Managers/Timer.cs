@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] public float           timerInSeconds;
+    [SerializeField] public float    timerInSeconds;
     string                           timerText;
     string                           finalBossTimerTexto;
     [SerializeField] TextMeshProUGUI timerTextMesh;
@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour
     [SerializeField] GameObject      powerfulEnemyPrefab;
     [SerializeField] GameObject      finalBossPrefab;
     [SerializeField] float           timeBeforeFinalBoss;
-    public static Timer SINGLETON;
+    public static    Timer           SINGLETON;
 
     void Awake()
     {

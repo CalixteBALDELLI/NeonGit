@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5975176543049524663}
   - component: {fileID: 5382567270991821216}
   - component: {fileID: 3342359284166084237}
+  - component: {fileID: 8479668153748218229}
   m_Layer: 5
   m_Name: Map 2
   m_TagString: Untagged
@@ -160,6 +161,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapData: {fileID: 11400000, guid: d4866de79785e1f42807c7dff18388f9, type: 2}
   buttonText: {fileID: 434934784799217201}
+--- !u!114 &8479668153748218229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040057270254387610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3502712925fabe4a971fd33d0144526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasComponent: {fileID: 3393876588187420587}
 --- !u!1 &1636572002722218224
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +187,7 @@ GameObject:
   - component: {fileID: 4070386848474558546}
   - component: {fileID: 7931795772295688197}
   - component: {fileID: 4415565619248086175}
+  - component: {fileID: 8617950478142058464}
   m_Layer: 5
   m_Name: Map 1
   m_TagString: Untagged
@@ -320,6 +335,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapData: {fileID: 11400000, guid: d4d04b40fbb133440ac7810a27a8e8cd, type: 2}
   buttonText: {fileID: 2825903518833472335}
+--- !u!114 &8617950478142058464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636572002722218224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3502712925fabe4a971fd33d0144526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasComponent: {fileID: 3393876588187420587}
 --- !u!1 &1841822988044522455
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,6 +637,7 @@ GameObject:
   - component: {fileID: 7048313157850692540}
   - component: {fileID: 403246786720676812}
   - component: {fileID: 279794061858682860}
+  - component: {fileID: 765296302764962290}
   m_Layer: 7
   m_Name: Map 3
   m_TagString: Untagged
@@ -756,6 +785,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapData: {fileID: 11400000, guid: d4866de79785e1f42807c7dff18388f9, type: 2}
   buttonText: {fileID: 3585822365346556307}
+--- !u!114 &765296302764962290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270507656330879196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3502712925fabe4a971fd33d0144526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasComponent: {fileID: 3393876588187420587}
 --- !u!1 &7087254073493211949
 GameObject:
   m_ObjectHideFlags: 0

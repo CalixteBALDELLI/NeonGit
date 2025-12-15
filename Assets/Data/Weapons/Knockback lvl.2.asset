@@ -12,11 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 625782ea73e1fe348886067bcf222d80, type: 3}
   m_Name: Knockback lvl.2
   m_EditorClassIdentifier: 
-  weaponId: 5
+  weaponId: 4
   isAnUpgrade: 1
+  isPropagation: 0
+  isFoudre: 0
+  isProjectile: 0
+  isSaignement: 0
+  isKnockback: 1
   description: 
   prefab: {fileID: 6997200509264440334, guid: cff74ebaa97c56c4cabf8537c433bc66, type: 3}
   dealDamages: 1
+  isAffliction: 0
   damage: 7
   hasSpeed: 0
   speed: 0
@@ -27,3 +33,5 @@ MonoBehaviour:
   hasKnockback: 1
   knockbackForce: 10
   maxKnockBackSteps: 3
+  hasDuration: 0
+  duration: 0

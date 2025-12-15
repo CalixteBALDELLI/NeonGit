@@ -171,16 +171,16 @@ public class ModuleManager : MonoBehaviour
 
     void InventoryUiUpdate()
     {
-        Debug.LogWarning("Inventory UI Update");
+        //Debug.LogWarning("Inventory UI Update");
         currentEquipedModules.Add(weaponToEquip);
-        Debug.Log("Added Module : " + weaponToEquip);
+        //Debug.Log("Added Module : " + weaponToEquip);
         currentEquipedModules.Sort();
         //int equippedModuleIconIndex = 0;
         int inventoryIndex = 0;
         foreach (int equippedModule in currentEquipedModules)
         {
-            Debug.Log("Inventory Index : " + inventoryIndex);
-            Debug.Log("Eqquiped Module : " + equippedModule);
+            //Debug.Log("Inventory Index : " + inventoryIndex);
+            //Debug.Log("Eqquiped Module : " + equippedModule);
             inventoryIcons[inventoryIndex].enabled = true;
             inventoryIcons[inventoryIndex].sprite  = modulesIcons[equippedModule];
             inventoryIndex++;
@@ -193,7 +193,7 @@ public class ModuleManager : MonoBehaviour
     }
     public IEnumerator PropagationCooldown()
     {
-        Debug.LogWarning("Propagation Cooldown");
+        //Debug.LogWarning("Propagation Cooldown");
         propagationCooldownFinished = false;
         float propagationCooldown  = 3;
         float delayBetweenDecrease = 0.25f;
@@ -201,7 +201,7 @@ public class ModuleManager : MonoBehaviour
         do
         {
             propagationCooldown -= cooldownReduction;
-            Debug.Log("Propagation Cooldown : " + propagationCooldown);
+            //Debug.Log("Propagation Cooldown : " + propagationCooldown);
             yield return new WaitForSeconds(delayBetweenDecrease);
         } while (propagationCooldown >= cooldownReduction);
         Debug.LogWarning("Propagation Cooldown Finished");

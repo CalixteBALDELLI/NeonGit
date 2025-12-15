@@ -154,7 +154,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 64e45669768ef994da056fbc55a66ad3, type: 2}
   - {fileID: 11400000, guid: 14633e93f02f0d149b4fb7f8348e139d, type: 2}
   - {fileID: 11400000, guid: acd84f6b304000440976b1a4c3499c03, type: 2}
-  foudreScript: {fileID: 0}
+  - {fileID: 11400000, guid: c38313b5c3c51934d8dd3d46dba0ad64, type: 2}
+  - {fileID: 11400000, guid: bbad54af29e159244b4d7eaf9c247687, type: 2}
+  - {fileID: 11400000, guid: e18ba14fa35e6bb48939ad35fb0afde9, type: 2}
+  - {fileID: 11400000, guid: 8480e29e39c041d4682a36e9678ab34d, type: 2}
+  - {fileID: 11400000, guid: bac5b59db1c96734ca9765558499afd0, type: 2}
+  - {fileID: 11400000, guid: 72dc9b2b416f0c340a5a76bc137399ac, type: 2}
+  - {fileID: 11400000, guid: 6789cc277a53aa446b1f07193dc52b09, type: 2}
+  - {fileID: 11400000, guid: eada2437330a3a84495e57bcdd19a8a4, type: 2}
+  foudreScript: {fileID: 7670656611126362940}
   weaponController: {fileID: 0}
   inventoryFullMessage: {fileID: 0}
   currentPropagationStep: 0
@@ -193,12 +201,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39dfcc9d1a275842b929a75cf06a976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerInSeconds: 75
+  timerInSeconds: 1
   timerTextMesh: {fileID: 0}
   FinalBossTimerText: {fileID: 0}
-  powerfulEnemyPrefab: {fileID: 0}
-  finalBossPrefab: {fileID: 0}
-  timeBeforeFinalBoss: 0
+  powerfulEnemyPrefab: {fileID: 8745270701351364792, guid: c43c827e8b406b44287770b184c708ee, type: 3}
+  finalBossPrefab: {fileID: 8745270701351364792, guid: 541ad2478d87c3745b14af3ee5d9b90e, type: 3}
+  timeBeforeFinalBoss: 900
 --- !u!114 &5181950233042040546
 MonoBehaviour:
   m_ObjectHideFlags: 0
