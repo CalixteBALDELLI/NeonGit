@@ -7,12 +7,12 @@ public class WeaponController : MonoBehaviour
     float currentCooldown;
 
 
-    protected PlayerMovement pm;
+    protected ProjectileWeaponBehavior pm;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
-        pm = FindAnyObjectByType<PlayerMovement>();
+        pm = FindAnyObjectByType<ProjectileWeaponBehavior>();
         currentCooldown = weaponData.CooldownDuration; //cooldown before starting to shoot
     }
 

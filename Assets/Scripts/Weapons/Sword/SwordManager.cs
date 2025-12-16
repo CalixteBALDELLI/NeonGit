@@ -21,7 +21,7 @@ public class SwordManager : MonoBehaviour
     private float targetPosition = -45;
     private float currentRotation;
     private float timeCount;
-    private float angle = 45f;
+    [SerializeField] private float angle = 45f;
     private float swingRadiusDividedbyTwo;
     float         currentSwingSpeed;
     

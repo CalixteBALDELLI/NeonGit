@@ -286,6 +286,7 @@ MonoBehaviour:
   dropRateManager: {fileID: 1161815033490814516}
   enemyMouvement: {fileID: 9024858487180829317}
   knockBackModule: {fileID: 8384407317656006888}
+  spriteRenderer: {fileID: 5318108029185307242}
   playerScriptableObject: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
   propagationCollider: {fileID: 7362021541057229684}
   propagationScript: {fileID: 1421777180657336548}

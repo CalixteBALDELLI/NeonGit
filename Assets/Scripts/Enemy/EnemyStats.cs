@@ -10,13 +10,13 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] DropRateManager dropRateManager;
     [SerializeField] EnemyMouvement enemyMouvement;
     [SerializeField] KnockBackModule knockBackModule;
-    
+    [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] CharacterScriptableObject playerScriptableObject;
     
     [SerializeField]        GameObject        propagationCollider;
     [SerializeField]        PropagationScript propagationScript;
     [SerializeField]        bool              isABoss;
-    [SerializeField] public  bool isFinalBoss;
+    [SerializeField] public bool              isFinalBoss;
     [SerializeField]        GameObject        teleporterKey;
     [SerializeField] public bool              isElectrocuted;
     [SerializeField] public bool              hitBySword;
@@ -25,7 +25,7 @@ public class EnemyStat : MonoBehaviour
     [HideInInspector] public EnemyStat        attacker;
     public                   Vector3          spawnPosition;
     public                   bool             isBleeding;
-    [SerializeField] Canvas victoryScreen;
+    [SerializeField]         Canvas           victoryScreen;
 
     
     // Current stats
@@ -65,15 +65,14 @@ public class EnemyStat : MonoBehaviour
     public IEnumerator DamageFlash()
     {
 //        Debug.Log(transform.position + "DamageFlash");
-        enemyMouvement.isStunned                          = true;
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        enemyMouvement.isStunned = true;
+        spriteRenderer.enabled   = false;
         yield return new WaitForSeconds(.2f);
-        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        spriteRenderer.enabled = true;
         yield return new WaitForSeconds(.2f);
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        spriteRenderer.enabled = false;
         yield return new WaitForSeconds(.2f);
-        gameObject.GetComponent<SpriteRenderer>().enabled = true;
-
+        spriteRenderer.enabled = true;
     }
 
     public void HealthCheck()
@@ -136,7 +135,7 @@ public class EnemyStat : MonoBehaviour
 
         if (cl2D.CompareTag("Projectile"))
         {
-            //TakeDamage(PlayerStats.SINGLETON.currentPlayerDamage);
+            TakeDamage(PlayerStats.SINGLETON.currentPlayerDamage);
             ModulesCheck();
         }
     }

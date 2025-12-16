@@ -1,12 +1,16 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ProjectileWeaponBehavior : MonoBehaviour
 {
-    public WeaponScriptableObject weaponData;
-    protected Vector3 direction;
-    public float destroyAfterSeconds;
+    public           WeaponScriptableObject weaponData;
+    public        Vector3                direction;
+    public           float                  destroyAfterSeconds;
+    [SerializeField] Vector2                mousePosition;
+    [SerializeField] Camera                 playerCamera;
+    [SerializeField] InputActionReference   mouseMovement;
     
     //Curent stat
     [SerializeField] protected float currentDamage;
@@ -14,6 +18,7 @@ public class ProjectileWeaponBehavior : MonoBehaviour
 
     void Awake()
     {
+	    playerCamera = Camera.main;
 	    RefreshStats();
     }
 
@@ -31,8 +36,10 @@ public class ProjectileWeaponBehavior : MonoBehaviour
 
     public void DirectionChecker(Vector3 dir) 
     {
-        direction = dir; 
-
+        direction     = dir; 
+        mousePosition = mouseMovement.action.ReadValue<Vector2>();
+        Vector3 worldPosition = playerCamera.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, playerCamera.nearClipPlane));
+        direction = (worldPosition - transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; //réglage de la rotation pour tous les armes de type projectile
         angle += -45;
         transform.rotation = Quaternion.Euler(0, 0, angle);

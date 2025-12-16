@@ -2,17 +2,15 @@ using UnityEngine;
 
 public class ProjectileBehavior : ProjectileWeaponBehavior
 {
-    ModuleManager moduleManager;
     protected override void Start()
     {
-        moduleManager = ModuleManager.SINGLETON;
-        if (moduleManager.projectileAcquired == 2)
+        if (ModuleManager.SINGLETON.projectileAcquired == 2)
         {
-            weaponData = moduleManager.modulesData[1];
+            weaponData = ModuleManager.SINGLETON.modulesData[1];
         }
-        else if (moduleManager.projectileAcquired == 3)
+        else if (ModuleManager.SINGLETON.projectileAcquired == 3)
         {
-            weaponData = moduleManager.modulesData[2];
+            weaponData = ModuleManager.SINGLETON.modulesData[2];
         }
         RefreshStats();
     }

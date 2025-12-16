@@ -198,10 +198,12 @@ MonoBehaviour:
   dropRateManager: {fileID: 1161815033490814516}
   enemyMouvement: {fileID: 9024858487180829317}
   knockBackModule: {fileID: -3416010661427898355}
+  spriteRenderer: {fileID: 5318108029185307242}
   playerScriptableObject: {fileID: 11400000, guid: d5e63fd26caaf7c45b45deea7d2281be, type: 2}
   propagationCollider: {fileID: 1751900232549313019}
   propagationScript: {fileID: 6869097372620016865}
   isABoss: 1
+  isFinalBoss: 0
   teleporterKey: {fileID: 1696656462747023363, guid: c08e5787a1c008245926913678fd7790, type: 3}
   isElectrocuted: 0
   hitBySword: 0
@@ -209,6 +211,7 @@ MonoBehaviour:
   attacker: {fileID: 0}
   spawnPosition: {x: 0, y: 0, z: 0}
   isBleeding: 0
+  victoryScreen: {fileID: 0}
   currentHealth: 0
 --- !u!114 &1161815033490814516
 MonoBehaviour:
