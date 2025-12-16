@@ -8,8 +8,9 @@ using UnityEngine.UI;
 
 public class ModuleManager : MonoBehaviour
 {
-    public static    ModuleManager        SINGLETON;
-    [SerializeField] GameObject           projectileControllerGameObject;
+    public static    ModuleManager     SINGLETON;
+    [SerializeField] GameObject        projectileControllerGameObject;
+    [SerializeField] ProjectileSpawner projectileSpawner;
     
     [Header("Player Inventory")]
     [SerializeField] public int propagationAcquired;
@@ -28,6 +29,7 @@ public class ModuleManager : MonoBehaviour
     [Header("InGame Propagation State")]
     public int  currentPropagationStep;
     public bool propagationCooldownFinished = true;
+    public bool projectileCooldownFinished = true;
 
     [Header("Inventory UI")]
     [SerializeField] Image[] inventoryIcons;
@@ -192,5 +194,22 @@ public class ModuleManager : MonoBehaviour
         Debug.LogWarning("Propagation Cooldown Finished");
         //propagationCooldown = 0;
         propagationCooldownFinished = true;
+    }
+
+    public IEnumerator ProjectileCooldown(float startCooldown, float delayBetweenDecrease, float cooldownReduction)
+    {
+        Debug.LogWarning("Module Cooldown");
+        float cooldown = startCooldown;
+        projectileCooldownFinished = false;
+        //float cooldown  = 3;
+        //float delayBetweenDecrease = 0.25f;
+        //float cooldownReduction    = 0.1f;
+        do
+        {
+            cooldown -= cooldownReduction;
+            Debug.Log("Module Cooldown : " + cooldown);
+            yield return new WaitForSeconds(delayBetweenDecrease);
+        } while (cooldown >= cooldownReduction);
+        projectileSpawner.SpawnProjectile();
     }
 }

@@ -4132,6 +4132,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1030987762967178339, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
   m_PrefabInstance: {fileID: 807375579}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2060791540 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5121948174635573711, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
+  m_PrefabInstance: {fileID: 807375579}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060791538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcfc80a17a6efb74bb88f428fac55b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2074808313 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8745270701351364792, guid: c43c827e8b406b44287770b184c708ee, type: 3}
@@ -4521,6 +4532,10 @@ PrefabInstance:
       propertyPath: weaponController
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: projectileSpawner
+      value: 
+      objectReference: {fileID: 2060791540}
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: inventoryFullMessage
       value: 
