@@ -135,7 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c753803ad7c2a594597f9168f8a2c06d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileController: {fileID: 0}
   projectileControllerGameObject: {fileID: 0}
   propagationAcquired: 0
   knockbackAcquired: 0
@@ -143,6 +142,7 @@ MonoBehaviour:
   foudreAcquired: 0
   saignementAcquired: 0
   modulesData:
+  - {fileID: 11400000, guid: 17a8d5d3ab2d40340ac769ebde4c3870, type: 2}
   - {fileID: 11400000, guid: 17a8d5d3ab2d40340ac769ebde4c3870, type: 2}
   - {fileID: 11400000, guid: 631e0273377c51646a6d10d1b5d9eeae, type: 2}
   - {fileID: 11400000, guid: d416d2276c58b32478fbf49221a7a16d, type: 2}
@@ -163,7 +163,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6789cc277a53aa446b1f07193dc52b09, type: 2}
   - {fileID: 11400000, guid: eada2437330a3a84495e57bcdd19a8a4, type: 2}
   foudreScript: {fileID: 7670656611126362940}
-  weaponController: {fileID: 0}
   inventoryFullMessage: {fileID: 0}
   currentPropagationStep: 0
   propagationCooldownFinished: 1
@@ -179,8 +178,6 @@ MonoBehaviour:
   - {fileID: 6989642852348889387, guid: 8b82b1b1e89a22340ac8887798340ae7, type: 3}
   - {fileID: -5337365177324631326, guid: 86bc8c8321ae4f44f86bda3822a263d3, type: 3}
   - {fileID: 64134209812282044, guid: 1205032d0d9aa6444a2aac16a3130332, type: 3}
-  - {fileID: 1897272322942515348, guid: 1be05156464d25a4e90a375e64cefe9b, type: 3}
-  - {fileID: -4347532159779508366, guid: c530acce33d296b4cb522401a4ce37c6, type: 3}
   currentEquipedModules: 
   weaponToEquip: 0
   pickedWeapon: {fileID: 0}

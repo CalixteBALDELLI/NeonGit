@@ -15,6 +15,8 @@ public class ProjectileMovement : MonoBehaviour
 
     void Start()
     {
+        speed         = ModuleManager.SINGLETON.modulesData[ModuleManager.SINGLETON.projectileAcquired].Speed;
+        currentPierce = ModuleManager.SINGLETON.modulesData[ModuleManager.SINGLETON.projectileAcquired].Pierce;
         playerCamera  = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         mousePosition = mouseMovement.action.ReadValue<Vector2>();
         Vector3 worldPosition = playerCamera.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, playerCamera.nearClipPlane));

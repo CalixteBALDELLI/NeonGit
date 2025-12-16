@@ -1500,22 +1500,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9008725113772030793, guid: f82bd7d7a0a5b34488b6a4a2b8a419f4, type: 3}
   m_PrefabInstance: {fileID: 327059269}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &706361849 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2070356557726473127, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
-  m_PrefabInstance: {fileID: 807375579}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &706361851 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6935302280865147188, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
-  m_PrefabInstance: {fileID: 807375579}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706361849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7ffa0a06e722546978ae5708d69386, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &711154257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1788,6 +1772,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1030987762967178339, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2070356557726473127, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1845,7 +1833,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 506158414214978198}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2070356557726473127, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
@@ -4138,6 +4127,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057274155}
   m_CullTransparentMesh: 1
+--- !u!1 &2060791538 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1030987762967178339, guid: 65efb8af86d0be346bb0d7c5edbc475b, type: 3}
+  m_PrefabInstance: {fileID: 807375579}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2074808313 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8745270701351364792, guid: c43c827e8b406b44287770b184c708ee, type: 3}
@@ -4526,18 +4520,6 @@ PrefabInstance:
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: weaponController
       value: 
-      objectReference: {fileID: 706361851}
-    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
-      propertyPath: knockbackAcquired
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
-      propertyPath: projectileAcquired
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
-      propertyPath: propagationAcquired
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: inventoryFullMessage
@@ -4546,31 +4528,11 @@ PrefabInstance:
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: projectileController
       value: 
-      objectReference: {fileID: 706361851}
+      objectReference: {fileID: 0}
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: propagationInProgress
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
-      propertyPath: modulesIcons.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
-      propertyPath: inventoryIcons.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
-      propertyPath: 'modulesIcons.Array.data[0]'
-      value: 
-      objectReference: {fileID: 6989642852348889387, guid: 8b82b1b1e89a22340ac8887798340ae7, type: 3}
-    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
-      propertyPath: 'modulesIcons.Array.data[1]'
-      value: 
-      objectReference: {fileID: -5337365177324631326, guid: 86bc8c8321ae4f44f86bda3822a263d3, type: 3}
-    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
-      propertyPath: 'modulesIcons.Array.data[2]'
-      value: 
-      objectReference: {fileID: 64134209812282044, guid: 1205032d0d9aa6444a2aac16a3130332, type: 3}
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: 'inventoryIcons.Array.data[0]'
       value: 
@@ -4598,11 +4560,7 @@ PrefabInstance:
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: projectileControllerGameObject
       value: 
-      objectReference: {fileID: 706361849}
-    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
-      propertyPath: currentEquipedModules.Array.size
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2060791538}
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: 'currentEquipedModules.Array.data[0]'
       value: 0

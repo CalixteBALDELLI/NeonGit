@@ -135,7 +135,8 @@ public class EnemyStat : MonoBehaviour
 
         if (cl2D.CompareTag("Projectile"))
         {
-            TakeDamage(PlayerStats.SINGLETON.currentPlayerDamage);
+            TakeDamage(ModuleManager.SINGLETON.modulesData[ModuleManager.SINGLETON.projectileAcquired].Damage * PlayerStats.SINGLETON.currentPlayerDamage);
+            //Debug.Log("Projectile Damages : " + ModuleManager.SINGLETON.modulesData[ModuleManager.SINGLETON.projectileAcquired].Damage * PlayerStats.SINGLETON.currentPlayerDamage);
             ModulesCheck();
         }
     }

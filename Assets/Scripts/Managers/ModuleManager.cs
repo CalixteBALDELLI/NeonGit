@@ -9,7 +9,6 @@ using UnityEngine.UI;
 public class ModuleManager : MonoBehaviour
 {
     public static    ModuleManager        SINGLETON;
-    [SerializeField] ProjectileController projectileController;
     [SerializeField] GameObject           projectileControllerGameObject;
     
     [Header("Player Inventory")]
@@ -24,7 +23,6 @@ public class ModuleManager : MonoBehaviour
     public FoudreScript foudreScript;
     
     [Header("Damage Text Settings")]
-    [SerializeField] ProjectileController weaponController;
     [SerializeField] Canvas               inventoryFullMessage;
     
     [Header("InGame Propagation State")]
@@ -76,23 +74,10 @@ public class ModuleManager : MonoBehaviour
         else
         {
             weaponChoiceCanvas = GameObject.Find("Weapon Choice").GetComponent<Canvas>();
-            if (weaponToEquip == 0 && projectileAcquired == 0) // Equipement du Projectile
+            if (weaponToEquip == 0) // Equipement du Projectile
             {
                 projectileAcquired++;
                 projectileControllerGameObject.SetActive(true);
-            }
-            else if (weaponToEquip == 0 && projectileAcquired == 1 || projectileAcquired == 2)
-            {
-                projectileAcquired++;
-                if (projectileAcquired == 2)
-                {
-                    weaponController.weaponData = modulesData[1];
-
-                }
-                else if (projectileAcquired == 3)
-                {
-                    weaponController.weaponData = modulesData[2];
-                }
             }
 
             if (weaponToEquip == 1) // Equipement du Knockback

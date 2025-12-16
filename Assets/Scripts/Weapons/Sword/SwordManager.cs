@@ -40,7 +40,7 @@ public class SwordManager : MonoBehaviour
         rotationActivated = true;
         if (moduleManager.projectileAcquired > 0)
         {
-            projectile.LaunchProjectile(); // LANCE LE PROJECTILE A CHAQUE COUP D'EPEE.
+            //projectile.LaunchProjectile(); // LANCE LE PROJECTILE A CHAQUE COUP D'EPEE.
         } 
     }
     
