@@ -26,9 +26,9 @@ Transform:
   m_GameObject: {fileID: 4995289600910362296}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.78, y: 0.11, z: 0}
-  m_LocalScale: {x: 0.7457917, y: 0.7457917, z: 0.7457917}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.4145156, y: 0.4145156, z: 0.4145156}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 9008725113772030793}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -5337365177324631326, guid: 39b77b34dfd268b4481bae060064f97f, type: 3}
-  m_Color: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
+  m_Sprite: {fileID: 1897272322942515348, guid: 1be05156464d25a4e90a375e64cefe9b, type: 3}
+  m_Color: {r: 1, g: 0.9564916, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.09, y: 3.98}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: -1498617175270481836}
   - component: {fileID: 8575406461301471705}
   m_Layer: 12
-  m_Name: Knockback Collectable Lvl.4
+  m_Name: Foudre Collectable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,7 +128,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5989766164689989864}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -179,5 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581ae21b98382a24ea693307854b20fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correspondingWeaponData: {fileID: 11400000, guid: 8493be848ddd7ac4ba0e8040a8bea312, type: 2}
-  weaponCollectibleData: {fileID: 11400000, guid: cee09ec9fcd8928419f1083cb80e00a1, type: 2}
+  correspondingWeaponData: {fileID: 11400000, guid: 72dc9b2b416f0c340a5a76bc137399ac, type: 2}
+  secondsBeforeSpawn: 2
+  boxCollider2D: {fileID: -1498617175270481836}
+  sprite: {fileID: 4995289600910362296}

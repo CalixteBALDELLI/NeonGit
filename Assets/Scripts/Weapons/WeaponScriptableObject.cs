@@ -12,10 +12,11 @@ public class WeaponScriptableObject :ScriptableObject
     //Base stats for weapons
     [Header("Module Type")]
     public bool isPropagation;
-    public bool isFoudre;
-    public bool isProjectile;
-    public bool isSaignement;
-    public bool isKnockback;
+    public bool  isFoudre;
+    public bool  isProjectile;
+    public bool  isSaignement;
+    public bool  isKnockback;
+    public Color weaponColor;
     
     
     [SerializeField]

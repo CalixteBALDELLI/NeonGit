@@ -1,19 +1,88 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.Reflection;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponChoiceUiTrigger : MonoBehaviour
 {
-    [SerializeField] Canvas                 weaponChoiceCanvas;
+	Canvas                                  weaponChoiceCanvas;
     [SerializeField] WeaponScriptableObject correspondingWeaponData;
-    [SerializeField] WeaponChoiceTexts      weaponChoiceTexts;
-    
+    WeaponChoiceTexts                       weaponChoiceTexts;
+    [SerializeField] int                    secondsBeforeSpawn;
+    [SerializeField] BoxCollider2D          boxCollider2D;
+    [SerializeField] GameObject             weaponSprite;
+    [SerializeField] GameObject             questPointer;
+    [SerializeField] Image                  questPointerArrow;
+    [SerializeField] Image                  questPointerWeaponIcon;
 
+
+    void Start()
+    {
+	    weaponChoiceCanvas = GameObject.Find("Weapon Choice").GetComponent<Canvas>();
+	    weaponChoiceTexts  = weaponChoiceCanvas.GetComponent<WeaponChoiceTexts>();
+	    
+	    weaponSprite.SetActive(false);
+	    StartCoroutine(SpawnWeapon());
+    }
+
+    IEnumerator SpawnWeapon()
+    {
+	    yield return new WaitForSeconds(secondsBeforeSpawn);
+	    boxCollider2D.enabled = true;
+	    weaponSprite.SetActive(true);
+	    questPointer.SetActive(true);
+	    questPointerArrow.color       = ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + 1].weaponColor;
+	    questPointerWeaponIcon.sprite = ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + 1].weaponIcon;
+    }
+    
+    int IndexToAdd()
+    {
+	    int index = 0;
+	    if (correspondingWeaponData.isPropagation)
+	    {
+		    index = ModuleManager.SINGLETON.propagationAcquired;
+	    }
+
+	    if (correspondingWeaponData.isProjectile)
+	    {
+		    index = ModuleManager.SINGLETON.projectileAcquired;
+	    }
+
+	    if (correspondingWeaponData.isFoudre)
+	    {
+		    index = ModuleManager.SINGLETON.foudreAcquired;
+	    }
+
+	    if (correspondingWeaponData.isSaignement)
+	    {
+		    index = ModuleManager.SINGLETON.saignementAcquired;
+	    }
+
+	    if (correspondingWeaponData.isKnockback)
+	    {
+		    index = ModuleManager.SINGLETON.knockbackAcquired;
+	    }
+			
+	    Debug.Log("Index To Add : " + index);
+	    return index;
+    }
+
+    bool CheckUpgrade()
+    {
+	    bool isUpgrade = correspondingWeaponData.isPropagation && ModuleManager.SINGLETON.propagationAcquired >= 1
+	                  || correspondingWeaponData.isProjectile  && ModuleManager.SINGLETON.projectileAcquired  >= 1
+	                  || correspondingWeaponData.isFoudre      && ModuleManager.SINGLETON.foudreAcquired      >= 1
+	                  || correspondingWeaponData.isKnockback   && ModuleManager.SINGLETON.knockbackAcquired   >= 1
+	                  || correspondingWeaponData.isSaignement  && ModuleManager.SINGLETON.saignementAcquired  >= 1;
+		    
+	    return isUpgrade;
+    }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
-	    
-	    //Debug.Log("Weapon Choice Trigger");
-	    weaponChoiceCanvas                           = GameObject.Find("Weapon Choice").GetComponent<Canvas>();
-	    weaponChoiceTexts                            = weaponChoiceCanvas.GetComponent<WeaponChoiceTexts>();
+		//Debug.Log("Weapon Choice Trigger");
 	    Time.timeScale                               = 0;
 
 	    foreach (var text in weaponChoiceTexts.upgradesText)
@@ -87,55 +156,12 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
 		    }
 	    }
 
-	    int IndexToAdd()
-	    {
-		    int index = 0;
-		    if (correspondingWeaponData.isPropagation)
-		    {
-			    index = ModuleManager.SINGLETON.propagationAcquired;
-		    }
-
-		    if (correspondingWeaponData.isProjectile)
-		    {
-			    index = ModuleManager.SINGLETON.projectileAcquired;
-		    }
-
-		    if (correspondingWeaponData.isFoudre)
-		    {
-			    index = ModuleManager.SINGLETON.foudreAcquired;
-		    }
-
-		    if (correspondingWeaponData.isSaignement)
-		    {
-			    index = ModuleManager.SINGLETON.saignementAcquired;
-		    }
-
-		    if (correspondingWeaponData.isKnockback)
-		    {
-			    index = ModuleManager.SINGLETON.knockbackAcquired;
-		    }
-			
-		    Debug.Log("Index To Add : " + index);
-		    return index;
-	    }
-
-	    bool CheckUpgrade()
-	    {
-		    bool isUpgrade = correspondingWeaponData.isPropagation && ModuleManager.SINGLETON.propagationAcquired >= 1
-		                  || correspondingWeaponData.isProjectile  && ModuleManager.SINGLETON.projectileAcquired  >= 1
-		                  || correspondingWeaponData.isFoudre      && ModuleManager.SINGLETON.foudreAcquired      >= 1
-		                  || correspondingWeaponData.isKnockback  && ModuleManager.SINGLETON.knockbackAcquired  >= 1
-		                  || correspondingWeaponData.isSaignement && ModuleManager.SINGLETON.saignementAcquired >= 1;
-		    
-		    return isUpgrade;
-	    }
-
 	    //weaponChoiceTexts.upgradeText.text     =;
 	    //weaponChoiceTexts.damagesAndCooldownText.text = "Dégâts : " + weaponData.Damage             + " Cooldown : " + weaponData.cooldownDuration;
-	    weaponChoiceTexts.xpGainText.text           = "+ " + correspondingWeaponData.xpValue + " XP";
-	    weaponChoiceCanvas.enabled                  = true;
-	    ModuleManager.SINGLETON.weaponToEquip       = correspondingWeaponData.weaponId;
-	    PlayerStats.SINGLETON.xpToExchange          = correspondingWeaponData.xpValue;
-	    ModuleManager.SINGLETON.pickedWeapon        = gameObject;
+	    weaponChoiceTexts.xpGainText.text     = "+ " + correspondingWeaponData.weaponId + IndexToAdd() + " XP";
+	    weaponChoiceCanvas.enabled            = true;
+	    ModuleManager.SINGLETON.weaponToEquip = correspondingWeaponData.weaponId;
+	    PlayerStats.SINGLETON.xpToExchange    = correspondingWeaponData.weaponId + IndexToAdd();
+	    ModuleManager.SINGLETON.pickedWeapon  = gameObject;
     }
 }

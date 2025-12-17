@@ -1235,6 +1235,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80ce93dd1a40e6b44b634a395173b49a, type: 3}
+--- !u!1001 &629338893
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5989766164689989864, guid: 3928d603cfbf2864692a438a08b3e00c, type: 3}
+      propertyPath: m_Name
+      value: Saignement Collectable Lvl.1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 3928d603cfbf2864692a438a08b3e00c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -26.450981
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 3928d603cfbf2864692a438a08b3e00c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -22.174494
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 3928d603cfbf2864692a438a08b3e00c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 3928d603cfbf2864692a438a08b3e00c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 3928d603cfbf2864692a438a08b3e00c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 3928d603cfbf2864692a438a08b3e00c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 3928d603cfbf2864692a438a08b3e00c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 3928d603cfbf2864692a438a08b3e00c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 3928d603cfbf2864692a438a08b3e00c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008725113772030793, guid: 3928d603cfbf2864692a438a08b3e00c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3928d603cfbf2864692a438a08b3e00c, type: 3}
 --- !u!1 &674287649
 GameObject:
   m_ObjectHideFlags: 0
@@ -3035,63 +3092,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80ce93dd1a40e6b44b634a395173b49a, type: 3}
---- !u!1001 &1752422529
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5989766164689989864, guid: b20a5844a00fb6f4a84ddd2097e17bd9, type: 3}
-      propertyPath: m_Name
-      value: Saignement Collectable Lvl.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9008725113772030793, guid: b20a5844a00fb6f4a84ddd2097e17bd9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -26.450981
-      objectReference: {fileID: 0}
-    - target: {fileID: 9008725113772030793, guid: b20a5844a00fb6f4a84ddd2097e17bd9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -22.174494
-      objectReference: {fileID: 0}
-    - target: {fileID: 9008725113772030793, guid: b20a5844a00fb6f4a84ddd2097e17bd9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9008725113772030793, guid: b20a5844a00fb6f4a84ddd2097e17bd9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9008725113772030793, guid: b20a5844a00fb6f4a84ddd2097e17bd9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9008725113772030793, guid: b20a5844a00fb6f4a84ddd2097e17bd9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9008725113772030793, guid: b20a5844a00fb6f4a84ddd2097e17bd9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9008725113772030793, guid: b20a5844a00fb6f4a84ddd2097e17bd9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9008725113772030793, guid: b20a5844a00fb6f4a84ddd2097e17bd9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9008725113772030793, guid: b20a5844a00fb6f4a84ddd2097e17bd9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b20a5844a00fb6f4a84ddd2097e17bd9, type: 3}
 --- !u!1 &1845959618
 GameObject:
   m_ObjectHideFlags: 0
@@ -4088,7 +4088,7 @@ SceneRoots:
   - {fileID: 923918495}
   - {fileID: 891412164}
   - {fileID: 1903638007}
-  - {fileID: 1752422529}
+  - {fileID: 629338893}
   - {fileID: 455733486}
   - {fileID: 3062721962874448365}
   - {fileID: 1337509567}
