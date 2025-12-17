@@ -10,7 +10,7 @@ public class PropagationCollider : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) // Ajoute dans une liste tous les ennemis présents dans la HitBox.
     {
 
-//        Debug.Log(propagationScript.spawnPosition + " Has Detected : " + other.name);
+        //Debug.Log(propagationScript.spawnPosition + " Has Detected : " + other.name);
         propagationScript.focusedEnemies.Add(other.GetComponent<EnemyStat>());
     }
 
