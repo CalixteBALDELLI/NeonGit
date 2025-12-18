@@ -37,6 +37,13 @@ public class ModuleManager : MonoBehaviour
     int                      weaponIconIndex;
     public Sprite[]          modulesIcons;
     public List<int>         currentEquipedModules = new List<int>();
+    
+    [SerializeField] Slider propagationSlider;
+    [SerializeField] Slider projectileSlider;
+    [SerializeField] Slider foudreSlider;
+    [SerializeField] Slider saignementSlider;
+    [SerializeField] Slider knockbackSlider;
+    
 
     [Header("InGame Inventory Management")]
     [HideInInspector] public int        weaponToEquip;
@@ -185,15 +192,18 @@ public class ModuleManager : MonoBehaviour
         float propagationCooldown  = 3;
         float delayBetweenDecrease = 0.25f;
         float cooldownReduction = 0.1f;
+        propagationSlider.maxValue = propagationCooldown;
         do
         {
             propagationCooldown -= cooldownReduction;
             //Debug.Log("Propagation Cooldown : " + propagationCooldown);
+            propagationSlider.value = propagationCooldown;
             yield return new WaitForSeconds(delayBetweenDecrease);
         } while (propagationCooldown >= cooldownReduction);
         Debug.LogWarning("Propagation Cooldown Finished");
         //propagationCooldown = 0;
         propagationCooldownFinished = true;
+        propagationSlider.value           = propagationSlider.maxValue;
     }
 
     public IEnumerator ProjectileCooldown(float startCooldown, float delayBetweenDecrease, float cooldownReduction)
@@ -201,6 +211,7 @@ public class ModuleManager : MonoBehaviour
         Debug.LogWarning("Module Cooldown");
         float cooldown = startCooldown;
         projectileCooldownFinished = false;
+        propagationSlider.maxValue = startCooldown;
         //float cooldown  = 3;
         //float delayBetweenDecrease = 0.25f;
         //float cooldownReduction    = 0.1f;
@@ -208,8 +219,11 @@ public class ModuleManager : MonoBehaviour
         {
             cooldown -= cooldownReduction;
             Debug.Log("Module Cooldown : " + cooldown);
+            projectileSlider.value = cooldown;
             yield return new WaitForSeconds(delayBetweenDecrease);
         } while (cooldown >= cooldownReduction);
+
+        projectileSlider.value = projectileSlider.maxValue;
         projectileSpawner.SpawnProjectile();
     }
 }
