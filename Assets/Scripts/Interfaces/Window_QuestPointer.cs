@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class QuestPointer : MonoBehaviour
 {
     [Header("Cible à suivre")]
+    [SerializeField] bool isAZoneBoss;
     public Transform target;
 
     [Header("Marge du bord d'écran (en pixels)")]
@@ -21,6 +22,10 @@ public class QuestPointer : MonoBehaviour
     
     void Awake()
     {
+        if (isAZoneBoss)
+        {
+            target = GameObject.FindGameObjectWithTag("ZoneBoss").transform;
+        }
         pointerRectTransform = GetComponent<RectTransform>();
         mainCamera = Camera.main;
         canvas = GetComponent<Canvas>();

@@ -83,6 +83,7 @@ public class EnemyStat : MonoBehaviour
             if (isABoss)
             {
                 PlayerStats.SINGLETON.teleporterKeyObtained = true;
+                Timer.SINGLETON.objectiveMessage.text       = "Clé du téléporteur obtenue. Fuyez vers celui-ci !";
             }
             if (isFinalBoss)
             {

@@ -38,6 +38,7 @@ TagManager:
   - FoudreHitBox
   - ColliderChecker
   - escaladable
+  - ZoneBoss
   layers:
   - Default
   - TransparentFX

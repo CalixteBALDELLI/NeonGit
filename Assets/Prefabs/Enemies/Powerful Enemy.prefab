@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 6869097372620016865}
   m_Layer: 3
   m_Name: Powerful Enemy
-  m_TagString: Enemy
+  m_TagString: ZoneBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
