@@ -158,10 +158,11 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
 
 	    //weaponChoiceTexts.upgradeText.text     =;
 	    //weaponChoiceTexts.damagesAndCooldownText.text = "Dégâts : " + weaponData.Damage             + " Cooldown : " + weaponData.cooldownDuration;
-	    weaponChoiceTexts.xpGainText.text     = "+ " + correspondingWeaponData.weaponId + IndexToAdd() + " XP";
-	    weaponChoiceCanvas.enabled            = true;
-	    ModuleManager.SINGLETON.weaponToEquip = correspondingWeaponData.weaponId;
-	    PlayerStats.SINGLETON.xpToExchange    = correspondingWeaponData.weaponId + IndexToAdd();
-	    ModuleManager.SINGLETON.pickedWeapon  = gameObject;
+	    weaponChoiceTexts.xpGainText.text         = "+ " + correspondingWeaponData.weaponId + IndexToAdd() + " XP";
+	    weaponChoiceCanvas.enabled                = true;
+	    ModuleManager.SINGLETON.weaponToEquip     = correspondingWeaponData.weaponId;
+	    PlayerStats.SINGLETON.xpToExchange        = correspondingWeaponData.weaponId + IndexToAdd();
+	    ModuleManager.SINGLETON.pickedWeapon      = gameObject;
+	    ModuleManager.SINGLETON.pickedWeaponArrow = questPointer;
     }
 }

@@ -165,24 +165,19 @@ public class PlayerStats : MonoBehaviour
     }
     
     // In Game Upgrades
-    public void UpgradeSwordAndModulesDamage()
+    
+    public void UpgradePlayerDamages()
     {
-        currentSwordDamages           += inGameUpgrades.swordAndModulesUpgrade;
-        currentSwordAndModulesUpgrade += inGameUpgrades.swordAndModulesUpgrade;
-        hasLeveledUp                  =  false;
-    }
-
-    public void UpgradeSwordDamage()
-    {
-        currentSwordDamages += inGameUpgrades.swordDamages;
+        currentPlayerDamage += inGameUpgrades.playerDamages;
         hasLeveledUp        =  false;
     }
-    public void UpgradeSpeed()
+    public void UpgradePlayerMoveSpeed()
     {
         currentMoveSpeed += inGameUpgrades.playerSpeed;
         hasLeveledUp     =  false;
     }
 
+    // améliorations Epée
     public void UpgradeSwordLength()
     {
         swordChildren.transform.localScale += new Vector3(inGameUpgrades.swordLength,0,0);
@@ -207,11 +202,7 @@ public class PlayerStats : MonoBehaviour
         hasLeveledUp         =  false;
     }
 
-    public void UpgradeCriticalHitChance()
-    {
-        
-    }
-
+    
     // Out Game Upgrades
     public void OutGameUpgradeDamages()
     {

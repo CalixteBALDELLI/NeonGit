@@ -10,7 +10,6 @@ public class WeaponSpawner : MonoBehaviour
     public  MapData       mapData;
     public  int           minSpawnTime;
     public  int           maxSpawnTime;
-    bool                  weaponSpawned;
     bool                  spawnerActive;
     WeaponSpawnersManager weaponSpawnersManager;
     
@@ -36,7 +35,6 @@ public class WeaponSpawner : MonoBehaviour
             spawnTime   = Random.Range(minSpawnTime, maxSpawnTime);
             yield return new WaitForSeconds(spawnTime);
             Instantiate(mapData.playerWeapons[whichweapon], transform);
-            weaponSpawned = true; 
         }
     }
 }

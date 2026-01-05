@@ -1,13 +1,16 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FoudreScript : MonoBehaviour
 {
-    public Transform                player;
-    public GameObject               hitboxPrefab;
-    public float                    timeUntilNextAoe;
-    Camera                          cam;
-    public WeaponScriptableObject[] foudreData;
+    public Transform                          player;
+    public GameObject                         hitboxPrefab;
+    public float                              timeUntilNextAoe;
+    Camera                                    cam;
+    public           WeaponScriptableObject[] foudreData;
+    [SerializeField] Slider                   foudreSlider;
+
 
     void Start()
     {
@@ -15,10 +18,8 @@ public class FoudreScript : MonoBehaviour
         if (ModuleManager.SINGLETON.foudreAcquired > 0)
         {
             HitZone();
-            StartCoroutine(Delay());
         }
     }
-
     
     public void HitZone()
     {
@@ -38,19 +39,6 @@ public class FoudreScript : MonoBehaviour
         Debug.Log("Point de spawn 2D : " + spawnPoint);
 
         Instantiate(hitboxPrefab, spawnPoint, Quaternion.identity);
+        StartCoroutine(ModuleManager.SINGLETON.FoudreCooldown(ModuleManager.SINGLETON.modulesData[16 + ModuleManager.SINGLETON.foudreAcquired].CooldownDuration));
     }
-
-    public IEnumerator Delay()
-    {
-        timeUntilNextAoe = foudreData[ModuleManager.SINGLETON.foudreAcquired - 1].cooldownDuration;
-        while (ModuleManager.SINGLETON.foudreAcquired > 0)
-        {
-            yield return new WaitForSeconds(timeUntilNextAoe);
-            HitZone();
-        }
-
-
-    }
-    
-    
 }

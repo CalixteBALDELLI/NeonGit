@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cc7e62b363736243ae4e58b87077a29, type: 3}
   m_Name: InGameUpgrades
   m_EditorClassIdentifier: 
-  swordAndModulesUpgrade: 0.5
+  playerDamages: 0.5
   playerSpeed: 1
   swordRadius: 22
   swordLength: 0.3
-  swordDamages: 0
   swordSpeed: 0
   swordCooldownToDecrease: 0

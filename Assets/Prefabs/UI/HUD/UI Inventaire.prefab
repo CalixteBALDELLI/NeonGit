@@ -754,12 +754,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: 100
     m_Right: 100
     m_Top: 100
-    m_Bottom: 0
-  m_ChildAlignment: 2
-  m_Spacing: -1000
+    m_Bottom: 66
+  m_ChildAlignment: 6
+  m_Spacing: -867.65
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0

@@ -14,6 +14,7 @@ public class Saignement : MonoBehaviour
 
     public void CallSaignememnt()
     {
+        ModuleManager.SINGLETON.StartSaignementCooldown();
         speedDamageSaignement = saignementData[ModuleManager.SINGLETON.saignementAcquired - 1].Speed;
         damageSaignement = saignementData[ModuleManager.SINGLETON.saignementAcquired - 1].Damage;
         Debug.Log(damageSaignement);

@@ -12,7 +12,7 @@ public class ProjectileSpawner : MonoBehaviour
         Debug.Log("Projectile spawned");
         //yield return new WaitForSeconds(1f);
         //StartCoroutine(SpawnProjectile());
-        StartCoroutine(ModuleManager.SINGLETON.ProjectileCooldown(3, 0.25f, 0.1f));
+        StartCoroutine(ModuleManager.SINGLETON.ProjectileCooldown(ModuleManager.SINGLETON.modulesData[ModuleManager.SINGLETON.projectileAcquired].CooldownDuration));
     }
     
     void Start()

@@ -239,10 +239,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timer
       objectReference: {fileID: 0}
-    - target: {fileID: 8771895426433555158, guid: a3b2a5a567422244986e5ef1b918d7c5, type: 3}
-      propertyPath: m_margin.z
-      value: -299.72748
-      objectReference: {fileID: 0}
     - target: {fileID: 8892863551157836162, guid: a3b2a5a567422244986e5ef1b918d7c5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -305,7 +301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8892863551157836162, guid: a3b2a5a567422244986e5ef1b918d7c5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -766
+      value: 83
       objectReference: {fileID: 0}
     - target: {fileID: 8892863551157836162, guid: a3b2a5a567422244986e5ef1b918d7c5, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -397,10 +393,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timer
       objectReference: {fileID: 0}
-    - target: {fileID: 8771895426433555158, guid: a3b2a5a567422244986e5ef1b918d7c5, type: 3}
-      propertyPath: m_margin.z
-      value: -286.7663
-      objectReference: {fileID: 0}
     - target: {fileID: 8892863551157836162, guid: a3b2a5a567422244986e5ef1b918d7c5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -463,11 +455,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8892863551157836162, guid: a3b2a5a567422244986e5ef1b918d7c5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -766
+      value: 81.3
       objectReference: {fileID: 0}
     - target: {fileID: 8892863551157836162, guid: a3b2a5a567422244986e5ef1b918d7c5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 344
+      value: 392.14
       objectReference: {fileID: 0}
     - target: {fileID: 8892863551157836162, guid: a3b2a5a567422244986e5ef1b918d7c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1923,6 +1915,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 72dc9b2b416f0c340a5a76bc137399ac, type: 2}
   - {fileID: 11400000, guid: 6789cc277a53aa446b1f07193dc52b09, type: 2}
   - {fileID: 11400000, guid: eada2437330a3a84495e57bcdd19a8a4, type: 2}
+  foudreSlider: {fileID: 0}
 --- !u!114 &636800813 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8334477637018599103, guid: 025580189a52cfc449919f9496ddba4d, type: 3}

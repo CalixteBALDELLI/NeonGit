@@ -29,7 +29,10 @@ public class ModuleManager : MonoBehaviour
     [Header("InGame Propagation State")]
     public int  currentPropagationStep;
     public bool propagationCooldownFinished = true;
-    public bool projectileCooldownFinished = true;
+    public bool projectileCooldownFinished  = true;
+    public bool knockbackCooldownFinished   = true;
+    public bool saignementCooldownFinished  = true;
+
 
     [Header("Inventory UI")]
     [SerializeField] Image[] inventoryIcons;
@@ -40,14 +43,15 @@ public class ModuleManager : MonoBehaviour
     
     [SerializeField] Slider propagationSlider;
     [SerializeField] Slider projectileSlider;
-    [SerializeField] Slider foudreSlider;
     [SerializeField] Slider saignementSlider;
     [SerializeField] Slider knockbackSlider;
-    
+    [SerializeField] Slider foudreSlider;
+
 
     [Header("InGame Inventory Management")]
     [HideInInspector] public int        weaponToEquip;
     [HideInInspector] public GameObject pickedWeapon;
+    [HideInInspector] public GameObject pickedWeaponArrow;
     public                   int        equippedWeapons;
     Canvas                              weaponChoiceCanvas;
 
@@ -103,7 +107,6 @@ public class ModuleManager : MonoBehaviour
             {
                 foudreAcquired++;
                 foudreScript.HitZone();
-                StartCoroutine(foudreScript.Delay());
             }
 
             if (weaponToEquip == 4)
@@ -115,6 +118,7 @@ public class ModuleManager : MonoBehaviour
             weaponChoiceCanvas.enabled = false;
             Time.timeScale             = 1;
             InventoryUiUpdate();
+            Destroy(pickedWeaponArrow);
             Destroy(pickedWeapon);
         }
     }
@@ -183,38 +187,50 @@ public class ModuleManager : MonoBehaviour
 
     public void StartPropagationCooldown()
     {
-        StartCoroutine(PropagationCooldown());
+        StartCoroutine(PropagationCooldown(modulesData[9 + propagationAcquired].CooldownDuration));
     }
-    public IEnumerator PropagationCooldown()
+
+    public void StartKnockbackCooldown()
+    {
+        StartCoroutine(KnockbackCooldown(modulesData[4 + knockbackAcquired].CooldownDuration));
+    }
+
+    public void StartSaignementCooldown()
+    {
+        StartCoroutine(SaignementCooldown(modulesData[11 + saignementAcquired].CooldownDuration));
+    }
+    
+    public IEnumerator PropagationCooldown(float startCooldown)
     {
         //Debug.LogWarning("Propagation Cooldown");
         propagationCooldownFinished = false;
-        float propagationCooldown  = 3;
-        float delayBetweenDecrease = 0.25f;
-        float cooldownReduction = 0.1f;
-        propagationSlider.maxValue = propagationCooldown;
+        float cooldown = startCooldown;
+        //float propagationCooldown  = 3;
+        float delayBetweenDecrease = 1f;
+        float cooldownReduction = 1f;
+        propagationSlider.maxValue = startCooldown;
         do
         {
-            propagationCooldown -= cooldownReduction;
-            //Debug.Log("Propagation Cooldown : " + propagationCooldown);
-            propagationSlider.value = propagationCooldown;
+            cooldown -= cooldownReduction;
+            Debug.Log("Propagation Cooldown : " + cooldown);
+            propagationSlider.value = cooldown;
             yield return new WaitForSeconds(delayBetweenDecrease);
-        } while (propagationCooldown >= cooldownReduction);
+        } while (cooldown >= cooldownReduction);
         Debug.LogWarning("Propagation Cooldown Finished");
         //propagationCooldown = 0;
         propagationCooldownFinished = true;
         propagationSlider.value           = propagationSlider.maxValue;
     }
 
-    public IEnumerator ProjectileCooldown(float startCooldown, float delayBetweenDecrease, float cooldownReduction)
+    public IEnumerator ProjectileCooldown(float startCooldown)
     {
         Debug.LogWarning("Module Cooldown");
         float cooldown = startCooldown;
         projectileCooldownFinished = false;
-        propagationSlider.maxValue = startCooldown;
+        projectileSlider.maxValue = startCooldown;
         //float cooldown  = 3;
-        //float delayBetweenDecrease = 0.25f;
-        //float cooldownReduction    = 0.1f;
+        float delayBetweenDecrease = 1f;
+        float cooldownReduction    = 1f;
         do
         {
             cooldown -= cooldownReduction;
@@ -225,5 +241,67 @@ public class ModuleManager : MonoBehaviour
 
         projectileSlider.value = projectileSlider.maxValue;
         projectileSpawner.SpawnProjectile();
+    }
+    
+    public IEnumerator KnockbackCooldown(float startCooldown)
+    {
+        Debug.LogWarning("Knockback Cooldown");
+        float cooldown = startCooldown;
+        knockbackCooldownFinished = false;
+        knockbackSlider.maxValue  = startCooldown;
+        //float cooldown  = 3;
+        float delayBetweenDecrease = 1f;
+        float cooldownReduction    = 1f;
+        do
+        {
+            cooldown -= cooldownReduction;
+            Debug.Log("Knockback Cooldown : " + cooldown);
+            knockbackSlider.value = cooldown;
+            yield return new WaitForSeconds(delayBetweenDecrease);
+        } while (cooldown >= cooldownReduction);
+        
+        knockbackSlider.value     = knockbackSlider.maxValue;
+        knockbackCooldownFinished = true;
+    }
+    
+    public IEnumerator FoudreCooldown(float startCooldown)
+    {
+        Debug.LogWarning("Foudre Cooldown");
+        float cooldown = startCooldown;
+        foudreSlider.maxValue = startCooldown;
+        //float cooldown  = 3;
+        float delayBetweenDecrease = 1f;
+        float cooldownReduction    = 1f;
+        do
+        {
+            cooldown -= cooldownReduction;
+            Debug.Log("Foudre Cooldown : " + cooldown);
+            foudreSlider.value = cooldown;
+            yield return new WaitForSeconds(delayBetweenDecrease);
+        } while (cooldown >= cooldownReduction);
+        
+        foudreSlider.value = foudreSlider.maxValue;
+        foudreScript.HitZone();
+    }
+    
+    public IEnumerator SaignementCooldown(float startCooldown)
+    {
+        Debug.LogWarning("Saignement Cooldown");
+        float cooldown = startCooldown;
+        saignementCooldownFinished = false;
+        saignementSlider.maxValue = startCooldown;
+        //float cooldown  = 3;
+        float delayBetweenDecrease = 1f;
+        float cooldownReduction    = 1f;
+        do
+        {
+            cooldown -= cooldownReduction;
+            Debug.Log("Saignement Cooldown : " + cooldown);
+            saignementSlider.value = cooldown;
+            yield return new WaitForSeconds(delayBetweenDecrease);
+        } while (cooldown >= cooldownReduction);
+        
+        saignementSlider.value     = saignementSlider.maxValue;
+        saignementCooldownFinished = true;
     }
 }

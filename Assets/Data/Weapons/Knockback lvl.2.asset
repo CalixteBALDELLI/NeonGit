@@ -31,7 +31,7 @@ MonoBehaviour:
   hasSpeed: 0
   speed: 0
   hasCooldown: 0
-  cooldownDuration: 0.3
+  cooldownDuration: 20
   hasPierce: 0
   pierce: 1
   hasKnockback: 1

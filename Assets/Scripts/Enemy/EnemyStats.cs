@@ -52,7 +52,7 @@ public class EnemyStat : MonoBehaviour
     {
         enemyMouvement.isStunned                   =  true;
         currentHealth                              -= dmg;
-        if (ModuleManager.SINGLETON.saignementAcquired > 0)
+        if (ModuleManager.SINGLETON.saignementCooldownFinished && ModuleManager.SINGLETON.saignementAcquired > 0)
         {
             GetComponent<Saignement>()?.CallSaignememnt();
         }
@@ -169,9 +169,10 @@ public class EnemyStat : MonoBehaviour
             Propage();
         }
 
-        if (ModuleManager.SINGLETON.knockbackAcquired > 0)
+        if (ModuleManager.SINGLETON.knockbackAcquired > 0 && ModuleManager.SINGLETON.knockbackCooldownFinished)
         {
             knockBackModule.KnockbackSetup();
+            ModuleManager.SINGLETON.StartKnockbackCooldown();
         }
     }
 
