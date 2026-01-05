@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d14c0144ba6d86046a5537685a224eb7
+guid: 0c7f446e46e729d45b5903b09d0713fc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 119550002390874199
-    second: "t\xE9l\xE9chargement (17) - Copie_0"
+      213: 5482254097293131870
+    second: "t\xE9l\xE9charger (7)_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "t\xE9l\xE9chargement (17) - Copie_0"
+      name: "t\xE9l\xE9charger (7)_0"
       rect:
         serializedVersion: 2
-        x: 221
-        y: 70
-        width: 218
-        height: 398
+        x: 27
+        y: 103
+        width: 438
+        height: 274
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 1}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 758b761081ab8a100800000000000000
-      internalID: 119550002390874199
+      spriteID: e5046952e01e41c40800000000000000
+      internalID: 5482254097293131870
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3474854f0e0186347a41cfd52bcdcecc
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "t\xE9l\xE9chargement (17) - Copie_0": 119550002390874199
+      "t\xE9l\xE9charger (7)_0": 5482254097293131870
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

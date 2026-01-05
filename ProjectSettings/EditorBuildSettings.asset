@@ -65,6 +65,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jeu/Industriel 4.unity
     guid: d158b89a00fb7e94bb8b85e5fedb93bd
+  - enabled: 1
+    path: "Assets/Scenes/Menu/Cr\xE9dit.unity"
+    guid: 54a1d90263087684989cb274120a6029
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
