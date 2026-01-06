@@ -2136,21 +2136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33340dc7272c2f499fa7cf6657e3776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &924950802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457366642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e7d3835801093c4fa07ee325d555b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scieCirculairePrefab: {fileID: 476331841559885539, guid: 590ba18612463ac4289155250903e2a5, type: 3}
-  player: {fileID: 993000869}
-  cooldown: 0.25
 --- !u!1 &956617144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2396,6 +2381,7 @@ MonoBehaviour:
   hitboxPrefab: {fileID: 3614222281372839154, guid: bd7bb4cf8039d9341826378c5734ca42, type: 3}
   timeUntilNextAoe: 5
   foudreData: []
+  foudreSlider: {fileID: 0}
 --- !u!1 &1074129317
 GameObject:
   m_ObjectHideFlags: 0
@@ -2811,6 +2797,18 @@ PrefabInstance:
     - target: {fileID: 211848326548982415, guid: 3bf107ed64ad3e143892108a2c7803c1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UpgradeSwordCooldown
+      objectReference: {fileID: 0}
+    - target: {fileID: 622013249004880778, guid: 3bf107ed64ad3e143892108a2c7803c1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 622013249004880778, guid: 3bf107ed64ad3e143892108a2c7803c1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 622013249004880778, guid: 3bf107ed64ad3e143892108a2c7803c1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 693215241624005284, guid: 3bf107ed64ad3e143892108a2c7803c1, type: 3}
       propertyPath: m_AnchorMax.y
@@ -4174,6 +4172,14 @@ PrefabInstance:
       value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: rubanAcquired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: rebondAcquired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: weaponController
       value: 
       objectReference: {fileID: 0}
@@ -4185,6 +4191,26 @@ PrefabInstance:
       propertyPath: projectileController
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: modulesData.Array.size
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: 'modulesData.Array.data[24]'
+      value: 
+      objectReference: {fileID: 11400000, guid: dc95680482672e642ad5bca4c44f2060, type: 2}
+    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: 'modulesData.Array.data[25]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e6ec9cfc83a96cb488820fe2cf9d60a5, type: 2}
+    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: 'modulesData.Array.data[26]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 888c0e60ea5df6e4da4a8b851f94f796, type: 2}
+    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: 'modulesData.Array.data[27]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 938d644d44cb8f24c8f965ca3c0a3b55, type: 2}
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: projectileControllerGameObject
       value: 
@@ -4206,6 +4232,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 322984206}
     - target: {fileID: 7670656611126362940, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 993000869}
+    - target: {fileID: 8607763588458473958, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 993000869}
@@ -4252,10 +4282,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2459730909182841648, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 924950802}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
 --- !u!1 &2109032659
 GameObject:
@@ -4358,7 +4385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2809771877204889217, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4296561577921226808, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4489,6 +4516,10 @@ PrefabInstance:
     - target: {fileID: 476331841559885539, guid: 590ba18612463ac4289155250903e2a5, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 476331841559885539, guid: 590ba18612463ac4289155250903e2a5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2845537990166057839, guid: 590ba18612463ac4289155250903e2a5, type: 3}
       propertyPath: mousePositionInput

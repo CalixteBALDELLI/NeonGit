@@ -39,6 +39,7 @@ TagManager:
   - ColliderChecker
   - escaladable
   - ZoneBoss
+  - ScieRebondissante
   layers:
   - Default
   - TransparentFX

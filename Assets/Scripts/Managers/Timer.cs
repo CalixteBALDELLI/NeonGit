@@ -31,7 +31,7 @@ public class Timer : MonoBehaviour
     
     void Start()
     {
-        SetBossTimer(4);
+        SetBossTimer(75);
         StartCoroutine(FinalBossTimer());
     }
 

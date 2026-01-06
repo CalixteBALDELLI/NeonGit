@@ -75,7 +75,9 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
 	                  || correspondingWeaponData.isProjectile  && ModuleManager.SINGLETON.projectileAcquired  >= 1
 	                  || correspondingWeaponData.isFoudre      && ModuleManager.SINGLETON.foudreAcquired      >= 1
 	                  || correspondingWeaponData.isKnockback   && ModuleManager.SINGLETON.knockbackAcquired   >= 1
-	                  || correspondingWeaponData.isSaignement  && ModuleManager.SINGLETON.saignementAcquired  >= 1;
+	                  || correspondingWeaponData.isSaignement  && ModuleManager.SINGLETON.saignementAcquired  >= 1
+	                  || correspondingWeaponData.isRuban       && ModuleManager.SINGLETON.rubanAcquired       >= 1
+	                  || correspondingWeaponData.isRebond      && ModuleManager.SINGLETON.rebondAcquired      >= 1;
 		    
 	    return isUpgrade;
     }

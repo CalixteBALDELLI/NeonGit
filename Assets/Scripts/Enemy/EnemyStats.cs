@@ -140,6 +140,13 @@ public class EnemyStat : MonoBehaviour
             //Debug.Log("Projectile Damages : " + ModuleManager.SINGLETON.modulesData[ModuleManager.SINGLETON.projectileAcquired].Damage * PlayerStats.SINGLETON.currentPlayerDamage);
             ModulesCheck();
         }
+        
+        if (cl2D.CompareTag("ScieRebondissante"))
+        {
+            TakeDamage(ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].Damage * PlayerStats.SINGLETON.currentPlayerDamage);
+            //Debug.Log("Projectile Damages : " + ModuleManager.SINGLETON.modulesData[ModuleManager.SINGLETON.projectileAcquired].Damage * PlayerStats.SINGLETON.currentPlayerDamage);
+            ModulesCheck();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)

@@ -12,11 +12,11 @@ public class ScieCirculaire : MonoBehaviour
         StartCoroutine(CreateScie());
     }
 
-    IEnumerator CreateScie()
+    public IEnumerator CreateScie()
     {
-        while (true)
+        while (ModuleManager.SINGLETON.rebondAcquired >= 1)
         {
-            yield return new WaitForSeconds(cooldown);
+            yield return new WaitForSeconds(ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].CooldownDuration);
             Instantiate(scieCirculairePrefab, player.position, Quaternion.identity);
         }
         
