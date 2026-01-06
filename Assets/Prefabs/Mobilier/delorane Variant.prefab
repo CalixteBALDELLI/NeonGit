@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &586649434372451692
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2290042286440137553, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565118077866344958, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 57.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565118077866344958, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 52.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565118077866344958, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565118077866344958, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9923116
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565118077866344958, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565118077866344958, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565118077866344958, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.12376463
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565118077866344958, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565118077866344958, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565118077866344958, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 14.219
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648121092485429650, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: m_Name
+      value: delorane Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209800178999137411, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2506588582918498366, guid: 152a4bf274c3a564abc2fb189c827712, type: 3}
+    - target: {fileID: 4260085010897599955, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: soundEffects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260085010897599955, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: 'soundEffects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: a6e27a4785bf4f048a34a2658f9cd2fb, type: 3}
+    - target: {fileID: 4260085010897599955, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: 'soundEffects.Array.data[1]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260085010897599955, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: 'soundEffects.Array.data[2]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260085010897599955, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: 'soundEffects.Array.data[3]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260085010897599955, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: 'soundEffects.Array.data[4]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496637607255381463, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 6.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496637607255381463, guid: 44f74e850f380e149845432f012766f8, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.49
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 44f74e850f380e149845432f012766f8, type: 3}
