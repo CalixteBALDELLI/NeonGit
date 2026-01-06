@@ -196,8 +196,8 @@ public class ModuleManager : MonoBehaviour
         {
             //Debug.Log("Inventory Index : " + inventoryIndex);
             //Debug.Log("Eqquiped Module : " + equippedModule);
-            inventoryIcons[inventoryIndex].enabled = true;
-            inventoryIcons[inventoryIndex].sprite  = modulesIcons[equippedModule];
+//            inventoryIcons[inventoryIndex].enabled = true;
+            //inventoryIcons[inventoryIndex].sprite  = modulesIcons[equippedModule];
             inventoryIndex++;
         }
     }

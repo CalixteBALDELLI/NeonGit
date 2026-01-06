@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Projectile lvl.1
   m_EditorClassIdentifier: 
   weaponId: 0
-  weaponName: 
-  description: 
+  weaponName: Projectile
+  description: "Lance un projectile qui traverse les ennemis \xE0 chaque coup d'\xE9p\xE9e"
   xpValue: 0
   weaponIcon: {fileID: 6989642852348889387, guid: 8b82b1b1e89a22340ac8887798340ae7, type: 3}
   isAnUpgrade: 0
@@ -23,6 +23,8 @@ MonoBehaviour:
   isProjectile: 1
   isSaignement: 0
   isKnockback: 0
+  isRuban: 0
+  isRebond: 0
   weaponColor: {r: 0, g: 1, b: 0.79312277, a: 1}
   prefab: {fileID: 6997200509264440334, guid: fb3ce32a2f5fc7a4db33e9033231bee7, type: 3}
   dealDamages: 1

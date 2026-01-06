@@ -172,7 +172,7 @@ public class EnemyStat : MonoBehaviour
         //Debug.Log("ModulesCheck");
         if (ModuleManager.SINGLETON.propagationAcquired > 0 && ModuleManager.SINGLETON.propagationCooldownFinished)
         {
-            Debug.Log("Cooldown Started");
+            //Debug.Log("Cooldown Started");
             ModuleManager.SINGLETON.StartPropagationCooldown();
             Propage();
         }

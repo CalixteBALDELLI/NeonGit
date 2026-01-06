@@ -31,7 +31,7 @@ public class Timer : MonoBehaviour
     
     void Start()
     {
-        SetBossTimer(75);
+        SetBossTimer(2);
         StartCoroutine(FinalBossTimer());
     }
 
@@ -56,7 +56,7 @@ public class Timer : MonoBehaviour
         Debug.Log("Boss Timer finished");
         Instantiate(powerfulEnemyPrefab);
         objectiveMessage.text = "Eliminez le boss de zone";
-        zoneBossArrow.SetActive(true);
+       //zoneBossArrow.SetActive(true);
         
         //powerfulEnemyPrefab.SetActive(true);
     }

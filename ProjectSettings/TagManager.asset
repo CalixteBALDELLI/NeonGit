@@ -40,6 +40,8 @@ TagManager:
   - escaladable
   - ZoneBoss
   - ScieRebondissante
+  - BossArrow
+  - Teleporter
   layers:
   - Default
   - TransparentFX

@@ -13,27 +13,30 @@ public class PlayerStats : MonoBehaviour
     //Stats actuelles
     //[HideInInspector]
     [Header("Current Stats")]
-    public float                            currentPlayerDamage;
-    public float                            currentHealth;
-    public float                            currentmaxHealth; 
-    float                                   currentAutoHealthRegeneration;
-    public float                            currentMoveSpeed;
-    float                                   currentProjectileSpeed;
-    public           float                  currentSwordDamages;
-    public           float                  currentModulesDamages;
-    public           float                  currentSwordSwingSpeed;
-    public           float                  currentSwordCooldown;
-    public           float                  currentSwordAndModulesUpgrade;
-    public           float                  currentXpGain;
-    public           int                    currentMoney;
-    public           int                    xpToExchange;
-    [Header("Current Out Game Upgrades")]
-    public           float                  speedToAdd;
-    public           float                  critChancesToAdd;
-    public           float                  swordDistanceToAdd;
-    public           float                  swordRadiusToAdd;
-    public           float                  swordAndModulesUpgradeToAdd;
-    public           bool                   teleporterKeyObtained;
+    public float currentPlayerDamage;
+    public                  float  currentHealth;
+    [HideInInspector] public float  currentmaxHealth; 
+    float                          currentAutoHealthRegeneration;
+    public                   float currentMoveSpeed;
+    [HideInInspector]        float currentProjectileSpeed;
+    [HideInInspector] public float currentSwordDamages;
+    [HideInInspector] public float currentModulesDamages;
+    [HideInInspector] public float currentSwordSwingSpeed;
+    [HideInInspector] public float currentSwordCooldown;
+    [HideInInspector] public float currentSwordAndModulesUpgrade;
+    [HideInInspector] public float currentXpGain;
+    [HideInInspector] public int   currentMoney;
+    public                   int   xpToExchange;
+    
+    //[Header("Current Out Game Upgrades")]
+    [HideInInspector]public           float                  speedToAdd;
+    [HideInInspector] public float critChancesToAdd;
+    [HideInInspector] public float swordDistanceToAdd;
+    [HideInInspector] public float swordRadiusToAdd;
+    [HideInInspector] public float swordAndModulesUpgradeToAdd;
+    
+    public                   bool  teleporterKeyObtained;
+
     [Header("Player GameObjects")]
     [SerializeField] SwordManager           swordManager;
     [SerializeField] GameObject             swordChildren;

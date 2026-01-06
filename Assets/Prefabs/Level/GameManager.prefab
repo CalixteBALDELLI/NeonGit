@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6114761339648453574}
   - component: {fileID: 2186516233191138354}
   - component: {fileID: 651058581322839038}
-  - component: {fileID: 5181950233042040546}
   - component: {fileID: 7670656611126362940}
   - component: {fileID: 8607763588458473958}
   m_Layer: 0
@@ -138,6 +137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileControllerGameObject: {fileID: 0}
   projectileSpawner: {fileID: 0}
+  rubanGameObject: {fileID: 0}
+  rebondScript: {fileID: 0}
   propagationAcquired: 0
   knockbackAcquired: 0
   projectileAcquired: 0
@@ -223,18 +224,6 @@ MonoBehaviour:
   timeBeforeFinalBoss: 900
   objectiveMessage: {fileID: 0}
   zoneBossArrow: {fileID: 0}
---- !u!114 &5181950233042040546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2459730909182841648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3e4950ee5b280b49a963a77fc450bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7670656611126362940
 MonoBehaviour:
   m_ObjectHideFlags: 0

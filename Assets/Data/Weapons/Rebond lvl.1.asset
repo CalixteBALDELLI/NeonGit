@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 625782ea73e1fe348886067bcf222d80, type: 3}
   m_Name: Rebond lvl.1
   m_EditorClassIdentifier: 
-  weaponId: 19
+  weaponId: 24
   weaponName: Scie Rebondissante
   description: "Tire des scies qui rebondissent sur les ennemis touch\xE9s."
   xpValue: 25
@@ -32,8 +32,8 @@ MonoBehaviour:
   damage: 0.5
   hasSpeed: 1
   speed: 20
-  hasCooldown: 0
-  cooldownDuration: 0
+  hasCooldown: 1
+  cooldownDuration: 1
   hasPierce: 1
   pierce: 3
   hasKnockback: 0

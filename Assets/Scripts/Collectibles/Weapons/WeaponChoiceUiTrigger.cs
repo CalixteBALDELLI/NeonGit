@@ -32,9 +32,9 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
 	    yield return new WaitForSeconds(secondsBeforeSpawn);
 	    boxCollider2D.enabled = true;
 	    weaponSprite.SetActive(true);
-	    questPointer.SetActive(true);
-	    questPointerArrow.color       = ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + 1].weaponColor;
-	    questPointerWeaponIcon.sprite = ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + 1].weaponIcon;
+//	    questPointer.SetActive(true);
+//	    questPointerArrow.color       = ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + 1].weaponColor;
+//	    questPointerWeaponIcon.sprite = ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + 1].weaponIcon;
     }
     
     int IndexToAdd()

@@ -128,7 +128,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5989766164689989864}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -182,7 +182,7 @@ MonoBehaviour:
   correspondingWeaponData: {fileID: 11400000, guid: 0ece670f98bcf8e45b46f6532bafa9fb, type: 2}
   secondsBeforeSpawn: 2
   boxCollider2D: {fileID: -1498617175270481836}
-  weaponSprite: {fileID: 0}
+  weaponSprite: {fileID: 4995289600910362296}
   questPointer: {fileID: 0}
   questPointerArrow: {fileID: 0}
   questPointerWeaponIcon: {fileID: 0}

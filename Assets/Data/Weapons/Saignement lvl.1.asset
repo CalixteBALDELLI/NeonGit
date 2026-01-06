@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Saignement lvl.1
   m_EditorClassIdentifier: 
   weaponId: 11
-  weaponName: 
-  description: 
+  weaponName: Poison
+  description: "Inflige p\xE9riodiquement des d\xE9g\xE2ts aux ennemis jusqu'\xE0
+    leur mort."
   xpValue: 0
   weaponIcon: {fileID: -4347532159779508366, guid: c530acce33d296b4cb522401a4ce37c6, type: 3}
   isAnUpgrade: 0
@@ -23,6 +24,8 @@ MonoBehaviour:
   isProjectile: 0
   isSaignement: 1
   isKnockback: 0
+  isRuban: 0
+  isRebond: 0
   weaponColor: {r: 0.050001383, g: 1, b: 0, a: 1}
   prefab: {fileID: 6997200509264440334, guid: cff74ebaa97c56c4cabf8537c433bc66, type: 3}
   dealDamages: 1
