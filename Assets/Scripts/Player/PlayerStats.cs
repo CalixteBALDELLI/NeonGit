@@ -147,7 +147,7 @@ public class PlayerStats : MonoBehaviour
     {
         xpBar.fillAmount     = (float)experience / experienceCap;
         healthBar.fillAmount = currentHealth     / characterData.MaxHealth;
-        MoneyText.text       = " " +  currentMoney;
+//        MoneyText.text       = " " +  currentMoney;
         RefreshText();
     }
     
@@ -167,7 +167,7 @@ public class PlayerStats : MonoBehaviour
     
     void RefreshText()
     {
-        MoneyText.text = " " +  currentMoney;
+//        MoneyText.text = " " +  currentMoney;
     }
     
     // In Game Upgrades
