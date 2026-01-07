@@ -240,5 +240,6 @@ MonoBehaviour:
   destructionSounds:
   - {fileID: 8300000, guid: 013597f901acf544d8e70c2de2ff6207, type: 3}
   - {fileID: 8300000, guid: 2ec5fca7bd347f94c9f4811fdd417c3a, type: 3}
+  audiomoney: {fileID: 8300000, guid: 3836f7990014f6e4195136cc68bfa988, type: 3}
   volume: 1
   MoneyToAdd: 10

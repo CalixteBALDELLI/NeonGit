@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3279149675978543912
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 274381155980003977, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: soundEffects.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 274381155980003977, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: 'soundEffects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: d6506a7b6b6c54b4292e883ee6058e67, type: 3}
+    - target: {fileID: 274381155980003977, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: 'soundEffects.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7c7690a2640576f4fbb440a7e3785afc, type: 3}
+    - target: {fileID: 274381155980003977, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: 'soundEffects.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e96c6cd2b9921049affdea852e58321, type: 3}
+    - target: {fileID: 274381155980003977, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: 'soundEffects.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c95966e184a8d440bc3d8b5c6ed073a, type: 3}
+    - target: {fileID: 274381155980003977, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: 'soundEffects.Array.data[4]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 526067336640805945, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2313760597495354943, guid: 09f94a05da0a6564ab413e8da8c7ea83, type: 3}
+    - target: {fileID: 526067336640805945, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 526067336640805945, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 526067336640805945, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359952996763945147, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4177403
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359952996763945147, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_Size.y
+      value: 0.63423157
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359952996763945147, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.20957257
+      objectReference: {fileID: 0}
+    - target: {fileID: 2359952996763945147, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.77042854
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897619684209756229, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_Name
+      value: teleporteur broc Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295209392970003301, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9561281
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295209392970003301, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.9561281
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295209392970003301, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.9561281
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295209392970003301, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295209392970003301, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295209392970003301, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295209392970003301, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295209392970003301, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295209392970003301, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295209392970003301, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295209392970003301, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295209392970003301, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295209392970003301, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 56c0ab71993b73a4f9aeefec8ced4ebf, type: 3}

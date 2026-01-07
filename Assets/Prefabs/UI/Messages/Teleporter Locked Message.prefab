@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "La cl\xE9 est n\xE9c\xE9ssaire pour activer ce t\xE9l\xE9porteur."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 45f476f0321ae2d409db0a115e990ae2, type: 2}
+  m_sharedMaterial: {fileID: -789016433449129515, guid: 45f476f0321ae2d409db0a115e990ae2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
