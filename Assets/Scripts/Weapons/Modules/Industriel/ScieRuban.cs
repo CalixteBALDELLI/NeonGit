@@ -6,9 +6,16 @@ public class ScieRuban : MonoBehaviour
 {
     public float damagePerTick = 5f;
     public float tickRate = 0.5f;
+    public float rotationSpeed = 100f; // Vitesse de rotation, ajustable depuis l'inspecteur
 
     private HashSet<EnemyStat> enemies = new HashSet<EnemyStat>();
     private Coroutine damageCoroutine;
+
+    void Update()
+    {
+        // Faire tourner l'objet autour de lui-même
+        transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime); // Rotation autour de l'axe Z (axe 2D)
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,12 +24,12 @@ public class ScieRuban : MonoBehaviour
             return;
         }
 
-        // Vérifie que l'objet a le tag Enemy
+        // Vérifie que l'objet a le tag "Enemy"
         if (!other.CompareTag("Enemy"))
         {
             return;
         }
-        
+
         EnemyStat enemy = other.GetComponent<EnemyStat>();
         if (enemy == null)
         {
@@ -39,13 +46,12 @@ public class ScieRuban : MonoBehaviour
         if (damageCoroutine == null)
         {
             damageCoroutine = StartCoroutine(DamageLoop());
-            
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        // Stop la coroutine si plus aucun ennemi
+        // Stoppe la coroutine si plus aucun ennemi
         if (enemies.Count == 0 && damageCoroutine != null)
         {
             StopCoroutine(damageCoroutine);
@@ -55,8 +61,7 @@ public class ScieRuban : MonoBehaviour
 
     IEnumerator DamageLoop()
     {
-        //if (tickRate <= 0f) tickRate = 0.1f;
-
+        // Si la vitesse du ruban n'est pas définie, la mettre à une valeur par défaut.
         WaitForSeconds wait = new WaitForSeconds(ModuleManager.SINGLETON.modulesData[19 + ModuleManager.SINGLETON.rubanAcquired].Speed);
 
         while (enemies.Count > 0)
@@ -72,7 +77,6 @@ public class ScieRuban : MonoBehaviour
                 else
                 {
                     enemies.Remove(enemy);
-                    
                 }
             }
 

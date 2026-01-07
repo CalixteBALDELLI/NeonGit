@@ -130,7 +130,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.098439, y: 0.098439, z: 0.098439}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3455104575245872894}
@@ -183,7 +183,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 8862273612299370736, guid: 3131a3f1c0c9fef499ed7127ac7be8eb, type: 3}
+  m_Sprite: {fileID: 6834684079179981106, guid: 3b82f3630722cd949924f00cd7a5ae34, type: 3}
   m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -228,8 +228,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.08, y: 1.73}
+  m_Offset: {x: -2.6079185, y: 0}
+  m_Size: {x: 6.2958364, y: 6.2958364}
   m_Direction: 0
 --- !u!50 &6970144066063837735
 Rigidbody2D:
@@ -445,7 +445,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.08, y: 1.73}
+    oldSize: {x: 17.38, y: 18.31}
     newSize: {x: 1.08, y: 1.73}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -466,7 +466,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
