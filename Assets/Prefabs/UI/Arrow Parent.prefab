@@ -92,9 +92,12 @@ MonoBehaviour:
   isAZoneBoss: 0
   target: {fileID: 0}
   edgePadding: 50
-  image: {fileID: 0}
-  distanceText: {fileID: 0}
+  image: {fileID: 3369177370233672131}
+  distanceText: {fileID: 521194963720080452}
   isArrow: 0
+  isTeleporterArrow: 0
+  teleporterIcon: {fileID: 0}
+  bossIcon: {fileID: 0}
 --- !u!1 &6513627060334764021
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +299,9 @@ MonoBehaviour:
   image: {fileID: 0}
   distanceText: {fileID: 0}
   isArrow: 1
+  isTeleporterArrow: 0
+  teleporterIcon: {fileID: 0}
+  bossIcon: {fileID: 0}
 --- !u!1 &8659876846931059004
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +393,9 @@ MonoBehaviour:
   isAZoneBoss: 0
   target: {fileID: 0}
   edgePadding: 50
-  image: {fileID: 0}
+  image: {fileID: 5840908178934681271}
   distanceText: {fileID: 0}
   isArrow: 1
+  isTeleporterArrow: 0
+  teleporterIcon: {fileID: 0}
+  bossIcon: {fileID: 0}

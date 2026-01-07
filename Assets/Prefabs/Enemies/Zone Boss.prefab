@@ -663,7 +663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 346357381649159480, guid: af27c9180ea518d49a0849628db42196, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3
+      value: -62.9
       objectReference: {fileID: 0}
     - target: {fileID: 521194963720080452, guid: af27c9180ea518d49a0849628db42196, type: 3}
       propertyPath: m_margin.z
@@ -678,6 +678,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2064473439258034773}
     - target: {fileID: 867173093165104170, guid: af27c9180ea518d49a0849628db42196, type: 3}
+      propertyPath: bossIcon
+      value: 
+      objectReference: {fileID: 8862273612299370736, guid: 3131a3f1c0c9fef499ed7127ac7be8eb, type: 3}
+    - target: {fileID: 867173093165104170, guid: af27c9180ea518d49a0849628db42196, type: 3}
       propertyPath: isAZoneBoss
       value: 0
       objectReference: {fileID: 0}
@@ -685,6 +689,10 @@ PrefabInstance:
       propertyPath: distanceText
       value: 
       objectReference: {fileID: 7197299486510292914}
+    - target: {fileID: 2946316519690569997, guid: af27c9180ea518d49a0849628db42196, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7772373
+      objectReference: {fileID: 0}
     - target: {fileID: 3369177370233672131, guid: af27c9180ea518d49a0849628db42196, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -696,11 +704,23 @@ PrefabInstance:
     - target: {fileID: 3596204193964693603, guid: af27c9180ea518d49a0849628db42196, type: 3}
       propertyPath: image
       value: 
-      objectReference: {fileID: 3879088859989761345}
+      objectReference: {fileID: 5340109419967283765}
     - target: {fileID: 3596204193964693603, guid: af27c9180ea518d49a0849628db42196, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 2064473439258034773}
+    - target: {fileID: 3596204193964693603, guid: af27c9180ea518d49a0849628db42196, type: 3}
+      propertyPath: bossIcon
+      value: 
+      objectReference: {fileID: 8862273612299370736, guid: 3131a3f1c0c9fef499ed7127ac7be8eb, type: 3}
+    - target: {fileID: 3596204193964693603, guid: af27c9180ea518d49a0849628db42196, type: 3}
+      propertyPath: edgePadding
+      value: 135
+      objectReference: {fileID: 0}
+    - target: {fileID: 3596204193964693603, guid: af27c9180ea518d49a0849628db42196, type: 3}
+      propertyPath: isAZoneBoss
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3596204193964693603, guid: af27c9180ea518d49a0849628db42196, type: 3}
       propertyPath: distanceText
       value: 
@@ -747,15 +767,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7332957150540237575, guid: af27c9180ea518d49a0849628db42196, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7332957150540237575, guid: af27c9180ea518d49a0849628db42196, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7332957150540237575, guid: af27c9180ea518d49a0849628db42196, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7332957150540237575, guid: af27c9180ea518d49a0849628db42196, type: 3}
       propertyPath: m_LocalPosition.x
@@ -842,6 +862,17 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5340109419967283765 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3369177370233672131, guid: af27c9180ea518d49a0849628db42196, type: 3}
+  m_PrefabInstance: {fileID: 7267219693718344694}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

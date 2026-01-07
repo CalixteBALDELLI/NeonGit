@@ -15,59 +15,38 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/Menu.unity
     guid: 17ef0acb1a46c3c4cbdaee8b3e6ffa89
   - enabled: 1
+    path: "Assets/Scenes/Menu/Cr\xE9dit.unity"
+    guid: 54a1d90263087684989cb274120a6029
+  - enabled: 1
     path: "Assets/Scenes/Jeu/D\xE9charge.unity"
     guid: 8cd1c529d0f57614e80140d8dc37cabc
   - enabled: 1
     path: Assets/Scenes/Jeu/N1.unity
     guid: 3534847f3b3e2e449927ccf5dc2c069a
   - enabled: 1
-    path: Assets/Scenes/Jeu/Neon 2.unity
-    guid: 1061b17fa4afc9f48a9207cc553286c9
+    path: Assets/Scenes/Jeu/N2.unity
+    guid: 278790b58e2079042b866bc0f36af0ef
   - enabled: 1
-    path: Assets/Scenes/Jeu/Neon 3.unity
-    guid: ba1223a05afca6a4f850eade02b2bbf6
+    path: Assets/Scenes/Jeu/N DY.unity
+    guid: 5c4be2273ec996a4db9b2016abd95ff9
   - enabled: 1
-    path: Assets/Scenes/Jeu/Neon 4.unity
-    guid: e59ec212451ebf648baaa9d2093e4d02
+    path: Assets/Scenes/Jeu/DY1.unity
+    guid: 7910eee828b64d84bae781d09a84f571
+  - enabled: 1
+    path: Assets/Scenes/Jeu/DY2.unity
+    guid: 6e8622a5b60458d4cb16b38afdeea495
+  - enabled: 1
+    path: Assets/Scenes/Jeu/DY C.unity
+    guid: 7e8ff1d171e5d544da5f9f408718cd5b
   - enabled: 1
     path: Assets/Scenes/Jeu/C1.unity
     guid: a491b8277b8025144aa2a250e00c75ab
   - enabled: 1
-    path: Assets/Scenes/Jeu/ChinaTown 2.unity
-    guid: 60f32533c1e40894db270df1736edee6
+    path: Assets/Scenes/Jeu/C2.unity
+    guid: 4220e25b0931a9c4a84d34d22dc176fc
   - enabled: 1
-    path: Assets/Scenes/Jeu/ChinaTown 3.unity
-    guid: b647a81257b926749a3a59584d31f246
-  - enabled: 1
-    path: Assets/Scenes/Jeu/ChinaTown 4.unity
-    guid: 3c20e2ed9eb15ae4e9f273a44949fe94
-  - enabled: 1
-    path: Assets/Scenes/Jeu/DIY 1.unity
-    guid: 59d16669ce38e154c8e95d40fe7420de
-  - enabled: 1
-    path: Assets/Scenes/Jeu/DIY 2.unity
-    guid: 722312bb7e347a64699ab001c59adb90
-  - enabled: 1
-    path: Assets/Scenes/Jeu/DIY 3.unity
-    guid: de0daa6aa8145e14a824950806edd1bd
-  - enabled: 1
-    path: Assets/Scenes/Jeu/DIY 4.unity
-    guid: 190cf54e41faa1c48a7de0fec032af38
-  - enabled: 1
-    path: Assets/Scenes/Jeu/Industriel 1.unity
-    guid: 594c1439fadb8854787452695e3de85a
-  - enabled: 1
-    path: Assets/Scenes/Jeu/Industriel 2.unity
-    guid: 6d5ad2bd5d871814b93748e0a4a3ac2b
-  - enabled: 1
-    path: Assets/Scenes/Jeu/Industriel 3.unity
-    guid: f76c50166b13d7e409e95032eaf3c5cc
-  - enabled: 1
-    path: Assets/Scenes/Jeu/Industriel 4.unity
-    guid: d158b89a00fb7e94bb8b85e5fedb93bd
-  - enabled: 1
-    path: "Assets/Scenes/Menu/Cr\xE9dit.unity"
-    guid: 54a1d90263087684989cb274120a6029
+    path: Assets/Scenes/Jeu/C N.unity
+    guid: 9d30ef00a5e38b244bc5640935e9bca1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

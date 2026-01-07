@@ -20,17 +20,26 @@ public class QuestPointer : MonoBehaviour
     [SerializeField] TextMeshProUGUI distanceText;
     [SerializeField] bool            isArrow;
     [SerializeField] bool            isTeleporterArrow;
-    
+    [SerializeField] Sprite          teleporterIcon;
+    [SerializeField] Sprite          bossIcon;
     void Awake()
     {
         if (isAZoneBoss)
         {
             target = GameObject.FindGameObjectWithTag("ZoneBoss").transform;
+            if (isArrow == false)
+            {
+                image.sprite = bossIcon;
+            }
         }
 
         if (isTeleporterArrow)
         {
             target = GameObject.FindGameObjectWithTag("Teleporter").transform;
+            if (isArrow == false)
+            {
+                image.sprite  = teleporterIcon;
+            }
         }
         pointerRectTransform = GetComponent<RectTransform>();
         mainCamera = Camera.main;
