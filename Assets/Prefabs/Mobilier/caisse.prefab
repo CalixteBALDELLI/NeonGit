@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 3013899044921229068}
   - component: {fileID: 3034354433338648147}
   m_Layer: 3
-  m_Name: Barrel_Oill 2
+  m_Name: caisse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,7 +238,8 @@ MonoBehaviour:
   destructTag: PlayerSword
   destroyedSprite: {fileID: 119550002390874199, guid: d14c0144ba6d86046a5537685a224eb7, type: 3}
   destructionSounds:
-  - {fileID: 8300000, guid: 013597f901acf544d8e70c2de2ff6207, type: 3}
-  - {fileID: 8300000, guid: 2ec5fca7bd347f94c9f4811fdd417c3a, type: 3}
+  - {fileID: 8300000, guid: 374c9fe3a47b47a4e92351f20ae50036, type: 3}
+  - {fileID: 8300000, guid: 9a7196d3c2122b84e87b1adbc9064aa7, type: 3}
+  audiomoney: []
   volume: 1
-  MoneyToAdd: 20
+  MoneyToAdd: 100

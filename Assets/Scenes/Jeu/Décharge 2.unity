@@ -18600,6 +18600,14 @@ PrefabInstance:
       propertyPath: destroyedSprite
       value: 
       objectReference: {fileID: -9142752262642046462, guid: 72f8a920f7fa11c45b658b131bbd6844, type: 3}
+    - target: {fileID: 3034354433338648147, guid: c1ed51ac8313b4d40826c37e5a6cff54, type: 3}
+      propertyPath: 'destructionSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 374c9fe3a47b47a4e92351f20ae50036, type: 3}
+    - target: {fileID: 3034354433338648147, guid: c1ed51ac8313b4d40826c37e5a6cff54, type: 3}
+      propertyPath: 'destructionSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a7196d3c2122b84e87b1adbc9064aa7, type: 3}
     - target: {fileID: 4081079604744392503, guid: c1ed51ac8313b4d40826c37e5a6cff54, type: 3}
       propertyPath: m_LocalPosition.x
       value: -26.61
