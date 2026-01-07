@@ -1,7 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using Vector3 = UnityEngine.Vector3;
-
 
 public class EnemyStat : MonoBehaviour
 {
@@ -13,60 +11,75 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] CharacterScriptableObject playerScriptableObject;
     
-    [SerializeField]        GameObject        propagationCollider;
-    [SerializeField]        PropagationScript propagationScript;
-    [SerializeField]        bool              isABoss;
-    [SerializeField] public bool              isFinalBoss;
-    [SerializeField]        GameObject        teleporterKey;
-    [SerializeField] public bool              isElectrocuted;
-    [SerializeField] public bool              hitBySword;
-    Canvas                                    KeyObtained;
-    [SerializeField]  public Collider2D       hitBoxCollider2D;
-    [HideInInspector] public EnemyStat        attacker;
-    public                   Vector3          spawnPosition;
-    public                   bool             isBleeding;
-    [SerializeField]         Canvas           victoryScreen;
+    [SerializeField] GameObject propagationCollider;
+    [SerializeField] PropagationScript propagationScript;
+    [SerializeField] bool isABoss;
+    [SerializeField] public bool isFinalBoss;
+    [SerializeField] GameObject teleporterKey;
+    [SerializeField] public bool isElectrocuted;
+    [SerializeField] public bool hitBySword;
+    Canvas KeyObtained;
+    [SerializeField] public Collider2D hitBoxCollider2D;
+    [HideInInspector] public EnemyStat attacker;
+    public Vector3 spawnPosition;
+    public bool isBleeding;
+    [SerializeField] Canvas victoryScreen;
 
-    
     // Current stats
     float currentMoveSpeed;
     public float currentHealth;
     float currentDamage;
     
-    [Header("Audio")]
-    private AudioSource  Dama;
-    private AudioSource  kill;
+
+    // Liste de sons aléatoires
+    [Header("Sounds")]
+    public AudioClip[] damageSounds; // Liste des sons de dégâts
+    public AudioClip[] deathSounds;  // Liste des sons de mort
+
+    public AudioSource audioSource; // Référence à l'AudioSource
+
     void Awake()
     {
         // Initialisation des stats
         currentMoveSpeed = enemyData.MoveSpeed;
-        currentHealth    = enemyData.MaxHealth;
-        currentDamage    = enemyData.Damage;
+        currentHealth = enemyData.MaxHealth;
+        currentDamage = enemyData.Damage;
 
         spawnPosition = transform.position;
-        //KeyObtained = GameObject.Find("KeyObtained").GetComponent<Canvas>();
+
+        // Récupérer l'AudioSource attaché à cet objet
+        audioSource = GetComponent<AudioSource>();
     }
 
-    
     public void TakeDamage(float dmg)
     {
-        enemyMouvement.isStunned                   =  true;
-        currentHealth                              -= dmg;
+        enemyMouvement.isStunned = true;
+        currentHealth -= dmg;
+
+        // Joue un son de dégâts aléatoire si la liste n'est pas vide
+        if (damageSounds.Length > 0)
+        {
+            AudioClip randomDamageSound = damageSounds[Random.Range(0, damageSounds.Length)];
+            audioSource.PlayOneShot(randomDamageSound);
+        }
+
         if (ModuleManager.SINGLETON.saignementCooldownFinished && ModuleManager.SINGLETON.saignementAcquired > 0)
         {
             GetComponent<Saignement>()?.CallSaignememnt();
         }
+        
         StartCoroutine(DamageFlash());
+
         if (isElectrocuted == false)
         {
             HealthCheck();
         }
     }
+
     public IEnumerator DamageFlash()
     {
-//        Debug.Log(transform.position + "DamageFlash");
         enemyMouvement.isStunned = true;
-        spriteRenderer.enabled   = false;
+        spriteRenderer.enabled = false;
         yield return new WaitForSeconds(.2f);
         spriteRenderer.enabled = true;
         yield return new WaitForSeconds(.2f);
@@ -77,16 +90,14 @@ public class EnemyStat : MonoBehaviour
 
     public void HealthCheck()
     {
-        //Debug.Log(transform.position + " Health Check");
         if (currentHealth <= 0)
         {
             if (isABoss)
             {
                 PlayerStats.SINGLETON.teleporterKeyObtained = true;
-                Timer.SINGLETON.objectiveMessage.text       = "Clé du téléporteur obtenue. Fuyez vers celui-ci !";
+                Timer.SINGLETON.objectiveMessage.text = "Clé du téléporteur obtenue. Fuyez vers celui-ci !";
                 Canvas teleporterArrow = GameObject.FindWithTag("TeleporterArrow").GetComponent<Canvas>();
                 teleporterArrow.enabled = true;
-                Debug.Log(teleporterArrow);
             }
             if (isFinalBoss)
             {
@@ -94,7 +105,7 @@ public class EnemyStat : MonoBehaviour
                 victoryScreen.enabled = true;
                 Time.timeScale = 0;
             }
-//            Debug.LogWarning(transform.position + " DIED");
+
             Kill();
         }
         else
@@ -105,8 +116,20 @@ public class EnemyStat : MonoBehaviour
 
     public void Kill()
     {
-        Destroy(gameObject);
+        // Joue un son de mort aléatoire
+        if (deathSounds.Length > 0)
+        {
+            AudioClip randomDeathSound = deathSounds[Random.Range(0, deathSounds.Length)];
+            // Crée un objet temporaire pour jouer le son de la mort
+            GameObject audioObject = new GameObject("AudioObject");
+            AudioSource tempAudioSource = audioObject.AddComponent<AudioSource>();
+            tempAudioSource.PlayOneShot(randomDeathSound);
+            Destroy(audioObject, randomDeathSound.length); // Détruit l'objet audio après la fin du son
+        }
+
+        
         dropRateManager.BottleDrop();
+        Destroy(gameObject);
     }
 
     private void OnDestroy()
@@ -120,7 +143,7 @@ public class EnemyStat : MonoBehaviour
     {
         if (cl2D.CompareTag("Player"))
         {
-           PlayerStats.SINGLETON.currentHealth -= enemyData.Damage;
+            PlayerStats.SINGLETON.currentHealth -= enemyData.Damage;
         }
 
         if (cl2D.CompareTag("PlayerSword"))
@@ -140,42 +163,34 @@ public class EnemyStat : MonoBehaviour
         if (cl2D.CompareTag("Projectile"))
         {
             TakeDamage(ModuleManager.SINGLETON.modulesData[ModuleManager.SINGLETON.projectileAcquired].Damage * PlayerStats.SINGLETON.currentPlayerDamage);
-            //Debug.Log("Projectile Damages : " + ModuleManager.SINGLETON.modulesData[ModuleManager.SINGLETON.projectileAcquired].Damage * PlayerStats.SINGLETON.currentPlayerDamage);
             ModulesCheck();
         }
-        
+
         if (cl2D.CompareTag("ScieRebondissante"))
         {
             TakeDamage(ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].Damage * PlayerStats.SINGLETON.currentPlayerDamage);
-            //Debug.Log("Projectile Damages : " + ModuleManager.SINGLETON.modulesData[ModuleManager.SINGLETON.projectileAcquired].Damage * PlayerStats.SINGLETON.currentPlayerDamage);
             ModulesCheck();
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-//        Debug.Log("Collision");
         if (enemyMouvement.isKnockedBack)
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                //Debug.Log(collision.gameObject.name);    
                 KnockBackModule touchedEnemyMouvement = collision.gameObject.GetComponent<KnockBackModule>();
                 touchedEnemyMouvement.currentKnockbackStep = knockBackModule.currentKnockbackStep + 1;
-                //Debug.Log(spawnPosition + " Current Knockback Step : " + touchedEnemyMouvement.currentKnockbackStep);
-//                Debug.Log(spawnPosition + " Damages = " + PlayerStats.SINGLETON.currentPlayerDamage + " / " + touchedEnemyMouvement.currentKnockbackStep + " = " + (PlayerStats.SINGLETON.currentPlayerDamage / touchedEnemyMouvement.currentKnockbackStep));
                 touchedEnemyMouvement.enemyStat.TakeDamage(PlayerStats.SINGLETON.currentPlayerDamage / touchedEnemyMouvement.currentKnockbackStep);
                 touchedEnemyMouvement.KnockbackSetup();
             }
         }
     }
-    
+
     public void ModulesCheck()
     {
-        //Debug.Log("ModulesCheck");
         if (ModuleManager.SINGLETON.propagationAcquired > 0 && ModuleManager.SINGLETON.propagationCooldownFinished)
         {
-            //Debug.Log("Cooldown Started");
             ModuleManager.SINGLETON.StartPropagationCooldown();
             Propage();
         }
@@ -189,8 +204,6 @@ public class EnemyStat : MonoBehaviour
 
     public void Propage()
     {
-        // Exécute le code pour la propagation.
-        //Debug.Log(transform.position + "Propaged");
         StartCoroutine(propagationScript.CallDamagingEnemyRepeatedly());
     }
 }

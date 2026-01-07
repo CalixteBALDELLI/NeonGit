@@ -16,14 +16,15 @@ public class SwordManager : MonoBehaviour
     [SerializeField]         InputActionReference mouseMovement;
     [SerializeField]         Vector2              mousePosition;
     
-    private bool  rotationActivated;
-    Vector3       swordDirection;
-    private float targetPosition = -45;
-    private float currentRotation;
-    private float timeCount;
+    private bool                   rotationActivated;
+    Vector3                        swordDirection;
+    private                  float targetPosition = -45;
+    private                  float currentRotation;
+    private                  float timeCount;
     [SerializeField] private float angle = 45f;
-    private float swingRadiusDividedbyTwo;
-    float         currentSwingSpeed;
+    private                  float swingRadiusDividedbyTwo;
+    float                          currentSwingSpeed;
+    public AudioSource             coup;
     
     void Start()
     {
@@ -32,7 +33,7 @@ public class SwordManager : MonoBehaviour
     
     public IEnumerator SwordAttack() // Active l'épée et règle la direction de son coup.
     {
-
+        
         playerSwordGameObject.SetActive(false);
         yield return new WaitForSeconds(1);
         playerSwordGameObject.SetActive(true);
@@ -46,6 +47,7 @@ public class SwordManager : MonoBehaviour
     
     void SetPlayerSwordOrientation() // Règle la direction du coup d'épée.
     {
+        coup.Play();
         mousePosition = mouseMovement.action.ReadValue<Vector2>();
         Vector3 worldPosition = playerCamera.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, playerCamera.nearClipPlane));
         swordDirection = (worldPosition - transform.position).normalized;

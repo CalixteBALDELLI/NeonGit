@@ -238,8 +238,11 @@ MonoBehaviour:
   destructTag: PlayerSword
   destroyedSprite: {fileID: 119550002390874199, guid: d14c0144ba6d86046a5537685a224eb7, type: 3}
   destructionSounds:
-  - {fileID: 8300000, guid: 013597f901acf544d8e70c2de2ff6207, type: 3}
-  - {fileID: 8300000, guid: 2ec5fca7bd347f94c9f4811fdd417c3a, type: 3}
-  audiomoney: {fileID: 8300000, guid: 3836f7990014f6e4195136cc68bfa988, type: 3}
+  - {fileID: 8300000, guid: e008278c7cdc10a4eb8e27840484e5df, type: 3}
+  - {fileID: 8300000, guid: f94b072e0c780194a8f020df6bbc5bc1, type: 3}
+  audiomoney:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   volume: 1
   MoneyToAdd: 10
