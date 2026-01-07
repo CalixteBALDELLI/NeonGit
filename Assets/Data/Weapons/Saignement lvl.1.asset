@@ -30,11 +30,11 @@ MonoBehaviour:
   prefab: {fileID: 6997200509264440334, guid: cff74ebaa97c56c4cabf8537c433bc66, type: 3}
   dealDamages: 1
   isAffliction: 0
-  damage: 0.05
+  damage: 0.025
   hasSpeed: 1
-  speed: 0.125
-  hasCooldown: 0
-  cooldownDuration: 10
+  speed: 0.01
+  hasCooldown: 1
+  cooldownDuration: 0.25
   hasPierce: 0
   pierce: 1
   hasKnockback: 0

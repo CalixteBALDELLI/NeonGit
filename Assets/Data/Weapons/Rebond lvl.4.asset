@@ -29,13 +29,13 @@ MonoBehaviour:
   prefab: {fileID: 0}
   dealDamages: 1
   isAffliction: 0
-  damage: 0
+  damage: 1
   hasSpeed: 1
-  speed: 0
+  speed: 30
   hasCooldown: 0
-  cooldownDuration: 0
+  cooldownDuration: 0.8437
   hasPierce: 1
-  pierce: 0
+  pierce: 4
   hasKnockback: 0
   knockbackForce: 0
   maxKnockBackSteps: 0
