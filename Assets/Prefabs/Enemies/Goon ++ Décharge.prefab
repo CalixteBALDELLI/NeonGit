@@ -494,22 +494,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2064473439258034773}
     m_Modifications:
-    - target: {fileID: 326990980748170173, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
-      propertyPath: enemyStat
-      value: 
-      objectReference: {fileID: -4390385675418812344}
-    - target: {fileID: 326990980748170173, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
-      propertyPath: enemyMouvement
-      value: 
-      objectReference: {fileID: 9024858487180829317}
-    - target: {fileID: 326990980748170173, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
-      propertyPath: spriteRenderer
-      value: 
-      objectReference: {fileID: 5318108029185307242}
-    - target: {fileID: 326990980748170173, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
-      propertyPath: electrocutionLight
-      value: 
-      objectReference: {fileID: 3881779619745310405}
     - target: {fileID: 2018381051067300431, guid: 427a43dc40fa018439581a925fb3de9e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
