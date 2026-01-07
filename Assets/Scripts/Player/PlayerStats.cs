@@ -14,8 +14,8 @@ public class PlayerStats : MonoBehaviour
     //[HideInInspector]
     [Header("Current Stats")]
     public float currentPlayerDamage;
-    public                  float  currentHealth;
-    [HideInInspector] public float  currentmaxHealth; 
+    public float                   currentHealth;
+    public float                   currentmaxHealth; 
     float                          currentAutoHealthRegeneration;
     public                   float currentMoveSpeed;
     [HideInInspector]        float currentProjectileSpeed;
@@ -159,7 +159,10 @@ public class PlayerStats : MonoBehaviour
     
     public void AddMoney(int moneyToAdd)
     {
-        currentMoney += moneyToAdd;
+        if (currentHealth < currentmaxHealth)
+        {
+            currentHealth += moneyToAdd;
+        }
     }
     
     void RefreshText()

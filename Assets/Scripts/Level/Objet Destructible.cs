@@ -29,8 +29,6 @@ public class DestructibleFurniture : MonoBehaviour
 			if (destroyedSprite != null) spriteRenderer.sprite = destroyedSprite;
 			if (destructionSounds.Length > 0)
 			{
-				
-				
 				AudioClip clip = destructionSounds[Random.Range(0, destructionSounds.Length)];
 				audioSource.PlayOneShot(clip, volume);
 				playerStats.AddMoney(MoneyToAdd);

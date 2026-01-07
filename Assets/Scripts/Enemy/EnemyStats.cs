@@ -84,6 +84,9 @@ public class EnemyStat : MonoBehaviour
             {
                 PlayerStats.SINGLETON.teleporterKeyObtained = true;
                 Timer.SINGLETON.objectiveMessage.text       = "Clé du téléporteur obtenue. Fuyez vers celui-ci !";
+                Canvas teleporterArrow = GameObject.FindWithTag("TeleporterArrow").GetComponent<Canvas>();
+                teleporterArrow.enabled = true;
+                Debug.Log(teleporterArrow);
             }
             if (isFinalBoss)
             {

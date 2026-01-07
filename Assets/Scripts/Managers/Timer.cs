@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
     [SerializeField] TextMeshProUGUI FinalBossTimerText;
     [SerializeField] GameObject      powerfulEnemyPrefab;
     [SerializeField] GameObject      finalBossPrefab;
+    [SerializeField] float           zoneBossTimer;
     [SerializeField] float           timeBeforeFinalBoss;
     public static    Timer           SINGLETON;
     public           TextMeshProUGUI objectiveMessage;
@@ -31,7 +32,7 @@ public class Timer : MonoBehaviour
     
     void Start()
     {
-        SetBossTimer(2);
+        SetBossTimer(zoneBossTimer);
         StartCoroutine(FinalBossTimer());
     }
 
