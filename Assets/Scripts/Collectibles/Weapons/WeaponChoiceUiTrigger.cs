@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class WeaponChoiceUiTrigger : MonoBehaviour
 {
 	Canvas                                  weaponChoiceCanvas;
-    [SerializeField] WeaponScriptableObject correspondingWeaponData;
+    public WeaponScriptableObject correspondingWeaponData;
     WeaponChoiceTexts                       weaponChoiceTexts;
     [SerializeField] int                    secondsBeforeSpawn;
     [SerializeField] BoxCollider2D          boxCollider2D;

@@ -44,17 +44,26 @@ public class ModuleManager : MonoBehaviour
     public Sprite[]          modulesIcons;
     public List<int>         currentEquipedModules = new List<int>();
     
+    [Header("Modules Bars Sliders")]
     [SerializeField] Slider propagationSlider;
     [SerializeField] Slider projectileSlider;
     [SerializeField] Slider rebondSlider;
     [SerializeField] Slider saignementSlider;
     [SerializeField] Slider knockbackSlider;
     [SerializeField] Slider foudreSlider;
+    
+    [Header("Modules Bars GameObjects")]
+    [SerializeField] GameObject propagationSliderGameObject;
+    [SerializeField] GameObject projectileSliderGameObject;
+    [SerializeField] GameObject rebondSliderGameObject;
+    [SerializeField] GameObject saignementSliderGameObject;
+    [SerializeField] GameObject knockbackSliderGameObject;
+    [SerializeField] GameObject foudreSliderGameObject;
 
 
     [Header("InGame Inventory Management")]
      public int        weaponToEquip;
-    [HideInInspector] public GameObject pickedWeapon;
+     public GameObject pickedWeapon;
     [HideInInspector] public GameObject pickedWeaponArrow;
     public                   int        equippedWeapons;
     Canvas                              weaponChoiceCanvas;
@@ -95,27 +104,32 @@ public class ModuleManager : MonoBehaviour
             {
                 projectileAcquired++;
                 projectileControllerGameObject.SetActive(true);
+                projectileSliderGameObject.SetActive(true);
             }
 
             if (weaponToEquip == 4) // Equipement du Knockback
             {
                 knockbackAcquired++;
+                knockbackSliderGameObject.SetActive(true);
             }
 
             if (weaponToEquip == 8) // Equipement de la Propagation
             {
                 propagationAcquired++;
+                propagationSliderGameObject.SetActive(true);
             }
 
             if (weaponToEquip == 16) // Equipement de la Foudre
             {
                 foudreAcquired++;
                 foudreScript.HitZone();
+                foudreSliderGameObject.SetActive(true);
             }
 
             if (weaponToEquip == 11) // Equipement du Saignement
             {
                 saignementAcquired++;
+                saignementSliderGameObject.SetActive(true);
             }
 
             if (weaponToEquip == 24)
@@ -124,7 +138,7 @@ public class ModuleManager : MonoBehaviour
                 rebondAcquired++;
                 //StopCoroutine(RebondCooldown(ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].CooldownDuration));
                 rebondScript.CreateScie();
-                
+                rebondSliderGameObject.SetActive(true);
             }
 
             if (weaponToEquip == 20)
@@ -196,10 +210,12 @@ public class ModuleManager : MonoBehaviour
         int inventoryIndex = 0;
         foreach (int equippedModule in currentEquipedModules)
         {
-            //Debug.Log("Inventory Index : " + inventoryIndex);
-            //Debug.Log("Eqquiped Module : " + equippedModule);
-//            inventoryIcons[inventoryIndex].enabled = true;
-            //inventoryIcons[inventoryIndex].sprite  = modulesIcons[equippedModule];
+            Debug.Log("Inventory Index : " + inventoryIndex);
+            Debug.Log("Eqquiped Module : " + equippedModule);
+            inventoryIcons[inventoryIndex].enabled = true;
+            //WeaponChoiceUiTrigger pickedWeaponData = pickedWeapon.GetComponent<WeaponChoiceUiTrigger>();
+            inventoryIcons[inventoryIndex].sprite = modulesData[equippedModule + 1].weaponIcon;
+            inventoryIcons[inventoryIndex].color  = modulesData[equippedModule + 1].weaponColor;
             inventoryIndex++;
         }
     }
