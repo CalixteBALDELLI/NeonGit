@@ -1,24 +1,24 @@
-using System.Collections;
 using UnityEngine;
 
 public class ScieCirculaire : MonoBehaviour
 {
     public GameObject scieCirculairePrefab;
-    public Transform player;
-    public float cooldown = 0.25f;
+    public Transform  player;
+    public float      cooldown = 0.25f;
 
     void Start()
     {
-        StartCoroutine(CreateScie());
+        if(ModuleManager.SINGLETON.rebondAcquired >= 1)
+        {
+            CreateScie();
+        }
     }
 
-    public IEnumerator CreateScie()
+    public void CreateScie()
     {
-        while (ModuleManager.SINGLETON.rebondAcquired >= 1)
-        {
-            yield return new WaitForSeconds(ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].CooldownDuration);
-            Instantiate(scieCirculairePrefab, player.position, Quaternion.identity);
-        }
-        
+        //yield return new WaitForSeconds(ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].CooldownDuration);
+        Instantiate(scieCirculairePrefab, player.position, Quaternion.identity);
+        StartCoroutine(ModuleManager.SINGLETON.RebondCooldown(ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].CooldownDuration));
     }
 }
+

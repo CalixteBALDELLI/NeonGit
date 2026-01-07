@@ -35,6 +35,7 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
 	    questPointer.SetActive(true);
 	    questPointerArrow.color       = ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + 1].weaponColor;
 	    questPointerWeaponIcon.sprite = ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + 1].weaponIcon;
+	    questPointerWeaponIcon.color  = ModuleManager.SINGLETON.modulesData[correspondingWeaponData.weaponId + 1].weaponColor;	
     }
     
     int IndexToAdd()

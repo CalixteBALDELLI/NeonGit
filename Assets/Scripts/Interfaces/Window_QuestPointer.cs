@@ -42,8 +42,8 @@ public class QuestPointer : MonoBehaviour
             }
         }
         pointerRectTransform = GetComponent<RectTransform>();
-        mainCamera = Camera.main;
-        canvas = GetComponent<Canvas>();
+        mainCamera           = Camera.main;
+        canvas               = GetComponent<Canvas>();
     }
 
     void Update()

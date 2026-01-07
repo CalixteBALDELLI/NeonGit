@@ -17,7 +17,7 @@ MonoBehaviour:
   description: "Inflige p\xE9riodiquement des d\xE9g\xE2ts aux ennemis jusqu'\xE0
     leur mort."
   xpValue: 0
-  weaponIcon: {fileID: -4347532159779508366, guid: c530acce33d296b4cb522401a4ce37c6, type: 3}
+  weaponIcon: {fileID: 480977973695864205, guid: 94208a97eaeab404fadf11b345e0965c, type: 3}
   isAnUpgrade: 0
   isPropagation: 0
   isFoudre: 0

@@ -46,6 +46,7 @@ public class ModuleManager : MonoBehaviour
     
     [SerializeField] Slider propagationSlider;
     [SerializeField] Slider projectileSlider;
+    [SerializeField] Slider rebondSlider;
     [SerializeField] Slider saignementSlider;
     [SerializeField] Slider knockbackSlider;
     [SerializeField] Slider foudreSlider;
@@ -121,8 +122,9 @@ public class ModuleManager : MonoBehaviour
             {
                 Debug.Log("Rebond Equipped");
                 rebondAcquired++;
-                StopCoroutine(rebondScript.CreateScie());
-                StartCoroutine(rebondScript.CreateScie());
+                //StopCoroutine(RebondCooldown(ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].CooldownDuration));
+                rebondScript.CreateScie();
+                
             }
 
             if (weaponToEquip == 20)
@@ -320,5 +322,25 @@ public class ModuleManager : MonoBehaviour
         
         saignementSlider.value     = saignementSlider.maxValue;
         saignementCooldownFinished = true;
+    }
+    
+    public IEnumerator RebondCooldown(float startCooldown)
+    {
+        Debug.LogWarning("Rebond Cooldown");
+        float cooldown = startCooldown;
+        rebondSlider.maxValue      = startCooldown;
+        //float cooldown  = 3;
+        float delayBetweenDecrease = 1f;
+        float cooldownReduction    = 1f;
+        do
+        {
+            cooldown -= cooldownReduction;
+            Debug.Log("Rebond Cooldown : " + cooldown);
+            rebondSlider.value = cooldown;
+            yield return new WaitForSeconds(delayBetweenDecrease);
+        } while (cooldown >= cooldownReduction);
+        
+        rebondSlider.value = rebondSlider.maxValue;
+        rebondScript.CreateScie();
     }
 }

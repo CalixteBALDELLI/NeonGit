@@ -17,7 +17,7 @@ MonoBehaviour:
   description: "Electrise les ennemis touch\xE9s par l'\xE9p\xE9e. Se propage aux
     ennemis alentours."
   xpValue: 0
-  weaponIcon: {fileID: 64134209812282044, guid: 1205032d0d9aa6444a2aac16a3130332, type: 3}
+  weaponIcon: {fileID: -7271272262745323431, guid: 586d93e30cc66f84c81393bbd226b3fe, type: 3}
   isAnUpgrade: 0
   isPropagation: 1
   isFoudre: 0

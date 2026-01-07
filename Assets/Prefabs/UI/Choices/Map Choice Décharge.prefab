@@ -1696,7 +1696,7 @@ GameObject:
   - component: {fileID: 3989026467012007792}
   - component: {fileID: 1003277157045948245}
   m_Layer: 5
-  m_Name: Map Choice
+  m_Name: "Map Choice D\xE9charge"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1734,7 +1734,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7087254073493211949}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}

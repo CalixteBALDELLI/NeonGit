@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAZoneBoss: 0
   target: {fileID: 0}
-  edgePadding: 50
+  edgePadding: 125
   image: {fileID: 3369177370233672131}
   distanceText: {fileID: 521194963720080452}
   isArrow: 0
@@ -296,8 +296,8 @@ MonoBehaviour:
   isAZoneBoss: 0
   target: {fileID: 0}
   edgePadding: 50
-  image: {fileID: 0}
-  distanceText: {fileID: 0}
+  image: {fileID: 3369177370233672131}
+  distanceText: {fileID: 521194963720080452}
   isArrow: 1
   isTeleporterArrow: 0
   teleporterIcon: {fileID: 0}
@@ -394,7 +394,7 @@ MonoBehaviour:
   target: {fileID: 0}
   edgePadding: 50
   image: {fileID: 5840908178934681271}
-  distanceText: {fileID: 0}
+  distanceText: {fileID: 521194963720080452}
   isArrow: 1
   isTeleporterArrow: 0
   teleporterIcon: {fileID: 0}
