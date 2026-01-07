@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 018cd20e7ca6e1b4dacc375d84f7c36f, type: 3}
-  m_Name: Goon Neon ++
+  m_Name: Goon Diy 4
   m_EditorClassIdentifier: 
-  moveSpeed: 4
-  maxHealth: 3
-  damage: 7
+  moveSpeed: 2.75
+  maxHealth: 4
+  damage: 7.5

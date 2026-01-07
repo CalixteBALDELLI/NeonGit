@@ -30,9 +30,9 @@ MonoBehaviour:
   prefab: {fileID: 0}
   dealDamages: 1
   isAffliction: 0
-  damage: 5
+  damage: 0.0375
   hasSpeed: 0
-  speed: 0
+  speed: 0.1
   hasCooldown: 0
   cooldownDuration: 0
   hasPierce: 0
