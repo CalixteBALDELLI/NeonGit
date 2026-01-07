@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class ScieCirculaire : MonoBehaviour
 {
-    public GameObject scieCirculairePrefab;
-    public Transform  player;
-    public float      cooldown = 0.25f;
+    public GameObject             scieCirculairePrefab;
+    public WeaponScriptableObject circulaireData;
+    public Transform              player;
+    public float                  cooldown = 0.25f;
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class ScieCirculaire : MonoBehaviour
     {
         //yield return new WaitForSeconds(ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].CooldownDuration);
         Instantiate(scieCirculairePrefab, player.position, Quaternion.identity);
-        StartCoroutine(ModuleManager.SINGLETON.RebondCooldown(ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].CooldownDuration));
+        StartCoroutine(ModuleManager.SINGLETON.RebondCooldown(ModuleManager.SINGLETON.modulesData[42 + ModuleManager.SINGLETON.rebondAcquired].CooldownDuration));
     }
 }
 

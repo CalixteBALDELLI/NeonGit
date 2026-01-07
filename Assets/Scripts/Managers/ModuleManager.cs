@@ -107,32 +107,32 @@ public class ModuleManager : MonoBehaviour
                 projectileSliderGameObject.SetActive(true);
             }
 
-            if (weaponToEquip == 4) // Equipement du Knockback
+            if (weaponToEquip == 7) // Equipement du Knockback
             {
                 knockbackAcquired++;
                 knockbackSliderGameObject.SetActive(true);
             }
 
-            if (weaponToEquip == 8) // Equipement de la Propagation
+            if (weaponToEquip == 14) // Equipement de la Propagation
             {
                 propagationAcquired++;
                 propagationSliderGameObject.SetActive(true);
             }
 
-            if (weaponToEquip == 16) // Equipement de la Foudre
+            if (weaponToEquip == 28) // Equipement de la Foudre
             {
                 foudreAcquired++;
                 foudreScript.HitZone();
                 foudreSliderGameObject.SetActive(true);
             }
 
-            if (weaponToEquip == 11) // Equipement du Saignement
+            if (weaponToEquip == 21) // Equipement du Saignement
             {
                 saignementAcquired++;
                 saignementSliderGameObject.SetActive(true);
             }
 
-            if (weaponToEquip == 24)
+            if (weaponToEquip == 42)
             {
                 Debug.Log("Rebond Equipped");
                 rebondAcquired++;
@@ -141,7 +141,7 @@ public class ModuleManager : MonoBehaviour
                 rebondSliderGameObject.SetActive(true);
             }
 
-            if (weaponToEquip == 20)
+            if (weaponToEquip == 35)
             {
                 rubanAcquired++;
                 rubanGameObject.SetActive(true);
@@ -222,22 +222,22 @@ public class ModuleManager : MonoBehaviour
 
     public void StartPropagationCooldown()
     {
-        StartCoroutine(PropagationCooldown(modulesData[9 + propagationAcquired].CooldownDuration));
+        StartCoroutine(PropagationCooldown(modulesData[14 + propagationAcquired].CooldownDuration));
     }
 
     public void StartKnockbackCooldown()
     {
-        StartCoroutine(KnockbackCooldown(modulesData[4 + knockbackAcquired].CooldownDuration));
+        StartCoroutine(KnockbackCooldown(modulesData[7 + knockbackAcquired].CooldownDuration));
     }
 
     public void StartSaignementCooldown()
     {
-        StartCoroutine(SaignementCooldown(modulesData[11 + saignementAcquired].CooldownDuration));
+        StartCoroutine(SaignementCooldown(modulesData[21 + saignementAcquired].CooldownDuration));
     }
     
     public IEnumerator PropagationCooldown(float startCooldown)
     {
-        //Debug.LogWarning("Propagation Cooldown");
+        Debug.LogWarning("Propagation Cooldown");
         propagationCooldownFinished = false;
         float cooldown = startCooldown;
         //float propagationCooldown  = 3;
@@ -252,6 +252,7 @@ public class ModuleManager : MonoBehaviour
             yield return new WaitForSeconds(delayBetweenDecrease);
         } while (cooldown >= cooldownReduction);
         Debug.LogWarning("Propagation Cooldown Finished");
+        
         //propagationCooldown = 0;
         propagationCooldownFinished = true;
         propagationSlider.value           = propagationSlider.maxValue;

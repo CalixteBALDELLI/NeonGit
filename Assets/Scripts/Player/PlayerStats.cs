@@ -140,6 +140,7 @@ public class PlayerStats : MonoBehaviour
     public void ModuleExchange()
     {
         IncreaseExperience(xpToExchange);
+        Destroy(ModuleManager.SINGLETON.pickedWeapon);
     }
     
 

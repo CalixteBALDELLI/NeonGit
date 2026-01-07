@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 625782ea73e1fe348886067bcf222d80, type: 3}
   m_Name: Knockback lvl.2
   m_EditorClassIdentifier: 
-  weaponId: 4
+  weaponId: 7
   weaponName: Knockback
   description: "Repousse les ennemis touch\xE9s par l'\xE9p\xE9e et le projectile."
   xpValue: 0

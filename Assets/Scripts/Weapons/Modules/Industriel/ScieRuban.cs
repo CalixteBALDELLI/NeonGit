@@ -72,7 +72,7 @@ public class ScieRuban : MonoBehaviour
             {
                 if (enemy != null)
                 {
-                    enemy.TakeDamage(ModuleManager.SINGLETON.modulesData[19 + ModuleManager.SINGLETON.rubanAcquired].Damage);
+                    enemy.TakeDamage(ModuleManager.SINGLETON.modulesData[42 + ModuleManager.SINGLETON.rubanAcquired].Damage);
                 }
                 else
                 {

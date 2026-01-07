@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 625782ea73e1fe348886067bcf222d80, type: 3}
   m_Name: Ruban lvl.4
   m_EditorClassIdentifier: 
-  weaponId: 19
+  weaponId: 35
   weaponName: "Zone d'\xE9nergie"
   description: "Cr\xE9e une zone autour du personnage qui inflige des d\xE9g\xE2ts
     aux ennemis entrant dedans."

@@ -49,14 +49,14 @@ public class Timer : MonoBehaviour
         while (timerInSeconds > 0)
         {
             timerInSeconds--;
-            timerText          = "Boss de Zone dans : " + System.TimeSpan.FromSeconds(timerInSeconds).ToString("hh':'mm':'ss");
+            timerText          = "Boss de Quartier dans : " + System.TimeSpan.FromSeconds(timerInSeconds).ToString("hh':'mm':'ss");
             timerTextMesh.text = timerText;
             yield return new WaitForSeconds(1);
         }
 
         Debug.Log("Boss Timer finished");
         Instantiate(powerfulEnemyPrefab);
-        objectiveMessage.text = "Eliminez le boss de zone";
+        objectiveMessage.text = "Eliminez le Boss de Quatier";
        //zoneBossArrow.SetActive(true);
         
         //powerfulEnemyPrefab.SetActive(true);

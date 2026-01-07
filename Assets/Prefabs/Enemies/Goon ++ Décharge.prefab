@@ -288,6 +288,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bbad54af29e159244b4d7eaf9c247687, type: 2}
   - {fileID: 11400000, guid: e18ba14fa35e6bb48939ad35fb0afde9, type: 2}
   - {fileID: 11400000, guid: 8480e29e39c041d4682a36e9678ab34d, type: 2}
+  - {fileID: 11400000, guid: bac5b59db1c96734ca9765558499afd0, type: 2}
+  - {fileID: 11400000, guid: b8ac2448cedcb214b957d2adb077a81c, type: 2}
+  - {fileID: 11400000, guid: eff75c9b36375f84dbfa02607413d87b, type: 2}
   saignementLight: {fileID: 2993485367836087157}
 --- !u!114 &1988480396899344604
 MonoBehaviour:

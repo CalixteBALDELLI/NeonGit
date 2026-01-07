@@ -31,7 +31,7 @@ MonoBehaviour:
   isAffliction: 0
   damage: 0
   hasSpeed: 0
-  speed: 0.01
+  speed: 4
   hasCooldown: 0
   cooldownDuration: 0
   hasPierce: 0

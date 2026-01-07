@@ -5,9 +5,10 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Collider2D))]
 public class ScieCirculaireBounce : MonoBehaviour
 {
-    public float speed = 5f;
-    public InputActionReference mousePositionInput;
-    public int maxBounces = 3;
+    public float                  speed = 5f;
+    public InputActionReference   mousePositionInput;
+    public int                    maxBounces = 3;
+    public WeaponScriptableObject circulaireData;
 
     private Vector3 direction;
     private Camera playerCamera;
@@ -33,14 +34,14 @@ public class ScieCirculaireBounce : MonoBehaviour
     {
         while (ModuleManager.SINGLETON.rebondAcquired >= 1)
         {
-            transform.Translate(direction * ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].Speed * Time.deltaTime);
+            transform.Translate(direction * ModuleManager.SINGLETON.modulesData[42 + ModuleManager.SINGLETON.rebondAcquired].Speed * Time.deltaTime);
             yield return null;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (bounceCount >= ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].Pierce)
+        if (bounceCount >= ModuleManager.SINGLETON.modulesData[42 + ModuleManager.SINGLETON.rebondAcquired].Pierce)
         {
             Destroy(gameObject);
             return;
