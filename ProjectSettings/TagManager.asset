@@ -42,6 +42,7 @@ TagManager:
   - ScieRebondissante
   - BossArrow
   - Teleporter
+  - TeleporterArrow
   layers:
   - Default
   - TransparentFX
