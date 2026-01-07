@@ -21133,6 +21133,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 166945050}
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: knockbackAcquired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: projectileSpawner
       value: 
       objectReference: {fileID: 738242159}
