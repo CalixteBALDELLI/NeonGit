@@ -39,6 +39,10 @@ TagManager:
   - ColliderChecker
   - escaladable
   - ZoneBoss
+  - ScieRebondissante
+  - BossArrow
+  - Teleporter
+  - TeleporterArrow
   layers:
   - Default
   - TransparentFX

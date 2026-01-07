@@ -55,9 +55,9 @@ public class ScieRuban : MonoBehaviour
 
     IEnumerator DamageLoop()
     {
-        if (tickRate <= 0f) tickRate = 0.1f;
+        //if (tickRate <= 0f) tickRate = 0.1f;
 
-        WaitForSeconds wait = new WaitForSeconds(tickRate);
+        WaitForSeconds wait = new WaitForSeconds(ModuleManager.SINGLETON.modulesData[19 + ModuleManager.SINGLETON.rubanAcquired].Speed);
 
         while (enemies.Count > 0)
         {
@@ -67,7 +67,7 @@ public class ScieRuban : MonoBehaviour
             {
                 if (enemy != null)
                 {
-                    enemy.TakeDamage(damagePerTick);
+                    enemy.TakeDamage(ModuleManager.SINGLETON.modulesData[19 + ModuleManager.SINGLETON.rubanAcquired].Damage);
                 }
                 else
                 {

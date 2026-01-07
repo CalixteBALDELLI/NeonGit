@@ -16,6 +16,8 @@ public class WeaponScriptableObject :ScriptableObject
     public bool  isProjectile;
     public bool  isSaignement;
     public bool  isKnockback;
+    public bool  isRuban;
+    public bool  isRebond;
     public Color weaponColor;
     
     

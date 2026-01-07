@@ -84,6 +84,9 @@ public class EnemyStat : MonoBehaviour
             {
                 PlayerStats.SINGLETON.teleporterKeyObtained = true;
                 Timer.SINGLETON.objectiveMessage.text       = "Clé du téléporteur obtenue. Fuyez vers celui-ci !";
+                Canvas teleporterArrow = GameObject.FindWithTag("TeleporterArrow").GetComponent<Canvas>();
+                teleporterArrow.enabled = true;
+                Debug.Log(teleporterArrow);
             }
             if (isFinalBoss)
             {
@@ -140,6 +143,13 @@ public class EnemyStat : MonoBehaviour
             //Debug.Log("Projectile Damages : " + ModuleManager.SINGLETON.modulesData[ModuleManager.SINGLETON.projectileAcquired].Damage * PlayerStats.SINGLETON.currentPlayerDamage);
             ModulesCheck();
         }
+        
+        if (cl2D.CompareTag("ScieRebondissante"))
+        {
+            TakeDamage(ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].Damage * PlayerStats.SINGLETON.currentPlayerDamage);
+            //Debug.Log("Projectile Damages : " + ModuleManager.SINGLETON.modulesData[ModuleManager.SINGLETON.projectileAcquired].Damage * PlayerStats.SINGLETON.currentPlayerDamage);
+            ModulesCheck();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -165,7 +175,7 @@ public class EnemyStat : MonoBehaviour
         //Debug.Log("ModulesCheck");
         if (ModuleManager.SINGLETON.propagationAcquired > 0 && ModuleManager.SINGLETON.propagationCooldownFinished)
         {
-            Debug.Log("Cooldown Started");
+            //Debug.Log("Cooldown Started");
             ModuleManager.SINGLETON.StartPropagationCooldown();
             Propage();
         }

@@ -18,6 +18,8 @@ public class ScieCirculaireBounce : MonoBehaviour
         playerCamera = Camera.main;
 
         // Get mouse position in world
+        //Debug.Log("Rebond Speed : " + ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].Speed);
+        //Debug.Log("Rebond Pierce : " + ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].Pierce);
         Vector2 mouseScreenPosition = mousePositionInput.action.ReadValue<Vector2>();
         Vector3 mouseWorldPosition = playerCamera.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, playerCamera.nearClipPlane));
         mouseWorldPosition.z = 0f;
@@ -29,23 +31,23 @@ public class ScieCirculaireBounce : MonoBehaviour
 
     IEnumerator MoveObject()
     {
-        while (true)
+        while (ModuleManager.SINGLETON.rebondAcquired >= 1)
         {
-            transform.Translate(direction * speed * Time.deltaTime);
+            transform.Translate(direction * ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].Speed * Time.deltaTime);
             yield return null;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (bounceCount >= maxBounces)
+        if (bounceCount >= ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].Pierce)
         {
             Destroy(gameObject);
             return;
         }
 
         bounceCount++;
-
+        Debug.Log(" Bounce Count : " + bounceCount);
         // Get the normal of the collision surface
         Vector2 normal = collision.contacts[0].normal;
 

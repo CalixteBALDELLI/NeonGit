@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
     [SerializeField] TextMeshProUGUI FinalBossTimerText;
     [SerializeField] GameObject      powerfulEnemyPrefab;
     [SerializeField] GameObject      finalBossPrefab;
+    [SerializeField] float           zoneBossTimer;
     [SerializeField] float           timeBeforeFinalBoss;
     public static    Timer           SINGLETON;
     public           TextMeshProUGUI objectiveMessage;
@@ -31,7 +32,7 @@ public class Timer : MonoBehaviour
     
     void Start()
     {
-        SetBossTimer(4);
+        SetBossTimer(zoneBossTimer);
         StartCoroutine(FinalBossTimer());
     }
 
@@ -56,7 +57,7 @@ public class Timer : MonoBehaviour
         Debug.Log("Boss Timer finished");
         Instantiate(powerfulEnemyPrefab);
         objectiveMessage.text = "Eliminez le boss de zone";
-        zoneBossArrow.SetActive(true);
+       //zoneBossArrow.SetActive(true);
         
         //powerfulEnemyPrefab.SetActive(true);
     }

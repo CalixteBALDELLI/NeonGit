@@ -11,6 +11,8 @@ public class ModuleManager : MonoBehaviour
     public static    ModuleManager     SINGLETON;
     [SerializeField] GameObject        projectileControllerGameObject;
     [SerializeField] ProjectileSpawner projectileSpawner;
+    [SerializeField] GameObject        rubanGameObject;
+    [SerializeField] ScieCirculaire    rebondScript;
     
     [Header("Player Inventory")]
     [SerializeField] public int propagationAcquired;
@@ -18,7 +20,8 @@ public class ModuleManager : MonoBehaviour
     [SerializeField] public int projectileAcquired;
     [SerializeField] public int foudreAcquired;
     [SerializeField] public int saignementAcquired;
-    
+    [SerializeField] public int rubanAcquired;
+    [SerializeField] public int rebondAcquired;
     [Header("Modules Data & Scripts")]
     public WeaponScriptableObject[] modulesData;
     public FoudreScript foudreScript;
@@ -49,7 +52,7 @@ public class ModuleManager : MonoBehaviour
 
 
     [Header("InGame Inventory Management")]
-    [HideInInspector] public int        weaponToEquip;
+     public int        weaponToEquip;
     [HideInInspector] public GameObject pickedWeapon;
     [HideInInspector] public GameObject pickedWeaponArrow;
     public                   int        equippedWeapons;
@@ -93,25 +96,39 @@ public class ModuleManager : MonoBehaviour
                 projectileControllerGameObject.SetActive(true);
             }
 
-            if (weaponToEquip == 1) // Equipement du Knockback
+            if (weaponToEquip == 4) // Equipement du Knockback
             {
                 knockbackAcquired++;
             }
 
-            if (weaponToEquip == 2) // Equipement de la Propagation
+            if (weaponToEquip == 8) // Equipement de la Propagation
             {
                 propagationAcquired++;
             }
 
-            if (weaponToEquip == 3)
+            if (weaponToEquip == 16) // Equipement de la Foudre
             {
                 foudreAcquired++;
                 foudreScript.HitZone();
             }
 
-            if (weaponToEquip == 4)
+            if (weaponToEquip == 11) // Equipement du Saignement
             {
                 saignementAcquired++;
+            }
+
+            if (weaponToEquip == 24)
+            {
+                Debug.Log("Rebond Equipped");
+                rebondAcquired++;
+                StopCoroutine(rebondScript.CreateScie());
+                StartCoroutine(rebondScript.CreateScie());
+            }
+
+            if (weaponToEquip == 20)
+            {
+                rubanAcquired++;
+                rubanGameObject.SetActive(true);
             }
 
             equippedWeapons++;
@@ -179,8 +196,8 @@ public class ModuleManager : MonoBehaviour
         {
             //Debug.Log("Inventory Index : " + inventoryIndex);
             //Debug.Log("Eqquiped Module : " + equippedModule);
-            inventoryIcons[inventoryIndex].enabled = true;
-            inventoryIcons[inventoryIndex].sprite  = modulesIcons[equippedModule];
+//            inventoryIcons[inventoryIndex].enabled = true;
+            //inventoryIcons[inventoryIndex].sprite  = modulesIcons[equippedModule];
             inventoryIndex++;
         }
     }

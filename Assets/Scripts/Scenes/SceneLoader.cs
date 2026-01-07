@@ -17,6 +17,8 @@ public class SceneLoader : MonoBehaviour
     }
     public void LoadScene()
     {
+        PlayerStats.SINGLETON.teleporterKeyObtained = false;
+        Timer.SINGLETON.objectiveMessage.text = "Survivez";
         SceneManager.LoadScene(mapData.mapId);
         playerCamera.fieldOfView                    = mapData.cameraFOV;
         PlayerStats.SINGLETON.teleporterKeyObtained = false;
