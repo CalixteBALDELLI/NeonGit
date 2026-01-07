@@ -10995,7 +10995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8879134912345789896, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: waves.Array.data[4].waveQuota
-      value: 1000
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8879134912345789896, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: waves.Array.data[4].spawnInterval
@@ -11003,11 +11003,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8879134912345789896, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: waves.Array.data[4].enemyGroups.Array.data[0].enemyCount
-      value: 100
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8879134912345789896, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: waves.Array.data[4].enemyGroups.Array.data[1].enemyCount
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8879134912345789896, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: waves.Array.data[0].enemyGroups.Array.data[0].enemyPrefab
