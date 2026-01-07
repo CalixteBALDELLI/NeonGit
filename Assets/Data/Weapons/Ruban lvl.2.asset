@@ -17,7 +17,7 @@ MonoBehaviour:
   description: "Cr\xE9e une zone autour du personnage qui inflige des d\xE9g\xE2ts
     aux ennemis entrant dedans."
   xpValue: 25
-  weaponIcon: {fileID: 0}
+  weaponIcon: {fileID: -8142686644846580299, guid: e3f9759146903c04d835312f30de7dd8, type: 3}
   isAnUpgrade: 1
   isPropagation: 0
   isFoudre: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
   isKnockback: 0
   isRuban: 0
   isRebond: 0
-  weaponColor: {r: 0, g: 0, b: 0, a: 0}
+  weaponColor: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
   prefab: {fileID: 0}
   dealDamages: 1
   isAffliction: 0

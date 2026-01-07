@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAZoneBoss: 0
   target: {fileID: 0}
-  edgePadding: 125
+  edgePadding: 175
   image: {fileID: 3369177370233672131}
   distanceText: {fileID: 521194963720080452}
   isArrow: 0
@@ -114,7 +114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7332957150540237575
 RectTransform:
   m_ObjectHideFlags: 0
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAZoneBoss: 0
   target: {fileID: 0}
-  edgePadding: 50
+  edgePadding: 100
   image: {fileID: 5840908178934681271}
   distanceText: {fileID: 521194963720080452}
   isArrow: 1

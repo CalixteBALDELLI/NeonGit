@@ -167,5 +167,6 @@ public class WeaponChoiceUiTrigger : MonoBehaviour
 	    PlayerStats.SINGLETON.xpToExchange        = correspondingWeaponData.weaponId + IndexToAdd();
 	    ModuleManager.SINGLETON.pickedWeapon      = gameObject;
 	    ModuleManager.SINGLETON.pickedWeaponArrow = questPointer;
+	    weaponChoiceTexts.weaponIcon.sprite       = correspondingWeaponData.weaponIcon;
     }
 }

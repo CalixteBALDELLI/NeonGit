@@ -4,7 +4,7 @@ public class CallSetBossTimer : MonoBehaviour
 {
     public void SetBossTimer()
     {
-        Timer.SINGLETON.SetBossTimer(1);
+        Timer.SINGLETON.SetBossTimer(180);
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created

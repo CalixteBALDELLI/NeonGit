@@ -2435,6 +2435,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ruban Collectable
       objectReference: {fileID: 0}
+    - target: {fileID: 8575406461301471705, guid: 5f37addcd5eb8fa4bb258deaab60186d, type: 3}
+      propertyPath: secondsBeforeSpawn
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 9008725113772030793, guid: 5f37addcd5eb8fa4bb258deaab60186d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 27.844223
@@ -11148,6 +11152,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saignement Collectable (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8575406461301471705, guid: 3928d603cfbf2864692a438a08b3e00c, type: 3}
+      propertyPath: secondsBeforeSpawn
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 9008725113772030793, guid: 3928d603cfbf2864692a438a08b3e00c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40.633747
@@ -13450,6 +13458,10 @@ PrefabInstance:
     - target: {fileID: 5989766164689989864, guid: b3ef396849ba14442ada9a032f1e0779, type: 3}
       propertyPath: m_Name
       value: Rebond Collectable (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575406461301471705, guid: b3ef396849ba14442ada9a032f1e0779, type: 3}
+      propertyPath: secondsBeforeSpawn
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9008725113772030793, guid: b3ef396849ba14442ada9a032f1e0779, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16253,6 +16265,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ruban Collectable (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8575406461301471705, guid: 5f37addcd5eb8fa4bb258deaab60186d, type: 3}
+      propertyPath: secondsBeforeSpawn
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 9008725113772030793, guid: 5f37addcd5eb8fa4bb258deaab60186d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.15475
@@ -17256,6 +17272,10 @@ PrefabInstance:
     - target: {fileID: 5989766164689989864, guid: b3ef396849ba14442ada9a032f1e0779, type: 3}
       propertyPath: m_Name
       value: Rebond Collectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575406461301471705, guid: b3ef396849ba14442ada9a032f1e0779, type: 3}
+      propertyPath: secondsBeforeSpawn
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9008725113772030793, guid: b3ef396849ba14442ada9a032f1e0779, type: 3}
       propertyPath: m_LocalPosition.x

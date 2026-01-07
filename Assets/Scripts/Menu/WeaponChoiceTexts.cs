@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponChoiceTexts : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class WeaponChoiceTexts : MonoBehaviour
     [SerializeField] public TextMeshProUGUI[] upgradesText;
     [SerializeField] public TextMeshProUGUI   xpGainText;
     [SerializeField] public TextMeshProUGUI   subDescriptionText;
+    [SerializeField] public Image weaponIcon;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

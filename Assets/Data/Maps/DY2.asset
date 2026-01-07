@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4cf8348f07297e409808649b5c26a61, type: 3}
   m_Name: DY2
   m_EditorClassIdentifier: 
-  mapName: DIY Est
+  mapName: DIY Final
   mapId: 7
   playerWeapons: []
   cameraFOV: 14
