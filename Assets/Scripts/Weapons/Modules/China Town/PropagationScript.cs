@@ -28,20 +28,8 @@ public class PropagationScript : MonoBehaviour
     public void PropagationSetup()
     {
         Debug.LogWarning(enemyStat.spawnPosition + " Propagation Started");
-        if (ModuleManager.SINGLETON.propagationAcquired == 1)
-        {
-            maxPropagationSteps = 2;
-        }
-        
-        if (ModuleManager.SINGLETON.propagationAcquired == 2)
-        {
-            maxPropagationSteps = 4;
-        }
-
-        if (ModuleManager.SINGLETON.propagationAcquired >= 3)
-        {
-            maxPropagationSteps = 6;
-        }
+        maxPropagationSteps = ModuleManager.SINGLETON.modulesData[14 + ModuleManager.SINGLETON.propagationAcquired].Pierce;
+        Debug.Log("Max Steps : " + maxPropagationSteps);
         
         enemyStat.spawnPosition            = transform.position;
         
