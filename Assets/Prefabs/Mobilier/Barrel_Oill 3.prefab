@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 3013899044921229068}
   - component: {fileID: 3034354433338648147}
   m_Layer: 3
-  m_Name: Barrel_Oill
+  m_Name: Barrel_Oill 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,7 +167,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1310319422878787194, guid: a3b8c815c37353543b4f68df1a44c7f7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.039215684, g: 0.7647059, b: 0.08479614, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -238,11 +238,11 @@ MonoBehaviour:
   destructTag: PlayerSword
   destroyedSprite: {fileID: 119550002390874199, guid: d14c0144ba6d86046a5537685a224eb7, type: 3}
   destructionSounds:
-  - {fileID: 8300000, guid: c8150ba11ef83934898d6382552177e8, type: 3}
-  - {fileID: 8300000, guid: 13ada6a36c87a9a4ea20bc947a2ef32b, type: 3}
+  - {fileID: 8300000, guid: e008278c7cdc10a4eb8e27840484e5df, type: 3}
+  - {fileID: 8300000, guid: f94b072e0c780194a8f020df6bbc5bc1, type: 3}
   audiomoney:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   volume: 0.582
-  MoneyToAdd: 0
+  MoneyToAdd: 10
