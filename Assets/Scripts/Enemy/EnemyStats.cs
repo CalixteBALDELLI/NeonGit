@@ -53,7 +53,7 @@ public class EnemyStat : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
-        Debug.Log("tOOK daMAGE");
+//        Debug.Log("tOOK daMAGE");
         enemyMouvement.isStunned = true;
         currentHealth -= dmg;
 
@@ -149,7 +149,7 @@ public class EnemyStat : MonoBehaviour
 
         if (cl2D.CompareTag("PlayerSword"))
         {
-            if (ModuleManager.SINGLETON.propagationAcquired == 0)
+            if (ModuleManager.SINGLETON.propagationAcquired == 0 || ModuleManager.SINGLETON.propagationCooldownFinished == false)
             {
                 TakeDamage(playerScriptableObject.damages);
                 ModulesCheck();
@@ -169,7 +169,7 @@ public class EnemyStat : MonoBehaviour
 
         if (cl2D.CompareTag("ScieRebondissante"))
         {
-            TakeDamage(ModuleManager.SINGLETON.modulesData[23 + ModuleManager.SINGLETON.rebondAcquired].Damage * PlayerStats.SINGLETON.currentPlayerDamage);
+            TakeDamage(ModuleManager.SINGLETON.modulesData[42 + ModuleManager.SINGLETON.rebondAcquired].Damage * PlayerStats.SINGLETON.currentPlayerDamage);
             ModulesCheck();
         }
     }
