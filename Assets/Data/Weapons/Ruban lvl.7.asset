@@ -16,7 +16,7 @@ MonoBehaviour:
   weaponName: "Zone d'\xE9nergie"
   description: "Cr\xE9e une zone autour du personnage qui inflige des d\xE9g\xE2ts
     aux ennemis entrant dedans."
-  xpValue: 25
+  xpValue: 75
   weaponIcon: {fileID: 0}
   isAnUpgrade: 1
   isPropagation: 0

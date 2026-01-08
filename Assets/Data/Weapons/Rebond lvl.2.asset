@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponId: 42
   weaponName: Scie Rebondissante
   description: "Tire des scies qui rebondissent sur les ennemis touch\xE9s."
-  xpValue: 25
+  xpValue: 35
   weaponIcon: {fileID: -7602934282252553644, guid: 0258d992230aed24e8fd101dd393fb4f, type: 3}
   isAnUpgrade: 1
   isPropagation: 0

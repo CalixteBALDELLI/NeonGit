@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponId: 7
   weaponName: Knockback
   description: "Repousse les ennemis touch\xE9s par l'\xE9p\xE9e et le projectile."
-  xpValue: 0
+  xpValue: 35
   weaponIcon: {fileID: 7893134356514104835, guid: 25d49f56d2821614d93e73eb769756a5, type: 3}
   isAnUpgrade: 1
   isPropagation: 0

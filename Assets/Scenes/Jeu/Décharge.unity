@@ -21112,6 +21112,50 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 20620729}
+    - target: {fileID: 1025633784134975101, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: levelRanges.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025633784134975101, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: levelRanges.Array.data[3].endLevel
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025633784134975101, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: levelRanges.Array.data[4].endLevel
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025633784134975101, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: levelRanges.Array.data[5].endLevel
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025633784134975101, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: levelRanges.Array.data[3].startLevel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025633784134975101, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: levelRanges.Array.data[4].startLevel
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025633784134975101, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: levelRanges.Array.data[5].startLevel
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025633784134975101, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: levelRanges.Array.data[2].experienceCapIncrease
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025633784134975101, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: levelRanges.Array.data[3].experienceCapIncrease
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025633784134975101, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: levelRanges.Array.data[4].experienceCapIncrease
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025633784134975101, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
+      propertyPath: levelRanges.Array.data[5].experienceCapIncrease
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: foudreSlider
       value: 
@@ -21150,7 +21194,7 @@ PrefabInstance:
       objectReference: {fileID: 193914254}
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: propagationAcquired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: inventoryFullMessage

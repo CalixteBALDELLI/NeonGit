@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponId: 0
   weaponName: Projectile
   description: "Lance un projectile qui traverse les ennemis \xE0 chaque coup d'\xE9p\xE9e"
-  xpValue: 0
+  xpValue: 75
   weaponIcon: {fileID: -2423627725662423091, guid: 6e15551b0ce52c9458e3f15bc63db41c, type: 3}
   isAnUpgrade: 1
   isPropagation: 0

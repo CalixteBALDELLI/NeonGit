@@ -16,7 +16,7 @@ MonoBehaviour:
   weaponName: Foudre
   description: "Cr\xE9e un anneau d'\xE9lectricit\xE9 \xE0 une position al\xE9atoire
     qui affecte les ennemis qui y entrent."
-  xpValue: 0
+  xpValue: 75
   weaponIcon: {fileID: 1897272322942515348, guid: 1be05156464d25a4e90a375e64cefe9b, type: 3}
   isAnUpgrade: 1
   isPropagation: 0
