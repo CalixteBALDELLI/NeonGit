@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: -1561611505317491127}
   - component: {fileID: 1988480396899344604}
   - component: {fileID: -4142296133642363235}
+  - component: {fileID: 5235139227223147785}
   m_Layer: 3
   m_Name: "Goon ++ D\xE9charge"
   m_TagString: Enemy
@@ -134,8 +135,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -2.6616356, y: 0}
-  m_Size: {x: 6.4032702, y: 6.4032702}
+  m_Offset: {x: -3, y: 0}
+  m_Size: {x: 11.874717, y: 21.149994}
   m_Direction: 0
 --- !u!50 &6970144066063837735
 Rigidbody2D:
@@ -413,6 +414,52 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &5235139227223147785
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8745270701351364792}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.26616764, y: 0.15209484}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 17.38, y: 18.31}
+    newSize: {x: 1.08, y: 1.73}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 20.041677, y: 20.591436}
+  m_EdgeRadius: 0
 --- !u!1001 &320374488252525908
 PrefabInstance:
   m_ObjectHideFlags: 0

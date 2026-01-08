@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5442699484696943214}
   m_Layer: 8
   m_Name: ScieCirculaire
-  m_TagString: Projectile
+  m_TagString: ScieRebondissante
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,6 +87,7 @@ MonoBehaviour:
   speed: 20
   mousePositionInput: {fileID: -8965022137329508415, guid: 189c225c90f342d47819dcdaec895259, type: 3}
   maxBounces: 3
+  circulaireData: {fileID: 0}
 --- !u!50 &8867015763752203741
 Rigidbody2D:
   serializedVersion: 5
