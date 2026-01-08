@@ -24,7 +24,7 @@ public class ProjectileMovement : MonoBehaviour
         float angle = Mathf.Atan2(mouseDirection.y, mouseDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         moveDirection      = new Vector2(Mathf.Sin(angle * Mathf.Deg2Rad), Mathf.Cos(angle * Mathf.Deg2Rad));
-
+        Destroy(gameObject, 5f);
     }
 
     void FixedUpdate()

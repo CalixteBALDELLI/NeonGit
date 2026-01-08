@@ -32,7 +32,7 @@ MonoBehaviour:
   damage: 0.5
   hasSpeed: 0
   speed: 0
-  hasCooldown: 1
+  hasCooldown: 0
   cooldownDuration: 0
   hasPierce: 0
   pierce: 1

@@ -16862,6 +16862,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8879134912345789896, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
+      propertyPath: enemiesAlive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879134912345789896, guid: 39056aee8c911ec4b970d6bba65ed0de, type: 3}
       propertyPath: waves.Array.data[1].waveQuota
       value: 0
       objectReference: {fileID: 0}
@@ -21165,10 +21169,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1452895}
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
-      propertyPath: rebondAcquired
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: knockbackSlider
       value: 
       objectReference: {fileID: 1273717561}
@@ -21185,10 +21185,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 166945050}
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
-      propertyPath: knockbackAcquired
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: projectileSpawner
       value: 
       objectReference: {fileID: 738242159}
@@ -21196,10 +21192,6 @@ PrefabInstance:
       propertyPath: propagationSlider
       value: 
       objectReference: {fileID: 193914254}
-    - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
-      propertyPath: propagationAcquired
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2186516233191138354, guid: c37f3ff26c64aef44b088953a10d17ad, type: 3}
       propertyPath: inventoryFullMessage
       value: 

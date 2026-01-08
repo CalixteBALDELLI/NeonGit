@@ -110,7 +110,7 @@ public class ModuleManager : MonoBehaviour
             if (weaponToEquip == 7) // Equipement du Knockback
             {
                 knockbackAcquired++;
-                knockbackSliderGameObject.SetActive(true);
+                //knockbackSliderGameObject.SetActive(true);
             }
 
             if (weaponToEquip == 14) // Equipement de la Propagation
@@ -247,7 +247,7 @@ public class ModuleManager : MonoBehaviour
         do
         {
             cooldown -= cooldownReduction;
-            Debug.Log("Propagation Cooldown : " + cooldown);
+            //Debug.Log("Propagation Cooldown : " + cooldown);
             propagationSlider.value = cooldown;
             yield return new WaitForSeconds(delayBetweenDecrease);
         } while (cooldown >= cooldownReduction);
@@ -260,7 +260,7 @@ public class ModuleManager : MonoBehaviour
 
     public IEnumerator ProjectileCooldown(float startCooldown)
     {
-        Debug.LogWarning("Module Cooldown");
+        //Debug.LogWarning("Module Cooldown");
         float cooldown = startCooldown;
         projectileCooldownFinished = false;
         projectileSlider.maxValue = startCooldown;
@@ -270,7 +270,7 @@ public class ModuleManager : MonoBehaviour
         do
         {
             cooldown -= cooldownReduction;
-            Debug.Log("Module Cooldown : " + cooldown);
+            //Debug.Log("Module Cooldown : " + cooldown);
             projectileSlider.value = cooldown;
             yield return new WaitForSeconds(delayBetweenDecrease);
         } while (cooldown >= cooldownReduction);
@@ -291,7 +291,7 @@ public class ModuleManager : MonoBehaviour
         do
         {
             cooldown -= cooldownReduction;
-            Debug.Log("Knockback Cooldown : " + cooldown);
+            //Debug.Log("Knockback Cooldown : " + cooldown);
             knockbackSlider.value = cooldown;
             yield return new WaitForSeconds(delayBetweenDecrease);
         } while (cooldown >= cooldownReduction);
@@ -311,7 +311,7 @@ public class ModuleManager : MonoBehaviour
         do
         {
             cooldown -= cooldownReduction;
-            Debug.Log("Foudre Cooldown : " + cooldown);
+            //Debug.Log("Foudre Cooldown : " + cooldown);
             foudreSlider.value = cooldown;
             yield return new WaitForSeconds(delayBetweenDecrease);
         } while (cooldown >= cooldownReduction);
@@ -332,7 +332,7 @@ public class ModuleManager : MonoBehaviour
         do
         {
             cooldown -= cooldownReduction;
-            Debug.Log("Saignement Cooldown : " + cooldown);
+            //Debug.Log("Saignement Cooldown : " + cooldown);
             saignementSlider.value = cooldown;
             yield return new WaitForSeconds(delayBetweenDecrease);
         } while (cooldown >= cooldownReduction);
@@ -352,7 +352,7 @@ public class ModuleManager : MonoBehaviour
         do
         {
             cooldown -= cooldownReduction;
-            Debug.Log("Rebond Cooldown : " + cooldown);
+            //Debug.Log("Rebond Cooldown : " + cooldown);
             rebondSlider.value = cooldown;
             yield return new WaitForSeconds(delayBetweenDecrease);
         } while (cooldown >= cooldownReduction);

@@ -53,7 +53,7 @@ public class EnemyStat : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
-        Debug.Log("tOOK daMAGE");
+//        Debug.Log("tOOK daMAGE");
         enemyMouvement.isStunned = true;
         currentHealth -= dmg;
 

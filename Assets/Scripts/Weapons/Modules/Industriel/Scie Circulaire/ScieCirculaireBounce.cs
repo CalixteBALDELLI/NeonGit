@@ -28,6 +28,7 @@ public class ScieCirculaireBounce : MonoBehaviour
         direction = (mouseWorldPosition - transform.position).normalized;
 
         StartCoroutine(MoveObject());
+        Destroy(gameObject, 5f);
     }
 
     IEnumerator MoveObject()
