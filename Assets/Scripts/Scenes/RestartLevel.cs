@@ -12,17 +12,17 @@ public class RestartLevel : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Time.timeScale ++;
+            //Time.timeScale ++;
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            Time.timeScale = 1;
+            //Time.timeScale = 1;
         }
     }
     public void ReturnToMainMenu()
